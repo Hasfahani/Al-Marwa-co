@@ -1,10 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-    AL MARWA CO - Contact Page
-    Built with Forty template by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 <head>
     <title>Contact Us - AL MARWA CO</title>
@@ -85,26 +79,31 @@
             <section id="contact" class="main">
                 <div class="inner">
 
-                    <!-- Contact Information -->
-                    <section class="split">
-                        
+                    <!-- Contact Info + Form -->
+                    <div class="split style1">
+
+                        <!-- Contact Information -->
                         <section>
+                            <h2>Get in Touch</h2>
+
                             <div class="contact-method">
                                 <span class="icon solid alt fa-envelope"></span>
                                 <h3>Email</h3>
                                 <a href="mailto:info@almarwaco.com">info@almarwaco.com</a>
                             </div>
-                        </section>
 
-                        <section>
                             <div class="contact-method">
                                 <span class="icon solid alt fa-phone"></span>
-                                <h3>Phone / WhatsApp</h3>
-                                <span>+961 70 099 978</span>
+                                <h3>Phone</h3>
+                                <a href="tel:+96170099978">+961 70 099 978</a>
                             </div>
-                        </section>
 
-                        <section>
+                            <div class="contact-method">
+                                <span class="icon brands alt fa-whatsapp"></span>
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/96170099978" target="_blank">Chat on WhatsApp</a>
+                            </div>
+
                             <div class="contact-method">
                                 <span class="icon solid alt fa-home"></span>
                                 <h3>Address</h3>
@@ -113,28 +112,57 @@
                             </div>
                         </section>
 
+                        <!-- Contact Form -->
                         <section>
-                            <div class="contact-method">
-                                <span class="icon solid alt fa-clock"></span>
-                                <h3>Business Hours</h3>
-                                <span>Monday - Friday: 9:00 - 18:00<br />
-                                Saturday: 10:00 - 14:00<br />
-                                Sunday: Closed</span>
-                            </div>
-                        </section>
+                            <h2>Send Us a Message</h2>
 
-                    </section>
+                            <form action="https://formsubmit.co/info@almarwaco.com" method="POST">
+
+                                <!-- Protect from spam -->
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+
+                                <div class="fields">
+
+                                    <div class="field half">
+                                        <label for="name">Full Name *</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+
+                                    <div class="field half">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="message">Message *</label>
+                                        <textarea id="message" name="message" rows="6" required></textarea>
+                                    </div>
+
+                                </div>
+
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message" class="primary"></li>
+                                    <li><input type="reset" value="Clear"></li>
+                                </ul>
+
+                            </form>
+
+                        </section>
+                    </div>
 
                     <!-- Google Maps -->
-                    <section>
+                    <section style="margin-top: 3em;">
                         <h2>Our Location</h2>
-                        <iframe 
-                            width="100%" 
-                            height="400" 
+
+                        <iframe
+                            width="100%"
+                            height="400"
                             loading="lazy"
-                            allowfullscreen 
+                            allowfullscreen
                             src="https://www.google.com/maps/embed/v1/place?q=33.7878056,35.4796389&key=YOUR_API_KEY_HERE">
                         </iframe>
+
                         <p style="font-size: 0.8em; margin-top: 5px;">Replace <strong>YOUR_API_KEY_HERE</strong> with your Google Maps Embed API key.</p>
                     </section>
 
@@ -152,7 +180,6 @@
                 </ul>
                 <ul class="copyright">
                     <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
                 </ul>
             </div>
         </footer>
