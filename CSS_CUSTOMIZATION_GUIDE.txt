@@ -1,0 +1,345 @@
+AL MARWA CO WEBSITE - CSS CUSTOMIZATION GUIDE
+==============================================
+
+This guide explains how to customize the colors, fonts, and styling of your website.
+
+QUICK CUSTOMIZATION
+===================
+
+For most users, you won't need to edit CSS. However, if you want to change
+colors or fonts, here's how:
+
+WHERE TO FIND COLORS
+====================
+
+The easiest colors to change are in:
+- assets/sass/libs/_vars.scss (if using SCSS)
+- assets/css/main.css (if editing CSS directly)
+
+Key Color Variables:
+- Primary Color (buttons, links, accents): Blue/Gray tones
+- Text Color: Dark gray/charcoal
+- Background Color: White
+- Accent Color: Action buttons
+
+HOW TO CHANGE COLORS
+====================
+
+METHOD 1: Using SCSS (Recommended)
+-----------------------------------
+If you have a SCSS compiler:
+
+1. Open: assets/sass/libs/_vars.scss
+2. Find color variables (look for $color or #hexcode)
+3. Update hex codes or color names
+4. Compile SCSS to CSS
+5. Replace assets/css/main.css with compiled output
+
+Common Variables to Update:
+- $primary-color: Main brand color
+- $accent-color: Button/link color
+- $text-color: Text color
+- $bg-color: Background color
+- $border-color: Border colors
+
+METHOD 2: Editing CSS Directly
+-------------------------------
+If you don't have SCSS:
+
+1. Open: assets/css/main.css
+2. Use Find/Replace (Ctrl+H) to replace colors
+3. Find hex codes like #3498db, #2c3e50, etc.
+4. Replace with your desired colors
+5. Save and test in browser
+
+Example:
+- Find: #3498db
+- Replace with: #FF6B6B (your new color)
+
+COMMON COLOR CHANGES
+====================
+
+Buttons (Primary CTA):
+- Look for: .button, .button.primary
+- Color properties: background-color, color, border-color
+- Current: Professional blue/gray
+- Change to: Your brand color
+
+Links & Accents:
+- Look for: a, a:hover, .accent
+- Color properties: color, text-decoration
+- Current: Blue with underline
+- Change to: Your preferred link color
+
+Text:
+- Look for: body, p, h1-h6
+- Color properties: color
+- Current: Dark gray (#2c3e50)
+- Change to: Your text color
+
+Background:
+- Look for: body, main, section
+- Color properties: background-color
+- Current: White (#ffffff)
+- Change to: Light background color
+
+Borders & Dividers:
+- Look for: border, border-color, hr
+- Color properties: border-color
+- Current: Light gray
+- Change to: Your preferred border color
+
+FONT CUSTOMIZATION
+==================
+
+Current Fonts:
+- Headlines: Sans-serif (system fonts)
+- Body: Sans-serif (system fonts)
+- Fallback: Georgia, Times New Roman
+
+To Change Fonts:
+
+1. Open: assets/css/main.css
+2. Look for: @font-face, font-family declarations
+3. Find font names in:
+   - h1, h2, h3, h4, h5, h6 { font-family: ... }
+   - body { font-family: ... }
+4. Update font-family property with new font name
+5. If using Google Fonts, add <link> to <head> of HTML files
+
+Example - Using Google Fonts:
+1. Go to: https://fonts.google.com/
+2. Select font family
+3. Copy <link> tag
+4. Paste into <head> of each HTML file BEFORE main.css
+5. Update CSS with new font-family name
+
+STYLING SECTIONS
+================
+
+Navbar/Header:
+- Look for: #header, header, nav
+- Change: background-color, border, text color
+- Properties: background-color, color, border-bottom
+
+Banner (Hero Section):
+- Look for: #banner, section.major
+- Change: background-color, text color, overlay
+- Properties: background, color, ::before
+
+Buttons:
+- Look for: .button, .button:hover, .button:active
+- Change: colors, padding, borders, radius
+- Properties: background-color, color, padding, border-radius
+
+Cards/Boxes:
+- Look for: .box, article, .tile
+- Change: background, shadow, border, text color
+- Properties: background-color, box-shadow, border, color
+
+Forms:
+- Look for: input, textarea, select, label, form
+- Change: background, border, text color, focus color
+- Properties: background-color, border-color, color
+
+Footer:
+- Look for: #footer, footer
+- Change: background-color, text color
+- Properties: background-color, color
+
+RESPONSIVE STYLING
+==================
+
+Media Query Breakpoints:
+- Mobile: <= 480px
+- Tablet: 481px - 768px
+- Small Desktop: 769px - 1024px
+- Large Desktop: > 1024px
+
+To Customize Responsive Behavior:
+
+1. Open: assets/css/main.css
+2. Look for: @media (max-width: ...)
+3. Find the breakpoint you want to modify
+4. Update properties inside that media query
+
+Example:
+@media (max-width: 768px) {
+  /* Mobile styles here */
+  .header { font-size: 14px; }
+}
+
+ADVANCED CUSTOMIZATION
+======================
+
+Theme Colors (Global):
+- Find CSS variables or SCSS variables
+- Update primary brand color
+- All buttons and accents will update automatically
+
+Font Scaling:
+- Modify base font size
+- All relative sizes (em, rem) will scale proportionally
+- Look for: html { font-size: ... }
+
+Spacing/Padding:
+- Modify margin and padding values
+- Affects spacing throughout the site
+- Look for: margin, padding properties
+
+Borders & Shadows:
+- Modify border-radius for roundness
+- Modify box-shadow for depth effects
+- Look for: border-radius, box-shadow properties
+
+COPY PASTE SOLUTIONS
+====================
+
+Want to quickly change your primary color?
+
+1. Open: assets/css/main.css
+2. Use Find and Replace: Ctrl+H (or Cmd+H on Mac)
+3. Find: #3498db (current primary color)
+4. Replace All with: #YourHexColor
+5. Find: #2980b9 (darker shade)
+6. Replace All with: #YourDarkerHex
+7. Save file
+8. Refresh browser (Ctrl+Shift+R to clear cache)
+
+Dark Mode (Advanced):
+To create a dark mode, add this CSS:
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  /* Add more dark mode rules as needed */
+}
+
+TESTING YOUR CHANGES
+====================
+
+After making CSS changes:
+
+1. Save the CSS file
+2. Open HTML file in browser
+3. Hard refresh: Ctrl+Shift+R (or Cmd+Shift+R on Mac)
+4. Check all pages for consistency
+5. Test on mobile devices
+6. Test in different browsers
+7. Check form styling still works
+8. Verify button hover effects work
+
+IF SOMETHING BREAKS
+===================
+
+1. Don't panic - CSS changes are reversible
+2. Undo your changes (Ctrl+Z in editor)
+3. Or restore from backup copy
+4. Test one change at a time
+5. Document what worked and what didn't
+6. Use browser DevTools to inspect elements:
+   - Right-click on element
+   - Select "Inspect" or "Inspect Element"
+   - View CSS in DevTools panel
+   - Test changes live before editing file
+
+COMMON PROBLEMS & SOLUTIONS
+===========================
+
+Problem: Colors not changing
+Solution:
+- Hard refresh browser (Ctrl+Shift+R)
+- Check if CSS is linked correctly in HTML
+- Check if there are conflicting CSS rules
+- Use browser DevTools to see applied styles
+
+Problem: Fonts not displaying
+Solution:
+- Check font is available or properly imported
+- Check font-family name matches exactly
+- Add fallback fonts: font-family: 'New Font', 'Fallback', sans-serif;
+- Check file paths to font files
+
+Problem: Layout broken after changes
+Solution:
+- Check you didn't accidentally break CSS syntax
+- Missing semicolons, braces, or quotes cause issues
+- Look for error messages in browser console
+- Restore previous version and try again
+
+Problem: Mobile view looks wrong
+Solution:
+- Check mobile media queries weren't affected
+- Test in browser's mobile preview (F12 > toggle device toolbar)
+- Verify breakpoints are correct
+- Check padding/margin values for mobile
+
+RESOURCES FOR LEARNING CSS
+===========================
+
+W3Schools CSS Tutorial:
+https://www.w3schools.com/css/
+
+Mozilla Developer Network CSS Guide:
+https://developer.mozilla.org/en-US/docs/Web/CSS
+
+CSS-Tricks:
+https://css-tricks.com/
+
+Color Tools:
+- Hex to RGB converter: https://www.rgbtohex.com/
+- Color palette generator: https://coolors.co/
+- Contrast checker: https://webaim.org/resources/contrastchecker/
+
+Font Resources:
+- Google Fonts: https://fonts.google.com/
+- Font Awesome: https://fontawesome.com/
+- Web Safe Fonts: https://www.w3schools.com/cssref/css_websafe_fonts.php
+
+BEST PRACTICES
+==============
+
+✓ Always backup original CSS before making changes
+✓ Test changes on all pages, not just one
+✓ Test on mobile devices after changing styling
+✓ Document any custom CSS you add
+✓ Use comments in CSS to explain changes
+✓ Keep color palette consistent throughout site
+✓ Test color contrast for accessibility
+✓ Avoid inline styles (keep CSS in files)
+✓ Use CSS classes for styling, not HTML changes
+✓ Minimize changes to avoid breaking functionality
+
+FILE LOCATIONS REFERENCE
+========================
+
+Main CSS:                   assets/css/main.css
+Fallback CSS:              assets/css/noscript.css
+SCSS Source (if available): assets/sass/
+  ├── main.scss
+  ├── libs/_vars.scss       (colors & variables)
+  ├── libs/_mixins.scss     (responsive mixins)
+  ├── base/                 (base styles)
+  └── components/           (component styles)
+
+HTML Files to Check:        index.html, about.html, services.html, contact.html
+
+SUPPORT
+=======
+
+If you need help:
+1. Refer to WEBSITE_GUIDE.md for detailed explanations
+2. Check HTML5 UP template documentation
+3. Use browser DevTools to inspect elements
+4. Search for CSS solutions online
+5. Test changes incrementally, one at a time
+
+Remember: You can always restore from backup if something goes wrong!
+
+---
+
+Last Updated: November 2025
+Version: 1.0
+Happy Customizing! 🎨

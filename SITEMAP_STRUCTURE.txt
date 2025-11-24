@@ -1,0 +1,395 @@
+AL MARWA CO WEBSITE - SITE MAP & STRUCTURE
+==========================================
+
+WEBSITE ARCHITECTURE
+====================
+
+┌─────────────────────────────────────────────────────┐
+│                     AL MARWA CO                      │
+│           Shipping & Forwarding Solutions           │
+└─────────────────────────────────────────────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        │                   │                   │
+        ▼                   ▼                   ▼
+   HOME (index.html)  ABOUT (about.html)  SERVICES (services.html)
+        │                   │                   │
+        │                   │                   │
+        ├─ Hero Banner      ├─ Our Story        ├─ Ocean Freight
+        ├─ Service Cards    ├─ Mission/Vision   ├─ Air Freight
+        ├─ Call to Action   ├─ Core Values      ├─ Customs Clearance
+        ├─ Contact Info     ├─ Why Choose Us    ├─ Warehousing
+        └─ Footer           ├─ Capabilities     ├─ Documentation
+                            ├─ Links            └─ Consultation
+                            └─ Footer
+
+        ┌─────────────────────────────────────┐
+        │    CONTACT (contact.html)           │
+        ├─ Contact Info                      │
+        ├─ Contact Form                      │
+        ├─ Business Hours                    │
+        └─ Why Trust Us Section              │
+        └─ Footer
+
+NAVIGATION FLOW
+===============
+
+Every Page Has:
+┌────────────────────────────────────────┐
+│  HEADER: Logo + Menu Toggle            │
+│  MENU: Home | About | Services | Contact
+└────────────────────────────────────────┘
+              ↓ [Content] ↓
+┌────────────────────────────────────────┐
+│  FOOTER:                               │
+│  Social Media | Copyright | Links      │
+└────────────────────────────────────────┘
+
+INTERNAL LINKS
+==============
+
+From INDEX.html (Homepage):
+- Main Logo → index.html (stays on page)
+- "Our Services" button → services.html
+- Service tiles → services.html#serviceName
+- "Learn More" button → about.html
+- Contact section → contact.html
+- Menu links → various pages
+- Footer links → same pages
+
+From ABOUT.html:
+- Logo → index.html
+- Menu → all pages
+- "Contact Us" button → contact.html
+- "View Our Services" button → services.html
+- Footer links → all pages
+
+From SERVICES.html:
+- Logo → index.html
+- Menu → all pages
+- Service anchor links → services.html#ocean/air/customs/warehouse/docs/consult
+- "Request a Quote" button → contact.html
+- Footer links → all pages
+
+From CONTACT.html:
+- Logo → index.html
+- Menu → all pages
+- All form submit → form handler
+- Footer links → all pages
+
+CONTENT SECTIONS BY PAGE
+=======================
+
+INDEX.HTML (Homepage)
+├── Header Section
+│   └── Company branding, navigation menu
+├── Banner Section
+│   ├── Hero headline
+│   ├── Subheading
+│   └── Call-to-action button
+├── Main Content
+│   ├── Services Showcase (6 tiles with images)
+│   │   ├── Ocean Freight
+│   │   ├── Air Freight
+│   │   ├── Customs Clearance
+│   │   ├── Warehousing
+│   │   ├── Documentation
+│   │   └── Consultation
+│   └── Why Partner With Us Section
+│       └── Brief description + Link to About
+├── Contact Section
+│   ├── Quick contact form
+│   └── Contact methods (email, phone, address)
+└── Footer Section
+    ├── Social media icons
+    └── Copyright & credits
+
+ABOUT.HTML (About Page)
+├── Header Section
+│   └── Company branding, navigation menu
+├── Page Banner
+│   └── "About AL MARWA CO" headline
+├── Main Content
+│   ├── Our Story
+│   ├── Mission Statement
+│   ├── Vision Statement
+│   ├── Core Values (4 boxes)
+│   │   ├── Reliability
+│   │   ├── Transparency
+│   │   ├── Expertise
+│   │   └── Customer Focus
+│   ├── Why Choose AL MARWA CO (6 points)
+│   ├── Our Capabilities (7 service types)
+│   └── Call-to-Action Buttons
+└── Footer Section
+
+SERVICES.HTML (Services Page)
+├── Header Section
+│   └── Company branding, navigation menu
+├── Page Banner
+│   ├── Headline
+│   └── Subheading
+├── Main Content
+│   ├── Ocean Freight Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── What we offer list
+│   ├── Air Freight Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── What we offer list
+│   ├── Customs Clearance Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── What we offer list
+│   ├── Warehousing Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── What we offer list
+│   ├── Documentation Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── What we provide list
+│   ├── Consultation Section
+│   │   ├── [Image]
+│   │   ├── Description
+│   │   └── Expertise list
+│   └── Call-to-Action Section
+└── Footer Section
+
+CONTACT.HTML (Contact Page)
+├── Header Section
+│   └── Company branding, navigation menu
+├── Page Banner
+│   ├── Headline
+│   └── Subheading
+├── Main Content
+│   ├── Contact Information (4 boxes)
+│   │   ├── Email
+│   │   ├── Phone
+│   │   ├── Address
+│   │   └── Business Hours
+│   ├── Contact Form
+│   │   ├── Full Name (required)
+│   │   ├── Email (required)
+│   │   ├── Company
+│   │   ├── Phone
+│   │   ├── Service Interested (dropdown, required)
+│   │   ├── Shipment Origin
+│   │   ├── Shipment Destination
+│   │   ├── Message (required)
+│   │   └── Submit/Clear buttons
+│   ├── Why Trust Us Section (4 boxes)
+│   │   ├── Responsive Service
+│   │   ├── Global Reach
+│   │   ├── Transparent Pricing
+│   │   └── Proven Experience
+│   └── Footer Section
+
+RESPONSIVE BREAKPOINTS
+=======================
+
+Desktop View (1024px and above):
+├── Full navigation bar visible
+├── Multi-column layouts
+├── Full tile grid (2-3 columns)
+├── Optimized spacing and padding
+
+Tablet View (768px - 1023px):
+├── Navigation bar visible
+├── 2-column layouts
+├── Adjusted tile grid
+├── Optimized for touch
+
+Mobile View (Below 768px):
+├── Hamburger menu
+├── Single-column layouts
+├── Touch-friendly buttons
+├── Stacked tiles
+├── Full-width forms
+
+STYLE GUIDE
+===========
+
+Colors Used:
+- Primary: Professional business blue/gray
+- Accent: Action button color
+- Text: Dark gray/charcoal
+- Background: White with light gray sections
+- Borders: Light gray
+
+Typography:
+- Headlines: Sans-serif, bold
+- Body: Sans-serif, regular
+- Links: Colored, underlined on hover
+
+Spacing:
+- Standard padding: 2-3em between sections
+- Margin between elements: consistent
+- Mobile margins: adjusted for smaller screens
+
+Components:
+- Buttons: Rounded corners, hover effects
+- Forms: Clean styling, clear labels
+- Cards/Tiles: Shadow effects, hover states
+- Icons: Font Awesome integration ready
+
+EXTERNAL LINKS (Ready to Update)
+================================
+
+Currently Pointing To:
+- Email: info@almarwaco.com → YOUR EMAIL
+- Phone: Contact form for details → YOUR PHONE
+- Address: "Your company address here" → YOUR ADDRESS
+- Social Media: # (placeholder) → YOUR PROFILES
+  ├── Twitter
+  ├── Facebook
+  ├── Instagram
+  └── LinkedIn
+- Contact form action: # → YOUR FORM HANDLER
+
+IMAGE PLACEHOLDERS
+==================
+
+assets/images/
+├── ocean-freight.jpg (1200x600px)
+├── air-freight.jpg (1200x600px)
+├── customs.jpg (1200x600px)
+├── warehousing.jpg (1200x600px)
+├── documentation.jpg (1200x600px)
+└── consultation.jpg (1200x600px)
+
+FORM FIELDS & VALIDATION
+========================
+
+Contact Form Fields:
+1. Full Name
+   - Type: Text input
+   - Required: Yes
+   - Validation: Text only
+
+2. Email
+   - Type: Email input
+   - Required: Yes
+   - Validation: Valid email format
+
+3. Company
+   - Type: Text input
+   - Required: No
+   - Validation: Text only
+
+4. Phone
+   - Type: Tel input
+   - Required: No
+   - Validation: Phone format
+
+5. Service Interested
+   - Type: Select dropdown
+   - Required: Yes
+   - Options:
+     * Ocean Freight
+     * Air Freight
+     * Customs Clearance
+     * Warehousing
+     * Logistics Consultation
+     * Other
+
+6. Shipment Origin
+   - Type: Text input
+   - Required: No
+   - Validation: Text only
+
+7. Shipment Destination
+   - Type: Text input
+   - Required: No
+   - Validation: Text only
+
+8. Message/Details
+   - Type: Textarea
+   - Required: Yes
+   - Validation: Text (6 rows visible)
+
+ASSET DEPENDENCIES
+==================
+
+CSS Dependencies:
+├── assets/css/main.css (required)
+├── assets/css/noscript.css (fallback)
+└── All files linked in <head> of each HTML
+
+JavaScript Dependencies:
+├── assets/js/jquery.min.js (required)
+├── assets/js/jquery.scrolly.min.js (optional - smooth scroll)
+├── assets/js/jquery.scrollex.min.js (optional - scroll effects)
+├── assets/js/browser.min.js (optional - browser detection)
+├── assets/js/breakpoints.min.js (optional - responsive breakpoints)
+├── assets/js/util.js (required - utilities)
+└── assets/js/main.js (required - main functionality)
+
+Font Dependencies:
+├── assets/webfonts/ (included)
+└── System fonts as fallback
+
+RECOMMENDED ADDITIONS
+====================
+
+Future Enhancements:
+- Blog section (with article pages)
+- Client testimonials/reviews page
+- Service pricing page
+- FAQ section
+- News/Updates section
+- Team member profiles
+- Case studies page
+- Video content
+- Live chat widget
+- Appointment booking system
+- Client login portal
+- Multi-language support
+- API integration
+- Advanced analytics
+
+PERFORMANCE CONSIDERATIONS
+==========================
+
+Current Status:
+✓ CSS files minified
+✓ JavaScript files minified
+✓ Images ready for compression
+✓ Minimal HTTP requests
+✓ No render-blocking resources
+✓ Mobile-optimized
+
+Optimization Opportunities:
+- Compress images further
+- Implement lazy loading
+- Use CDN for assets
+- Enable gzip compression
+- Add caching headers
+- Minify inline CSS/JS
+
+SEO CONSIDERATIONS
+==================
+
+Currently Optimized:
+✓ Semantic HTML5 markup
+✓ Proper heading hierarchy
+✓ Alt text on images
+✓ Mobile responsive
+✓ Clear page titles
+
+Still To Do:
+- Meta descriptions per page
+- Meta keywords (if needed)
+- Structured data (schema.org)
+- Sitemap.xml
+- robots.txt
+- Open Graph tags
+- Social media meta tags
+
+---
+
+This document provides a complete overview of the website structure.
+Refer to other documentation files for implementation details.
+
+Last Updated: November 2025

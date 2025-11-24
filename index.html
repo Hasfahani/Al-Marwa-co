@@ -1,215 +1,326 @@
 <!DOCTYPE HTML>
 <!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    AL MARWA CO - Home Page
+    Based on "Forty" by HTML5 UP
 -->
 <html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>AL MARWA CO – Shipping & Forwarding Solutions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <style>
+        /* Logo in header */
+        #header .logo img {
+            height: 45px;
+            margin-right: 0.6em;
+            vertical-align: middle;
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        #header .logo span.brand-text {
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            font-size: 0.95em;
+        }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+        /* Hero banner */
+        #banner {
+            background: url("images/banner.jpg") center center/cover no-repeat;
+            position: relative;
+        }
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Hi, my name is Forty</h1>
-							</header>
-							<div class="content">
-								<p>A responsive site template designed by HTML5 UP<br />
-								and released under the Creative Commons.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        #banner:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
 
-				<!-- Main -->
-					<div id="main">
+        #banner .inner {
+            position: relative;
+        }
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Aliquam</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Tempus</a></h3>
-										<p>feugiat amet tempus</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section>
+        /* Service preview cards */
+        .service-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 1.75em 1.5em;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2em;
+        }
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+        .service-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1em;
+        }
 
-					</div>
+        .service-card h3 {
+            margin-bottom: 0.4em;
+            color: #0A2540;
+        }
 
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+        /* Why choose us boxes */
+        .feature-box {
+            background: #0a2540;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 1.5em 1.25em;
+            margin-bottom: 1.5em;
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
+        .feature-box h4 {
+            margin-bottom: 0.4em;
+            color: #F3C623;
+        }
 
-			</div>
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .whatsapp-float:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-	</body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="AL MARWA CO Logo" />
+                <span class="brand-text">AL MARWA CO</span>
+            </a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Banner -->
+        <section id="banner" class="major">
+            <div class="inner">
+                <header class="major">
+                    <h1>Global Shipping, Forwarding & Trading</h1>
+                </header>
+                <div class="content">
+                    <p>
+                        Since 1997, AL MARWA CO has been delivering trusted land, sea, and air logistics
+                        solutions connecting Asia, Europe and beyond.
+                    </p>
+                    <ul class="actions">
+                        <li><a href="contact.html" class="button primary">Request a Quote</a></li>
+                        <li><a href="services.html" class="button">View Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- About Preview -->
+            <section id="one" class="tiles">
+                <article>
+                    <span class="image">
+                        <img src="images/pic08.jpg" alt="AL MARWA CO Office" />
+                    </span>
+                    <header class="major">
+                        <h3><a href="about.html" class="link">About AL MARWA CO</a></h3>
+                        <p>
+                            Over 25 years of experience in forwarding, shipping, and trading –
+                            building long-term partnerships through reliable service.
+                        </p>
+                    </header>
+                </article>
+                <article>
+                    <span class="image">
+                        <img src="images/pic06.jpg" alt="Logistics Network" />
+                    </span>
+                    <header class="major">
+                        <h3><a href="services.html" class="link">Integrated Logistics</a></h3>
+                        <p>
+                            Tailored logistics solutions combining land, sea, and air to keep
+                            your supply chain running smoothly.
+                        </p>
+                    </header>
+                </article>
+            </section>
+
+            <!-- Services Preview Section -->
+            <section id="two" class="inner">
+                <header class="major">
+                    <h2>Core Services</h2>
+                </header>
+
+                <div class="row gtr-200">
+                    <!-- Land Freight -->
+                    <div class="col-4 col-12-medium">
+                        <div class="service-card">
+                            <img src="images/pic02.jpg" alt="Land Freight Trucks" />
+                            <h3>Land Freight</h3>
+                            <p>
+                                Regional road transportation network with FTL &amp; LTL options for
+                                flexible, timely deliveries.
+                            </p>
+                            <ul>
+                                <li>FTL &amp; LTL shipments</li>
+                                <li>Flexible cargo capacity</li>
+                                <li>Fast regional delivery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Maritime Shipping -->
+                    <div class="col-4 col-12-medium">
+                        <div class="service-card">
+                            <img src="images/pic05.jpg" alt="Container Ship" />
+                            <h3>Maritime Shipping</h3>
+                            <p>
+                                Cost-effective international sea freight with competitive
+                                container rates and port handling.
+                            </p>
+                            <ul>
+                                <li>Containerized cargo</li>
+                                <li>Global shipping routes</li>
+                                <li>Port handling &amp; documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Air Cargo -->
+                    <div class="col-4 col-12-medium">
+                        <div class="service-card">
+                            <img src="images/pic07.jpg" alt="Airplane Air Cargo" />
+                            <h3>Air Cargo</h3>
+                            <p>
+                                Fast, secure air freight for urgent and high-value shipments
+                                worldwide.
+                            </p>
+                            <ul>
+                                <li>Express delivery</li>
+                                <li>Global coverage</li>
+                                <li>Secure handling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="actions" style="margin-top: 1.5em;">
+                    <li><a href="services.html" class="button">See All Services</a></li>
+                </ul>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section id="three" class="inner">
+                <header class="major">
+                    <h2>Why Businesses Choose AL MARWA CO</h2>
+                </header>
+                <div class="row gtr-200">
+                    <div class="col-6 col-12-medium">
+                        <div class="feature-box">
+                            <h4>25+ Years of Experience</h4>
+                            <p>Established in 1997 with a proven track record in forwarding and trading.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <div class="feature-box">
+                            <h4>Global Network</h4>
+                            <p>Strong partnerships and routes across Asia, Europe, and key international hubs.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <div class="feature-box">
+                            <h4>Reliable &amp; On-Time</h4>
+                            <p>We prioritize punctual delivery and transparent communication at every step.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-12-medium">
+                        <div class="feature-box">
+                            <h4>Tailored Solutions</h4>
+                            <p>Customized logistics strategies designed around each client’s supply chain.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section id="four" class="inner">
+                <header class="major">
+                    <h2>Ready to Ship?</h2>
+                </header>
+                <p>
+                    Whether you need land freight, maritime shipping, or air cargo, AL MARWA CO is ready
+                    to support your next shipment with reliable, secure, and efficient logistics.
+                </p>
+                <ul class="actions">
+                    <li><a href="contact.html" class="button primary">Contact Us Today</a></li>
+                </ul>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands alt fa-facebook-f"></a></li>
+                    <li><a href="#" class="icon brands alt fa-instagram"></a></li>
+                    <li><a href="#" class="icon brands alt fa-linkedin"></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
+                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/961XXXXXXXX" class="whatsapp-float" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
 </html>
