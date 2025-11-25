@@ -4326,4 +4326,78 @@ p, li, a {
 .button:hover {
     background: #005c2c !important;
 }
+/* ============================================================
+   AL MARWA CO — FIX MENU TEXT + REMOVE ALL REMAINING BLUE
+   ============================================================ */
+
+/* ------------ FIX MOBILE MENU ------------ */
+#menu {
+    background: #ffffff !important;   /* menu background white */
+}
+
+#menu .links a,
+#menu a,
+#menu li a {
+    color: #007a3b !important;        /* menu text green */
+    font-weight: 700 !important;
+}
+
+#menu .close {
+    color: #007a3b !important;
+}
+
+/* remove HTML5UP darkoverlay behind menu */
+#menu:before {
+    background: #ffffff !important;
+}
+
+/* ------------ REMOVE REMAINING DARK BLUE ------------ */
+
+/* kill global dark-blue layer */
+body:before {
+    display: none !important;
+}
+
+/* kill dark-blue section backgrounds */
+#main,
+#main.alt,
+section,
+section.major,
+section.special,
+.inner,
+.wrapper,
+.spotlights > section {
+    background: #ffffff !important;
+}
+
+/* kill dark-blue from the banner wrapper behind text */
+#banner,
+#banner.major {
+    background: #ffffff !important;
+}
+
+/* kill dark-blue tint under spotlight images */
+.spotlights > section:before,
+.tiles article:before {
+    background: transparent !important;
+}
+
+/* force PURE WHITE backgrounds everywhere */
+div,
+article,
+section,
+.tiles article,
+.about-card,
+.service-card {
+    background-color: #ffffff !important;
+}
+
+/* text color enhancements */
+p, li, a {
+    color: #222 !important;
+}
+
+h1, h2, h3, h4 {
+    color: #007a3b !important;
+}
 
