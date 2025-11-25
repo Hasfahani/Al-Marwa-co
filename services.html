@@ -1,136 +1,259 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Our Services - AL MARWA CO</title>
+    <title>Services – AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
+        body {
+            background: #f4fff8; /* Light green/white background */
+        }
+
+        /* Section headings */
+        h2, h3 {
+            color: #007a3b;
+            font-weight: 800;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 1.7em;
+            border-radius: 12px;
+            margin-bottom: 2.5em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+            border-top: 4px solid #007a3b;
+        }
+
         .service-card img {
-            border-radius: 8px;
             width: 100%;
-            height: 230px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 1em;
+        }
+
+        /* Heavy Lifting video & image gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2em;
+            margin-top: 1em;
+        }
+
+        .gallery img {
+            width: calc(33% - 1em);
+            border-radius: 6px;
             object-fit: cover;
         }
-        .service-card {
-            margin-bottom: 2em;
-            background: #ffffff;
-            padding: 1.5em;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+        @media (max-width: 768px) {
+            .gallery img {
+                width: 100%;
+            }
         }
-        .service-card h3 {
-            margin-top: 0.6em;
+
+        /* Internal navigation (“table of contents”) */
+        .toc {
+            background: #ffffff;
+            border-left: 5px solid #007a3b;
+            padding: 1.4em;
+            margin-bottom: 2em;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+
+        .toc a {
+            color: #007a3b;
             font-weight: 700;
-            color: #0A2540;
         }
     </style>
 </head>
 
 <body class="is-preload">
-    <div id="wrapper">
+<div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo"><strong>AL MARWA CO</strong></a>
-            <nav><a href="#menu">Menu</a></nav>
-        </header>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">
+            <img src="images/logo.jpg" style="height:40px;vertical-align:middle;margin-right:8px;">
+            <strong>AL MARWA CO</strong>
+        </a>
+        <nav><a href="#menu">Menu</a></nav>
+    </header>
 
-        <!-- Menu -->
-        <nav id="menu">
-            <ul class="links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- Banner -->
-        <section id="banner" class="major">
-            <div class="inner">
-                <header class="major">
-                    <h1>Our Services</h1>
-                </header>
-                <p>Reliable shipping, forwarding, and logistics solutions</p>
-            </div>
-        </section>
-
-        <!-- Main Content -->
-        <div id="main">
-            <section class="inner">
-
-                <!-- LAND FREIGHT -->
-                <div class="service-card">
-                    <img src="images/pic02.jpg" alt="Land Freight Logistics" />
-                    <h3>Land Freight</h3>
-                    <p>
-                        Our extensive regional road transportation network ensures fast and reliable shipping across Lebanon and neighboring countries.
-                    </p>
-                    <ul>
-                        <li>FTL (Full Truck Load) & LTL (Less Truck Load)</li>
-                        <li>Flexible cargo capacity</li>
-                        <li>Fast regional delivery</li>
-                        <li>Custom route planning</li>
-                    </ul>
-                </div>
-
-                <!-- MARITIME SHIPPING -->
-                <div class="service-card">
-                    <img src="images/pic05.jpg" alt="Maritime Shipping Services" />
-                    <h3>Maritime Shipping</h3>
-                    <p>
-                        Cost-effective and secure sea freight solutions for international shipping across global trade routes.
-                    </p>
-                    <ul>
-                        <li>Containerized cargo</li>
-                        <li>Competitive shipping rates</li>
-                        <li>Port handling & documentation</li>
-                        <li>Worldwide destinations</li>
-                    </ul>
-                </div>
-
-                <!-- AIR CARGO -->
-                <div class="service-card">
-                    <img src="images/pic07.jpg" alt="Air Cargo Services" />
-                    <h3>Air Cargo</h3>
-                    <p>
-                        Fast and secure air freight for urgent shipments and high-value cargo with global coverage.
-                    </p>
-                    <ul>
-                        <li>Express global delivery</li>
-                        <li>Secure cargo handling</li>
-                        <li>Ideal for urgent shipments</li>
-                        <li>Worldwide airport-to-airport service</li>
-                    </ul>
-                </div>
-
-            </section>
+    <!-- Banner -->
+    <section id="banner" class="major">
+        <div class="inner">
+            <header class="major">
+                <h1>Our Services</h1>
+            </header>
+            <p>Professional land, sea, and air logistics powered by 25+ years of experience.</p>
         </div>
+    </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                
-                <ul class="copyright">
-                    <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+    <!-- Main -->
+    <div id="main">
+        <section class="inner">
+
+            <!-- TABLE OF CONTENTS -->
+            <div class="toc">
+                <h3>Jump to a Service:</h3>
+                <ul>
+                    <li><a href="#land-freight">• Land Freight (18m Trailers)</a></li>
+                    <li><a href="#heavy-lifting">• Heavy Lifting (Up to 70 Tons)</a></li>
+                    <li><a href="#maritime-shipping">• Maritime Shipping</a></li>
+                    <li><a href="#air-cargo">• Air Cargo</a></li>
                 </ul>
             </div>
-        </footer>
 
+            <!-- LAND FREIGHT -->
+            <div id="land-freight" class="service-card">
+                <img src="images/pic02.jpg" alt="Land Freight Logistics">
+                <h2>Land Freight</h2>
+
+                <p>
+                    AL MARWA CO operates a complete regional land transportation network across Lebanon and
+                    neighboring countries. We handle all shipment sizes through FTL & LTL options and provide
+                    custom routing for industrial and commercial cargo.
+                </p>
+
+                <p style="font-weight:800; color:#007a3b;">
+                    ⭐ AL MARWA CO is one of the ONLY logistics companies in Lebanon operating
+                    <span style="color:#005c2c;">18-meter long trailers</span> for oversized and long cargo.
+                </p>
+
+                <ul>
+                    <li>FTL & LTL operations</li>
+                    <li>18-meter long trailers for oversized loads</li>
+                    <li>General, palletized, and bulk cargo</li>
+                    <li>Door-to-door pickup and delivery</li>
+                    <li>Custom route planning</li>
+                    <li>Cross-border transportation</li>
+                </ul>
+
+                <h3>Gallery</h3>
+                <div class="gallery">
+                    <img src="images/pic01.jpg">
+                    <img src="images/pic11.jpg">
+                    <img src="images/pic12.jpg"> <!-- new -->
+                </div>
+            </div>
+
+            <!-- HEAVY LIFTING -->
+            <div id="heavy-lifting" class="service-card">
+                <img src="images/pic13.jpg" alt="Heavy Lifting 70 Tons">
+
+                <h2>Heavy Lifting (Up to 70 Tons)</h2>
+
+                <p>
+                    Our heavy lifting division provides reliable lifting and movement for major industrial projects.
+                    Using cranes, flatbeds, and low-bed trailers, we handle extremely heavy and oversized machinery.
+                </p>
+
+                <ul>
+                    <li>Heavy lifting up to <strong>70 tons</strong></li>
+                    <li>Cranes and special rigging teams</li>
+                    <li>Transformers, heavy machines, steel structures</li>
+                    <li>Low-bed trailers for oversized cargo</li>
+                    <li>On-site loading, positioning, and unloading</li>
+                </ul>
+
+                <h3>Media</h3>
+                <div class="gallery">
+                    <img src="images/pic13.jpg">
+                    <img src="images/pic14.jpg">
+                </div>
+
+                <h3>Videos</h3>
+                <video src="videos/vid01.mp4" controls style="width:100%;max-width:780px;border-radius:8px;margin-top:1em;"></video>
+            </div>
+
+            <!-- MARITIME SHIPPING -->
+            <div id="maritime-shipping" class="service-card">
+                <img src="images/pic05.jpg" alt="Maritime Shipping">
+
+                <h2>Maritime Shipping</h2>
+                <p>
+                    Cost-effective global sea freight solutions through strong partnerships
+                    with leading international carriers such as MAERSK, MSC, CMA CGM, and Evergreen.
+                </p>
+
+                <ul>
+                    <li>FCL & LCL container shipping</li>
+                    <li>Competitive freight rates</li>
+                    <li>Worldwide shipments from Lebanon</li>
+                    <li>Full documentation & customs support</li>
+                    <li>Handling of special cargo</li>
+                </ul>
+
+                <h3>Gallery</h3>
+                <div class="gallery">
+                    <img src="images/pic03.jpg">
+                    <img src="images/pic04.jpg">
+                    <img src="images/pic15.jpg">
+                </div>
+            </div>
+
+            <!-- AIR CARGO -->
+            <div id="air-cargo" class="service-card">
+                <img src="images/pic07.jpg" alt="Air Cargo Services">
+                <h2>Air Cargo</h2>
+
+                <p>
+                    Fast & secure air freight solutions for urgent, sensitive, and high-value cargo.
+                    We offer worldwide coverage in partnership with major airlines.
+                </p>
+
+                <ul>
+                    <li>Express & priority service</li>
+                    <li>High-value cargo handling</li>
+                    <li>Airport-to-airport & door-to-door</li>
+                    <li>Tracking from departure to arrival</li>
+                </ul>
+
+                <h3>Gallery</h3>
+                <div class="gallery">
+                    <img src="images/pic06.jpg">
+                    <img src="images/pic07.jpg">
+                    <img src="images/pic16.jpg">
+                </div>
+            </div>
+
+        </section>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="copyright">
+                <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>

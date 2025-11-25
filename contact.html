@@ -1,23 +1,53 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Contact Us - AL MARWA CO</title>
+    <title>Contact Us – AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
+        body {
+            background: #f4fff8;
+        }
+
         #contact-banner {
             background: url("images/pic01.jpg") center center/cover no-repeat;
-            height: 320px;
+            height: 330px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.65);
         }
 
+        #contact-banner h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        h2 {
+            color: #007a3b;
+            font-weight: 800;
+        }
+
+        .contact-method h3 {
+            color: #007a3b;
+            margin-bottom: 0.3em;
+        }
+
+        .contact-method a {
+            color: #005c2c;
+            font-weight: 600;
+        }
+
+        .contact-method span.icon {
+            color: #007a3b;
+        }
+
+        /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -36,6 +66,11 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
+        .whatsapp-float img {
+            width: 36px;
+            height: 36px;
+        }
+
         .whatsapp-float:hover {
             background-color: #1ebe5d;
         }
@@ -52,7 +87,10 @@
 
         <!-- Header -->
         <header id="header">
-            <a href="index.html" class="logo"><strong>AL MARWA CO</strong></a>
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" style="height:40px;vertical-align:middle;margin-right:8px;">
+                <strong>AL MARWA CO</strong>
+            </a>
             <nav><a href="#menu">Menu</a></nav>
         </header>
 
@@ -71,7 +109,7 @@
             <h1>Contact AL MARWA CO</h1>
         </section>
 
-        <!-- Main -->
+        <!-- Main Content -->
         <div id="main" class="alt">
             <section id="contact" class="main">
                 <div class="inner">
@@ -85,13 +123,16 @@
                             <div class="contact-method">
                                 <span class="icon solid alt fa-envelope"></span>
                                 <h3>Email</h3>
-                                <a href="mailto:info@almarwaco.com">info@almarwaco.com</a>
+                                <a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a>
                             </div>
 
                             <div class="contact-method">
                                 <span class="icon solid alt fa-phone"></span>
-                                <h3>Phone</h3>
-                                <a href="tel:+96170099978">+961 70 099 978</a>
+                                <h3>Phone Numbers</h3>
+
+                                <p><a href="tel:009613369652">00961 3 369652</a></p>
+                                <p><a href="tel:009613313265">00961 3 313265</a></p>
+                                <p><a href="tel:009613750945">00961 3 750945</a></p>
                             </div>
 
                             <div class="contact-method">
@@ -103,8 +144,10 @@
                             <div class="contact-method">
                                 <span class="icon solid alt fa-home"></span>
                                 <h3>Address</h3>
-                                <span>Khalde Highway<br />
-                                Lebanon</span>
+                                <span>
+                                    Khalde Highway,<br>
+                                    Lebanon
+                                </span>
                             </div>
                         </section>
 
@@ -112,7 +155,6 @@
                         <section>
                             <h2>Send Us a Message</h2>
 
-                            <!-- 100% Working FormSubmit Form -->
                             <form action="https://formsubmit.co/info@almarwaco.com" method="POST">
 
                                 <input type="hidden" name="_captcha" value="false">
@@ -147,7 +189,7 @@
 
                     </div>
 
-                    <!-- Google Maps -->
+                    <!-- Google Map -->
                     <section style="margin-top: 3em;">
                         <h2>Our Location</h2>
 
@@ -159,8 +201,8 @@
                             src="https://www.google.com/maps/embed/v1/place?q=33.7878056,35.4796389&key=YOUR_API_KEY_HERE">
                         </iframe>
 
-                        <p style="font-size: 0.8em;margin-top:5px;">
-                            Replace <strong>YOUR_API_KEY_HERE</strong> with a Maps Embed API key.
+                        <p style="font-size: 0.85em; margin-top:5px;">
+                            Replace <strong>YOUR_API_KEY_HERE</strong> with your Google Maps Embed API key.
                         </p>
                     </section>
 
@@ -171,8 +213,6 @@
         <!-- Footer -->
         <footer id="footer">
             <div class="inner">
-                <ul class="icons">
-                   
                 <ul class="copyright">
                     <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
                 </ul>
@@ -181,9 +221,9 @@
 
     </div>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Floating Button (with your custom PNG) -->
     <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank">
-        <i class="fa fa-whatsapp"></i>
+        <img src="images/whatsapp.png" alt="WhatsApp">
     </a>
 
     <!-- Scripts -->

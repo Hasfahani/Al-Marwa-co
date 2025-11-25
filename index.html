@@ -12,7 +12,38 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
-        /* Logo in header */
+        /* ====== GLOBAL OVERRIDES FOR GREEN THEME ====== */
+        body {
+            background-color: #f4fff8; /* very light green/white */
+        }
+
+        a {
+            color: #007a3b;
+        }
+
+        a:hover {
+            color: #005c2c;
+        }
+
+        .button.primary {
+            background-color: #007a3b !important;
+            border-color: #007a3b !important;
+        }
+
+        .button.primary:hover {
+            background-color: #005c2c !important;
+            border-color: #005c2c !important;
+        }
+
+        /* Header */
+        #header {
+            background: rgba(0, 122, 59, 0.9);
+        }
+
+        #header.alt {
+            background: transparent;
+        }
+
         #header .logo img {
             height: 45px;
             margin-right: 0.6em;
@@ -42,13 +73,18 @@
             position: relative;
         }
 
+        #banner .inner h1 {
+            text-transform: none;
+        }
+
         /* Service preview cards */
         .service-card {
             background: #ffffff;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 1.75em 1.5em;
             box-shadow: 0 3px 12px rgba(0,0,0,0.08);
             margin-bottom: 2em;
+            border-top: 4px solid #007a3b;
         }
 
         .service-card img {
@@ -61,21 +97,66 @@
 
         .service-card h3 {
             margin-bottom: 0.4em;
-            color: #0A2540;
+            color: #007a3b;
+        }
+
+        .service-card ul {
+            margin-top: 0.6em;
         }
 
         /* Why choose us boxes */
         .feature-box {
-            background: #0a2540;
+            background: #007a3b;
             color: #ffffff;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 1.5em 1.25em;
             margin-bottom: 1.5em;
         }
 
         .feature-box h4 {
             margin-bottom: 0.4em;
-            color: #F3C623;
+            color: #f8ffec;
+        }
+
+        /* Partners / Shipping companies strip */
+        #partners {
+            background: #ffffff;
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        #partners h2 {
+            text-align: center;
+            color: #007a3b;
+        }
+
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-logos a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logos img {
+            max-height: 50px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .partner-logos img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: translateY(-3px);
         }
 
         /* WhatsApp Floating Button */
@@ -100,6 +181,21 @@
         .whatsapp-float:hover {
             background-color: #1ebe5d;
         }
+
+        /* Mobile tweaks */
+        @media screen and (max-width: 736px) {
+            #banner .inner .content p {
+                font-size: 0.95em;
+            }
+
+            .service-card img {
+                height: 170px;
+            }
+
+            .partner-logos {
+                gap: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -109,15 +205,14 @@
 
         <!-- Header -->
         <header id="header" class="alt">
-    <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="AL MARWA CO">
-        <span class="brand-text">AL MARWA CO</span>
-    </a>
-    <nav>
-        <a href="#menu">Menu</a>
-    </nav>
-</header>
-
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+                <span class="brand-text">AL MARWA CO</span>
+            </a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
 
         <!-- Menu -->
         <nav id="menu">
@@ -133,12 +228,12 @@
         <section id="banner" class="major">
             <div class="inner">
                 <header class="major">
-                    <h1>Global Shipping, Forwarding & Trading</h1>
+                    <h1>Global Shipping, Forwarding &amp; Trading</h1>
                 </header>
                 <div class="content">
                     <p>
                         Since 1997, AL MARWA CO has been delivering trusted land, sea, and air logistics
-                        solutions connecting Asia, Europe and beyond.
+                        solutions connecting Asia, Europe, and beyond.
                     </p>
                     <ul class="actions">
                         <li><a href="contact.html" class="button primary">Request a Quote</a></li>
@@ -155,25 +250,24 @@
             <section id="one" class="tiles">
                 <article>
                     <span class="image">
-                        <img src="images/pic08.jpg" alt="AL MARWA CO Office" />
+                        <img src="images/pic08.jpg" alt="AL MARWA CO operations yard" />
                     </span>
                     <header class="major">
                         <h3><a href="about.html" class="link">About AL MARWA CO</a></h3>
                         <p>
-                            Over 25 years of experience in forwarding, shipping, and trading –
-                            building long-term partnerships through reliable service.
+                            Over 25 years of experience in forwarding, shipping, and trading – building long-term partnerships
+                            through reliable service and regional expertise.
                         </p>
                     </header>
                 </article>
                 <article>
                     <span class="image">
-                        <img src="images/pic06.jpg" alt="Logistics Network" />
+                        <img src="images/pic06.jpg" alt="Integrated logistics solutions" />
                     </span>
                     <header class="major">
                         <h3><a href="services.html" class="link">Integrated Logistics</a></h3>
                         <p>
-                            Tailored logistics solutions combining land, sea, and air to keep
-                            your supply chain running smoothly.
+                            Tailored logistics solutions combining land, sea, and air to keep your supply chain running smoothly.
                         </p>
                     </header>
                 </article>
@@ -192,13 +286,16 @@
                             <img src="images/pic02.jpg" alt="Land Freight Trucks" />
                             <h3>Land Freight</h3>
                             <p>
-                                Regional road transportation network with FTL &amp; LTL options for
-                                flexible, timely deliveries.
+                                Regional road transport network with FTL &amp; LTL options. AL MARWA CO operates
+                                18-meter long trailers for oversized and long cargo across Lebanon and the region.
                             </p>
                             <ul>
                                 <li>FTL &amp; LTL shipments</li>
-                                <li>Flexible cargo capacity</li>
+                                <li>18-meter long trailers</li>
                                 <li>Fast regional delivery</li>
+                            </ul>
+                            <ul class="actions" style="margin-top: 0.8em;">
+                                <li><a href="services.html#land-freight" class="button small">Learn More</a></li>
                             </ul>
                         </div>
                     </div>
@@ -206,16 +303,19 @@
                     <!-- Maritime Shipping -->
                     <div class="col-4 col-12-medium">
                         <div class="service-card">
-                            <img src="images/pic05.jpg" alt="Container Ship" />
+                            <img src="images/pic05.jpg" alt="Container Ship at sea" />
                             <h3>Maritime Shipping</h3>
                             <p>
-                                Cost-effective international sea freight with competitive
-                                container rates and port handling.
+                                Cost-effective international sea freight with FCL &amp; LCL options, competitive
+                                container rates, and complete port handling and documentation.
                             </p>
                             <ul>
-                                <li>Containerized cargo</li>
+                                <li>FCL &amp; LCL containers</li>
                                 <li>Global shipping routes</li>
-                                <li>Port handling &amp; documentation</li>
+                                <li>Customs &amp; documentation support</li>
+                            </ul>
+                            <ul class="actions" style="margin-top: 0.8em;">
+                                <li><a href="services.html#maritime-shipping" class="button small">Learn More</a></li>
                             </ul>
                         </div>
                     </div>
@@ -223,16 +323,19 @@
                     <!-- Air Cargo -->
                     <div class="col-4 col-12-medium">
                         <div class="service-card">
-                            <img src="images/pic07.jpg" alt="Airplane Air Cargo" />
+                            <img src="images/pic07.jpg" alt="Air cargo loading" />
                             <h3>Air Cargo</h3>
                             <p>
-                                Fast, secure air freight for urgent and high-value shipments
-                                worldwide.
+                                Fast and secure air freight for urgent and high-value cargo with worldwide coverage
+                                and flexible express options.
                             </p>
                             <ul>
                                 <li>Express delivery</li>
                                 <li>Global coverage</li>
                                 <li>Secure handling</li>
+                            </ul>
+                            <ul class="actions" style="margin-top: 0.8em;">
+                                <li><a href="services.html#air-cargo" class="button small">Learn More</a></li>
                             </ul>
                         </div>
                     </div>
@@ -252,7 +355,7 @@
                     <div class="col-6 col-12-medium">
                         <div class="feature-box">
                             <h4>25+ Years of Experience</h4>
-                            <p>Established in 1997 with a proven track record in forwarding and trading.</p>
+                            <p>Established in 1997 with a proven track record in forwarding, logistics, and trading.</p>
                         </div>
                     </div>
                     <div class="col-6 col-12-medium">
@@ -276,6 +379,54 @@
                 </div>
             </section>
 
+            <!-- Partner Shipping Companies -->
+            <section id="partners">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Trusted Global Partners</h2>
+                    </header>
+                    <p style="text-align:center; max-width: 720px; margin: 0 auto;">
+                        AL MARWA CO works with leading international shipping, courier, and ocean carriers
+                        to provide reliable and flexible transport solutions worldwide.
+                    </p>
+                    <div class="partner-logos">
+                        <!-- courier / express -->
+                        <a href="https://www.ups.com" target="_blank" rel="noopener">
+                            <img src="images/partner_ups.png" alt="UPS" />
+                        </a>
+                        <a href="https://www.dhl.com" target="_blank" rel="noopener">
+                            <img src="images/partner_dhl.png" alt="DHL" />
+                        </a>
+                        <a href="https://www.fedex.com" target="_blank" rel="noopener">
+                            <img src="images/partner_fedex.png" alt="FedEx" />
+                        </a>
+                        <a href="https://www.dpd.com" target="_blank" rel="noopener">
+                            <img src="images/partner_dpd.png" alt="DPD" />
+                        </a>
+                        <a href="https://www.tnt.com" target="_blank" rel="noopener">
+                            <img src="images/partner_tnt.png" alt="TNT" />
+                        </a>
+                        <a href="https://www.aramex.com" target="_blank" rel="noopener">
+                            <img src="images/partner_aramex.png" alt="Aramex" />
+                        </a>
+
+                        <!-- ocean carriers -->
+                        <a href="https://www.maersk.com" target="_blank" rel="noopener">
+                            <img src="images/partner_maersk.png" alt="Maersk" />
+                        </a>
+                        <a href="https://www.cma-cgm.com" target="_blank" rel="noopener">
+                            <img src="images/partner_cmacgm.png" alt="CMA CGM" />
+                        </a>
+                        <a href="https://www.msc.com" target="_blank" rel="noopener">
+                            <img src="images/partner_msc.png" alt="MSC" />
+                        </a>
+                        <a href="https://www.evergreen-marine.com" target="_blank" rel="noopener">
+                            <img src="images/partner_evergreen.png" alt="Evergreen" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Call to Action -->
             <section id="four" class="inner">
                 <header class="major">
@@ -294,21 +445,22 @@
 
         <!-- Footer -->
         <footer id="footer">
-    <div class="inner">
-        <ul class="copyright">
-            <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-        </ul>
-    </div>
-</footer>
-
+            <div class="inner">
+                <ul class="copyright">
+                    <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
+                </ul>
+            </div>
+        </footer>
 
     </div>
 
     <!-- WhatsApp Floating Button -->
-   <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank">
-    <i class="fa fa-whatsapp"></i>
+    <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank">
+    <img src="images/whatsapp.png" alt="WhatsApp" style="width: 36px; height: 36px;">
 </a>
 
+    </a>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>

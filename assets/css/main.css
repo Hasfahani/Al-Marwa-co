@@ -3949,4 +3949,162 @@ input, select, textarea {
 			transform: none;
 			opacity: 1;
 			visibility: visible;
-		}
+		} 
+/* =========================================================
+   AL MARWA CO – THEME OVERRIDES
+   (Paste this at the very end of main.css)
+   ========================================================= */
+
+/* Global background + text */
+body {
+    background-color: #f4fff8; /* light green/white */
+    color: #2c3e50;
+}
+
+/* Links */
+a {
+    color: #007a3b;
+}
+
+a:hover {
+    color: #005c2c;
+}
+
+/* Header */
+#header {
+    background: rgba(0, 122, 59, 0.95);
+}
+
+#header.alt {
+    background: transparent; /* keep hero nice */
+}
+
+/* Mobile header background when scrolled */
+body.is-preload #header.alt,
+body.is-menu-visible #header {
+    background: rgba(0, 122, 59, 0.95);
+}
+
+/* Menu (mobile slide-out) */
+#menu {
+    background: #007a3b;
+}
+
+#menu .links a {
+    color: #ffffff;
+}
+
+#menu .links a:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Buttons */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    border-color: #007a3b;
+    color: #007a3b;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    border-color: #005c2c;
+    color: #005c2c;
+}
+
+.button.primary,
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary {
+    background-color: #007a3b;
+    border-color: #007a3b;
+    color: #ffffff !important;
+}
+
+.button.primary:hover,
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover {
+    background-color: #005c2c;
+    border-color: #005c2c;
+}
+
+/* Tiles & spotlight sections – brighten background */
+.tiles article {
+    background: #ffffff;
+}
+
+.tiles article:before {
+    background: rgba(0, 122, 59, 0.12);
+}
+
+.spotlights > section {
+    background: #ffffff;
+}
+
+/* Footer */
+#footer {
+    background: #0b4d23;
+    color: #e9f7ef;
+}
+
+#footer a {
+    color: #ffffff;
+}
+
+#footer a:hover {
+    color: #c8facc;
+}
+
+/* Forms */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007a3b;
+    box-shadow: 0 0 0 1px #007a3b;
+}
+
+/* WhatsApp floating button basic safety (in case HTML style missing) */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img {
+    width: 36px;
+    height: 36px;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe5d;
+}
