@@ -4212,4 +4212,11 @@ input, textarea, select {
 #contact-banner:before {
     background: rgba(0,0,0,0.35) !important; /* keeps readability */
 }
+/* Fix huge logo in header */
+#header .logo img {
+    height: 55px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+}
 
