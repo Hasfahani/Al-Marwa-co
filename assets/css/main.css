@@ -4400,4 +4400,86 @@ p, li, a {
 h1, h2, h3, h4 {
     color: #007a3b !important;
 }
+/* ============================================================
+   AL MARWA CO — FORCE PURE WHITE BACKGROUND ON ALL PAGES
+   ============================================================ */
+
+/* REMOVE ALL BACKGROUND LAYERS */
+body,
+html,
+#wrapper,
+#main,
+#main.alt,
+section,
+section.major,
+section.special,
+.wrapper,
+.inner,
+.row,
+.tiles,
+.tiles article,
+.spotlights,
+.spotlights > section {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+/* REMOVE ALL DARK/BLUE/PURPLE BEFORE & AFTER OVERLAYS */
+body:before,
+#wrapper:before,
+#main:before,
+#main:after,
+section:before,
+section:after,
+.tiles article:before,
+.tiles article:after,
+.spotlights > section:before,
+.spotlights > section:after,
+.inner:before,
+.inner:after {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* BANNER FIX — REMOVE BLUE UNDERLAY */
+#banner,
+#banner.major {
+    background: #ffffff !important;
+}
+#banner:before,
+#banner.major:before {
+    background: rgba(0,0,0,0.00) !important; /* no tint */
+}
+
+/* WHITE TILES AND CARDS */
+.service-card,
+.about-card,
+.feature-box,
+.stat-box,
+.tiles article .content {
+    background: #ffffff !important;
+}
+
+/* MENU FIX — WHITE BACKGROUND + GREEN TEXT */
+#menu {
+    background: #ffffff !important;
+}
+#menu a,
+#menu .links a {
+    color: #007a3b !important;
+    font-weight: 700 !important;
+}
+
+/* GLOBAL TEXT COLOR FIX */
+h1, h2, h3, h4, h5 {
+    color: #007a3b !important;
+}
+p, li, a, span, strong {
+    color: #222 !important;
+}
+
+/* REMOVE ANY REMAINING GRADIENTS OR FILTERS */
+* {
+    background-image: none !important;
+}
 
