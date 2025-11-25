@@ -4482,4 +4482,19 @@ p, li, a, span, strong {
 * {
     background-image: none !important;
 }
+/* Fix for background images disappearing after color change */
+#banner,
+.spotlights > section,
+.wrapper,
+.wrapper.style1,
+.wrapper.style2,
+.wrapper.style3,
+section {
+    background-blend-mode: normal !important;
+    background-color: transparent !important;
+}
+/* Fix for images or links not clicking */
+a, a * {
+    pointer-events: auto !important;
+}
 
