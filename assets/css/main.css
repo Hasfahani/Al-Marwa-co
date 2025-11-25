@@ -4108,3 +4108,108 @@ textarea:focus {
 .whatsapp-float:hover {
     background-color: #1ebe5d;
 }
+/* ============================================================
+   AL MARWA CO – GLOBAL GREEN + WHITE THEME OVERRIDE
+   (Overrides the original HTML5UP blue/purple theme)
+   ============================================================ */
+
+:root {
+    --green-main: #007a3b;
+    --green-dark: #005c2c;
+    --green-light: #f4fff8;
+    --white: #ffffff;
+}
+
+/* Background fixes */
+body,
+#main,
+#wrapper {
+    background: var(--green-light) !important;
+    color: #222 !important;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5 {
+    color: var(--green-main) !important;
+}
+
+/* Links */
+a {
+    color: var(--green-main) !important;
+}
+a:hover {
+    color: var(--green-dark) !important;
+}
+
+/* Buttons */
+.button, input[type="submit"], input[type="reset"], input[type="button"] {
+    background-color: var(--green-main) !important;
+    border-color: var(--green-main) !important;
+    color: white !important;
+}
+.button:hover {
+    background-color: var(--green-dark) !important;
+    border-color: var(--green-dark) !important;
+}
+
+/* Header */
+#header {
+    background: rgba(0, 122, 59, 0.92) !important;
+}
+#header.alt {
+    background: transparent !important;
+}
+
+/* Menu */
+#menu {
+    background: var(--green-main) !important;
+}
+#menu a {
+    color: white !important;
+}
+
+/* Tiles / Cards */
+.tiles article,
+.service-card,
+.about-card,
+.stat-box,
+.feature-box {
+    background: var(--white) !important;
+    border-top-color: var(--green-main) !important;
+    color: #222 !important;
+}
+
+/* Feature boxes */
+.feature-box {
+    background: var(--green-main) !important;
+    color: white !important;
+}
+
+/* Forms */
+input, textarea, select {
+    background: white !important;
+    border: 1px solid var(--green-main) !important;
+    color: #222 !important;
+}
+
+/* Footer */
+#footer {
+    background: var(--green-main) !important;
+    color: white !important;
+}
+#footer a {
+    color: white !important;
+}
+
+/* Partner logos filter removal (if needed) */
+.partner-logos img {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* Remove HTML5UP purple/blue overlay */
+#banner:before,
+#contact-banner:before {
+    background: rgba(0,0,0,0.35) !important; /* keeps readability */
+}
+

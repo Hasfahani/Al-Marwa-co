@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>About Us – AL MARWA CO</title>
     <meta charset="utf-8" />
@@ -10,7 +10,7 @@
 
     <style>
         body {
-            background: #f4fff8; /* light green/white */
+            background: #f4fff8;
         }
 
         h1, h2, h3, h4 {
@@ -23,26 +23,29 @@
             line-height: 1.75;
         }
 
-        /* About section wrapper */
+        /* About section card */
         .about-card {
             background: #ffffff;
             padding: 2.2em;
             border-radius: 12px;
             margin-bottom: 3em;
             box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-            border-top: 4px solid #007a3b;
+            border-top: 5px solid #007a3b;
         }
 
+        /* Fix image cropping */
         .about-image img {
             width: 100%;
             border-radius: 12px;
-            object-fit: cover;
+            object-fit: contain !important; /* FIXED */
+            background: white;
+            max-height: 420px;
             box-shadow: 0 5px 18px rgba(0,0,0,0.12);
             transition: 0.3s ease;
         }
 
         .about-image img:hover {
-            transform: scale(1.015);
+            transform: scale(1.010);
         }
 
         /* Stats */
@@ -59,7 +62,7 @@
             background: #ffffff;
             padding: 1.3em;
             border-radius: 8px;
-            border-left: 5px solid #007a3b;
+            border-left: 6px solid #007a3b;
             box-shadow: 0 3px 10px rgba(0,0,0,0.10);
         }
 
@@ -80,6 +83,20 @@
                 flex-direction: column;
             }
         }
+
+        /* Header Logo */
+        #header .logo img {
+            height: 45px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        #header .brand-subtitle {
+            display: block;
+            font-size: 0.8em;
+            margin-top: -3px;
+            color: #004d26;
+        }
     </style>
 </head>
 
@@ -89,8 +106,11 @@
     <!-- Header -->
     <header id="header">
         <a href="index.html" class="logo">
-            <img src="images/logo.jpg" style="height:40px;vertical-align:middle;margin-right:8px;">
-            <strong>AL MARWA CO</strong>
+            <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+            <span class="brand-text">
+                <strong>AL MARWA CO</strong>
+                <span class="brand-subtitle">شركة المروة للشحن والخدمات اللوجستية</span>
+            </span>
         </a>
         <nav><a href="#menu">Menu</a></nav>
     </header>
@@ -106,12 +126,12 @@
     </nav>
 
     <!-- Banner -->
-    <section id="banner" class="major">
+    <section id="banner" class="major" style="background:url('images/banner.jpg') center/cover;">
         <div class="inner">
             <header class="major">
                 <h1>About AL MARWA CO</h1>
             </header>
-            <p>Your trusted logistics partner since 1997</p>
+            <p style="color:white;">Your trusted logistics partner since 1997</p>
         </div>
     </section>
 
@@ -119,7 +139,7 @@
     <div id="main" class="alt">
         <section class="inner">
 
-            <!-- Company Introduction -->
+            <!-- Company Intro -->
             <div class="about-card">
                 <div class="row gtr-200">
                     <div class="col-6 col-12-medium about-image">
@@ -128,17 +148,17 @@
 
                     <div class="col-6 col-12-medium">
                         <h2>Our Company</h2>
+
                         <p>
-                            Since 1997, AL MARWA CO has been a leading provider of forwarding, shipping, and
-                            trading services. With over 25 years of industry expertise, we deliver reliable,
-                            efficient, and secure logistics across Lebanon, the Middle East, Asia, and Europe.
+                            Since 1997, AL MARWA CO has been a trusted provider of forwarding, shipping, and
+                            trading services. With over 25 years of experience, we deliver reliable, efficient,
+                            and secure logistics across Lebanon, the Middle East, Asia, and Europe.
                         </p>
 
                         <p>
-                            Our philosophy is simple: <strong>we listen, we adapt, and we deliver</strong>.
-                            Through personalized service, transparent communication, and a commitment to
-                            professionalism, we have built long-term partnerships with clients across various
-                            sectors worldwide.
+                            Our approach is simple: <strong>we listen, we adapt, we deliver</strong>.
+                            Through clear communication, tailored solutions, and consistent professionalism,
+                            we have built long-term partnerships across various industries worldwide.
                         </p>
 
                         <div class="stats-container">
@@ -152,9 +172,10 @@
                             </div>
                             <div class="stat-box">
                                 <h3>Trusted</h3>
-                                <p>By Companies Worldwide</p>
+                                <p>By Clients Worldwide</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -163,8 +184,8 @@
             <div class="about-card">
                 <h2>Our Mission</h2>
                 <p>
-                    To deliver exceptional logistics solutions that exceed customer expectations through
-                    professionalism, reliability, and operational excellence.
+                    To provide exceptional logistics solutions that exceed customer expectations through
+                    professionalism, efficiency, and reliability.
                 </p>
             </div>
 
@@ -172,7 +193,7 @@
             <div class="about-card">
                 <h2>Our Vision</h2>
                 <p>
-                    To be the preferred logistics partner for businesses seeking innovative, efficient, and
+                    To be the preferred logistics partner for companies seeking innovative, dependable, and
                     globally connected transport solutions.
                 </p>
             </div>
@@ -182,10 +203,10 @@
                 <h2>Core Values</h2>
 
                 <ul>
-                    <li><strong>Reliability:</strong> We ensure consistent, on-time delivery.</li>
-                    <li><strong>Transparency:</strong> Clear communication at every stage.</li>
-                    <li><strong>Expertise:</strong> Deep knowledge of logistics, forwarding, and customs regulations.</li>
-                    <li><strong>Customer Focus:</strong> Tailored solutions designed around your unique needs.</li>
+                    <li><strong>Reliability:</strong> Consistent, on-time delivery.</li>
+                    <li><strong>Transparency:</strong> Communication you can trust.</li>
+                    <li><strong>Expertise:</strong> Skilled logistics & customs specialists.</li>
+                    <li><strong>Customer Focus:</strong> Tailored solutions for every client.</li>
                 </ul>
             </div>
 
@@ -193,12 +214,12 @@
             <div class="about-card">
                 <h2>Why Choose AL MARWA CO?</h2>
                 <ul>
-                    <li><strong>Global Network:</strong> Connections with top carriers across major routes.</li>
-                    <li><strong>24/7 Support:</strong> Always available when clients need us.</li>
-                    <li><strong>Competitive Rates:</strong> Best pricing without compromising quality.</li>
-                    <li><strong>Expert Team:</strong> Professionals handling every aspect of logistics.</li>
-                    <li><strong>Compliance:</strong> Full mastery of customs & documentation.</li>
-                    <li><strong>Technology:</strong> Real-time visibility and tracking systems.</li>
+                    <li><strong>Global Network:</strong> Strong connections with top carriers.</li>
+                    <li><strong>24/7 Support:</strong> Always available when needed.</li>
+                    <li><strong>Competitive Rates:</strong> Best prices without compromising quality.</li>
+                    <li><strong>Expert Team:</strong> Professionals managing all operations.</li>
+                    <li><strong>Compliance:</strong> Full customs & documentation mastery.</li>
+                    <li><strong>Technology:</strong> Real-time tracking & visibility.</li>
                 </ul>
             </div>
 
@@ -217,11 +238,11 @@
                 </ul>
             </div>
 
-            <!-- Contact CTA -->
+            <!-- CTA -->
             <div class="about-card" style="text-align:center;">
                 <h2>Get In Touch</h2>
                 <p>
-                    Ready to work with AL MARWA CO? Our team is here to support your logistics needs.
+                    Ready to partner with AL MARWA CO? Our team is here to support your logistics needs.
                 </p>
                 <a href="contact.html" class="button primary">Contact Us</a>
             </div>

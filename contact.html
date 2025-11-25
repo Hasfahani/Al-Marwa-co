@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>Contact Us – AL MARWA CO</title>
     <meta charset="utf-8" />
@@ -13,6 +13,7 @@
             background: #f4fff8;
         }
 
+        /* Contact Banner */
         #contact-banner {
             background: url("images/pic01.jpg") center center/cover no-repeat;
             height: 330px;
@@ -28,14 +29,9 @@
             font-weight: 800;
         }
 
-        h2 {
+        h2, h3 {
             color: #007a3b;
             font-weight: 800;
-        }
-
-        .contact-method h3 {
-            color: #007a3b;
-            margin-bottom: 0.3em;
         }
 
         .contact-method a {
@@ -45,6 +41,18 @@
 
         .contact-method span.icon {
             color: #007a3b;
+        }
+
+        /* Fix white-on-white field visibility */
+        input, textarea {
+            background: white !important;
+            color: #222 !important;
+            border: 1px solid #007a3b !important;
+        }
+
+        label {
+            color: #007a3b;
+            font-weight:600;
         }
 
         /* WhatsApp Floating Button */
@@ -75,8 +83,34 @@
             background-color: #1ebe5d;
         }
 
-        iframe {
+        /* Location Button */
+        .map-button {
+            display: inline-block;
+            padding: 0.8em 1.4em;
+            background: #007a3b;
+            color: white;
             border-radius: 8px;
+            margin-top: 1em;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .map-button:hover {
+            background: #005c2c;
+        }
+
+        /* Header Logo Fix */
+        #header .logo img {
+            height: 45px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        #header .brand-subtitle {
+            display: block;
+            font-size: 0.8em;
+            margin-top: -3px;
+            color: #004d26;
         }
     </style>
 </head>
@@ -88,8 +122,11 @@
         <!-- Header -->
         <header id="header">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" style="height:40px;vertical-align:middle;margin-right:8px;">
-                <strong>AL MARWA CO</strong>
+                <img src="images/logo.jpg" alt="AL MARWA CO">
+                <span class="brand-text">
+                    <strong>AL MARWA CO</strong>
+                    <span class="brand-subtitle">شركة المروة للشحن والخدمات اللوجستية</span>
+                </span>
             </a>
             <nav><a href="#menu">Menu</a></nav>
         </header>
@@ -109,7 +146,7 @@
             <h1>Contact AL MARWA CO</h1>
         </section>
 
-        <!-- Main Content -->
+        <!-- Main -->
         <div id="main" class="alt">
             <section id="contact" class="main">
                 <div class="inner">
@@ -129,7 +166,6 @@
                             <div class="contact-method">
                                 <span class="icon solid alt fa-phone"></span>
                                 <h3>Phone Numbers</h3>
-
                                 <p><a href="tel:009613369652">00961 3 369652</a></p>
                                 <p><a href="tel:009613313265">00961 3 313265</a></p>
                                 <p><a href="tel:009613750945">00961 3 750945</a></p>
@@ -144,10 +180,7 @@
                             <div class="contact-method">
                                 <span class="icon solid alt fa-home"></span>
                                 <h3>Address</h3>
-                                <span>
-                                    Khalde Highway,<br>
-                                    Lebanon
-                                </span>
+                                <span>Khalde Highway, Lebanon</span>
                             </div>
                         </section>
 
@@ -156,12 +189,10 @@
                             <h2>Send Us a Message</h2>
 
                             <form action="https://formsubmit.co/info@almarwaco.com" method="POST">
-
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
 
                                 <div class="fields">
-
                                     <div class="field half">
                                         <label for="name">Full Name *</label>
                                         <input type="text" id="name" name="name" required>
@@ -176,34 +207,29 @@
                                         <label for="message">Message *</label>
                                         <textarea id="message" name="message" rows="6" required></textarea>
                                     </div>
-
                                 </div>
 
                                 <ul class="actions">
                                     <li><input type="submit" value="Send Message" class="primary"></li>
                                     <li><input type="reset" value="Clear"></li>
                                 </ul>
-
                             </form>
                         </section>
 
                     </div>
 
-                    <!-- Google Map -->
+                    <!-- Location Section (Iframe Removed) -->
                     <section style="margin-top: 3em;">
                         <h2>Our Location</h2>
 
-                        <iframe
-                            width="100%"
-                            height="400"
-                            loading="lazy"
-                            allowfullscreen
-                            src="https://www.google.com/maps/embed/v1/place?q=33.7878056,35.4796389&key=YOUR_API_KEY_HERE">
-                        </iframe>
+                        <p>You can find us on Google Maps using the button below:</p>
 
-                        <p style="font-size: 0.85em; margin-top:5px;">
-                            Replace <strong>YOUR_API_KEY_HERE</strong> with your Google Maps Embed API key.
-                        </p>
+                        <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" 
+                           target="_blank" 
+                           class="map-button">
+                           📍 Open in Google Maps
+                        </a>
+
                     </section>
 
                 </div>
@@ -221,9 +247,9 @@
 
     </div>
 
-    <!-- WhatsApp Floating Button (with your custom PNG) -->
+    <!-- WhatsApp Floating Button (JPG ONLY!) -->
     <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank">
-        <img src="images/whatsapp.png" alt="WhatsApp">
+        <img src="images/whatsapp.jpg" alt="WhatsApp">
     </a>
 
     <!-- Scripts -->
