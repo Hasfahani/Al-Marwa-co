@@ -4219,4 +4219,111 @@ input, textarea, select {
     object-fit: contain !important;
     border-radius: 0 !important;
 }
+/* ============================================================
+   AL MARWA CO – FINAL COLOR FIX (REMOVE BLUE + PURPLE COMPLETELY)
+   Place at the VERY END of main.css
+   ============================================================ */
+
+/* Remove all HTML5UP blue + purple backgrounds */
+body,
+#wrapper,
+#main,
+#banner,
+#one,
+#two,
+#three,
+#four,
+.tiles,
+.inner,
+section {
+    background: #f4fff8 !important;  /* clean white/green tint */
+}
+
+/* Remove blue/purple backgrounds in tiles */
+.tiles article,
+.tiles article:before,
+.tiles article:after {
+    background: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* Banner overlay fix */
+#banner:before,
+#banner.major:before {
+    background: rgba(0, 0, 0, 0.35) !important; /* only dark overlay, no blue */
+}
+
+/* Remove the DARK BLUE background from banner */
+#banner {
+    background: none !important;
+    background-color: #004d26 !important; /* dark green tone */
+}
+
+/* Remove bright BLUE section from home page */
+section.style1,
+section.style2,
+section.style3,
+section.major {
+    background: #f4fff8 !important;
+}
+
+/* REMOVE purple and blue colored blocks */
+div,
+article,
+section {
+    background-color: #ffffff00 !important; /* transparent default */
+}
+
+/* FORCE all service preview cards to white */
+.service-card {
+    background: #ffffff !important;
+    border-top: 4px solid #007a3b !important;
+}
+
+/* Fix About / Services boxes */
+.about-card,
+.feature-box,
+.stat-box {
+    background: white !important;
+}
+
+/* Make feature-box green with white text */
+.feature-box {
+    background: #007a3b !important;
+    color: white !important;
+}
+
+/* Fix Maritime / Land / Air icons */
+.service-card img,
+.tiles article span.image img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* KILL weird bright cyan strip */
+#main:before,
+#main:after {
+    display: none !important;
+}
+
+/* FORCE text to readable colors */
+h1, h2, h3, h4, h5 {
+    color: #007a3b !important;
+}
+
+p, li, a {
+    color: #222 !important;
+}
+
+/* Buttons */
+.button, input[type="submit"], input[type="reset"], input[type="button"] {
+    background: #007a3b !important;
+    color: white !important;
+    border-color: #007a3b !important;
+}
+
+.button:hover {
+    background: #005c2c !important;
+}
 
