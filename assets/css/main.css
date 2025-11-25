@@ -4497,4 +4497,19 @@ section {
 a, a * {
     pointer-events: auto !important;
 }
+/* Force banner background image to show */
+#banner {
+    background-blend-mode: normal !important;
+    background-color: transparent !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* Remove the dark overlay that hides the banner image */
+#banner:before,
+#banner:after {
+    background: none !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+}
 
