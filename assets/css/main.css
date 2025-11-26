@@ -4512,4 +4512,83 @@ a, a * {
     opacity: 1 !important;
     pointer-events: none !important;
 }
+/* ------------------------------------------------------ */
+/* AL MARWA CO — CUSTOM FIXES (Paste at bottom of main.css) */
+/* ------------------------------------------------------ */
+
+/* FIX BANNER BACKGROUND */
+#banner {
+    background: url("../images/banner.jpg") center center/cover no-repeat !important;
+    position: relative;
+    color: #ffffff;
+}
+
+/* WHATSAPP FLOATING BUTTON */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.whatsapp-float img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.05);
+}
+
+/* PARTNER LOGOS — MAKE THEM CLICKABLE + LOOK CLEAN */
+.partner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.partner-logos a {
+    display: inline-block;
+    pointer-events: auto !important;
+}
+
+.partner-logos img {
+    max-height: 70px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.partner-logos img:hover {
+    transform: scale(1.07);
+    opacity: 0.85;
+}
+
+/* FIX IMAGE OVERLAP / TILE SPACING */
+.tiles article .image img {
+    width: 100%;
+    height: auto;
+}
+
+/* FIX BUTTON SPACING */
+.actions .button {
+    margin-top: 8px;
+}
+
+/* CUSTOM RESPONSIVE ADJUSTMENTS */
+@media screen and (max-width: 768px) {
+    .partner-logos img {
+        max-height: 55px;
+    }
+
+    .whatsapp-float img {
+        width: 55px;
+        height: 55px;
+    }
+}
 

@@ -28,13 +28,11 @@
             border-top: 5px solid #007a3b;
         }
 
-        /* FIXED: Images not cropping */
         .service-card img {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 1em;
-            object-fit: contain !important;
-            background: white;
+            object-fit: cover;
             max-height: 420px;
         }
 
@@ -49,8 +47,7 @@
         .gallery img {
             width: calc(33% - 1em);
             border-radius: 8px;
-            object-fit: contain !important;
-            background: white;
+            object-fit: cover;
             max-height: 260px;
         }
 
@@ -78,15 +75,11 @@
         /* Header Logo */
         #header .logo img {
             height: 45px;
-            vertical-align: middle;
             margin-right: 8px;
         }
 
         #header .brand-subtitle {
-            display: block;
-            font-size: 0.8em;
-            margin-top: -4px;
-            color: #004d26;
+            display: none; /* Removed Arabic subtitle */
         }
     </style>
 </head>
@@ -98,10 +91,7 @@
     <header id="header">
         <a href="index.html" class="logo">
             <img src="images/logo.jpg" alt="AL MARWA CO Logo">
-            <span class="brand-text">
-                <strong>AL MARWA CO</strong>
-                <span class="brand-subtitle">شركة المروة للشحن والخدمات اللوجستية</span>
-            </span>
+            <span class="brand-text"><strong>AL MARWA CO</strong></span>
         </a>
         <nav><a href="#menu">Menu</a></nav>
     </header>
@@ -117,7 +107,7 @@
     </nav>
 
     <!-- Banner -->
-    <section id="banner" class="major" style="background:url('images/banner.jpg') center/cover;">
+    <section id="banner" class="major" style="background:url('images/banner.jpg') center/cover no-repeat;">
         <div class="inner">
             <header class="major">
                 <h1>Our Services</h1>
@@ -157,11 +147,10 @@
                 </p>
 
                 <ul>
-                    <li>FTL & LTL</li>
+                    <li>FTL & LTL solutions</li>
                     <li>18-meter long trailers</li>
                     <li>Bulk & palletized cargo</li>
                     <li>Door-to-door delivery</li>
-                    <li>Custom route planning</li>
                     <li>Cross-border transport</li>
                 </ul>
 
@@ -179,16 +168,16 @@
                 <h2>Heavy Lifting (Up to 70 Tons)</h2>
 
                 <p>
-                    Our heavy lifting division handles major industrial machinery using cranes, low-beds,
-                    and professional rigging teams.
+                    Our heavy lifting division manages industrial machinery, large equipment, and
+                    oversized cargo using cranes, low-bed trailers, and expert rigging teams.
                 </p>
 
                 <ul>
                     <li>Up to 70 tons</li>
-                    <li>Cranes & rigging teams</li>
-                    <li>Industrial equipment</li>
+                    <li>Cranes & rigging specialists</li>
+                    <li>Industrial machinery</li>
                     <li>Low-bed trailers</li>
-                    <li>On-site loading & positioning</li>
+                    <li>On-site loading & placement</li>
                 </ul>
 
                 <h3>Media</h3>
@@ -207,15 +196,15 @@
                 <h2>Maritime Shipping</h2>
 
                 <p>
-                    Cost-effective global ocean freight with top carriers: MAERSK, MSC, CMA CGM, Evergreen.
+                    AL MARWA CO offers cost-effective global ocean freight with the world’s top carriers:
+                    Maersk, MSC, CMA CGM, and Evergreen.
                 </p>
 
                 <ul>
-                    <li>FCL & LCL</li>
-                    <li>Competitive rates</li>
-                    <li>Worldwide shipments</li>
-                    <li>Documentation support</li>
-                    <li>Special cargo handling</li>
+                    <li>FCL & LCL shipments</li>
+                    <li>Competitive worldwide rates</li>
+                    <li>Port handling and documentation</li>
+                    <li>Special cargo coordination</li>
                 </ul>
 
                 <h3>Gallery</h3>
@@ -232,14 +221,14 @@
                 <h2>Air Cargo</h2>
 
                 <p>
-                    Fast & secure air freight for urgent and high-value cargo with global coverage.
+                    Fast & secure air freight solutions for urgent shipments with worldwide coverage.
                 </p>
 
                 <ul>
-                    <li>Express service</li>
-                    <li>High-value cargo</li>
-                    <li>Airport-to-airport / door-to-door</li>
-                    <li>Tracking updates</li>
+                    <li>Express & regular services</li>
+                    <li>High-value cargo handling</li>
+                    <li>Airport-to-airport or door-to-door</li>
+                    <li>Real-time tracking</li>
                 </ul>
 
                 <h3>Gallery</h3>

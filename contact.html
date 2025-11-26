@@ -43,7 +43,7 @@
             color: #007a3b;
         }
 
-        /* Fix white-on-white field visibility */
+        /* White form fields */
         input, textarea {
             background: white !important;
             color: #222 !important;
@@ -102,7 +102,6 @@
         /* Header Logo Fix */
         #header .logo img {
             height: 45px;
-            vertical-align: middle;
             margin-right: 8px;
         }
 
@@ -125,7 +124,6 @@
                 <img src="images/logo.jpg" alt="AL MARWA CO">
                 <span class="brand-text">
                     <strong>AL MARWA CO</strong>
-                    <span class="brand-subtitle">شركة المروة للشحن والخدمات اللوجستية</span>
                 </span>
             </a>
             <nav><a href="#menu">Menu</a></nav>
@@ -174,7 +172,8 @@
                             <div class="contact-method">
                                 <span class="icon brands alt fa-whatsapp"></span>
                                 <h3>WhatsApp</h3>
-                                <a href="https://wa.me/96170099978" target="_blank">Chat on WhatsApp</a>
+                                <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
+                                   target="_blank">Chat on WhatsApp</a>
                             </div>
 
                             <div class="contact-method">
@@ -188,9 +187,11 @@
                         <section>
                             <h2>Send Us a Message</h2>
 
-                            <form action="https://formsubmit.co/info@almarwaco.com" method="POST">
+                            <!-- WORKING CONTACT FORM -->
+                            <form action="https://formsubmit.co/info@al-marwaco.com" method="POST">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
 
                                 <div class="fields">
                                     <div class="field half">
@@ -218,7 +219,7 @@
 
                     </div>
 
-                    <!-- Location Section (Iframe Removed) -->
+                    <!-- Location Section -->
                     <section style="margin-top: 3em;">
                         <h2>Our Location</h2>
 
@@ -247,8 +248,9 @@
 
     </div>
 
-    <!-- WhatsApp Floating Button (JPG ONLY!) -->
-    <a href="https://wa.me/96170099978" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
+       class="whatsapp-float" target="_blank">
         <img src="images/whatsapp.jpg" alt="WhatsApp">
     </a>
 

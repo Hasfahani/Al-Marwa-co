@@ -33,22 +33,21 @@
             border-top: 5px solid #007a3b;
         }
 
-        /* Fix image cropping */
+        /* Image styling */
         .about-image img {
             width: 100%;
             border-radius: 12px;
-            object-fit: contain !important; /* FIXED */
-            background: white;
+            object-fit: cover;
             max-height: 420px;
             box-shadow: 0 5px 18px rgba(0,0,0,0.12);
             transition: 0.3s ease;
         }
 
         .about-image img:hover {
-            transform: scale(1.010);
+            transform: scale(1.01);
         }
 
-        /* Stats */
+        /* Stats section */
         .stats-container {
             display: flex;
             gap: 2em;
@@ -87,15 +86,11 @@
         /* Header Logo */
         #header .logo img {
             height: 45px;
-            vertical-align: middle;
             margin-right: 8px;
         }
 
         #header .brand-subtitle {
-            display: block;
-            font-size: 0.8em;
-            margin-top: -3px;
-            color: #004d26;
+            display: none; /* Arabic subtitle removed */
         }
     </style>
 </head>
@@ -109,7 +104,6 @@
             <img src="images/logo.jpg" alt="AL MARWA CO Logo">
             <span class="brand-text">
                 <strong>AL MARWA CO</strong>
-                <span class="brand-subtitle">شركة المروة للشحن والخدمات اللوجستية</span>
             </span>
         </a>
         <nav><a href="#menu">Menu</a></nav>
@@ -126,7 +120,7 @@
     </nav>
 
     <!-- Banner -->
-    <section id="banner" class="major" style="background:url('images/banner.jpg') center/cover;">
+    <section id="banner" class="major" style="background:url('images/banner.jpg') center/cover no-repeat;">
         <div class="inner">
             <header class="major">
                 <h1>About AL MARWA CO</h1>
@@ -150,15 +144,15 @@
                         <h2>Our Company</h2>
 
                         <p>
-                            Since 1997, AL MARWA CO has been a trusted provider of forwarding, shipping, and
-                            trading services. With over 25 years of experience, we deliver reliable, efficient,
-                            and secure logistics across Lebanon, the Middle East, Asia, and Europe.
+                            Founded in 1997, AL MARWA CO has grown into one of the region’s trusted names in
+                            forwarding, shipping, and trading. With more than 25 years of hands-on logistics
+                            experience, we support businesses across Lebanon, the Middle East, Asia, and Europe.
                         </p>
 
                         <p>
-                            Our approach is simple: <strong>we listen, we adapt, we deliver</strong>.
-                            Through clear communication, tailored solutions, and consistent professionalism,
-                            we have built long-term partnerships across various industries worldwide.
+                            Our philosophy is simple: <strong>We listen. We adapt. We deliver.</strong>
+                            Through personalized solutions, transparent communication, and commitment to reliability,
+                            we have built long-term partnerships with clients worldwide.
                         </p>
 
                         <div class="stats-container">
@@ -172,7 +166,7 @@
                             </div>
                             <div class="stat-box">
                                 <h3>Trusted</h3>
-                                <p>By Clients Worldwide</p>
+                                <p>Industry Reputation</p>
                             </div>
                         </div>
 
@@ -184,8 +178,8 @@
             <div class="about-card">
                 <h2>Our Mission</h2>
                 <p>
-                    To provide exceptional logistics solutions that exceed customer expectations through
-                    professionalism, efficiency, and reliability.
+                    To deliver high-quality logistics solutions that exceed customer expectations through integrity,
+                    efficiency, and operational excellence.
                 </p>
             </div>
 
@@ -193,8 +187,8 @@
             <div class="about-card">
                 <h2>Our Vision</h2>
                 <p>
-                    To be the preferred logistics partner for companies seeking innovative, dependable, and
-                    globally connected transport solutions.
+                    To be the most dependable and innovative logistics partner for businesses seeking global transport
+                    solutions.
                 </p>
             </div>
 
@@ -203,10 +197,10 @@
                 <h2>Core Values</h2>
 
                 <ul>
-                    <li><strong>Reliability:</strong> Consistent, on-time delivery.</li>
-                    <li><strong>Transparency:</strong> Communication you can trust.</li>
-                    <li><strong>Expertise:</strong> Skilled logistics & customs specialists.</li>
-                    <li><strong>Customer Focus:</strong> Tailored solutions for every client.</li>
+                    <li><strong>Reliability:</strong> Consistent, on-time performance.</li>
+                    <li><strong>Transparency:</strong> Clear communication at every step.</li>
+                    <li><strong>Expertise:</strong> Skilled logistics & customs professionals.</li>
+                    <li><strong>Customer Focus:</strong> Solutions specific to your needs.</li>
                 </ul>
             </div>
 
@@ -214,12 +208,12 @@
             <div class="about-card">
                 <h2>Why Choose AL MARWA CO?</h2>
                 <ul>
-                    <li><strong>Global Network:</strong> Strong connections with top carriers.</li>
-                    <li><strong>24/7 Support:</strong> Always available when needed.</li>
-                    <li><strong>Competitive Rates:</strong> Best prices without compromising quality.</li>
-                    <li><strong>Expert Team:</strong> Professionals managing all operations.</li>
-                    <li><strong>Compliance:</strong> Full customs & documentation mastery.</li>
-                    <li><strong>Technology:</strong> Real-time tracking & visibility.</li>
+                    <li><strong>Global Network:</strong> Partnerships with world-leading carriers.</li>
+                    <li><strong>Competitive Rates:</strong> Cost-effective solutions for every shipment.</li>
+                    <li><strong>24/7 Support:</strong> Reach us any time for assistance.</li>
+                    <li><strong>Compliance:</strong> Full customs & documentation expertise.</li>
+                    <li><strong>Professional Team:</strong> Experienced industry specialists.</li>
+                    <li><strong>Technology:</strong> Real-time tracking & shipment visibility.</li>
                 </ul>
             </div>
 
@@ -230,11 +224,11 @@
                     <li>Ocean freight (FCL / LCL)</li>
                     <li>Air freight</li>
                     <li>Land freight (FTL / LTL)</li>
-                    <li>Customs clearance & documentation</li>
+                    <li>Customs clearance</li>
                     <li>Warehousing & storage</li>
                     <li>Insurance & risk management</li>
+                    <li>Project cargo</li>
                     <li>Door-to-door logistics</li>
-                    <li>Project cargo handling</li>
                 </ul>
             </div>
 
