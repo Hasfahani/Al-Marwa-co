@@ -4613,4 +4613,41 @@ a, a * {
     box-shadow: 0 12px 32px rgba(0, 120, 60, 0.45);
     opacity: 0.92;
 }
+/* PREMIUM CTA BUTTONS */
+.button.cta {
+    background: linear-gradient(135deg, #00a859, #007a3b);
+    color: #fff !important;
+    border: none;
+    font-weight: 800;
+    padding: 1.1em 2em;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 120, 60, 0.35);
+    transition: all 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.4px;
+}
+
+.button.cta:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 120, 60, 0.45);
+    opacity: 0.92;
+}
+
+/* LAYOUT: TWO BUTTONS SIDE BY SIDE */
+.cta-container {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 1em;
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
 
