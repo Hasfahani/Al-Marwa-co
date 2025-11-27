@@ -4754,3 +4754,57 @@ a:hover {
     color: #0FA958 !important;
     border-bottom-color: transparent !important;
 }
+/* ==== AL MARWA SAFE COLOR OVERRIDES (DO NOT EDIT ABOVE THIS) ==== */
+
+/* Brand green */
+:root {
+    --alm-green: #0FA958;
+}
+
+/* Keep headings normal size */
+h1, h2, h3, h4, h5, h6 {
+    color: #0A0A0A !important;
+}
+
+/* Buttons green */
+.button,
+button,
+input[type="submit"] {
+    border-color: var(--alm-green) !important;
+    color: var(--alm-green) !important;
+    background: transparent !important;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: var(--alm-green) !important;
+    color: #ffffff !important;
+}
+
+/* Make links green */
+a {
+    color: var(--alm-green) !important;
+}
+
+/* Restore all layout backgrounds */
+.wrapper,
+.spotlights section,
+.tiles article {
+    background: inherit !important;
+}
+
+/* Restore Forty tile overlay */
+.tiles article:before {
+    background: rgba(0,0,0,0.3) !important;
+}
+
+/* Fix the banner */
+#banner {
+    min-height: 70vh;
+    background: url("../images/bgrndpic.jpg") center/cover no-repeat;
+}
+
+#banner:before {
+    background-color: rgba(0, 0, 0, 0.45);
+}
