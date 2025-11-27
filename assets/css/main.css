@@ -194,3 +194,25 @@
 .partner-logos img:hover {
     transform: scale(1.08);
 }
+/* ================================ */
+/* FIX BANNER BACKGROUND IMAGE     */
+/* ================================ */
+
+#banner.major {
+    min-height: 70vh !important;
+    background-image: url("../images/bgrndpic.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Remove dark overlay blocking the picture */
+#banner:before {
+    background: none !important;
+}
+
+/* Remove the white background inside the banner */
+#banner .inner {
+    background: transparent !important;
+}
+
