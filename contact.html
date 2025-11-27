@@ -55,32 +55,20 @@
             font-weight:600;
         }
 
-        /* WhatsApp Floating Button */
+        /* Remove old WhatsApp style (to unify with homepage) */
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 32px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            right: 18px;
+            bottom: 18px;
+            z-index: 9999;
         }
 
         .whatsapp-float img {
-            width: 36px;
-            height: 36px;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #1ebe5d;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
         }
 
         /* Location Button */
@@ -99,18 +87,6 @@
             background: #005c2c;
         }
 
-        /* Header Logo Fix */
-        #header .logo img {
-            height: 45px;
-            margin-right: 8px;
-        }
-
-        #header .brand-subtitle {
-            display: block;
-            font-size: 0.8em;
-            margin-top: -3px;
-            color: #004d26;
-        }
     </style>
 </head>
 
@@ -167,6 +143,7 @@
                                 <p><a href="tel:009613369652">00961 3 369652</a></p>
                                 <p><a href="tel:009613313265">00961 3 313265</a></p>
                                 <p><a href="tel:009613750945">00961 3 750945</a></p>
+                                <p><a href="tel:0096170099978" style="font-weight:700;">00961 70 099978</a></p>
                             </div>
 
                             <div class="contact-method">
@@ -248,7 +225,7 @@
 
     </div>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Floating Button (Unified with Home Page) -->
     <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
        class="whatsapp-float" target="_blank">
         <img src="images/whatsapp.jpg" alt="WhatsApp">

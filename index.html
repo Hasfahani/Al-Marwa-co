@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- Font Awesome for icons (Request a Quote / View Services) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          referrerpolicy="no-referrer" />
+
     <!-- SEO -->
     <meta name="description" content="AL MARWA CO provides global shipping, freight forwarding, land transport, maritime cargo, and international logistics solutions since 1997.">
     <meta name="keywords" content="shipping, logistics, freight, cargo, air freight, maritime, land transport, Lebanon, Germany, forwarding">
@@ -29,6 +34,7 @@
                 </span>
             </a>
             <nav>
+                <!-- Menu button text – visibility will be improved in CSS later -->
                 <a href="#menu">Menu</a>
             </nav>
         </header>
@@ -43,36 +49,42 @@
             </ul>
         </nav>
 
-        <!-- Banner (Background set from CSS) -->
-        <section id="banner" class="major">
+        <!-- Banner -->
+        <!-- Background image: /images/bgrndpic.jpg -->
+        <section id="banner" class="major" style="background-image: url('images/bgrndpic.jpg'); background-size: cover; background-position: center;">
             <div class="inner">
                 <header class="major">
                     <h1>Global Shipping, Forwarding & Trading</h1>
+
+                    <!-- Handwritten AL MARWA image (make sure this file exists in /images) -->
+                    <!-- Rename src if your file has a different name -->
+                    <img src="images/almarwa_signature.jpg"
+                         alt="AL MARWA CO handwritten logo"
+                         class="handwritten-logo">
                 </header>
                 <div class="content">
                     <p>
                         Since 1997, AL MARWA CO has been delivering trusted land, sea, and air logistics
-                        solutions connecting Asia, Europe, and beyond.
-                   </p>
+                        solutions, shipping <strong>globally</strong> – not only to neighboring countries – and
+                        connecting Asia, Europe, the Middle East, Africa, and beyond.
+                    </p>
 
-<!-- Premium CTA Buttons -->
-<div class="cta-container">
+                    <!-- Premium CTA Buttons -->
+                    <div class="cta-container">
 
-    <!-- Request a Quote (Premium Button) -->
-    <a href="contact.html" class="button cta">
-        <i class="fas fa-file-signature"></i>
-        Request a Quote
-    </a>
+                        <!-- Request a Quote (Premium Button) -->
+                        <a href="contact.html" class="button cta">
+                            <i class="fas fa-file-signature"></i>
+                            Request a Quote
+                        </a>
 
-    <!-- View Services (Premium Button) -->
-    <a href="services.html" class="button cta">
-        <i class="fas fa-truck-loading"></i>
-        View Services
-    </a>
+                        <!-- View Services (Premium Button) -->
+                        <a href="services.html" class="button cta">
+                            <i class="fas fa-truck-loading"></i>
+                            View Services
+                        </a>
 
-</div>
-
-                    </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -80,7 +92,44 @@
         <!-- Main -->
         <div id="main">
 
-            <!-- About Preview -->
+            <!-- About + Integrated Logistics overview with visible Learn More buttons -->
+            <section id="overview">
+                <div class="inner">
+                    <div class="row gtr-200">
+
+                        <!-- About AL MARWA CO -->
+                        <div class="col-6 col-12-small">
+                            <header class="major">
+                                <h2>About AL MARWA CO</h2>
+                            </header>
+                            <p>
+                                With over 25 years of experience in forwarding, shipping, and trading, AL MARWA CO
+                                provides reliable, customer-focused logistics solutions backed by a global partner network.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="about.html" class="button small">Learn More</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Integrated Logistics -->
+                        <div class="col-6 col-12-small">
+                            <header class="major">
+                                <h2>Integrated Logistics</h2>
+                            </header>
+                            <p>
+                                Tailored solutions that combine land, sea, and air freight to move your cargo efficiently
+                                across borders, with complete coordination from origin to final destination.
+                            </p>
+                            <ul class="actions">
+                                <li><a href="services.html" class="button small">Learn More</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Preview Tiles -->
             <section id="one" class="tiles">
 
                 <article>
@@ -90,6 +139,9 @@
                     <header class="major">
                         <h3><a href="about.html" class="link">About AL MARWA CO</a></h3>
                         <p>Over 25 years of experience in forwarding, shipping, and trading.</p>
+                        <ul class="actions">
+                            <li><a href="about.html" class="button small">Learn More</a></li>
+                        </ul>
                     </header>
                 </article>
 
@@ -100,6 +152,9 @@
                     <header class="major">
                         <h3><a href="services.html" class="link">Integrated Logistics</a></h3>
                         <p>Tailored solutions combining land, sea, and air freight.</p>
+                        <ul class="actions">
+                            <li><a href="services.html" class="button small">Learn More</a></li>
+                        </ul>
                     </header>
                 </article>
 
@@ -117,7 +172,7 @@
                         <div class="service-card">
                             <img src="images/pic02.jpg" alt="Land Freight" />
                             <h3>Land Freight</h3>
-                            <p>FTL & LTL regional transport with 18-meter trailers.</p>
+                            <p>FTL &amp; LTL regional and international transport with 18-meter trailers and heavy-lift capability.</p>
                             <ul class="actions">
                                 <li><a href="services.html#land-freight" class="button small">Learn More</a></li>
                             </ul>
@@ -128,7 +183,7 @@
                         <div class="service-card">
                             <img src="images/pic05.jpg" alt="Maritime Shipping" />
                             <h3>Maritime Shipping</h3>
-                            <p>FCL & LCL options with full port handling.</p>
+                            <p>FCL &amp; LCL options with full port handling and door-to-door global coverage.</p>
                             <ul class="actions">
                                 <li><a href="services.html#maritime-shipping" class="button small">Learn More</a></li>
                             </ul>
@@ -139,7 +194,7 @@
                         <div class="service-card">
                             <img src="images/pic07.jpg" alt="Air Cargo" />
                             <h3>Air Cargo</h3>
-                            <p>Express and standard worldwide delivery.</p>
+                            <p>Express and standard worldwide delivery with flexible transit times.</p>
                             <ul class="actions">
                                 <li><a href="services.html#air-cargo" class="button small">Learn More</a></li>
                             </ul>
@@ -173,7 +228,10 @@
                         <!-- Ocean Carriers -->
                         <a href="https://www.maersk.com" target="_blank"><img src="images/maersk.jpg" alt="Maersk"></a>
                         <a href="https://www.cma-cgm.com" target="_blank"><img src="images/cmacgm.jpg" alt="CMA CGM"></a>
-                        <a href="https://www.msc.com" target="_blank"><img src="images/msc.jpg" alt="MSC"></a>
+
+                        <!-- Replaced MSC with ARKAS -->
+                        <a href="https://www.arkasline.com" target="_blank"><img src="images/arkas.jpg" alt="ARKAS Shipping Company"></a>
+
                         <a href="https://www.evergreen-marine.com" target="_blank"><img src="images/evergreen.jpg" alt="Evergreen"></a>
 
                     </div>
@@ -185,7 +243,7 @@
                 <header class="major">
                     <h2>Ready to Ship?</h2>
                 </header>
-                <p>Land, sea, or air — AL MARWA CO is ready to support your next shipment.</p>
+                <p>Land, sea, or air — AL MARWA CO is ready to support your next shipment with global coverage.</p>
                 <ul class="actions">
                     <li><a href="contact.html" class="button primary">Contact Us Today</a></li>
                 </ul>
@@ -205,10 +263,11 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
+    <!-- Number kept as 96170099978 which matches 0096170099978 -->
     <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
        class="whatsapp-float"
        target="_blank">
-        <img src="images/whatsapp.jpg" alt="WhatsApp">
+        <img src="images/whatsapp.jpg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
     <!-- Scripts -->
