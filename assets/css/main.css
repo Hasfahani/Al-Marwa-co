@@ -4452,3 +4452,29 @@ a, a * {
     }
 }
 /* Fix Hero Title */
+/* FIX MOBILE BANNER FULL WIDTH */
+@media (max-width: 768px) {
+    #banner {
+        width: 100% !important;
+        display: block !important;
+        padding: 6em 1.5em 4em 1.5em !important;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+
+    #banner .inner {
+        width: 100% !important;
+        margin: 0 auto !important;
+        text-align: center !important;
+    }
+
+    #banner h1 {
+        font-size: 1.7rem !important;
+        margin-top: 0 !important;
+    }
+
+    .handwritten-logo {
+        max-width: 75% !important;
+        margin: 0.5em auto !important;
+    }
+}
