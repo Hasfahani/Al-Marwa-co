@@ -4196,38 +4196,10 @@ body:before {
     display: none !important;
 }
 
-/* kill dark-blue section backgrounds */
-#main,
-#main.alt,
-section,
-section.major,
-section.special,
-.inner,
-.wrapper,
-.spotlights > section {
-    background: #ffffff !important;
-}
-
-/* kill dark-blue from the banner wrapper behind text */
-#banner,
-#banner.major {
-    background: #ffffff !important;
-}
-
 /* kill dark-blue tint under spotlight images */
 .spotlights > section:before,
 .tiles article:before {
     background: transparent !important;
-}
-
-/* force PURE WHITE backgrounds everywhere */
-div,
-article,
-section,
-.tiles article,
-.about-card,
-.service-card {
-    background-color: #ffffff !important;
 }
 
 /* text color enhancements */
@@ -4481,4 +4453,11 @@ a, a * {
 /* Remove white layer on banner */
 body.is-preload #banner {
     background: none !important;
+}
+#banner {
+    background-image: url('/images/bgrndpic.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh !important;
 }
