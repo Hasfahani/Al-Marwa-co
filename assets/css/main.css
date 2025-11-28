@@ -4650,3 +4650,29 @@ a, a * {
         gap: 12px;
     }
 }
+/* Fix Hero Title */
+#banner.major h1 {
+    font-size: 3rem !important;     /* smaller */
+    font-weight: 800;
+    color: #0d7a3c !important;       /* stronger green */
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Move title downward */
+#banner.major .inner {
+    padding-top: 8rem !important; 
+}
+#header.alt + #banner .inner p {
+    display: none !important;
+}
+
+/* Force custom banner background */
+#banner.major {
+    background-image: url('../images/bgrndpic.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+}
