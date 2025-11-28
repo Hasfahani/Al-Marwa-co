@@ -3373,31 +3373,42 @@ input, select, textarea {
 
 		}
 
-/* Banner */
-
-	#banner {
+/* CLEAN AL MARWA BANNER (final version) */
+#banner {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    /* Correct background path for GitHub + local */
-    background-image: url("images/bgrndpic.jpg") !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../images/bgrndpic.jpg") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: scroll !important;
 
-    /* DO NOT use fixed → breaks on GitHub & mobile */
-    background-attachment: scroll;
-
-    padding: 8em 0 4em 0;
+    padding: 7em 0 4em 0;
     height: 60vh;
-    min-height: 320px;
-    max-height: 500px;
+    min-height: 360px;
+    max-height: 520px;
     position: relative;
     border-bottom: 0 !important;
 }
+/* Banner Title Fix */
+#banner h1 {
+    font-size: 2.4em !important;
+    font-weight: 800;
+    color: #007a3b !important; /* Al Marwa green */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    margin-top: 2rem !important;
+    text-align: center;
+}
+background-image: url('../../images/bgrndpic.jpg') !important;
+#header .brand-subtitle {
+    color: #007a3b !important;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+}
 
-		
+
 
 /* Main */
 
@@ -4491,6 +4502,24 @@ a, a * {
 }
 /* Make top header subtitle green */
 #header .brand-subtitle {
-    color: #007a3c !important;
+    color: #007a3b !important;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+}
+/* Banner Title Fix */
+#banner h1 {
+    font-size: 2.4em !important;
+    font-weight: 800;
+    color: #007a3b !important; /* Al Marwa green */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    margin-top: 2rem !important;
+    text-align: center;
+}
+background-image: url('../../images/bgrndpic.jpg') !important;
+#header .brand-subtitle {
+    color: #007a3b !important;
+    font-weight: 600;
     letter-spacing: 0.25em;
 }
+
+
