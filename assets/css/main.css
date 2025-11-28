@@ -3373,61 +3373,52 @@ input, select, textarea {
 
 		}
 
-/* ===========================
-   CLEAN FIXED BANNER SECTION
-   =========================== */
-/* ===========================
-   FIXED RESPONSIVE BANNER
-   =========================== */
+/* ========================= */
+/*      CLEAN BANNER CSS     */
+/* ========================= */
+
 #banner {
-    position: relative;
-    width: 100%;
-    
-    /* Responsive height */
-    min-height: 60vh;            /* desktop */
-    height: auto;                /* content decides height */
-    padding: 6em 1.5em 4em 1.5em;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background-image: url('../images/bgrndpic.jpg') !important;
+    background-image: url("../images/bgrndpic.jpg") !important;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
+    background-attachment: scroll; /* Better for mobile */
+    
+    height: 75vh;
+    min-height: 350px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    padding: 4em 1em;
+    text-align: center;
 }
 
-/* Remove old overlay */
-#banner:after {
-    display: none !important;
-}
-
-/* Title */
+/* Banner title */
 #banner h1 {
-    font-size: 2.7em;
+    font-size: 2.1rem;
     font-weight: 800;
     color: #007a3b !important; /* AL MARWA green */
-    margin-bottom: 1em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    margin-bottom: 0.5em;
 }
 
-/* Signature logo */
+/* Subtitle under header logo */
+#header .brand-subtitle {
+    color: #007a3b !important;
+}
+
+/* Signature logo image */
 .handwritten-logo {
-    width: 70%;
-    max-width: 700px;
-    margin-bottom: 1.5em;
+    width: 330px;
+    max-width: 90%;
+    display: block;
+    margin: 1em auto 0 auto;
 }
 
-/* Buttons */
-#banner .cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5em;
-    margin-top: 1em;
-    flex-wrap: wrap;
-}
+
 
 /* Main */
 
@@ -4090,17 +4081,7 @@ section {
     box-shadow: none !important;
 }
 
-/* Banner overlay fix */
-#banner:before,
-#banner.major:before {
-    background: rgba(0, 0, 0, 0.35) !important; /* only dark overlay, no blue */
-}
 
-/* Remove the DARK BLUE background from banner */
-{
-    background: none !important;
-    backgrou#banner nd-color: #004d26 !important; /* dark green tone */
-}
 
 /* Remove bright BLUE section from home page */
 section.style1,
@@ -4341,30 +4322,7 @@ a, a * {
     pointer-events: auto !important;
 }
 /* Force banner background image to show */
-#banner {
-    background-blend-mode: normal !important;
-    background-color: transparent !important;
-    position: relative !important;
-    z-index: 1 !important;
-}
 
-/* Remove the dark overlay that hides the banner image */
-#banner:before,
-#banner:after {
-    background: none !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
-}
-/* ------------------------------------------------------ */
-/* AL MARWA CO — CUSTOM FIXES (Paste at bottom of main.css) */
-/* ------------------------------------------------------ */
-
-/* FIX BANNER BACKGROUND */
-#banner {
-    background: url("../images/banner.jpg") center center/cover no-repeat !important;
-    position: relative;
-    color: #ffffff;
-}
 
 /* WHATSAPP FLOATING BUTTON */
 .whatsapp-float {
@@ -4494,66 +4452,3 @@ a, a * {
     }
 }
 /* Fix Hero Title */
-#banner.major h1 {
-    font-size: 3rem !important;     /* smaller */
-    font-weight: 800;
-    color: #0d7a3c !important;       /* stronger green */
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-/* Move title downward */
-#banner.major .inner {
-    padding-top: 8rem !important; 
-}
-#header.alt + #banner .inner p {
-    display: none !important;
-}
-
-/* Force custom banner background */
-#banner.major {
-    background-image: url('../images/bgrndpic.jpg') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    background-color: transparent !important;
-}
-/* Make top header subtitle green */
-#header .brand-subtitle {
-    color: #007a3b !important;
-    letter-spacing: 0.25em;
-    font-weight: 600;
-}
-/* Banner Title Fix */
-#banner h1 {
-    font-size: 2.4em !important;
-    font-weight: 800;
-    color: #007a3b !important; /* Al Marwa green */
-    text-shadow: 0 2px 10px rgba(0,0,0,0.25);
-    margin-top: 2rem !important;
-    text-align: center;
-}
-background-image: url('../../images/bgrndpic.jpg') !important;
-#header .brand-subtitle {
-    color: #007a3b !important;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-}
-@media screen and (max-width: 600px) {
-    #banner {
-        min-height: 50vh;
-        padding: 4em 1em;
-        background-position: top center !important; /* fixes weird cropping */
-    }
-
-    #banner h1 {
-        font-size: 1.9em;
-    }
-
-    .handwritten-logo {
-        width: 90%;
-    }
-}
-
-
