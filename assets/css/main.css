@@ -4466,3 +4466,19 @@ a, a * {
     }
 }
 /* Fix Hero Title */
+/* FORCE banner background and override all HTML5UP layers */
+#banner,
+#banner.major,
+#banner:before,
+#banner.major:before,
+#banner .inner {
+    background: url("../images/hero.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Remove white layer on banner */
+body.is-preload #banner {
+    background: none !important;
+}
