@@ -3376,52 +3376,57 @@ input, select, textarea {
 /* ===========================
    CLEAN FIXED BANNER SECTION
    =========================== */
+/* ===========================
+   FIXED RESPONSIVE BANNER
+   =========================== */
 #banner {
     position: relative;
     width: 100%;
-    height: 70vh;
-    min-height: 450px;
+    
+    /* Responsive height */
+    min-height: 60vh;            /* desktop */
+    height: auto;                /* content decides height */
+    padding: 6em 1.5em 4em 1.5em;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    background-image: url('../../images/bgrndpic.jpg') !important;
+    background-image: url('../images/bgrndpic.jpg') !important;
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-
-    padding: 4em 1em;
 }
 
-/* Remove dark overlay */
+/* Remove old overlay */
 #banner:after {
     display: none !important;
 }
 
-/* Title fix */
+/* Title */
 #banner h1 {
-    font-size: 3em;
+    font-size: 2.7em;
     font-weight: 800;
-    color: #007a3b !important;
+    color: #007a3b !important; /* AL MARWA green */
     margin-bottom: 1em;
 }
 
 /* Signature logo */
 .handwritten-logo {
-    width: 60%;
+    width: 70%;
     max-width: 700px;
-    margin: 0 auto 1.5em auto;
-    display: block;
+    margin-bottom: 1.5em;
 }
 
-/* CTA buttons row */
+/* Buttons */
 #banner .cta-container {
     display: flex;
     justify-content: center;
     gap: 1.5em;
     margin-top: 1em;
+    flex-wrap: wrap;
 }
 
 /* Main */
@@ -4092,9 +4097,9 @@ section {
 }
 
 /* Remove the DARK BLUE background from banner */
-#banner {
+{
     background: none !important;
-    background-color: #004d26 !important; /* dark green tone */
+    backgrou#banner nd-color: #004d26 !important; /* dark green tone */
 }
 
 /* Remove bright BLUE section from home page */
@@ -4534,6 +4539,21 @@ background-image: url('../../images/bgrndpic.jpg') !important;
     color: #007a3b !important;
     font-weight: 600;
     letter-spacing: 0.25em;
+}
+@media screen and (max-width: 600px) {
+    #banner {
+        min-height: 50vh;
+        padding: 4em 1em;
+        background-position: top center !important; /* fixes weird cropping */
+    }
+
+    #banner h1 {
+        font-size: 1.9em;
+    }
+
+    .handwritten-logo {
+        width: 90%;
+    }
 }
 
 
