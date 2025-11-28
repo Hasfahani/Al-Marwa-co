@@ -4676,3 +4676,8 @@ a, a * {
     background-repeat: no-repeat !important;
     background-color: transparent !important;
 }
+/* Make top header subtitle green */
+#header .brand-subtitle {
+    color: #007a3c !important;
+    letter-spacing: 0.25em;
+}
