@@ -4455,7 +4455,7 @@ body.is-preload #banner {
     background: none !important;
 }
 #banner {
-    background-image: url('/images/bgrndpic.jpg') !important;
+    background-image: url('/images/hero.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
