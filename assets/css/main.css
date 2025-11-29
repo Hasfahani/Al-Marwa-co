@@ -4510,3 +4510,41 @@ a, a * {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
 }
+/* ============================================================
+   FINAL BANNER VISUAL FIX
+   (Removes white box & green tint, makes text white)
+   ============================================================ */
+
+/* 1. Remove the WHITE BOX around the content */
+#banner .inner {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 2. Remove the GREEN TINT overlay */
+/* I set this to a light black (0.3) so white text is readable. 
+   If you want the raw original image brightness, change 0.3 to 0.0 */
+#banner:after {
+    background: rgba(0, 0, 0, 0.3) !important; 
+    z-index: 1;
+}
+
+/* 3. Turn the TEXT WHITE (Essential for dark backgrounds) */
+#banner h1, 
+#banner h2, 
+#banner p, 
+#banner span {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* Adds a small shadow for readability */
+}
+
+/* 4. Fix the LOGO visibility */
+/* This filter turns your dark green logo WHITE so it stands out against the sea.
+   If you prefer the original logo color, remove the line starting with 'filter' */
+.handwritten-logo, 
+#banner img {
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.9 !important;
+}
