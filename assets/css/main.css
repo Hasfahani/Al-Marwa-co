@@ -4526,25 +4526,45 @@ a, a * {
 /* 2. Remove the GREEN TINT overlay */
 /* I set this to a light black (0.3) so white text is readable. 
    If you want the raw original image brightness, change 0.3 to 0.0 */
-#banner:after {
-    background: rgba(13, 41, 221, 0.503) !important; 
-    z-index: 1;
+/* ============================================================
+   FINAL BANNER FIX: NATURAL IMAGE, NO BOXES, WHITE TEXT
+   (Paste this at the very bottom of main.css)
+   ============================================================ */
+
+/* 1. RESTORE THE BANNER IMAGE */
+#banner {
+    background-color: transparent !important;
+    background: transparent !important;
+    background-image: url("../../images/hero.jpg") !important; 
+    
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
 }
 
-/* 3. Turn the TEXT WHITE (Essential for dark backgrounds) */
+/* 2. REMOVE THE TINT / OVERLAY COMPLETELY */
+#banner:after {
+    content: none !important; /* Removes the pseudo-element that creates the tint */
+    background: transparent !important; 
+    opacity: 0 !important;
+}
+
+/* 3. REMOVE THE WHITE BOX AROUND THE TEXT */
+#banner .inner {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0; 
+}
+
+/* 4. MAKE THE TEXT WHITE AND READABLE */
 #banner h1, 
 #banner h2, 
 #banner p, 
 #banner span {
     color: #ffffff !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* Adds a small shadow for readability */
-}
-
-/* 4. Fix the LOGO visibility */
-/* This filter turns your dark green logo WHITE so it stands out against the sea.
-   If you prefer the original logo color, remove the line starting with 'filter' */
-.handwritten-logo, 
-#banner img {
-    filter: brightness(0) invert(1) !important;
-    opacity: 0.9 !important;
+    /* Strong shadow for readability on bright parts of the image */
+    text-shadow: 0 0 5px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6); 
 }
