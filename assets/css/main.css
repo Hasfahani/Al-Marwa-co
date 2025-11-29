@@ -4612,3 +4612,15 @@ a, a * {
         text-shadow: 0 0 5px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6) !important; 
     }
 }
+
+/* 1. RESTORE THE BANNER IMAGE */
+#banner {
+    /* ... existing rules ... */
+    
+    /* ADD or CHANGE this line: */
+    background-color: #f4fff8 !important; /* This is the light green you used before */
+    
+    background: transparent !important; /* KEEP this line, it forces the image over the color */
+    
+    /* ... existing rules ... */
+}
