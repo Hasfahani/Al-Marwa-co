@@ -4527,7 +4527,7 @@ a, a * {
 /* I set this to a light black (0.3) so white text is readable. 
    If you want the raw original image brightness, change 0.3 to 0.0 */
 #banner:after {
-    background: rgba(0, 0, 0, 0.3) !important; 
+    background: rgba(13, 41, 221, 0.503) !important; 
     z-index: 1;
 }
 
