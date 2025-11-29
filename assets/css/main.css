@@ -4612,5 +4612,24 @@ a, a * {
         text-shadow: 0 0 5px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6) !important; 
     }
 }
+/* ============================================================
+   FIX: HEADER TRANSPARENCY AND HEIGHT
+   (Removes the white space at the top)
+   ============================================================ */
 
+#header {
+    background: transparent !important; /* Removes the white background color */
+    box-shadow: none !important;        /* Removes any shadow line */
+    border-bottom: none !important;     /* Removes any bottom border line */
+    
+    /* Pushes the header content up to be layered over the banner */
+    position: absolute; 
+    width: 100%;
+    z-index: 100; /* Ensures the menu button and logo are visible on top of the banner */
+}
+
+/* Also ensure the banner starts right at the top of the page */
+#banner {
+    margin-top: 0 !important;
+}
 
