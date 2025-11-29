@@ -4568,3 +4568,47 @@ a, a * {
     /* Strong shadow for readability on bright parts of the image */
     text-shadow: 0 0 5px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6); 
 }
+/* ============================================================
+   FINAL MOBILE VIEW FIX (ALL ISSUES RESOLVED)
+   (Paste this at the very bottom of main.css)
+   ============================================================ */
+
+/* Target the mobile screen size ranges */
+@media screen and (max-width: 980px) {
+
+    /* 1. FIX IMAGE & BLUE COLOR */
+    #banner {
+        /* Forces the container to use 100% of the screen width */
+        width: 100% !important; 
+        
+        /* Removes any mobile-specific background color (the blue) */
+        background-color: transparent !important;
+        
+        /* Ensure the image covers the full width */
+        background-size: cover !important; 
+    }
+
+    /* 2. FIX EMPTY BOX (WHITE OR BLUE) */
+    #banner .inner {
+        /* Removes any background color from the content box */
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* 3. REMOVE ANY MOBILE TINT/OVERLAY (The blue tint from :after) */
+    #banner:after {
+        content: none !important;
+        background: transparent !important; 
+        opacity: 0 !important;
+    }
+
+    /* 4. Ensure readability by keeping the white text with shadow */
+    #banner h1, 
+    #banner h2, 
+    #banner p, 
+    #banner span {
+        color: #ffffff !important;
+        text-shadow: 0 0 5px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6) !important; 
+    }
+}
