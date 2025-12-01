@@ -4652,3 +4652,33 @@ body,
         padding-top: 0 !important;
     }
 }
+/* ============================================================
+   FINAL MOBILE CONTENT SPACING FIX
+   (Fixes logo overlapping title on small screens)
+   ============================================================ */
+
+/* Target styles specifically for phone screens */
+@media screen and (max-width: 736px) {
+    
+    /* 1. Ensure the banner content is stacked vertically */
+    #banner .inner {
+        /* Adds space between the signature image, title, and buttons */
+        padding: 4em 1.5em !important; 
+    }
+
+    /* 2. Target the signature image specifically on mobile */
+    /* This centers the image and gives it vertical breathing room */
+    #banner .inner img {
+        display: block !important; /* Forces image to take its own line */
+        margin: 0 auto 2em auto !important; /* Centers and adds spacing below */
+        max-width: 200px !important; /* Optionally reduce size on small screens */
+    }
+
+    /* 3. Reduce margin on the main title if necessary */
+    #banner h1 {
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+        font-size: 2em !important; /* Optional: Make font smaller on mobile */
+        line-height: 1.2 !important;
+    }
+}
