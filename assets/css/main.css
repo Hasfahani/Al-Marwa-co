@@ -4468,17 +4468,7 @@ a, a * {
 }
 
 /* Ensure the pseudo-element overlay is visible but dark enough to read text */
-#banner:after {
-    background: rgba(0, 122, 59, 0.4) !important; /* Green tint overlay */
-    opacity: 1 !important;
-    content: '' !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
+
 
 /* Bring text above the overlay */
 #banner .inner {
@@ -4504,12 +4494,8 @@ a, a * {
 }
 
 /* Optional: Adds a dark green tint so text is readable */
-#banner:after {
-    background: rgba(0, 122, 59, 0.4) !important;
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-}
+
+
 /* ============================================================
    FINAL BANNER VISUAL FIX
    (Removes white box & green tint, makes text white)
@@ -4574,7 +4560,7 @@ a, a * {
    ============================================================ */
 
 /* Target the mobile screen size ranges */
-@media screen and (max-width: 980px) {
+
 
     /* 1. FIX IMAGE & BLUE COLOR */
     #banner {
@@ -4679,6 +4665,82 @@ body,
         margin-top: 0.5em !important;
         margin-bottom: 0.5em !important;
         font-size: 2em !important; /* Optional: Make font smaller on mobile */
+        line-height: 1.2 !important;
+    }
+}
+/* ============================================================
+   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
+   (Paste this first)
+   ============================================================ */
+
+/* 1. Targets the Header (Navigation Bar) on all pages, making it transparent and fixed */
+#header {
+    background-color: transparent !important; 
+    box-shadow: none !important;              
+    border-bottom: none !important;           
+    position: fixed !important;               
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;                  
+    padding: 0 !important;
+}
+
+/* 2. Fixes height, image cropping, and spacing on the main banner */
+#banner {
+    /* Set to 90% of screen height to prevent cutting the top/bottom */
+    min-height: 90vh !important; 
+    
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* 3. Fixes spacing on all main page containers */
+body, 
+#wrapper, 
+#main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* 4. Targets secondary page banners (ensures no background color/spacing on other pages) */
+.major, .style1, .style2, .style3, .style4, .style5, .style6 {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    background-color: transparent !important;
+}
+
+/* 5. Fixes content flowing out (The "Title Flowing Out" Fix) */
+#banner .inner {
+    padding: 2em 1em !important; 
+    box-sizing: border-box !important; 
+    max-height: 90vh !important;
+    overflow: hidden; /* Prevents content from pushing out */
+}
+/* ============================================================
+   FINAL MOBILE VIEW FIX (SPACING & STACKING)
+   (Paste this second, immediately after Block A)
+   ============================================================ */
+
+@media screen and (max-width: 736px) {
+    
+    /* 1. Ensure the banner content is stacked vertically on mobile */
+    #banner .inner {
+        padding: 4em 1.5em !important; 
+    }
+
+    /* 2. Target the signature image specifically on mobile */
+    #banner .inner img {
+        display: block !important; 
+        margin: 0 auto 1.5em auto !important;
+        max-width: 200px !important;
+    }
+
+    /* 3. Reduce margin on the main title for tighter packing */
+    #banner h1 {
+        margin-top: 0.5em !important;
+        margin-bottom: 0.5em !important;
+        font-size: 1.8em !important;
         line-height: 1.2 !important;
     }
 }
