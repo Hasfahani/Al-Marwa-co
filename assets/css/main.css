@@ -4673,7 +4673,12 @@ body,
    (Paste this first)
    ============================================================ */
 
-/* 1. Targets the Header (Navigation Bar) on all pages, making it transparent and fixed */
+/* ============================================================
+   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
+   (FINAL REVISION for PC Cropping and Title Overflow)
+   ============================================================ */
+
+/* 1. Targets the Header (Navigation Bar) on all pages */
 #header {
     background-color: transparent !important; 
     box-shadow: none !important;              
@@ -4688,11 +4693,15 @@ body,
 
 /* 2. Fixes height, image cropping, and spacing on the main banner */
 #banner {
-    /* Set to 90% of screen height to prevent cutting the top/bottom */
-    min-height: 90vh !important; 
-    
-    padding-top: 0 !important;
+    /* Use a slightly smaller min-height for less aggressive cropping */
+    min-height: 75vh !important; 
+    /* Add padding to ensure content has internal space */
+    padding: 8em 0 !important; 
     margin-top: 0 !important;
+    
+    /* Ensure the image position is still covering the whole area */
+    background-size: cover !important;
+    background-position: center center !important;
 }
 
 /* 3. Fixes spacing on all main page containers */
@@ -4703,19 +4712,26 @@ body,
     margin-top: 0 !important;
 }
 
-/* 4. Targets secondary page banners (ensures no background color/spacing on other pages) */
+/* 4. Fixes content flowing out and centers it vertically (THE FIX) */
+#banner .inner {
+    /* Use Flexbox to center the content vertically and prevent overflow */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    /* Ensure padding is minimal, letting #banner padding handle space */
+    padding: 0 1em !important; 
+    box-sizing: border-box !important; 
+    max-height: 100% !important;
+    overflow: hidden; 
+}
+
+/* 5. Targets secondary page banners (ensures no background color/spacing on other pages) */
 .major, .style1, .style2, .style3, .style4, .style5, .style6 {
     padding-top: 0 !important;
     margin-top: 0 !important;
     background-color: transparent !important;
-}
-
-/* 5. Fixes content flowing out (The "Title Flowing Out" Fix) */
-#banner .inner {
-    padding: 2em 1em !important; 
-    box-sizing: border-box !important; 
-    max-height: 90vh !important;
-    overflow: hidden; /* Prevents content from pushing out */
 }
 /* ============================================================
    FINAL MOBILE VIEW FIX (SPACING & STACKING)
