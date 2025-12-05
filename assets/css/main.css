@@ -3114,8 +3114,8 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #2a2f4a;
-		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
+		background-color: transparent;
+		box-shadow: none;
 		cursor: default;
 		font-weight: 600;
 		height: 3.25em;
@@ -3404,32 +3404,44 @@ input, select, textarea {
     }
 }
 /* FIX banner background properly */
-
 #banner {
-    background-image: url("../images/hero.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
+	background-image: url("../images/hero.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 75vh;
+	padding: 8em 3em 6em;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	box-sizing: border-box;
 }
 
 /* FIX banner title */
+#banner h1,
 #banner.major h1 {
-    font-size: 2.4em !important;
-    font-weight: 800;
-    color: #007a3b !important;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    margin-top: 2rem !important;
-    text-align: center;
+	line-height: 1.15;
+	padding-top: 0.35em;
 }
 
 /* FIX logo under banner */
 .handwritten-logo {
-    display: block;
-    margin: 1.5rem auto;
-    width: 280px;
+	display: block;
+	margin: 1.5rem auto;
+	width: 280px;
+}
+
+@media screen and (min-width: 992px) {
+	.handwritten-logo {
+		margin-top: 250px;
+		position: relative;
+		z-index: 20000;
+	}
 }
 
 
@@ -4358,8 +4370,18 @@ a, a * {
 }
 
 /* FIX BUTTON SPACING */
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
 .actions .button {
-    margin-top: 8px;
+	padding: 16px 30px;
+	height: auto;
+	line-height: 1.2;
+}
+
+.actions .button {
+	margin-top: 8px;
 }
 
 /* CUSTOM RESPONSIVE ADJUSTMENTS */
@@ -4372,6 +4394,25 @@ a, a * {
         width: 55px;
         height: 55px;
     }
+}
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+	ul.actions {
+		flex-direction: column;
+		align-items: center;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	ul.actions li {
+		padding: 0 0 0.75em 0;
+		width: 100%;
+	}
+
+	.actions .button {
+		width: 100%;
+		text-align: center;
+	}
 }
 /* VIEW SERVICES — PREMIUM BUTTON */
 .button.view-services {
@@ -4887,121 +4928,3 @@ body,
     z-index: 5;
 }
 
-/* ======================================================= */
-/* === FINAL & COMPLETE CSS LAYOUT FIXES (Version 3) === */
-/* ======================================================= */
-
-/* 1. STRUCTURAL FIX: Targets the Header (Navigation Bar) */
-#header {
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-    border-bottom: none !important; 
-    position: fixed !important; 
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 100 !important; 
-    padding: 0 !important;
-}
-
-/* 2. STRUCTURAL FIX: Main banner background and spacing */
-/* ======================================================= */
-/* === FINAL & COMPLETE CSS LAYOUT FIXES (Version 3) === */
-/* ======================================================= */
-
-/* 1. STRUCTURAL FIX: Targets the Header (Navigation Bar) */
-#header {
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-    border-bottom: none !important; 
-    position: fixed !important; 
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 100 !important; 
-    padding: 0 !important;
-}
-
-/* 2. STRUCTURAL FIX: Main banner background and spacing */
-#banner {
-    min-height: 75vh !important; 
-    padding: 8em 0 !important; 
-    margin-top: 0 !important;
-    background-size: cover !important;
-    background-position: center center !important;
-}
-
-/* 3. STRUCTURAL FIX: Global spacing reset */
-body, 
-#wrapper, 
-#main {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-}
-
-/* 4. STRUCTURAL FIX: Banner content vertical centering and overflow control */
-#banner .inner {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 0 1em !important; 
-    box-sizing: border-box !important; 
-    max-height: 100% !important;
-    overflow: hidden; 
-}
-
-/* 5. FIX: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
-#banner h1 { 
-    line-height: 1.15 !important; 
-    padding-top: 8px !important;  
-    padding-bottom: 8px !important; 
-    margin-top: 0.5em !important;
-    margin-bottom: 0.5em !important;
-    position: relative; 
-    z-index: 5;
-}
-
-/* 6. FIX: Ensure buttons (.button) are tall enough and not clipped (Replaces .request-quote-button, etc.) */
-.button { 
-    padding: 16px 30px !important; 
-    box-sizing: border-box !important; 
-    height: auto !important; 
-}
-
-
-/* ======================================================= */
-/* === DESKTOP/PC LAYOUT FIX (992px and up) === */
-/* ======================================================= */
-@media (min-width: 992px) {
-    
-    /* 7. FIX: Resolve the Overlapping Logo Box on PC screens */
-    img.handwritten-logo { 
-        position: relative !important; 
-        top: auto !important;     
-        left: auto !important;
-        /* Adjust this value to push the logo down to the correct spot */
-        margin-top: 250px !important; 
-        z-index: 10;
-    }
-}
-
-/* ======================================================= */
-/* === MOBILE LANDSCAPE FIX (Stack buttons vertically) === */
-/* ======================================================= */
-@media (max-width: 768px) and (orientation: landscape) {
-    
-    /* 8. FIX: Force buttons to stack in landscape mode (Uses .actions for the wrapper) */
-    .actions { 
-        display: flex; 
-        flex-direction: column !important; 
-        align-items: center !important;
-        width: 100%;
-    }
-    
-    /* Adjust width and spacing for the stacked buttons */
-    .button { 
-        width: 90% !important; 
-        margin-bottom: 15px !important; 
-    }
-}
