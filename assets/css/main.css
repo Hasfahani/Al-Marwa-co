@@ -4668,26 +4668,20 @@ body,
         line-height: 1.2 !important;
     }
 }
-/* ============================================================
-   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
-   (Paste this first)
-   ============================================================ */
-
-/* ============================================================
-   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
-   (FINAL REVISION for PC Cropping and Title Overflow)
-   ============================================================ */
+/* ======================================================= */
+/* === REPLACEMENT & STRUCTURAL FIXES (Block 1 & 2) === */
+/* ======================================================= */
 
 /* 1. Targets the Header (Navigation Bar) on all pages */
 #header {
     background-color: transparent !important; 
-    box-shadow: none !important;              
-    border-bottom: none !important;           
-    position: fixed !important;               
+    box-shadow: none !important; 
+    border-bottom: none !important; 
+    position: fixed !important; 
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    z-index: 100 !important;                  
+    z-index: 100 !important; 
     padding: 0 !important;
 }
 
@@ -4733,26 +4727,17 @@ body,
     margin-top: 0 !important;
     background-color: transparent !important;
 }
-/* ============================================================
-   FINAL MOBILE VIEW FIX (SPACING & STACKING)
-   (Paste this second, immediately after Block A)
-   ============================================================ */
 
+/* 6. Mobile stacking adjustments (from old block 2) */
 @media screen and (max-width: 736px) {
-    
-    /* 1. Ensure the banner content is stacked vertically on mobile */
     #banner .inner {
         padding: 4em 1.5em !important; 
     }
-
-    /* 2. Target the signature image specifically on mobile */
     #banner .inner img {
         display: block !important; 
         margin: 0 auto 1.5em auto !important;
         max-width: 200px !important;
     }
-
-    /* 3. Reduce margin on the main title for tighter packing */
     #banner h1 {
         margin-top: 0.5em !important;
         margin-bottom: 0.5em !important;
@@ -4760,9 +4745,10 @@ body,
         line-height: 1.2 !important;
     }
 }
-git push origin main
+
+
 /* ======================================================= */
-/* === RESPONSIVE LAYOUT FIXES (ALL SCREENS) === */
+/* === SPECIFIC CLIPPING & OVERLAP FIXES (Final Block) === */
 /* ======================================================= */
 
 /* Fix 1: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
@@ -4782,9 +4768,7 @@ git push origin main
     height: auto !important; 
 }
 
-/* ======================================================= */
 /* === DESKTOP/PC LAYOUT FIX (992px and up) === */
-/* ======================================================= */
 @media (min-width: 992px) {
     
     /* Fix 3: Resolve the Overlapping Logo Box on PC screens */
@@ -4793,7 +4777,7 @@ git push origin main
         position: relative !important; 
         top: auto !important;     
         left: auto !important;
-        /* You may need to adjust this value to push the logo down to the correct spot */
+        /* Adjust this value to push the logo down to the correct spot */
         margin-top: 250px !important; 
         z-index: 10;
     }
@@ -4806,9 +4790,7 @@ git push origin main
     }
 }
 
-/* ======================================================= */
 /* === MOBILE LANDSCAPE FIX (Stack buttons vertically) === */
-/* ======================================================= */
 @media (max-width: 768px) and (orientation: landscape) {
     /* Fix 4: Force buttons to stack in landscape mode to prevent clipping */
     .buttons-wrapper { 
