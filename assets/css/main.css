@@ -4760,3 +4760,39 @@ body,
         line-height: 1.2 !important;
     }
 }
+/* --- Media Query for Large Screens (Desktop/PC) --- */
+@media (min-width: 992px) {
+    /* * Target the container holding the main logo/text box that is overlapping. 
+     * You will need to replace '.logo-box' with the actual CSS class or ID 
+     * of the element containing "Al Marwa Co.". 
+     */
+    .logo-box {
+        /* Reset positioning and ensure it is not obscuring the header */
+        position: relative; /* Use relative positioning */
+        top: auto;          /* Reset fixed/absolute top position */
+        left: auto;         /* Reset fixed/absolute left position */
+        
+        /* Adjust margin to push it down or out of the way */
+        margin-top: 250px; /* Example: pushes the box further down the page */
+        width: 300px;      /* Example: set a fixed width */
+        max-width: none;   /* Ensure it can use the fixed width */
+        
+        /* Ensure the main title text sits above it */
+        z-index: 1; 
+    }
+    
+    /* * Target the main "Global Shipping..." title (replace '.header-title' 
+     * with the actual class/ID). Give it a higher z-index to ensure visibility. 
+     */
+    .header-title {
+        z-index: 10; /* Higher than the logo box */
+    }
+    
+    /* * General layout adjustment: If your container is too wide, 
+     * constrain its size or center it.
+     */
+    .main-container {
+        max-width: 1200px; 
+        margin: 0 auto; /* Center the content */
+    }
+}
