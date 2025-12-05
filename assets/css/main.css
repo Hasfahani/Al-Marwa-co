@@ -4761,3 +4761,68 @@ body,
     }
 }
 git push origin main
+/* ======================================================= */
+/* === RESPONSIVE LAYOUT FIXES (ALL SCREENS) === */
+/* ======================================================= */
+
+/* Fix 1: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
+.header-title-class { 
+    /* !!! REPLACE '.header-title-class' with the actual class of your main heading !!! */
+    line-height: 1.15; 
+    padding-top: 8px;  
+    padding-bottom: 8px; 
+}
+
+/* Fix 2: Ensure buttons (REQUEST A QUOTE, VIEW SERVICES) are tall enough and not clipped */
+.request-quote-button, 
+.view-services-button { 
+    /* !!! REPLACE with the actual classes of your buttons !!! */
+    padding: 16px 30px !important; 
+    box-sizing: border-box; 
+    height: auto !important; 
+}
+
+/* ======================================================= */
+/* === DESKTOP/PC LAYOUT FIX (992px and up) === */
+/* ======================================================= */
+@media (min-width: 992px) {
+    
+    /* Fix 3: Resolve the Overlapping Logo Box on PC screens */
+    .logo-container-class { 
+        /* !!! REPLACE '.logo-container-class' with the actual class of the logo container !!! */
+        position: relative !important; 
+        top: auto !important;     
+        left: auto !important;
+        /* You may need to adjust this value to push the logo down to the correct spot */
+        margin-top: 250px !important; 
+        z-index: 10;
+    }
+    
+    /* Ensure the main title is in its proper place relative to the logo */
+    .header-title-class {
+        /* Use the same class as in Fix 1 */
+        z-index: 5;
+        position: relative;
+    }
+}
+
+/* ======================================================= */
+/* === MOBILE LANDSCAPE FIX (Stack buttons vertically) === */
+/* ======================================================= */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Fix 4: Force buttons to stack in landscape mode to prevent clipping */
+    .buttons-wrapper { 
+        /* !!! REPLACE with the actual class of the container holding BOTH buttons !!! */
+        display: flex; 
+        flex-direction: column !important; 
+        align-items: center !important;
+        width: 100%;
+    }
+    
+    /* Adjust width and spacing for the stacked buttons */
+    .request-quote-button, 
+    .view-services-button { 
+        width: 90% !important; 
+        margin-bottom: 15px !important; 
+    }
+}
