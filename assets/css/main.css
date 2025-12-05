@@ -4887,10 +4887,83 @@ body,
     z-index: 5;
 }
 
-/* 6. FIX: Ensure buttons (REQUEST A QUOTE, VIEW SERVICES) are tall enough and not clipped */
-/* --- PLEASE VERIFY THESE TWO CLASS NAMES (THEY ARE THE LAST PLACEHOLDERS) --- */
-.request-quote-button, 
-.view-services-button { 
+/* ======================================================= */
+/* === FINAL & COMPLETE CSS LAYOUT FIXES (Version 3) === */
+/* ======================================================= */
+
+/* 1. STRUCTURAL FIX: Targets the Header (Navigation Bar) */
+#header {
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+    border-bottom: none !important; 
+    position: fixed !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important; 
+    padding: 0 !important;
+}
+
+/* 2. STRUCTURAL FIX: Main banner background and spacing */
+/* ======================================================= */
+/* === FINAL & COMPLETE CSS LAYOUT FIXES (Version 3) === */
+/* ======================================================= */
+
+/* 1. STRUCTURAL FIX: Targets the Header (Navigation Bar) */
+#header {
+    background-color: transparent !important; 
+    box-shadow: none !important; 
+    border-bottom: none !important; 
+    position: fixed !important; 
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important; 
+    padding: 0 !important;
+}
+
+/* 2. STRUCTURAL FIX: Main banner background and spacing */
+#banner {
+    min-height: 75vh !important; 
+    padding: 8em 0 !important; 
+    margin-top: 0 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+/* 3. STRUCTURAL FIX: Global spacing reset */
+body, 
+#wrapper, 
+#main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* 4. STRUCTURAL FIX: Banner content vertical centering and overflow control */
+#banner .inner {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 1em !important; 
+    box-sizing: border-box !important; 
+    max-height: 100% !important;
+    overflow: hidden; 
+}
+
+/* 5. FIX: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
+#banner h1 { 
+    line-height: 1.15 !important; 
+    padding-top: 8px !important;  
+    padding-bottom: 8px !important; 
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+    position: relative; 
+    z-index: 5;
+}
+
+/* 6. FIX: Ensure buttons (.button) are tall enough and not clipped (Replaces .request-quote-button, etc.) */
+.button { 
     padding: 16px 30px !important; 
     box-sizing: border-box !important; 
     height: auto !important; 
@@ -4918,9 +4991,8 @@ body,
 /* ======================================================= */
 @media (max-width: 768px) and (orientation: landscape) {
     
-    /* 8. FIX: Force buttons to stack in landscape mode to prevent clipping */
-    /* --- PLEASE VERIFY THIS CLASS NAME (THE LAST PLACEHOLDER) --- */
-    .buttons-wrapper { 
+    /* 8. FIX: Force buttons to stack in landscape mode (Uses .actions for the wrapper) */
+    .actions { 
         display: flex; 
         flex-direction: column !important; 
         align-items: center !important;
@@ -4928,8 +5000,7 @@ body,
     }
     
     /* Adjust width and spacing for the stacked buttons */
-    .request-quote-button, 
-    .view-services-button { 
+    .button { 
         width: 90% !important; 
         margin-bottom: 15px !important; 
     }
