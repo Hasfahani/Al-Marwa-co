@@ -3114,8 +3114,8 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: transparent;
-		box-shadow: none;
+		background-color: #2a2f4a;
+		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
 		cursor: default;
 		font-weight: 600;
 		height: 3.25em;
@@ -3404,44 +3404,32 @@ input, select, textarea {
     }
 }
 /* FIX banner background properly */
+
 #banner {
-	background-image: url("../images/hero.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	min-height: 75vh;
-	padding: 8em 3em 6em;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	-moz-align-items: center;
-	-webkit-align-items: center;
-	-ms-align-items: center;
-	align-items: center;
-	box-sizing: border-box;
+    background-image: url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
 }
 
 /* FIX banner title */
-#banner h1,
 #banner.major h1 {
-	line-height: 1.15;
-	padding-top: 0.35em;
+    font-size: 2.4em !important;
+    font-weight: 800;
+    color: #007a3b !important;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 2rem !important;
+    text-align: center;
 }
 
 /* FIX logo under banner */
 .handwritten-logo {
-	display: block;
-	margin: 1.5rem auto;
-	width: 280px;
-}
-
-@media screen and (min-width: 992px) {
-	.handwritten-logo {
-		margin-top: 250px;
-		position: relative;
-		z-index: 20000;
-	}
+    display: block;
+    margin: 1.5rem auto;
+    width: 280px;
 }
 
 
@@ -4370,52 +4358,8 @@ a, a * {
 }
 
 /* FIX BUTTON SPACING */
-.button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
 .actions .button {
-	padding: 16px 30px;
-	height: auto;
-	line-height: 1.2;
-}
-
-.actions .button {
-	margin-top: 8px;
-}
-
-/* HERO CTA BUTTONS */
-.cta-container {
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: -ms-flex;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
-	margin-top: 1.75rem;
-}
-
-.button.cta {
-	background: linear-gradient(135deg, #00a859, #007a3b);
-	color: #fff !important;
-	border: none;
-	font-weight: 800;
-	padding: 1em 1.8em;
-	border-radius: 12px;
-	box-shadow: 0 10px 28px rgba(0, 122, 59, 0.35);
-	display: inline-flex;
-	align-items: center;
-	gap: 0.6rem;
-	font-size: 1rem;
-}
-
-.button.cta:hover {
-	filter: brightness(1.06);
-	transform: translateY(-2px);
-}
-
-.button.cta i {
-	font-size: 1.05rem;
+    margin-top: 8px;
 }
 
 /* CUSTOM RESPONSIVE ADJUSTMENTS */
@@ -4428,44 +4372,6 @@ input[type="button"],
         width: 55px;
         height: 55px;
     }
-}
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-	ul.actions {
-		flex-direction: column;
-		align-items: center;
-		width: 90%;
-		margin: 0 auto;
-	}
-
-	ul.actions li {
-		padding: 0 0 0.75em 0;
-		width: 100%;
-	}
-
-	.actions .button {
-		width: 100%;
-		text-align: center;
-	}
-}
-
-@media screen and (max-width: 736px) {
-	.cta-container {
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	.button.cta {
-		width: 100%;
-		text-align: center;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
-		justify-content: center;
-	}
 }
 /* VIEW SERVICES — PREMIUM BUTTON */
 .button.view-services {
@@ -4762,20 +4668,26 @@ body,
         line-height: 1.2 !important;
     }
 }
-/* ======================================================= */
-/* === REPLACEMENT & STRUCTURAL FIXES (Block 1 & 2) === */
-/* ======================================================= */
+/* ============================================================
+   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
+   (Paste this first)
+   ============================================================ */
+
+/* ============================================================
+   GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
+   (FINAL REVISION for PC Cropping and Title Overflow)
+   ============================================================ */
 
 /* 1. Targets the Header (Navigation Bar) on all pages */
 #header {
     background-color: transparent !important; 
-    box-shadow: none !important; 
-    border-bottom: none !important; 
-    position: fixed !important; 
+    box-shadow: none !important;              
+    border-bottom: none !important;           
+    position: fixed !important;               
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
-    z-index: 100 !important; 
+    z-index: 100 !important;                  
     padding: 0 !important;
 }
 
@@ -4821,17 +4733,26 @@ body,
     margin-top: 0 !important;
     background-color: transparent !important;
 }
+/* ============================================================
+   FINAL MOBILE VIEW FIX (SPACING & STACKING)
+   (Paste this second, immediately after Block A)
+   ============================================================ */
 
-/* 6. Mobile stacking adjustments (from old block 2) */
 @media screen and (max-width: 736px) {
+    
+    /* 1. Ensure the banner content is stacked vertically on mobile */
     #banner .inner {
         padding: 4em 1.5em !important; 
     }
+
+    /* 2. Target the signature image specifically on mobile */
     #banner .inner img {
         display: block !important; 
         margin: 0 auto 1.5em auto !important;
         max-width: 200px !important;
     }
+
+    /* 3. Reduce margin on the main title for tighter packing */
     #banner h1 {
         margin-top: 0.5em !important;
         margin-bottom: 0.5em !important;
@@ -4839,145 +4760,3 @@ body,
         line-height: 1.2 !important;
     }
 }
-
-/* ======================================================= */
-/* === REPLACEMENT & STRUCTURAL FIXES (Structural Theme Adjustments) === */
-/* ======================================================= */
-
-/* 1. Targets the Header (Navigation Bar) on all pages */
-#header {
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-    border-bottom: none !important; 
-    position: fixed !important; 
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 100 !important; 
-    padding: 0 !important;
-}
-
-/* 2. Fixes height, image cropping, and spacing on the main banner */
-#banner {
-    min-height: 75vh !important; 
-    padding: 8em 0 !important; 
-    margin-top: 0 !important;
-    background-size: cover !important;
-    background-position: center center !important;
-}
-
-/* 3. Fixes spacing on all main page containers */
-body, 
-#wrapper, 
-#main {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-}
-
-/* 4. Fixes content flowing out and centers it vertically */
-#banner .inner {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 0 1em !important; 
-    box-sizing: border-box !important; 
-    max-height: 100% !important;
-    overflow: hidden; 
-}
-
-/* 5. Targets secondary page banners */
-.major, .style1, .style2, .style3, .style4, .style5, .style6 {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    background-color: transparent !important;
-}
-
-/* 6. Mobile stacking adjustments (based on previous code) */
-@media screen and (max-width: 736px) {
-    #banner .inner {
-        padding: 4em 1.5em !important; 
-    }
-    #banner .inner img {
-        display: block !important; 
-        margin: 0 auto 1.5em auto !important;
-        max-width: 200px !important;
-    }
-    #banner h1 {
-        margin-top: 0.5em !important;
-        margin-bottom: 0.5em !important;
-        font-size: 1.8em !important;
-        line-height: 1.2 !important;
-    }
-}
-
-
-/* ======================================================= */
-/* === SPECIFIC CLIPPING & OVERLAP FIXES (FINAL ATTEMPT) === */
-/* ======================================================= */
-
-/* Fix 1: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
-#banner h1 { 
-    /* Assuming #banner h1 targets the main heading */
-    line-height: 1.15 !important; 
-    padding-top: 8px !important;  
-    padding-bottom: 8px !important; 
-}
-
-/* ======================================================= */
-/* === FINAL & COMPLETE CSS LAYOUT FIXES FOR AL MARWA CO. === */
-/* ======================================================= */
-
-/* 1. STRUCTURAL FIX: Targets the Header (Navigation Bar) on all pages */
-#header {
-    background-color: transparent !important; 
-    box-shadow: none !important; 
-    border-bottom: none !important; 
-    position: fixed !important; 
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 100 !important; 
-    padding: 0 !important;
-}
-
-/* 2. STRUCTURAL FIX: Main banner background and spacing */
-#banner {
-    min-height: 75vh !important; 
-    padding: 8em 0 !important; 
-    margin-top: 0 !important;
-    background-size: cover !important;
-    background-position: center center !important;
-}
-
-/* 3. STRUCTURAL FIX: Global spacing reset */
-body, 
-#wrapper, 
-#main {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-}
-
-/* 4. STRUCTURAL FIX: Banner content vertical centering and overflow control */
-#banner .inner {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 0 1em !important; 
-    box-sizing: border-box !important; 
-    max-height: 100% !important;
-    overflow: hidden; 
-}
-
-/* 5. FIX: Ensure main title text (Global Shipping...) isn't cut off vertically on any screen */
-#banner h1 { 
-    line-height: 1.15 !important; 
-    padding-top: 8px !important;  
-    padding-bottom: 8px !important; 
-    margin-top: 0.5em !important;
-    margin-bottom: 0.5em !important;
-    position: relative; /* Essential for z-index */
-    z-index: 5;
-}
-

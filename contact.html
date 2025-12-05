@@ -15,39 +15,18 @@
 
         /* Contact Banner */
         #contact-banner {
-            position: relative;
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("images/pic01.jpg") center center/cover no-repeat;
-            min-height: 300px;
+            background: url("images/pic01.jpg") center center/cover no-repeat;
+            height: 330px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            text-align: center;
-            padding: 6em 1.5em 4em;
+            color: white;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.65);
         }
 
         #contact-banner h1 {
-            font-size: clamp(2.2rem, 4vw, 3rem);
+            font-size: 2.8rem;
             font-weight: 800;
-            line-height: 1.1;
-            margin: 0;
-            letter-spacing: 0.08em;
-        }
-
-        /* Layout */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .contact-card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 1.75rem;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 122, 59, 0.08);
         }
 
         h2, h3 {
@@ -55,55 +34,28 @@
             font-weight: 800;
         }
 
-        .contact-method {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-            padding: 0.6rem 0;
-        }
-
-        .contact-method span.icon {
-            color: #007a3b;
-            font-size: 1.25rem;
-            margin-top: 0.1rem;
-        }
-
         .contact-method a {
             color: #005c2c;
             font-weight: 600;
         }
 
-        .contact-cta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.25rem;
+        .contact-method span.icon {
+            color: #007a3b;
         }
 
-        .contact-cta .button {
-            padding: 0.9em 1.6em;
-            border-radius: 10px;
-            font-weight: 700;
+        /* White form fields */
+        input, textarea {
+            background: white !important;
+            color: #222 !important;
+            border: 1px solid #007a3b !important;
         }
 
-        /* Map */
-        .map-wrapper {
-            width: 100%;
-            height: 100%;
-            min-height: 320px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 122, 59, 0.08);
+        label {
+            color: #007a3b;
+            font-weight:600;
         }
 
-        .map-wrapper iframe {
-            border: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* WhatsApp Floating Button */
+        /* Remove old WhatsApp style (to unify with homepage) */
         .whatsapp-float {
             position: fixed;
             right: 18px;
@@ -117,32 +69,24 @@
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-            transition: transform 0.2s ease;
         }
 
-        .whatsapp-float img:hover {
-            transform: scale(1.05);
+        /* Location Button */
+        .map-button {
+            display: inline-block;
+            padding: 0.8em 1.4em;
+            background: #007a3b;
+            color: white;
+            border-radius: 8px;
+            margin-top: 1em;
+            text-decoration: none;
+            font-weight: 700;
         }
 
-        @media screen and (max-width: 736px) {
-            #contact-banner {
-                padding: 5em 1.25em 3.5em;
-                min-height: 260px;
-            }
-
-            .contact-card {
-                padding: 1.4rem;
-            }
-
-            .contact-cta {
-                flex-direction: column;
-            }
-
-            .contact-cta .button {
-                width: 100%;
-                text-align: center;
-            }
+        .map-button:hover {
+            background: #005c2c;
         }
+
     </style>
 </head>
 
@@ -151,10 +95,12 @@
     <div id="wrapper">
 
         <!-- Header -->
-        <header id="header" class="alt">
+        <header id="header">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="AL MARWA CO logo">
-                <span class="brand-text"><strong>AL MARWA CO</strong></span>
+                <img src="images/logo.jpg" alt="AL MARWA CO">
+                <span class="brand-text">
+                    <strong>AL MARWA CO</strong>
+                </span>
             </a>
             <nav><a href="#menu">Menu</a></nav>
         </header>
@@ -179,117 +125,89 @@
             <section id="contact" class="main">
                 <div class="inner">
 
-                    <div class="contact-grid">
+                    <div class="split style1">
 
                         <!-- Contact Info -->
-                        <section class="contact-card">
+                        <section>
                             <h2>Get in Touch</h2>
-                            <p style="margin: 0 0 1rem; color: #1c2340; line-height: 1.6;">Speak with our logistics team for quotes, routing, or time-critical shipments.</p>
 
                             <div class="contact-method">
-                                <span class="icon solid alt fa-home" aria-hidden="true"></span>
-                                <div>
-                                    <h3>Address</h3>
-                                    <p style="margin: 0;">Khalde, Lebanon</p>
-                                    <p style="margin: 0; color: #4a5568;">Coordinates: 33°47'16.1"N 35°28'46.7"E</p>
-                                </div>
+                                <span class="icon solid alt fa-envelope"></span>
+                                <h3>Email</h3>
+                                <a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a>
                             </div>
 
                             <div class="contact-method">
-                                <span class="icon solid alt fa-phone" aria-hidden="true"></span>
-                                <div>
-                                    <h3>Phone</h3>
-                                    <p style="margin: 0;"><a href="tel:+96170099978">+961 70 099978</a></p>
-                                    <p style="margin: 0; color: #4a5568;">24/7 support for urgent cargo</p>
-                                </div>
+                                <span class="icon solid alt fa-phone"></span>
+                                <h3>Phone Numbers</h3>
+                                <p><a href="tel:009613369652">00961 3 369652</a></p>
+                                <p><a href="tel:009613313265">00961 3 313265</a></p>
+                                <p><a href="tel:009613750945">00961 3 750945</a></p>
+                                <p><a href="tel:0096170099978" style="font-weight:700;">00961 70 099978</a></p>
                             </div>
 
                             <div class="contact-method">
-                                <span class="icon brands alt fa-whatsapp" aria-hidden="true"></span>
-                                <div>
-                                    <h3>WhatsApp</h3>
-                                    <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO." target="_blank" rel="noopener">Open chat</a>
-                                </div>
+                                <span class="icon brands alt fa-whatsapp"></span>
+                                <h3>WhatsApp</h3>
+                                <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
+                                   target="_blank">Chat on WhatsApp</a>
                             </div>
 
                             <div class="contact-method">
-                                <span class="icon solid alt fa-envelope" aria-hidden="true"></span>
-                                <div>
-                                    <h3>Email</h3>
-                                    <a href="mailto:info@almarwaco.com">info@almarwaco.com</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-method">
-                                <span class="icon solid alt fa-map-marker-alt" aria-hidden="true"></span>
-                                <div>
-                                    <h3>Google Maps</h3>
-                                    <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" target="_blank" rel="noopener">View location</a>
-                                </div>
-                            </div>
-
-                            <div class="contact-cta">
-                                <a class="button primary" href="tel:+96170099978">Call Now</a>
-                                <a class="button" href="mailto:info@almarwaco.com">Email Us</a>
-                                <a class="button" href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" target="_blank" rel="noopener">Open in Maps</a>
+                                <span class="icon solid alt fa-home"></span>
+                                <h3>Address</h3>
+                                <span>Khalde Highway, Lebanon</span>
                             </div>
                         </section>
 
-                        <!-- Map Embed -->
-                        <section class="map-wrapper" aria-label="AL MARWA CO location on Google Maps">
-                            <iframe
-                                title="AL MARWA CO on Google Maps"
-                                loading="lazy"
-                                allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade"
-                                src="https://www.google.com/maps?q=33.787806,35.479639&z=14&output=embed">
-                            </iframe>
+                        <!-- Contact Form -->
+                        <section>
+                            <h2>Send Us a Message</h2>
+
+                            <!-- WORKING CONTACT FORM -->
+                            <form action="https://formsubmit.co/info@al-marwaco.com" method="POST">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
+
+                                <div class="fields">
+                                    <div class="field half">
+                                        <label for="name">Full Name *</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+
+                                    <div class="field half">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="message">Message *</label>
+                                        <textarea id="message" name="message" rows="6" required></textarea>
+                                    </div>
+                                </div>
+
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send Message" class="primary"></li>
+                                    <li><input type="reset" value="Clear"></li>
+                                </ul>
+                            </form>
                         </section>
 
                     </div>
 
-                    <!-- Contact Form -->
-                    <section class="contact-card" style="margin-top: 2.5rem;">
-                        <h2>Send Us a Message</h2>
-                        <p style="margin: 0 0 1rem; color: #1c2340; line-height: 1.6;">Share your shipment details and we will respond quickly with routing and pricing.</p>
+                    <!-- Location Section -->
+                    <section style="margin-top: 3em;">
+                        <h2>Our Location</h2>
 
-                        <form action="https://formsubmit.co/info@almarwaco.com" method="POST">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
+                        <p>You can find us on Google Maps using the button below:</p>
 
-                            <div class="fields">
-                                <div class="field half">
-                                    <label for="name">Full Name *</label>
-                                    <input type="text" id="name" name="name" required>
-                                </div>
+                        <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" 
+                           target="_blank" 
+                           class="map-button">
+                           📍 Open in Google Maps
+                        </a>
 
-                                <div class="field half">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-
-                                <div class="field half">
-                                    <label for="phone">Phone *</label>
-                                    <input type="tel" id="phone" name="phone" required>
-                                </div>
-
-                                <div class="field half">
-                                    <label for="service">Service</label>
-                                    <input type="text" id="service" name="service" placeholder="Land, Air, or Sea">
-                                </div>
-
-                                <div class="field">
-                                    <label for="message">Message *</label>
-                                    <textarea id="message" name="message" rows="6" required></textarea>
-                                </div>
-                            </div>
-
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" class="primary"></li>
-                                <li><input type="reset" value="Clear"></li>
-                            </ul>
-                        </form>
                     </section>
 
                 </div>
@@ -309,8 +227,8 @@
 
     <!-- WhatsApp Floating Button (Unified with Home Page) -->
     <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
-       class="whatsapp-float" target="_blank" rel="noopener">
-        <img src="images/whatsapp.jpg" alt="WhatsApp chat with AL MARWA CO">
+       class="whatsapp-float" target="_blank">
+        <img src="images/whatsapp.jpg" alt="WhatsApp">
     </a>
 
     <!-- Scripts -->
