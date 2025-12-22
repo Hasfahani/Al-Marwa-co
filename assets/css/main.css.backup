@@ -154,7 +154,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #ffffff;
+		color: inherit;
 		text-decoration: none;
 	}
 
@@ -178,7 +178,6 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-		color: #ffffff;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -189,7 +188,7 @@ input, select, textarea {
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: #ffffff;
+			color: inherit;
 			border-bottom: 0;
 		}
 
@@ -4396,63 +4395,46 @@ a, a * {
     box-shadow: 0 12px 32px rgba(0, 120, 60, 0.45);
     opacity: 0.92;
 }
-/* PREMIUM CTA BUTTONS - ALWAYS VISIBLE & BRIGHT */
+/* PREMIUM CTA BUTTONS */
 .button.cta {
-    background: linear-gradient(135deg, #00a859, #007a3b) !important;
-    color: #ffffff !important;
-    border: none !important;
-    font-weight: 800 !important;
-    padding: 1.1em 2em !important;
-    font-size: 1.1rem !important;
-    border-radius: 12px !important;
-    box-shadow: 0 8px 22px rgba(0, 120, 60, 0.35) !important;
-    transition: all 0.28s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    letter-spacing: 0.4px !important;
-    line-height: 1.5 !important;
-    min-height: 3.5em !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    z-index: 100 !important;
-    position: relative !important;
+    background: linear-gradient(135deg, #00a859, #007a3b);
+    color: #fff !important;
+    border: none;
+    font-weight: 800;
+    padding: 1.1em 2em;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 120, 60, 0.35);
+    transition: all 0.28s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    min-height: 3.5em;
+    overflow: visible;
 }
 
 .button.cta:hover {
-    transform: translateY(-4px) scale(1.05) !important;
-    box-shadow: 0 12px 32px rgba(0, 120, 60, 0.45) !important;
-    opacity: 1 !important;
-    background: linear-gradient(135deg, #00c46a, #00a859) !important;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 120, 60, 0.45);
+    opacity: 0.92;
 }
 
-/* LAYOUT: TWO BUTTONS SIDE BY SIDE - ALWAYS VISIBLE */
+/* LAYOUT: TWO BUTTONS SIDE BY SIDE */
 .cta-container {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 18px !important;
-    margin-top: 1em !important;
-    overflow: visible !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 100 !important;
-    position: relative !important;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 1em;
+    overflow: visible;
 }
 
 @media (max-width: 768px) {
     .cta-container {
-        flex-direction: column !important;
-        gap: 12px !important;
-        overflow: visible !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-    
-    .button.cta {
-        width: 100% !important;
-        justify-content: center !important;
+        flex-direction: column;
+        gap: 12px;
+        overflow: visible;
     }
 }
 /* Fix Hero Title */
@@ -4690,368 +4672,6 @@ body,
         font-size: 2em !important; /* Optional: Make font smaller on mobile */
         line-height: 1.2 !important;
     }
-}
-
-/* ============================================================
-   PREMIUM PROFESSIONAL RESPONSIVE ENHANCEMENTS
-   Optimized for Phone Landscape & Desktop - High-End Quality
-   ============================================================ */
-
-/* === PHONE LANDSCAPE MODE (typically 568px - 896px width) === */
-@media screen and (orientation: landscape) and (max-height: 500px) {
-    /* Optimize banner height for landscape phones */
-    #banner {
-        min-height: 100vh !important;
-        padding: 3em 0 !important;
-    }
-    
-    #banner .inner {
-        padding: 1.5em 2em !important;
-    }
-    
-    #banner h1 {
-        font-size: 2.2em !important;
-        line-height: 1.3 !important;
-        margin-bottom: 0.3em !important;
-    }
-    
-    #banner p {
-        font-size: 1em !important;
-        line-height: 1.5 !important;
-        margin-bottom: 1em !important;
-    }
-    
-    /* Stack buttons horizontally in landscape */
-    .cta-container {
-        display: flex !important;
-        gap: 1em !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-    }
-    
-    .cta-container .button {
-        flex: 0 1 auto !important;
-        white-space: nowrap !important;
-    }
-}
-
-/* === ENHANCED DESKTOP & LARGE SCREENS (1281px+) === */
-@media screen and (min-width: 1281px) {
-    /* Premium max-width container for ultra-wide screens */
-    #main {
-        max-width: 1800px;
-        margin: 0 auto;
-    }
-    
-    /* Larger, more impactful typography */
-    h1 {
-        font-size: 3.5em !important;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-    }
-    
-    h2 {
-        font-size: 2.25em !important;
-    }
-    
-    h3 {
-        font-size: 1.65em !important;
-    }
-    
-    /* Enhanced paragraph readability */
-    p {
-        font-size: 1.15em;
-        line-height: 1.8;
-        max-width: 75ch; /* Optimal reading width */
-    }
-    
-    /* Premium button hover effects */
-    .button {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 15px rgba(155, 241, 255, 0.3);
-    }
-}
-
-/* === SMOOTH SCROLL & PREMIUM ANIMATIONS === */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Fade-in animation for sections */
-section {
-    animation: fadeInUp 0.8s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === IMPROVED TILES/GRID RESPONSIVENESS === */
-@media screen and (min-width: 737px) and (max-width: 1280px) {
-    .tiles article {
-        width: calc(50% - 1px) !important;
-        min-height: 22em;
-    }
-    
-    .tiles article .image img {
-        object-fit: cover;
-        height: 100%;
-    }
-}
-
-@media screen and (min-width: 1281px) {
-    .tiles article {
-        min-height: 26em;
-    }
-}
-
-/* === LANDSCAPE TABLET (768px - 1024px) === */
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    #banner .inner {
-        max-width: 90% !important;
-        padding: 2em !important;
-    }
-    
-    #banner h1 {
-        font-size: 2.8em !important;
-    }
-    
-    /* Better spacing for tiles */
-    .tiles article header.major {
-        padding: 2em 2em 0.5em 2em !important;
-    }
-}
-
-/* === PROFESSIONAL MICRO-INTERACTIONS === */
-a {
-    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
-                border-bottom-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* Smooth image hover effects */
-.tiles article .image img {
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-                filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tiles article:hover .image img {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-/* Enhanced focus states for accessibility */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid #9bf1ff !important;
-    outline-offset: 3px !important;
-}
-
-/* === IMPROVED READABILITY & SPACING === */
-@media screen and (min-width: 1025px) {
-    /* Better content width for readability */
-    .inner {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    
-    /* Enhanced section spacing */
-    section {
-        padding: 4em 0;
-    }
-    
-    section.major {
-        padding: 6em 0;
-    }
-}
-
-/* === PREMIUM HEADER BEHAVIOR === */
-#header {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Scrolled state for header (if using JS) */
-#header.scrolled {
-    background-color: rgba(36, 41, 67, 0.95) !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* === ENHANCED MOBILE MENU === */
-@media screen and (max-width: 980px) {
-    #menu {
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-    }
-    
-    #menu .links li {
-        border-top: 1px solid rgba(155, 241, 255, 0.1);
-    }
-    
-    #menu .links a {
-        padding: 1.2em 1.5em;
-        font-size: 1.1em;
-        transition: padding-left 0.3s ease;
-    }
-    
-    #menu .links a:hover {
-        padding-left: 2em;
-        background: rgba(155, 241, 255, 0.05);
-    }
-}
-
-/* === OPTIMIZE LANDSCAPE PHONES (below 900px wide) === */
-@media screen and (max-width: 900px) and (orientation: landscape) {
-    body, input, select, textarea {
-        font-size: 13pt !important;
-    }
-    
-    #banner {
-        padding: 2em 0 !important;
-    }
-    
-    #banner .inner {
-        padding: 1em 2em !important;
-    }
-    
-    .handwritten-logo {
-        max-width: 180px !important;
-        margin-bottom: 0.8em !important;
-    }
-}
-
-/* === PERFOMANCE: GPU ACCELERATION === */
-#banner,
-.tiles article,
-.button,
-#header,
-#menu {
-    will-change: transform;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-}
-
-/* === ULTRA-WIDE SCREENS (1920px+) === */
-@media screen and (min-width: 1920px) {
-    #wrapper {
-        max-width: 2200px;
-        margin: 0 auto;
-    }
-    
-    #banner h1 {
-        font-size: 4.5em !important;
-    }
-    
-    #banner p {
-        font-size: 1.4em;
-    }
-    
-    .button {
-        font-size: 1.1em;
-        padding: 0 3em;
-    }
-}
-
-/* === PRINT OPTIMIZATION === */
-@media print {
-    #header,
-    #menu,
-    .button {
-        display: none !important;
-    }
-    
-    #banner {
-        min-height: auto !important;
-        page-break-after: always;
-    }
-}
-
-/* ============================================================
-   GLOBAL BRIGHT TEXT ENHANCEMENT
-   Makes all text bright and readable across the website
-   ============================================================ */
-
-/* Ensure all text elements are bright white by default */
-body * {
-    color: #ffffff;
-}
-
-/* Banner content - extra bright with shadow for readability */
-#banner h1, 
-#banner h2, 
-#banner h3,
-#banner p, 
-#banner span,
-#banner strong {
-    color: #ffffff !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Section headings - bright white */
-section h1,
-section h2,
-section h3,
-section h4,
-section h5,
-section h6 {
-    color: #ffffff !important;
-}
-
-/* Paragraphs and general text */
-section p,
-section span,
-section li,
-section strong,
-section em {
-    color: #ffffff !important;
-}
-
-/* Links - bright cyan on hover */
-a {
-    color: #ffffff !important;
-}
-
-a:hover {
-    color: #9bf1ff !important;
-}
-
-/* Icon text bright */
-.icon {
-    color: #ffffff !important;
-}
-
-/* List items */
-ul li,
-ol li,
-dl dt,
-dl dd {
-    color: #ffffff !important;
-}
-
-/* Form labels and inputs */
-label {
-    color: #ffffff !important;
-}
-
-/* Table content */
-table th,
-table td {
-    color: #ffffff !important;
 }
 /* ============================================================
    GLOBAL FIX: HEADER/BANNER TRANSPARENCY & POSITION (ALL PAGES)
