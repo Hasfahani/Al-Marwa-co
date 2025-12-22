@@ -2766,11 +2766,17 @@ input, select, textarea {
 
 			.tiles article h3 {
 				font-size: 1.75em;
+				color: #ffffff;
 			}
 
 				.tiles article h3 a:hover {
 					color: inherit !important;
 				}
+
+			.tiles article p,
+			.tiles article span {
+				color: #ffffff;
+			}
 
 			.tiles article .link.primary {
 				border: 0;
@@ -2939,6 +2945,7 @@ input, select, textarea {
 			-ms-flex-direction: row;
 			flex-direction: row;
 			background-color: #2e3450;
+			color: #ffffff;
 		}
 
 			.spotlights > section > .image {
@@ -2987,6 +2994,15 @@ input, select, textarea {
 				align-items: center;
 				padding: 2em 3em 0.1em 3em ;
 				width: 70%;
+				color: #ffffff;
+			}
+
+			.spotlights > section > .content h1,
+			.spotlights > section > .content h2,
+			.spotlights > section > .content h3,
+			.spotlights > section > .content p,
+			.spotlights > section > .content span {
+				color: #ffffff;
 			}
 
 				.spotlights > section > .content > .inner {
@@ -3001,6 +3017,7 @@ input, select, textarea {
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
 				background-color: #333856;
+				color: #ffffff;
 			}
 
 				.spotlights > section:nth-child(2n) > .content {
@@ -3008,6 +3025,7 @@ input, select, textarea {
 					-webkit-align-items: -webkit-flex-end;
 					-ms-align-items: -ms-flex-end;
 					align-items: flex-end;
+					color: #ffffff;
 				}
 
 		@media screen and (max-width: 1680px) {
