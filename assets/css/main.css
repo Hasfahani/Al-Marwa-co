@@ -4450,12 +4450,14 @@ a, a * {
     display: flex !important;
     justify-content: center !important;
     gap: 18px !important;
-    margin-top: 1em !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 2em !important;
     overflow: visible !important;
     opacity: 1 !important;
     visibility: visible !important;
     z-index: 100 !important;
     position: relative !important;
+    padding-bottom: 2em !important;
 }
 
 @media (max-width: 768px) {
@@ -5025,9 +5027,9 @@ textarea:focus-visible {
 /* 2. Fixes height, image cropping, and spacing on the main banner */
 #banner {
     /* Use a slightly smaller min-height for less aggressive cropping */
-    min-height: 75vh !important; 
-    /* Add padding to ensure content has internal space */
-    padding: 6em 0 !important; 
+    min-height: 85vh !important; 
+    /* Add more padding to prevent top cutoff */
+    padding: 10em 0 6em 0 !important; 
     margin-top: 0 !important;
     
     /* Ensure the image position is still covering the whole area */
@@ -5042,6 +5044,19 @@ textarea:focus-visible {
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     max-width: 100% !important;
+    margin-top: 0 !important;
+}
+
+/* Style the globally word with special highlight */
+.globally-highlight {
+    color: #00e676 !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    padding: 0 0.3em !important;
+    background: rgba(0, 230, 118, 0.15) !important;
+    border-radius: 4px !important;
+    border: 2px solid #00e676 !important;
 }
 
 /* 3. Fixes spacing on all main page containers */
@@ -5061,10 +5076,10 @@ body,
     align-items: center !important;
 
     /* Ensure padding is minimal, letting #banner padding handle space */
-    padding: 0 1em !important; 
+    padding: 2em 1em 3em 1em !important; 
     box-sizing: border-box !important; 
-    max-height: 100% !important;
-    overflow: hidden; 
+    max-height: none !important;
+    overflow: visible !important;
 }
 
 /* 5. Targets secondary page banners (ensures no background color/spacing on other pages) */
