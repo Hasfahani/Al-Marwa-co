@@ -3402,7 +3402,8 @@ input, select, textarea {
         display: block !important;
         padding: 6em 1.5em 4em 1.5em !important;
         background-position: center !important;
-        background-size: cover !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
     }
 
     #banner .inner {
@@ -3425,9 +3426,10 @@ input, select, textarea {
 
 #banner {
     background-image: url("../images/hero.jpg");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #242943;
     height: 100vh;
 }
 
@@ -4477,9 +4479,10 @@ a, a * {
 /* FINAL FIX FOR BANNER */
 #banner {
     background-image: url("../images/hero.jpg") !important;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    background-color: #242943 !important;
     height: 100vh !important;
 }
 /* ============================================================
@@ -4496,9 +4499,10 @@ a, a * {
     background-image: url("../../images/hero.jpg") !important; 
     
     /* 3. Force the image to display and cover the area */
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-color: #242943 !important;
     
     /* 4. Ensure no blend modes or overlays are hiding it */
     background-blend-mode: normal !important;
@@ -4525,9 +4529,10 @@ a, a * {
     background-image: url("../../images/hero.jpg") !important; 
 
     /* 3. Make it cover the full screen */
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-color: #242943 !important;
     
     /* 4. Ensure height */
     min-height: 100vh;
@@ -4563,9 +4568,10 @@ a, a * {
     background: transparent !important;
     background-image: url("../../images/hero.jpg") !important; 
     
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-color: #242943 !important;
     min-height: 100vh;
 }
 
@@ -5030,9 +5036,11 @@ textarea:focus-visible {
     padding: 8em 0 !important; 
     margin-top: 0 !important;
     
-    /* Ensure the image position is still covering the whole area */
-    background-size: cover !important;
+    /* Show complete image without cropping */
+    background-size: contain !important;
     background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #242943 !important;
 }
 
 /* 3. Fixes spacing on all main page containers */
