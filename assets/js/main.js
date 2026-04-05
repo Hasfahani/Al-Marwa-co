@@ -216,7 +216,7 @@
 				$image = $this.find('.image'), $img = $image.find('img');
 
 			// Parallax.
-				$this._parallax(0.275);
+				$this._parallax(0);
 
 			// Image.
 				if ($image.length > 0) {
