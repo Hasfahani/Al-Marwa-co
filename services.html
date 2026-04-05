@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Services – AL MARWA CO</title>
+    <title>Services - AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -9,250 +9,557 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
-        body {
-            background: #f4fff8;
+        body.services-page {
+            background: #f3f8f5;
         }
 
-        h1, h2, h3 {
-            color: #007a3b;
-            font-weight: 800;
-        }
-
-        /* Service Card */
-        .service-card {
-            background: #ffffff;
-            padding: 1.8em;
-            border-radius: 14px;
-            margin-bottom: 2.5em;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-            border-top: 5px solid #007a3b;
-        }
-
-        .service-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 1em;
-            object-fit: cover;
-            max-height: 420px;
-        }
-
-        /* Gallery */
-        .gallery {
+        .services-hero {
+            background: linear-gradient(160deg, rgba(4, 40, 24, 0.78), rgba(6, 27, 18, 0.58)), url("images/pic05.jpg") center/cover no-repeat;
+            min-height: 62vh;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.2em;
-            margin-top: 1em;
+            align-items: flex-end;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .gallery img {
-            width: calc(33% - 1em);
-            border-radius: 8px;
-            object-fit: cover;
-            max-height: 260px;
+        .services-hero .inner {
+            padding-top: 7.5em;
+            padding-bottom: 3.8em;
         }
 
-        @media (max-width: 768px) {
-            .gallery img {
-                width: 100%;
-            }
-        }
-
-        /* Table of Contents */
-        .toc {
-            background: #ffffff;
-            border-left: 6px solid #007a3b;
-            padding: 1.4em;
-            margin-bottom: 2em;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-        }
-
-        .toc a {
-            color: #007a3b;
+        .services-eyebrow {
+            display: inline-block;
+            margin: 0 0 1em 0;
+            padding: 0.45em 0.8em;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: #edf7f1;
+            font-size: 0.78em;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
             font-weight: 700;
         }
 
-        /* Header Logo */
-        #header .logo img {
-            height: 45px;
-            margin-right: 8px;
+        .services-hero h1 {
+            color: #ffffff;
+            margin-bottom: 0.35em;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
         }
 
-        #header .brand-subtitle {
-            display: none;
+        .services-hero p {
+            color: #ecf7f2;
+            max-width: 56ch;
+            margin: 0;
+            font-size: 1.02rem;
+            line-height: 1.75;
+        }
+
+        .services-main {
+            padding-top: 3.2em;
+            padding-bottom: 2.6em;
+        }
+
+        .intro-panel {
+            background: #ffffff;
+            border: 1px solid #dce8e0;
+            border-radius: 14px;
+            box-shadow: 0 10px 28px rgba(7, 31, 20, 0.07);
+            padding: 1.45em 1.5em;
+            margin-bottom: 2.2em;
+        }
+
+        .intro-panel h2 {
+            margin-bottom: 0.35em;
+            color: #0b4d2b;
+            font-size: clamp(1.45rem, 2vw, 2rem);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .intro-panel p {
+            margin: 0;
+            color: #445851;
+            line-height: 1.75;
+        }
+
+        .service-nav {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8em;
+            margin: 1.2em 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-nav a {
+            display: block;
+            text-align: center;
+            padding: 0.8em 0.7em;
+            border-radius: 10px;
+            border: 1px solid #cfe0d5;
+            background: #f8fcfa;
+            color: #0f5f36;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .service-nav a:hover {
+            background: #eaf5ef;
+            border-color: #9ec7af;
+        }
+
+        .service-stack {
+            display: grid;
+            gap: 1.35em;
+        }
+
+        .service-block {
+            background: #ffffff;
+            border: 1px solid #dce8e1;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(8, 35, 23, 0.08);
+            padding: 1.35em;
+        }
+
+        .service-head {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9em;
+            margin-bottom: 0.9em;
+        }
+
+        .service-icon {
+            width: 2.45em;
+            height: 2.45em;
+            border-radius: 0.6em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #e8f5ed;
+            color: #0d6e3d;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .service-head h2 {
+            margin: 0;
+            color: #0b4d2b;
+            line-height: 1.2;
+            font-weight: 800;
+            font-size: clamp(1.2rem, 1.7vw, 1.55rem);
+        }
+
+        .service-support {
+            margin: 0.32em 0 0;
+            color: #5a6f67;
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 1.2em;
+            align-items: start;
+        }
+
+        .service-media img,
+        .service-media video {
+            width: 100%;
+            border-radius: 11px;
+            display: block;
+            border: 1px solid #d8e5dd;
+        }
+
+        .service-media img {
+            object-fit: cover;
+            max-height: 320px;
+        }
+
+        .service-body p {
+            margin: 0 0 0.9em;
+            color: #334942;
+            line-height: 1.74;
+        }
+
+        .service-body h3 {
+            margin: 0.4em 0 0.45em;
+            color: #0f5f36;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            font-weight: 700;
+        }
+
+        .service-points {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.5em;
+        }
+
+        .service-points li {
+            padding: 0.55em 0.7em;
+            border-radius: 8px;
+            background: #f5faf7;
+            border: 1px solid #e2efe7;
+            color: #274138;
+            font-size: 0.93rem;
+            line-height: 1.45;
+        }
+
+        .service-gallery {
+            margin-top: 1em;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.65em;
+        }
+
+        .service-gallery img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #d9e7df;
+        }
+
+        .services-cta {
+            margin-top: 2em;
+            background: linear-gradient(155deg, #f4fbf7 0%, #edf7f2 100%);
+            border: 1px solid #cde1d5;
+            border-radius: 14px;
+            box-shadow: 0 14px 34px rgba(6, 33, 21, 0.11);
+            padding: 2em;
+        }
+
+        .services-cta h2 {
+            margin: 0 0 0.35em;
+            color: #0b4f2c;
+            line-height: 1.2;
+            font-size: clamp(1.35rem, 2vw, 2rem);
+        }
+
+        .services-cta p {
+            margin: 0 0 1.2em;
+            color: #3f564d;
+            max-width: 62ch;
+        }
+
+        .services-cta .actions {
+            margin: 0;
+            gap: 0.6em;
+            flex-wrap: wrap;
+        }
+
+        .services-cta .button {
+            border-radius: 10px;
+            line-height: 1;
+            height: auto;
+            padding: 1.05em 1.3em;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+
+        .services-cta .button:not(.primary) {
+            background: #ffffff;
+            border: 1px solid #bed9ca;
+            color: #0f6137;
+        }
+
+        @media screen and (max-width: 1100px) {
+            .service-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .service-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 736px) {
+            .services-hero {
+                min-height: 54vh;
+            }
+
+            .services-hero .inner {
+                padding-top: 5.8em;
+                padding-bottom: 2.8em;
+            }
+
+            .services-main {
+                padding-top: 2.2em;
+            }
+
+            .intro-panel,
+            .service-block,
+            .services-cta {
+                padding: 1.15em;
+            }
+
+            .service-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .service-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .services-cta .actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .services-cta .button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 
-<body class="is-preload">
+<body class="is-preload services-page">
 <div id="wrapper">
 
-    <!-- Header -->
     <header id="header">
         <a href="index.html" class="logo">
             <img src="images/logo.jpg" alt="AL MARWA CO Logo">
-            
         </a>
         <nav><a href="#menu">Menu</a></nav>
     </header>
 
-    <!-- Menu -->
-    <nav id="menu">
+    <nav id="menu" aria-label="Main navigation">
         <ul class="links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html" aria-current="page">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Banner -->
-    <section id="banner" class="major" style="background:url('images/pic05.jpg') center/cover no-repeat;">
+    <section class="services-hero">
         <div class="inner">
-            <header class="major">
-                <h1>Our Services</h1>
-            </header>
-            <p style="color:white;">Professional land, sea, and air logistics — powered by 25+ years of experience.</p>
+            <p class="services-eyebrow">Services</p>
+            <h1>Freight and Logistics Services Built for Operational Clarity</h1>
+            <p>From road transport to ocean and air cargo, we support your shipment cycle with practical planning, execution discipline, and responsive communication.</p>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
-    <div id="main">
+    <div id="main" class="services-main">
         <section class="inner">
 
-            <!-- TOC -->
-            <div class="toc">
-                <h3>Jump to a Service:</h3>
-                <ul>
-                    <li><a href="#land-freight">• Land Freight (18m Trailers)</a></li>
-                    <li><a href="#heavy-lifting">• Heavy Lifting</a></li>
-                    <li><a href="#maritime-shipping">• Maritime Shipping</a></li>
-                    <li><a href="#air-cargo">• Air Cargo</a></li>
+            <div class="intro-panel">
+                <h2>Our Service Portfolio</h2>
+                <p>Explore each service area below. Every section includes core capabilities and short support notes to help you quickly identify the right fit for your cargo.</p>
+                <ul class="service-nav">
+                    <li><a href="#land-freight">Land Freight</a></li>
+                    <li><a href="#heavy-lifting">Heavy Lifting</a></li>
+                    <li><a href="#maritime-shipping">Maritime Shipping</a></li>
+                    <li><a href="#air-cargo">Air Cargo</a></li>
                 </ul>
             </div>
 
-            <!-- LAND FREIGHT -->
-            <div id="land-freight" class="service-card">
-                <img src="images/pic02.jpg" alt="Land Freight" loading="lazy" decoding="async">
-                <h2>Land Freight</h2>
+            <div class="service-stack">
 
-                <p>
-                    AL MARWA CO operates a complete regional land transport network across Lebanon
-                    and the Middle East. We handle all shipment sizes with FTL & LTL options.
-                </p>
+                <article id="land-freight" class="service-block">
+                    <div class="service-head">
+                        <span class="service-icon icon solid fa-truck"></span>
+                        <div>
+                            <h2>Land Freight</h2>
+                            <p class="service-support">Structured regional and cross-border road transport for routine and time-sensitive shipments.</p>
+                        </div>
+                    </div>
 
-                <p style="font-weight:800;color:#007a3b;">
-                    ⭐ One of the only companies in Lebanon operating
-                    <span style="color:#004d26;">18-meter long trailers</span>.
-                </p>
+                    <div class="service-layout">
+                        <div class="service-media">
+                            <img src="images/pic02.jpg" alt="Land Freight" loading="lazy" decoding="async">
+                            <div class="service-gallery">
+                                <img src="images/pic01.jpg" alt="Land transport operation" loading="lazy" decoding="async">
+                                <img src="images/pic11.jpg" alt="Trailer logistics" loading="lazy" decoding="async">
+                                <img src="images/pic12.jpg" alt="Road freight handling" loading="lazy" decoding="async">
+                            </div>
+                        </div>
 
-                <ul>
-                    <li>FTL & LTL solutions</li>
-                    <li>18-meter long trailers</li>
-                    <li>Bulk & palletized cargo</li>
-                    <li>Door-to-door delivery</li>
-                    <li>Cross-border transport</li>
-                </ul>
+                        <div class="service-body">
+                            <p>AL MARWA CO manages land transport operations across Lebanon and the Middle East with flexible planning for both full-truckload and partial-truckload cargo.</p>
+                            <h3>Core Capabilities</h3>
+                            <ul class="service-points">
+                                <li>FTL and LTL transport solutions</li>
+                                <li>18-meter trailer operations</li>
+                                <li>Bulk and palletized freight</li>
+                                <li>Door-to-door coordination</li>
+                                <li>Cross-border movement support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-                <h3>Photos</h3>
-                <div class="gallery">
-                    <img src="images/pic01.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic11.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic12.jpg" alt="" loading="lazy" decoding="async">
-                </div>
+                <article id="heavy-lifting" class="service-block">
+                    <div class="service-head">
+                        <span class="service-icon icon solid fa-dolly"></span>
+                        <div>
+                            <h2>Heavy Lifting</h2>
+                            <p class="service-support">Controlled handling for oversized and industrial cargo requiring specialized equipment and rigging.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-layout">
+                        <div class="service-media">
+                            <img src="images/pic13.jpg" alt="Heavy Lifting" loading="lazy" decoding="async">
+                            <div class="service-gallery">
+                                <img src="images/pic13.jpg" alt="Heavy machinery loading" loading="lazy" decoding="async">
+                                <img src="images/pic14.jpg" alt="Heavy cargo operation" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <div class="service-body">
+                            <p>Our team handles industrial machinery and oversized cargo with the technical planning needed for lifting, loading, and final placement.</p>
+                            <h3>Core Capabilities</h3>
+                            <ul class="service-points">
+                                <li>Cranes and rigging team support</li>
+                                <li>Industrial equipment transportation</li>
+                                <li>Low-bed trailer deployment</li>
+                                <li>On-site loading and unloading coordination</li>
+                            </ul>
+                            <h3>Service Footage</h3>
+                            <div class="service-media">
+                                <video src="videos/vid01.mp4" controls preload="metadata"></video>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="maritime-shipping" class="service-block">
+                    <div class="service-head">
+                        <span class="service-icon icon solid fa-ship"></span>
+                        <div>
+                            <h2>Maritime Shipping</h2>
+                            <p class="service-support">Ocean freight support for import and export flows with carrier coordination and document control.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-layout">
+                        <div class="service-media">
+                            <img src="images/pic05.jpg" alt="Maritime Shipping" loading="lazy" decoding="async">
+                            <div class="service-gallery">
+                                <img src="images/pic03.jpg" alt="Port operation" loading="lazy" decoding="async">
+                                <img src="images/pic04.jpg" alt="Container shipment" loading="lazy" decoding="async">
+                                <img src="images/pic15.jpg" alt="Maritime cargo handling" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <div class="service-body">
+                            <p>AL MARWA CO supports global ocean freight routes and works with major carriers to deliver practical options for commercial cargo movement.</p>
+                            <h3>Core Capabilities</h3>
+                            <ul class="service-points">
+                                <li>FCL and LCL shipping options</li>
+                                <li>Carrier and schedule coordination</li>
+                                <li>Port handling and documentation support</li>
+                                <li>Special cargo planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="air-cargo" class="service-block">
+                    <div class="service-head">
+                        <span class="service-icon icon solid fa-plane"></span>
+                        <div>
+                            <h2>Air Cargo</h2>
+                            <p class="service-support">Fast and secure freight movement for urgent cargo and schedule-sensitive deliveries.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-layout">
+                        <div class="service-media">
+                            <img src="images/pic07.jpg" alt="Air Cargo" loading="lazy" decoding="async">
+                            <div class="service-gallery">
+                                <img src="images/pic06.jpg" alt="Air logistics" loading="lazy" decoding="async">
+                                <img src="images/pic07.jpg" alt="Air freight handling" loading="lazy" decoding="async">
+                                <img src="images/pic16.jpg" alt="Cargo preparation" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <div class="service-body">
+                            <p>Our air freight service is designed for shipment speed, reliability, and controlled handling when delivery timing is critical.</p>
+                            <h3>Core Capabilities</h3>
+                            <ul class="service-points">
+                                <li>Express and standard air services</li>
+                                <li>High-value cargo handling support</li>
+                                <li>Airport-to-airport and door-to-door options</li>
+                                <li>Operational follow-up throughout transit</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
             </div>
 
-            <!-- HEAVY LIFTING -->
-            <div id="heavy-lifting" class="service-card">
-                <img src="images/pic13.jpg" alt="Heavy Lifting" loading="lazy" decoding="async">
-                <h2>Heavy Lifting</h2>
-
-                <p>
-                    Our heavy lifting division manages industrial machinery, large equipment, and
-                    oversized cargo using cranes, low-bed trailers, and expert rigging teams.
-                </p>
-
-                <ul>
-                    <li>Cranes & rigging specialists</li>
-                    <li>Industrial machinery transport</li>
-                    <li>Low-bed trailers</li>
-                    <li>On-site loading & placement</li>
+            <section class="services-cta">
+                <h2>Need Help Choosing the Right Service?</h2>
+                <p>Share your cargo type, route, and timeline. Our team will guide you to the most suitable logistics option and coordinate execution from start to finish.</p>
+                <ul class="actions">
+                    <li><a href="contact.html" class="button primary">Request Consultation</a></li>
+                    <li><a href="index.html" class="button">Back to Home</a></li>
                 </ul>
-
-                <h3>Photos</h3>
-                <div class="gallery">
-                    <img src="images/pic13.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic14.jpg" alt="" loading="lazy" decoding="async">
-                </div>
-
-                <h3>Footage</h3>
-                <video src="videos/vid01.mp4" controls preload="metadata" style="width:100%;max-width:780px;border-radius:10px;"></video>
-            </div>
-
-            <!-- MARITIME SHIPPING -->
-            <div id="maritime-shipping" class="service-card">
-                <img src="images/pic05.jpg" alt="Maritime Shipping" loading="lazy" decoding="async">
-                <h2>Maritime Shipping</h2>
-
-                <p>
-                    AL MARWA CO provides global ocean freight with top carriers including
-                    Maersk, CMA CGM, Evergreen, and ARKAS.
-                </p>
-
-                <ul>
-                    <li>FCL & LCL shipments</li>
-                    <li>Competitive global rates</li>
-                    <li>Port handling and documentation</li>
-                    <li>Special cargo coordination</li>
-                </ul>
-
-                <h3>Photos</h3>
-                <div class="gallery">
-                    <img src="images/pic03.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic04.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic15.jpg" alt="" loading="lazy" decoding="async">
-                </div>
-            </div>
-
-            <!-- AIR CARGO -->
-            <div id="air-cargo" class="service-card">
-                <img src="images/pic07.jpg" alt="Air Cargo" loading="lazy" decoding="async">
-                <h2>Air Cargo</h2>
-
-                <p>
-                    Fast & secure air freight solutions for urgent shipments with worldwide coverage.
-                </p>
-
-                <ul>
-                    <li>Express & regular services</li>
-                    <li>High-value cargo handling</li>
-                    <li>Airport-to-airport or door-to-door</li>
-                    <li>Real-time tracking</li>
-                </ul>
-
-                <h3>Photos</h3>
-                <div class="gallery">
-                    <img src="images/pic06.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic07.jpg" alt="" loading="lazy" decoding="async">
-                    <img src="images/pic16.jpg" alt="" loading="lazy" decoding="async">
-                </div>
-            </div>
+            </section>
 
         </section>
     </div>
 
-    <!-- FOOTER -->
     <footer id="footer">
         <div class="inner">
-            <ul class="copyright">
-                <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-            </ul>
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <h3>AL MARWA CO</h3>
+                    <p>Professional freight forwarding and logistics coordination since 1997. Land, sea, and air cargo services across the region and beyond.</p>
+                </div>
+                <nav class="footer-col" aria-label="Site links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-col" aria-label="Services links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#land-freight">Land Freight</a></li>
+                        <li><a href="services.html#heavy-lifting">Heavy Lifting</a></li>
+                        <li><a href="services.html#maritime-shipping">Maritime Shipping</a></li>
+                        <li><a href="services.html#air-cargo">Air Cargo</a></li>
+                    </ul>
+                </nav>
+                <address class="footer-col footer-contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@al-marwaco.com"><span class="icon solid fa-envelope" aria-hidden="true"></span>info@al-marwaco.com</a></li>
+                        <li><a href="tel:+96170099978"><span class="icon solid fa-phone" aria-hidden="true"></span>+961 70 099978</a></li>
+                        <li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>Khalde Highway, Lebanon</li>
+                    </ul>
+                </address>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2025 AL MARWA CO. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
 </div>
 
-<!-- Scripts -->
+<a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with AL MARWA CO on WhatsApp">
+    <img src="images/whatsapp.jpg" alt="WhatsApp" loading="lazy" decoding="async">
+</a>
+
 <script src="assets/js/jquery.min.js" defer></script>
 <script src="assets/js/jquery.scrolly.min.js" defer></script>
 <script src="assets/js/jquery.scrollex.min.js" defer></script>
