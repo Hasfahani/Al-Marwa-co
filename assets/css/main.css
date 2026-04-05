@@ -1131,9 +1131,11 @@ body.is-menu-visible #menu .inner {
 	text-decoration: none;
 }
 
-.whatsapp-float .icon {
+
+.whatsapp-float .fab {
 	font-size: 1.65rem;
 	line-height: 1;
+	font-style: normal;
 }
 
 .whatsapp-float:hover {
@@ -1149,8 +1151,61 @@ body.is-menu-visible #menu .inner {
 		right: 14px;
 		bottom: 14px;
 	}
-	.whatsapp-float .icon {
+	.whatsapp-float .fab {
 		font-size: 1.5rem;
+	}
+}
+
+.home-page .partner-logos {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 0.9em;
+	align-items: center;
+}
+
+.home-page .partner-logos a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.6em;
+	border: 1px solid #dce8e1;
+	border-radius: 10px;
+	background: #ffffff;
+	min-height: 72px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-page .partner-logos a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 8px 18px rgba(8, 36, 24, 0.09);
+}
+
+.home-page .partner-logos img {
+	width: 100%;
+	max-width: 110px;
+	max-height: 34px;
+	object-fit: contain;
+	display: block;
+}
+
+@media screen and (max-width: 1080px) {
+	.home-page .partner-logos {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.home-page .partner-logos {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.7em;
+	}
+	.home-page .partner-logos a {
+		min-height: 64px;
+		padding: 0.5em;
+	}
+	.home-page .partner-logos img {
+		max-width: 92px;
+		max-height: 30px;
 	}
 }
 
