@@ -1,268 +1,486 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>About Us – AL MARWA CO</title>
+    <title>About Us - AL MARWA CO | Logistics &amp; Freight Forwarding Since 1997</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Learn about AL MARWA CO, a trusted freight forwarding and logistics company operating since 1997 across the Middle East, Europe, and Asia." />
+    <meta property="og:title" content="About AL MARWA CO - Logistics Since 1997" />
+    <meta property="og:description" content="Professional freight forwarding and shipping coordination since 1997. Land, sea, and air cargo services across the region and beyond." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/pic08.jpg" />
+    <link rel="canonical" href="https://al-marwaco.com/about.html" />
 
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
-        body {
-            background: #f4fff8;
+        body.about-page {
+            background: #f3f8f5;
         }
 
-        h1, h2, h3, h4 {
-            color: #007a3b;
-            font-weight: 800;
+        /* Hero */
+        .about-hero {
+            background: linear-gradient(155deg, rgba(5, 42, 25, 0.80), rgba(6, 28, 18, 0.60)), url("images/pic08.jpg") center/cover no-repeat;
+            min-height: 52vh;
+            display: flex;
+            align-items: flex-end;
         }
 
-        p, li {
-            color: #34495e;
+        .about-hero .inner {
+            padding-top: 7.2em;
+            padding-bottom: 3.2em;
+        }
+
+        .about-eyebrow {
+            display: inline-block;
+            margin: 0 0 0.95em 0;
+            padding: 0.45em 0.82em;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            color: #edf7f2;
+            font-size: 0.78em;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .about-hero h1 {
+            margin: 0 0 0.35em;
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+
+        .about-hero p {
+            margin: 0;
+            color: #eaf6f0;
+            max-width: 56ch;
             line-height: 1.75;
         }
 
-        /* About section card */
-        .about-card {
+        /* Main layout */
+        .about-main {
+            background: #f3f8f5;
+        }
+
+        .about-main > .inner {
+            padding-top: 3em;
+            padding-bottom: 3em;
+        }
+
+        /* Shared panel */
+        .about-section {
             background: #ffffff;
-            padding: 2.2em;
-            border-radius: 12px;
-            margin-bottom: 3em;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
-            border-top: 5px solid #007a3b;
+            border: 1px solid #dce8e1;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(8, 36, 24, 0.07);
+            padding: 2.4em;
+            margin-bottom: 1.5em;
         }
 
-        /* Image styling */
-        .about-image img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            max-height: 420px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
-            transition: 0.3s ease;
+        .about-section h2 {
+            color: #0b4d2b;
+            font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 0.75em;
+            letter-spacing: -0.01em;
         }
 
-        .about-image img:hover {
-            transform: scale(1.01);
+        .about-section p {
+            color: #304740;
+            line-height: 1.75;
+            margin-bottom: 1em;
         }
 
-        /* Stats section */
-        .stats-container {
-            display: flex;
-            gap: 2em;
-            flex-wrap: wrap;
-            margin-top: 2em;
+        .about-section p:last-child {
+            margin-bottom: 0;
         }
 
-        .stat-box {
-            flex: 1;
-            min-width: 160px;
-            background: #ffffff;
-            padding: 1.3em;
-            border-radius: 8px;
-            border-left: 6px solid #007a3b;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        /* Intro split */
+        .about-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.4em;
+            align-items: start;
         }
 
-        .stat-box h3 {
+        .about-intro-grid figure {
             margin: 0;
-            color: #007a3b;
-            font-size: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .stat-box p {
-            margin-top: 0.3em;
-            font-weight: 600;
-            color: #5d6d74;
+        .about-intro-grid figure img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
         }
 
-        @media (max-width: 760px) {
-            .stats-container {
-                flex-direction: column;
+        .about-intro-grid figure img:hover {
+            transform: scale(1.02);
+        }
+
+        /* MVV grid */
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25em;
+            margin-bottom: 1.5em;
+        }
+
+        .mvv-card {
+            background: #ffffff;
+            border: 1px solid #dce8e1;
+            border-radius: 12px;
+            padding: 1.5em;
+            box-shadow: 0 6px 18px rgba(8, 36, 24, 0.06);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 34px rgba(8, 36, 24, 0.11);
+        }
+
+        .mvv-card .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.4em;
+            height: 2.4em;
+            border-radius: 0.6em;
+            background: #e4f2eb;
+            color: #0f6037;
+            font-size: 1rem;
+            margin-bottom: 0.85em;
+        }
+
+        .mvv-card h3 {
+            color: #0b4d2b;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.6em;
+        }
+
+        .mvv-card p,
+        .mvv-card ul {
+            color: #304740;
+            font-size: 0.94rem;
+            line-height: 1.72;
+            margin: 0;
+        }
+
+        .mvv-card ul {
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.4em;
+        }
+
+        .mvv-card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55em;
+            padding: 0;
+        }
+
+        .mvv-card ul li::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #0f6037;
+            flex-shrink: 0;
+            margin-top: 0.58em;
+        }
+
+        /* Capabilities */
+        .capability-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.65em;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .capability-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+            padding: 0.72em 0.95em;
+            background: #f6fbf8;
+            border: 1px solid #d8e8e0;
+            border-radius: 8px;
+            color: #243630;
+            font-size: 0.94rem;
+            font-weight: 500;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .capability-list li:hover {
+            border-color: #a8ccba;
+            box-shadow: 0 3px 12px rgba(8, 50, 32, 0.07);
+        }
+
+        .capability-list li .icon {
+            color: #0f6037;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        /* CTA panel */
+        .about-cta {
+            background: linear-gradient(150deg, #f2fbf6 0%, #e9f6ef 100%) !important;
+            border-color: #c8dfd2 !important;
+            text-align: center;
+        }
+
+        .about-cta h2 {
+            margin-bottom: 0.5em;
+        }
+
+        .about-cta p {
+            max-width: 56ch;
+            margin: 0 auto 1.3em;
+        }
+
+        .about-cta .actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.65em;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .about-cta .actions li {
+            padding: 0;
+        }
+
+        .about-cta .button {
+            border-radius: 9px;
+            line-height: 1;
+            height: auto;
+            padding: 1em 1.45em;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .about-cta .button:not(.primary) {
+            background: #ffffff;
+            border: 1px solid #b8d5c5;
+            color: #0f5f36;
+        }
+
+        @media screen and (max-width: 980px) {
+            .about-intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-intro-grid figure {
+                order: -1;
+            }
+
+            .about-intro-grid figure img {
+                height: 260px;
+            }
+
+            .mvv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .capability-list {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Header Logo */
-        #header .logo img {
-            height: 45px;
-            margin-right: 8px;
-        }
+        @media screen and (max-width: 736px) {
+            .about-hero {
+                min-height: 44vh;
+            }
 
-        #header .brand-subtitle {
-            display: none;
+            .about-hero .inner {
+                padding-top: 5.8em;
+                padding-bottom: 2.6em;
+            }
+
+            .about-main > .inner {
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+
+            .about-section {
+                padding: 1.5em;
+            }
         }
     </style>
 </head>
 
-<body class="is-preload">
-<div id="wrapper">
+<body class="is-preload about-page">
+    <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header">
-        <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="AL MARWA CO Logo">
-            <span class="brand-text">
-                
-            </span>
-        </a>
-        <nav><a href="#menu">Menu</a></nav>
-    </header>
+        <header id="header">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+            </a>
+            <nav><a href="#menu">Menu</a></nav>
+        </header>
 
-    <!-- Menu -->
-    <nav id="menu">
-        <ul class="links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        <nav id="menu" aria-label="Main navigation">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" aria-current="page">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- Banner -->
-    <section id="banner" class="major" style="background:url('images/pic05.jpg') center/cover no-repeat;">
-        <div class="inner">
-            <header class="major">
-                <h1>About AL MARWA CO</h1>
-            </header>
-            <p style="color:white;">Your trusted logistics partner since 1997</p>
-        </div>
-    </section>
+        <section class="about-hero" aria-labelledby="about-hero-title">
+            <div class="inner">
+                <p class="about-eyebrow">About AL MARWA CO</p>
+                <h1 id="about-hero-title">Logistics That Moves With You</h1>
+                <p>Building reliable freight partnerships across the region since 1997.</p>
+            </div>
+        </section>
 
-    <!-- Main -->
-    <div id="main" class="alt">
-        <section class="inner">
+        <main id="main" class="about-main">
+            <div class="inner">
 
-            <!-- Company Intro -->
-            <div class="about-card">
-                <div class="row gtr-200">
-                    <div class="col-6 col-12-medium about-image">
-                        <img src="images/pic08.jpg" alt="AL MARWA CO Operations" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="col-6 col-12-medium">
-                        <h2>Our Company</h2>
-
-                        <p>
-                            Founded in 1997, AL MARWA CO has grown into one of the region’s trusted names in
-                            forwarding, shipping, and trading. With more than 25 years of hands-on logistics
-                            experience, we support businesses across Lebanon, the Middle East, Asia, and Europe.
-                        </p>
-
-                        <p>
-                            Our philosophy is simple: <strong>We listen. We adapt. We deliver.</strong>
-                            Through personalized logistics solutions, transparent communication, and a commitment
-                            to reliability, we have built long-term partnerships with clients worldwide.
-                        </p>
-
-                        <div class="stats-container">
-                            <div class="stat-box">
-                                <h3>25+</h3>
-                                <p>Years of Experience</p>
-                            </div>
-                            <div class="stat-box">
-                                <h3>Global</h3>
-                                <p>Asia & Europe Network</p>
-                            </div>
-                            <div class="stat-box">
-                                <h3>Trusted</h3>
-                                <p>Industry Reputation</p>
-                            </div>
+                <!-- Company Intro -->
+                <section class="about-section" aria-labelledby="about-intro-title">
+                    <div class="about-intro-grid">
+                        <div>
+                            <h2 id="about-intro-title">Our Company</h2>
+                            <p>Founded in 1997, AL MARWA CO has built a steady record in freight forwarding, shipping, and logistics coordination across the Middle East, Europe, and Asia.</p>
+                            <p>With over 25 years of hands-on operations experience, our team delivers professional planning, clear communication, and practical execution for clients who depend on reliable freight partnerships.</p>
+                            <p>Our approach is direct: <strong>We listen to the requirement, plan the right route, and follow through to delivery.</strong></p>
                         </div>
-
+                        <figure>
+                            <img src="images/pic08.jpg" alt="AL MARWA CO freight operations and logistics coordination" loading="lazy" decoding="async" />
+                        </figure>
                     </div>
+                </section>
+
+                <!-- Mission / Vision / Values -->
+                <div class="mvv-grid">
+                    <article class="mvv-card">
+                        <span class="icon solid fa-bullseye" aria-hidden="true"></span>
+                        <h3>Our Mission</h3>
+                        <p>To deliver high-quality logistics coordination that meets client needs through integrity, operational discipline, and consistent follow-through on every shipment.</p>
+                    </article>
+
+                    <article class="mvv-card">
+                        <span class="icon solid fa-eye" aria-hidden="true"></span>
+                        <h3>Our Vision</h3>
+                        <p>To be the most dependable logistics partner for businesses that need consistent, practical freight solutions across multiple transport modes and regions.</p>
+                    </article>
+
+                    <article class="mvv-card">
+                        <span class="icon solid fa-award" aria-hidden="true"></span>
+                        <h3>Core Values</h3>
+                        <ul>
+                            <li>Reliability and on-time performance</li>
+                            <li>Transparent, clear communication</li>
+                            <li>Expertise across all freight modes</li>
+                            <li>Client-focused logistics planning</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!-- Capabilities -->
+                <section class="about-section" aria-labelledby="about-capabilities-title">
+                    <h2 id="about-capabilities-title">Our Capabilities</h2>
+                    <ul class="capability-list">
+                        <li><span class="icon solid fa-ship" aria-hidden="true"></span>Ocean Freight &mdash; FCL &amp; LCL</li>
+                        <li><span class="icon solid fa-plane" aria-hidden="true"></span>Air Freight</li>
+                        <li><span class="icon solid fa-truck" aria-hidden="true"></span>Land Freight &mdash; FTL &amp; LTL</li>
+                        <li><span class="icon solid fa-dolly" aria-hidden="true"></span>Heavy Lifting &amp; Project Cargo</li>
+                        <li><span class="icon solid fa-file-alt" aria-hidden="true"></span>Customs Clearance &amp; Documentation</li>
+                        <li><span class="icon solid fa-warehouse" aria-hidden="true"></span>Warehousing &amp; Storage</li>
+                        <li><span class="icon solid fa-shield-alt" aria-hidden="true"></span>Cargo Insurance &amp; Risk Management</li>
+                        <li><span class="icon solid fa-home" aria-hidden="true"></span>Door-to-Door Logistics</li>
+                    </ul>
+                </section>
+
+                <!-- CTA -->
+                <section class="about-section about-cta" aria-labelledby="about-cta-title">
+                    <h2 id="about-cta-title">Ready to Work With Us?</h2>
+                    <p>Share your shipment requirements and our team will respond with a practical plan for your route, cargo type, and timeline.</p>
+                    <ul class="actions">
+                        <li><a href="contact.html" class="button primary">Contact Our Team</a></li>
+                        <li><a href="services.html" class="button">View Our Services</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <h3>AL MARWA CO</h3>
+                        <p>Professional freight forwarding and logistics coordination since 1997. Land, sea, and air cargo services across the region and beyond.</p>
+                    </div>
+                    <nav class="footer-col" aria-label="Site links">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services links">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html#land-freight">Land Freight</a></li>
+                            <li><a href="services.html#heavy-lifting">Heavy Lifting</a></li>
+                            <li><a href="services.html#maritime-shipping">Maritime Shipping</a></li>
+                            <li><a href="services.html#air-cargo">Air Cargo</a></li>
+                        </ul>
+                    </nav>
+                    <address class="footer-col footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="mailto:info@al-marwaco.com"><span class="icon solid fa-envelope" aria-hidden="true"></span>info@al-marwaco.com</a></li>
+                            <li><a href="tel:+96170099978"><span class="icon solid fa-phone" aria-hidden="true"></span>+961 70 099978</a></li>
+                            <li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>Khalde Highway, Lebanon</li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2025 AL MARWA CO. All rights reserved.</p>
                 </div>
             </div>
+        </footer>
 
-            <!-- Mission -->
-            <div class="about-card">
-                <h2>Our Mission</h2>
-                <p>
-                    To deliver high-quality logistics solutions that exceed customer expectations through integrity,
-                    efficiency, and operational excellence.
-                </p>
-            </div>
-
-            <!-- Vision -->
-            <div class="about-card">
-                <h2>Our Vision</h2>
-                <p>
-                    To be the most dependable and innovative logistics partner for businesses seeking global transport
-                    solutions.
-                </p>
-            </div>
-
-            <!-- Values -->
-            <div class="about-card">
-                <h2>Core Values</h2>
-
-                <ul>
-                    <li><strong>Reliability:</strong> Consistent, on-time performance.</li>
-                    <li><strong>Transparency:</strong> Clear communication at every step.</li>
-                    <li><strong>Expertise:</strong> Skilled logistics & customs professionals.</li>
-                    <li><strong>Customer Focus:</strong> Solutions tailored to each client.</li>
-                </ul>
-            </div>
-
-            <!-- Why Choose Us -->
-            <div class="about-card">
-                <h2>Why Choose AL MARWA CO?</h2>
-                <ul>
-                    <li><strong>Global Network:</strong> Partnerships with world-leading carriers.</li>
-                    <li><strong>Competitive Rates:</strong> Cost-effective solutions for every shipment.</li>
-                    <li><strong>24/7 Support:</strong> Assistance whenever needed.</li>
-                    <li><strong>Compliance:</strong> Complete documentation & customs expertise.</li>
-                    <li><strong>Professional Team:</strong> Experienced logistics specialists.</li>
-                    <li><strong>Technology:</strong> Real-time tracking & full cargo visibility.</li>
-                </ul>
-            </div>
-
-            <!-- Capabilities -->
-            <div class="about-card">
-                <h2>Our Capabilities</h2>
-                <ul>
-                    <li>Ocean freight (FCL / LCL)</li>
-                    <li>Air freight</li>
-                    <li>Land freight (FTL / LTL)</li>
-                    <li>Customs clearance</li>
-                    <li>Warehousing & storage</li>
-                    <li>Insurance & risk management</li>
-                    <li>Project cargo</li>
-                    <li>Door-to-door logistics</li>
-                </ul>
-            </div>
-
-            <!-- CTA -->
-            <div class="about-card" style="text-align:center;">
-                <h2>Get In Touch</h2>
-                <p>
-                    Ready to partner with AL MARWA CO? Our team is here to support your logistics needs.
-                </p>
-                <a href="contact.html" class="button primary">Contact Us</a>
-            </div>
-
-        </section>
     </div>
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="copyright">
-                <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-            </ul>
-        </div>
-    </footer>
+    <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with AL MARWA CO on WhatsApp">
+        <img src="images/whatsapp.jpg" alt="WhatsApp" loading="lazy" decoding="async">
+    </a>
 
-</div>
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/jquery.scrolly.min.js" defer></script>
-<script src="assets/js/jquery.scrollex.min.js" defer></script>
-<script src="assets/js/browser.min.js" defer></script>
-<script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
-<script src="assets/js/main.js" defer></script>
-
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/jquery.scrolly.min.js" defer></script>
+    <script src="assets/js/jquery.scrollex.min.js" defer></script>
+    <script src="assets/js/browser.min.js" defer></script>
+    <script src="assets/js/breakpoints.min.js" defer></script>
+    <script src="assets/js/util.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>

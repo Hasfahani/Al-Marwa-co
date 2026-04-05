@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Contact Us – AL MARWA CO</title>
+    <title>Contact Us - AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -9,229 +9,614 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <style>
-        body {
-            background: #f4fff8;
+        body.contact-page {
+            background: #f3f8f5;
         }
 
-        /* Contact Banner */
-        #contact-banner {
-            background: url("images/pic01.jpg") center center/cover no-repeat;
-            height: 330px;
+        .contact-hero {
+            background: linear-gradient(155deg, rgba(5, 42, 25, 0.78), rgba(6, 28, 18, 0.58)), url("images/pic01.jpg") center/cover no-repeat;
+            min-height: 52vh;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .contact-hero .inner {
+            padding-top: 7.2em;
+            padding-bottom: 3.2em;
+        }
+
+        .contact-eyebrow {
+            display: inline-block;
+            margin: 0 0 0.95em 0;
+            padding: 0.45em 0.82em;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            color: #edf7f2;
+            font-size: 0.78em;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .contact-hero h1 {
+            margin: 0 0 0.35em;
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-hero p {
+            margin: 0;
+            color: #eaf6f0;
+            max-width: 56ch;
+            line-height: 1.75;
+        }
+
+        .contact-main {
+            padding-top: 3em;
+            padding-bottom: 2.6em;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            gap: 1.25em;
+            align-items: start;
+        }
+
+        .contact-panel,
+        .form-panel,
+        .location-panel,
+        .contact-cta {
+            background: #ffffff;
+            border: 1px solid #dce8e1;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(8, 36, 24, 0.08);
+        }
+
+        .contact-panel,
+        .form-panel,
+        .location-panel {
+            padding: 1.35em;
+        }
+
+        .panel-title {
+            color: #0b4d2b;
+            margin: 0 0 0.35em;
+            font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .panel-subtitle {
+            margin: 0 0 1em;
+            color: #4e635b;
+            line-height: 1.7;
+        }
+
+        .contact-card-list {
+            display: grid;
+            gap: 0.8em;
+        }
+
+        .contact-card {
+            border: 1px solid #dfece5;
+            border-radius: 10px;
+            padding: 0.9em;
+            background: #f9fcfb;
+        }
+
+        .contact-card h3 {
+            margin: 0 0 0.45em;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.65);
+            gap: 0.5em;
+            color: #0f6037;
+            font-size: 0.98rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
 
-        #contact-banner h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
+        .contact-card h3 .icon {
+            color: #0f6f3e;
+            width: 1.15em;
+            text-align: center;
         }
 
-        h2, h3 {
-            color: #007a3b;
-            font-weight: 800;
+        .contact-card p,
+        .contact-card a,
+        .contact-card address {
+            margin: 0;
+            color: #304740;
+            line-height: 1.65;
+            font-size: 0.95rem;
+            text-decoration: none;
+            font-style: normal;
         }
 
-        .contact-method a {
-            color: #005c2c;
+        .contact-card a {
+            color: #0b6238;
             font-weight: 600;
         }
 
-        .contact-method span.icon {
-            color: #007a3b;
+        .contact-card a:hover {
+            text-decoration: underline;
         }
 
-        /* White form fields */
-        input, textarea {
-            background: white !important;
-            color: #222 !important;
-            border: 1px solid #007a3b !important;
+        .phone-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.28em;
         }
 
-        label {
-            color: #007a3b;
-            font-weight:600;
+        .whatsapp-cta {
+            margin-top: 1em;
+            border-radius: 11px;
+            padding: 1em;
+            background: linear-gradient(150deg, #e7f8ef 0%, #dbf3e6 100%);
+            border: 1px solid #b8dfc9;
+            display: grid;
+            gap: 0.55em;
         }
 
-        /* Remove old WhatsApp style (to unify with homepage) */
+        .whatsapp-cta h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #0d5f36;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-weight: 800;
+        }
+
+        .whatsapp-cta p {
+            margin: 0;
+            color: #2c4a3f;
+            font-size: 0.94rem;
+        }
+
+        .whatsapp-cta .button {
+            width: fit-content;
+            border-radius: 9px;
+            line-height: 1;
+            height: auto;
+            padding: 0.95em 1.2em;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 0.2em;
+        }
+
+        .form-panel form {
+            margin: 0;
+        }
+
+        .fields {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.95em;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.35em;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            color: #0c5b33;
+            font-size: 0.82rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            background: #ffffff;
+            color: #243630;
+            border: 1px solid #bcd7c9;
+            border-radius: 9px;
+            min-height: 2.9em;
+            padding: 0.65em 0.8em;
+            font-size: 0.95rem;
+            line-height: 1.35;
+        }
+
+        .field textarea {
+            min-height: 8.4em;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: #0f6f3e;
+            box-shadow: 0 0 0 3px rgba(15, 111, 62, 0.16);
+            outline: none;
+        }
+
+        .field-hint {
+            margin: 0;
+            color: #5f756d;
+            font-size: 0.82rem;
+            line-height: 1.45;
+        }
+
+        .form-actions {
+            margin-top: 1.15em;
+            display: flex;
+            gap: 0.55em;
+            flex-wrap: wrap;
+        }
+
+        .form-actions .button,
+        .form-actions input[type="submit"],
+        .form-actions input[type="reset"] {
+            border-radius: 9px;
+            line-height: 1;
+            height: auto;
+            padding: 1em 1.25em;
+            font-size: 0.72rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+
+        .location-panel {
+            margin-top: 1em;
+        }
+
+        .map-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5em;
+            padding: 0.85em 1.2em;
+            background: #0f6f3e;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+        }
+
+        .map-button:hover {
+            background: #0b5a31;
+        }
+
+        .contact-cta {
+            margin-top: 1.15em;
+            padding: 1.5em;
+            background: linear-gradient(150deg, #f2fbf6 0%, #e9f6ef 100%);
+            border-color: #c8dfd2;
+        }
+
+        .contact-cta h2 {
+            margin: 0 0 0.35em;
+            color: #0d4f2d;
+            font-size: clamp(1.25rem, 1.8vw, 1.7rem);
+            line-height: 1.2;
+        }
+
+        .contact-cta p {
+            margin: 0 0 0.95em;
+            color: #385248;
+            max-width: 64ch;
+        }
+
+        .contact-cta .actions {
+            margin: 0;
+            gap: 0.55em;
+            flex-wrap: wrap;
+        }
+
+        .contact-cta .button {
+            border-radius: 9px;
+            line-height: 1;
+            height: auto;
+            padding: 0.98em 1.2em;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+
+        .contact-cta .button:not(.primary) {
+            background: #ffffff;
+            border: 1px solid #b8d5c5;
+            color: #0f5f36;
+        }
+
         .whatsapp-float {
             position: fixed;
             right: 18px;
             bottom: 18px;
             z-index: 9999;
-        }
-
-        .whatsapp-float img {
             width: 60px;
             height: 60px;
             border-radius: 50%;
+            box-shadow: 0 8px 22px rgba(6, 33, 21, 0.25);
+            overflow: hidden;
+        }
+
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+            display: block;
         }
 
-        /* Location Button */
-        .map-button {
-            display: inline-block;
-            padding: 0.8em 1.4em;
-            background: #007a3b;
-            color: white;
-            border-radius: 8px;
-            margin-top: 1em;
-            text-decoration: none;
-            font-weight: 700;
+        @media screen and (max-width: 980px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fields {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .map-button:hover {
-            background: #005c2c;
-        }
+        @media screen and (max-width: 736px) {
+            .contact-hero {
+                min-height: 44vh;
+            }
 
+            .contact-hero .inner {
+                padding-top: 5.8em;
+                padding-bottom: 2.6em;
+            }
+
+            .contact-main {
+                padding-top: 2.1em;
+                padding-bottom: 2.1em;
+            }
+
+            .contact-panel,
+            .form-panel,
+            .location-panel,
+            .contact-cta {
+                padding: 1.1em;
+            }
+
+            .form-actions,
+            .contact-cta .actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .form-actions .button,
+            .form-actions input[type="submit"],
+            .form-actions input[type="reset"],
+            .contact-cta .button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                right: 14px;
+                bottom: 14px;
+            }
+        }
     </style>
 </head>
 
-<body class="is-preload">
-
+<body class="is-preload contact-page">
     <div id="wrapper">
 
-        <!-- Header -->
         <header id="header">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="AL MARWA CO">
-                <span class="brand-text">
-                    <strong>AL MARWA CO</strong>
-                </span>
+                <img src="images/logo.jpg" alt="AL MARWA CO Logo">
             </a>
             <nav><a href="#menu">Menu</a></nav>
         </header>
 
-        <!-- Menu -->
-        <nav id="menu">
+        <nav id="menu" aria-label="Main navigation">
             <ul class="links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
 
-        <!-- Banner -->
-        <section id="contact-banner">
-            <h1>Contact AL MARWA CO</h1>
+        <section class="contact-hero" aria-labelledby="contact-hero-title">
+            <div class="inner">
+                <p class="contact-eyebrow">Contact</p>
+                <h1 id="contact-hero-title">Talk to Our Logistics Team</h1>
+                <p>Share your shipment needs and we will respond with practical guidance for your route, cargo type, and timeline.</p>
+            </div>
         </section>
 
-        <!-- Main -->
-        <div id="main" class="alt">
-            <section id="contact" class="main">
-                <div class="inner">
+        <main id="main" class="contact-main">
+            <section class="inner" aria-labelledby="contact-section-title">
+                <h2 id="contact-section-title" class="sr-only" style="position:absolute;left:-9999px;">Contact options and inquiry form</h2>
 
-                    <div class="split style1">
+                <div class="contact-grid">
 
-                        <!-- Contact Info -->
-                        <section>
-                            <h2>Get in Touch</h2>
+                    <aside class="contact-panel" aria-label="Contact information">
+                        <h2 class="panel-title">Get in Touch</h2>
+                        <p class="panel-subtitle">Choose the channel that works best for your team. For urgent shipment inquiries, WhatsApp is often the fastest option.</p>
 
-                            <div class="contact-method">
-                                <span class="icon solid alt fa-envelope"></span>
-                                <h3>Email</h3>
+                        <div class="contact-card-list">
+                            <article class="contact-card">
+                                <h3><span class="icon solid fa-envelope" aria-hidden="true"></span>Email</h3>
                                 <a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a>
-                            </div>
+                            </article>
 
-                            <div class="contact-method">
-                                <span class="icon solid alt fa-phone"></span>
-                                <h3>Phone Numbers</h3>
-                                <p><a href="tel:009613369652">00961 3 369652</a></p>
-                                <p><a href="tel:009613313265">00961 3 313265</a></p>
-                                <p><a href="tel:009613750945">00961 3 750945</a></p>
-                                <p><a href="tel:0096170099978" style="font-weight:700;">00961 70 099978</a></p>
-                            </div>
+                            <article class="contact-card">
+                                <h3><span class="icon solid fa-phone" aria-hidden="true"></span>Phone Numbers</h3>
+                                <ul class="phone-list">
+                                    <li><a href="tel:+9613369652">+961 3 369652</a></li>
+                                    <li><a href="tel:+9613313265">+961 3 313265</a></li>
+                                    <li><a href="tel:+9613750945">+961 3 750945</a></li>
+                                    <li><a href="tel:+96170099978"><strong>+961 70 099978</strong></a></li>
+                                </ul>
+                            </article>
 
-                            <div class="contact-method">
-                                <span class="icon brands alt fa-whatsapp"></span>
-                                <h3>WhatsApp</h3>
-                                <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
-                                   target="_blank">Chat on WhatsApp</a>
-                            </div>
+                            <article class="contact-card">
+                                <h3><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>Address</h3>
+                                <address>Khalde Highway, Lebanon</address>
+                            </article>
+                        </div>
 
-                            <div class="contact-method">
-                                <span class="icon solid alt fa-home"></span>
-                                <h3>Address</h3>
-                                <span>Khalde Highway, Lebanon</span>
-                            </div>
-                        </section>
+                        <div class="whatsapp-cta" aria-label="WhatsApp contact">
+                            <h3><span class="icon brands fa-whatsapp" aria-hidden="true"></span>WhatsApp Support</h3>
+                            <p>Use WhatsApp for quick shipment inquiries and direct communication with our team.</p>
+                            <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO." class="button primary" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                        </div>
+                    </aside>
 
-                        <!-- Contact Form -->
-                        <section>
-                            <h2>Send Us a Message</h2>
+                    <section class="form-panel" aria-labelledby="form-title">
+                        <h2 id="form-title" class="panel-title">Shipment Inquiry Form</h2>
+                        <p class="panel-subtitle">Complete the form below and our team will review your request and contact you.</p>
 
-                            <!-- WORKING CONTACT FORM -->
-                            <form action="https://formsubmit.co/info@al-marwaco.com" method="POST">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_template" value="table">
-                                <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
+                        <form action="https://formsubmit.co/info@al-marwaco.com" method="POST" novalidate>
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
 
-                                <div class="fields">
-                                    <div class="field half">
-                                        <label for="name">Full Name *</label>
-                                        <input type="text" id="name" name="name" required>
-                                    </div>
-
-                                    <div class="field half">
-                                        <label for="email">Email *</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-
-                                    <div class="field">
-                                        <label for="message">Message *</label>
-                                        <textarea id="message" name="message" rows="6" required></textarea>
-                                    </div>
+                            <div class="fields">
+                                <div class="field">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
                                 </div>
 
-                                <ul class="actions">
-                                    <li><input type="submit" value="Send Message" class="primary"></li>
-                                    <li><input type="reset" value="Clear"></li>
-                                </ul>
-                            </form>
-                        </section>
+                                <div class="field">
+                                    <label for="company">Company (Optional)</label>
+                                    <input type="text" id="company" name="company" autocomplete="organization">
+                                </div>
 
-                    </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" autocomplete="email" required aria-required="true">
+                                </div>
 
-                    <!-- Location Section -->
-                    <section style="margin-top: 3em;">
-                        <h2>Our Location</h2>
+                                <div class="field">
+                                    <label for="phone">Phone (Optional)</label>
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+                                </div>
 
-                        <p>You can find us on Google Maps using the button below:</p>
+                                <div class="field">
+                                    <label for="shipment-type">Shipment Type (Optional)</label>
+                                    <select id="shipment-type" name="shipment_type">
+                                        <option value="">Select type</option>
+                                        <option value="Land Freight">Land Freight</option>
+                                        <option value="Heavy Lifting">Heavy Lifting</option>
+                                        <option value="Maritime Shipping">Maritime Shipping</option>
+                                        <option value="Air Cargo">Air Cargo</option>
+                                        <option value="Not Sure">Not Sure Yet</option>
+                                    </select>
+                                </div>
 
-                        <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" 
-                           target="_blank" 
-                           class="map-button">
-                           📍 Open in Google Maps
-                        </a>
+                                <div class="field">
+                                    <label for="estimated-weight">Estimated Weight (Optional)</label>
+                                    <input type="text" id="estimated-weight" name="estimated_weight" placeholder="e.g., 1200 kg">
+                                </div>
 
+                                <div class="field">
+                                    <label for="origin">Origin (Optional)</label>
+                                    <input type="text" id="origin" name="origin" placeholder="City / Country">
+                                </div>
+
+                                <div class="field">
+                                    <label for="destination">Destination (Optional)</label>
+                                    <input type="text" id="destination" name="destination" placeholder="City / Country">
+                                </div>
+
+                                <div class="field full">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" rows="7" required aria-required="true" placeholder="Please share your shipment details, timeline, and any special handling requirements."></textarea>
+                                    <p class="field-hint">Required fields: Full Name, Email, and Message.</p>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <input type="submit" value="Send Inquiry" class="primary">
+                                <input type="reset" value="Clear Form">
+                            </div>
+                        </form>
                     </section>
 
                 </div>
-            </section>
-        </div>
 
-        <!-- Footer -->
+                <section class="location-panel" aria-labelledby="location-title">
+                    <h2 id="location-title" class="panel-title">Our Location</h2>
+                    <p class="panel-subtitle">You can open our location directly in Google Maps.</p>
+                    <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" target="_blank" rel="noopener noreferrer" class="map-button">
+                        <span aria-hidden="true">??</span> Open in Google Maps
+                    </a>
+                </section>
+
+                <section class="contact-cta" aria-labelledby="contact-cta-title">
+                    <h2 id="contact-cta-title">Need Immediate Assistance?</h2>
+                    <p>For time-sensitive requests, contact us by WhatsApp or phone and share your shipment route and urgency level.</p>
+                    <ul class="actions">
+                        <li><a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO." target="_blank" rel="noopener noreferrer" class="button primary">WhatsApp Now</a></li>
+                        <li><a href="tel:+96170099978" class="button">Call +961 70 099978</a></li>
+                    </ul>
+                </section>
+            </section>
+        </main>
+
         <footer id="footer">
             <div class="inner">
-                <ul class="copyright">
-                    <li>&copy; 2025 AL MARWA CO. All rights reserved.</li>
-                </ul>
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <h3>AL MARWA CO</h3>
+                        <p>Professional freight forwarding and logistics coordination since 1997. Land, sea, and air cargo services across the region and beyond.</p>
+                    </div>
+                    <nav class="footer-col" aria-label="Site links">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services links">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html#land-freight">Land Freight</a></li>
+                            <li><a href="services.html#heavy-lifting">Heavy Lifting</a></li>
+                            <li><a href="services.html#maritime-shipping">Maritime Shipping</a></li>
+                            <li><a href="services.html#air-cargo">Air Cargo</a></li>
+                        </ul>
+                    </nav>
+                    <address class="footer-col footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="mailto:info@al-marwaco.com"><span class="icon solid fa-envelope" aria-hidden="true"></span>info@al-marwaco.com</a></li>
+                            <li><a href="tel:+96170099978"><span class="icon solid fa-phone" aria-hidden="true"></span>+961 70 099978</a></li>
+                            <li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>Khalde Highway, Lebanon</li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2025 AL MARWA CO. All rights reserved.</p>
+                </div>
             </div>
         </footer>
 
     </div>
 
-    <!-- WhatsApp Floating Button (Unified with Home Page) -->
     <a href="https://wa.me/96170099978?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20shipping%20order%20with%20AL%20MARWA%20CO."
-       class="whatsapp-float" target="_blank">
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with AL MARWA CO on WhatsApp">
         <img src="images/whatsapp.jpg" alt="WhatsApp" loading="lazy" decoding="async">
     </a>
 
-    <!-- Scripts -->
     <script src="assets/js/jquery.min.js" defer></script>
     <script src="assets/js/jquery.scrolly.min.js" defer></script>
     <script src="assets/js/jquery.scrollex.min.js" defer></script>
@@ -239,6 +624,5 @@
     <script src="assets/js/breakpoints.min.js" defer></script>
     <script src="assets/js/util.js" defer></script>
     <script src="assets/js/main.js" defer></script>
-
 </body>
 </html>
