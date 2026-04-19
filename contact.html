@@ -3,7 +3,7 @@
 <head>
         <title>Contact AL MARWA CO - Request a Freight Quote</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
         <meta name="description" content="Contact AL MARWA CO for freight forwarding, shipping, and logistics inquiries. Reach our team by phone, WhatsApp, email, or inquiry form." />
         <meta name="keywords" content="contact logistics company Lebanon, freight quote Lebanon, AL MARWA CO contact" />
@@ -453,6 +453,7 @@
 </head>
 
 <body class="is-preload contact-page">
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
 
         <header id="header">
@@ -481,7 +482,7 @@
 
         <main id="main" class="contact-main">
             <section class="inner" aria-labelledby="contact-section-title">
-                <h2 id="contact-section-title" class="sr-only" style="position:absolute;left:-9999px;">Contact options and inquiry form</h2>
+                <h2 id="contact-section-title" class="sr-only">Contact options and inquiry form</h2>
 
                 <div class="contact-grid">
 
@@ -522,15 +523,15 @@
                         <h2 id="form-title" class="panel-title">Shipment Inquiry Form</h2>
                         <p class="panel-subtitle">Complete the form below and our team will review your request and contact you.</p>
 
-                        <form action="https://formsubmit.co/info@al-marwaco.com" method="POST" novalidate>
-                            <input type="hidden" name="_captcha" value="false">
+                        <form action="https://formsubmit.co/info@al-marwaco.com" method="POST">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
+                            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
 
                             <div class="fields">
                                 <div class="field">
                                     <label for="name">Full Name</label>
-                                    <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
+                                    <input type="text" id="name" name="name" autocomplete="name" required aria-required="true" minlength="2" maxlength="80">
                                 </div>
 
                                 <div class="field">
@@ -540,12 +541,12 @@
 
                                 <div class="field">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" autocomplete="email" required aria-required="true">
+                                    <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-required="true" maxlength="120">
                                 </div>
 
                                 <div class="field">
                                     <label for="phone">Phone (Optional)</label>
-                                    <input type="tel" id="phone" name="phone" autocomplete="tel">
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+961 ...">
                                 </div>
 
                                 <div class="field">
@@ -577,8 +578,8 @@
 
                                 <div class="field full">
                                     <label for="message">Message</label>
-                                    <textarea id="message" name="message" rows="7" required aria-required="true" placeholder="Please share your shipment details, timeline, and any special handling requirements."></textarea>
-                                    <p class="field-hint">Required fields: Full Name, Email, and Message.</p>
+                                    <textarea id="message" name="message" rows="7" required aria-required="true" minlength="20" maxlength="2000" placeholder="Please share your shipment details, timeline, and any special handling requirements."></textarea>
+                                    <p class="field-hint">Required fields: Full Name, Email, and Message. Browser validation is enabled to help catch missing details before submission.</p>
                                 </div>
                             </div>
 
@@ -595,7 +596,7 @@
                     <h2 id="location-title" class="panel-title">Our Location</h2>
                     <p class="panel-subtitle">You can open our location directly in Google Maps.</p>
                     <a href="https://maps.app.goo.gl/GnxXc8WF17nMK7qi8?g_st=iw" target="_blank" rel="noopener noreferrer" class="map-button">
-                        <span aria-hidden="true">??</span> Open in Google Maps
+                        <span class="icon solid fa-map-marker-alt" aria-hidden="true"></span> Open in Google Maps
                     </a>
                 </section>
 
@@ -645,7 +646,7 @@
                     </address>
                 </div>
                 <div class="footer-bottom">
-                    <p class="footer-copy">&copy; 2025 AL MARWA CO. All rights reserved.</p>
+                    <p class="footer-copy">&copy; 2026 AL MARWA CO. All rights reserved.</p>
                 </div>
             </div>
         </footer>
