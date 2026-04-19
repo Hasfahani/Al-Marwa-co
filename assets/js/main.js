@@ -332,4 +332,20 @@
 
 			});
 
+	// Scroll-to-top button
+		var $scrollBtn = $('<button class="scroll-top-btn" aria-label="Scroll to top"><span class="icon solid fa-chevron-up" aria-hidden="true"></span></button>');
+		$body.append($scrollBtn);
+
+		$window.on('scroll.scrolltop', function() {
+			if ($window.scrollTop() > 400) {
+				$scrollBtn.addClass('visible');
+			} else {
+				$scrollBtn.removeClass('visible');
+			}
+		});
+
+		$scrollBtn.on('click', function() {
+			$('html, body').animate({ scrollTop: 0 }, 380);
+		});
+
 })(jQuery);

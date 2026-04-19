@@ -4,11 +4,17 @@
     <title>Freight Forwarding Lebanon | Shipping &amp; Logistics | AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+    <link rel="shortcut icon" href="images/logo.jpg" />
 
         <meta name="description" content="Freight forwarding company in Lebanon offering land freight, sea freight, air cargo, customs support, and international shipping solutions since 1997." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="author" content="AL MARWA CO" />
         <meta name="theme-color" content="#0b4d2b" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+        <link rel="dns-prefetch" href="https://formsubmit.co" />
         <link rel="canonical" href="https://al-marwaco.com/" />
 
         <meta property="og:locale" content="en_US" />
@@ -77,6 +83,15 @@
         }
         </script>
 
+    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <link rel="preload" href="images/pic05.jpg" as="image" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -135,6 +150,31 @@
         </section>
 
         <div id="main">
+
+            <section class="home-quick-quote" aria-label="Quick shipment inquiry">
+                <div class="inner">
+                    <p class="quick-quote-label"><span class="icon solid fa-bolt" aria-hidden="true"></span> Quick Inquiry</p>
+                    <form class="quick-quote-form" action="https://formsubmit.co/info@al-marwaco.com" method="POST">
+                        <input type="hidden" name="_subject" value="Quick Quote Request - AL MARWA CO">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+                        <div class="quick-quote-fields">
+                            <input type="text" name="origin" placeholder="Origin (city / country)" required aria-label="Origin city or country">
+                            <input type="text" name="destination" placeholder="Destination (city / country)" required aria-label="Destination city or country">
+                            <select name="shipment_type" aria-label="Freight type">
+                                <option value="">Freight type</option>
+                                <option value="Land Freight">Land Freight</option>
+                                <option value="Sea Freight">Sea Freight</option>
+                                <option value="Air Cargo">Air Cargo</option>
+                                <option value="Heavy Lifting">Heavy Lifting</option>
+                                <option value="Not Sure">Not Sure Yet</option>
+                            </select>
+                            <input type="email" name="email" placeholder="Your email" required aria-label="Your email address">
+                            <button type="submit" class="quick-quote-submit">Get Quote <span class="icon solid fa-arrow-right" aria-hidden="true"></span></button>
+                        </div>
+                    </form>
+                </div>
+            </section>
 
             <section class="home-section home-proof">
                 <div class="inner">
@@ -345,6 +385,75 @@
                         <a href="https://www.cma-cgm.com" target="_blank" rel="noopener noreferrer"><img src="images/cmacgm.jpg" alt="CMA CGM" loading="lazy" decoding="async" /></a>
                         <a href="https://www.arkasline.com" target="_blank" rel="noopener noreferrer"><img src="images/arkas.jpg" alt="ARKAS" loading="lazy" decoding="async" /></a>
                         <a href="https://www.evergreen-marine.com" target="_blank" rel="noopener noreferrer"><img src="images/evergreen.jpg" alt="Evergreen" loading="lazy" decoding="async" /></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-section home-coverage">
+                <div class="inner">
+                    <header class="section-heading">
+                        <h2>Our Service Coverage</h2>
+                        <p class="section-lead">From Lebanon, we coordinate freight across the Middle East, Europe, and Asia.</p>
+                    </header>
+                    <div class="coverage-grid">
+                        <div class="coverage-region">
+                            <span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>
+                            <h3>Lebanon</h3>
+                            <p>Beirut, Khalde, Tripoli, Sidon — full domestic coordination and customs support at every stage.</p>
+                        </div>
+                        <div class="coverage-region">
+                            <span class="icon solid fa-globe" aria-hidden="true"></span>
+                            <h3>Middle East</h3>
+                            <p>UAE, Saudi Arabia, Kuwait, Jordan, Turkey, Egypt — land and sea routes with established carrier connections.</p>
+                        </div>
+                        <div class="coverage-region">
+                            <span class="icon solid fa-ship" aria-hidden="true"></span>
+                            <h3>Europe</h3>
+                            <p>Germany, Greece, Italy, Spain and major EU ports — FCL, LCL, and air freight connections.</p>
+                        </div>
+                        <div class="coverage-region">
+                            <span class="icon solid fa-plane" aria-hidden="true"></span>
+                            <h3>Asia</h3>
+                            <p>China, India, Bangladesh — containerized ocean freight and time-sensitive air cargo lanes.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-section home-testimonials">
+                <div class="inner">
+                    <header class="section-heading">
+                        <h2>What Our Clients Say</h2>
+                        <p class="section-lead">Businesses across the region trust AL MARWA CO to move their cargo on time and without surprises.</p>
+                    </header>
+                    <div class="testimonial-grid">
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p>AL MARWA CO handled our oversized machinery shipment from Europe with zero issues. They planned every step and kept us updated throughout the entire move.</p>
+                            </blockquote>
+                            <footer>
+                                <span class="testimonial-author">Operations Manager</span>
+                                <span class="testimonial-company">Industrial Equipment Company, Lebanon</span>
+                            </footer>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p>Urgent air cargo from Asia — they arranged it within 24 hours and the paperwork was clean. That's exactly the team you want handling critical shipments.</p>
+                            </blockquote>
+                            <footer>
+                                <span class="testimonial-author">Logistics Coordinator</span>
+                                <span class="testimonial-company">Medical Supplies Distributor, Lebanon</span>
+                            </footer>
+                        </article>
+                        <article class="testimonial-card">
+                            <blockquote>
+                                <p>We've been routing our LCL shipments through AL MARWA CO for years. Consistent, straightforward, and they handle customs documentation properly every time.</p>
+                            </blockquote>
+                            <footer>
+                                <span class="testimonial-author">Import Manager</span>
+                                <span class="testimonial-company">Consumer Goods Importer, Beirut</span>
+                            </footer>
+                        </article>
                     </div>
                 </div>
             </section>
