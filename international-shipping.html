@@ -3,7 +3,7 @@
 <head>
     <title>International Shipping Services - AL MARWA CO</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content="International shipping services by AL MARWA CO with land, sea, and air freight options, route planning, and practical cargo coordination." />
     <meta name="keywords" content="international shipping, freight forwarding, cargo shipping services, AL MARWA CO" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -36,68 +36,424 @@
     }
     </script>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best shipping mode for international cargo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best mode depends on urgency, cargo type, budget, and handling requirements. Air cargo suits urgent freight, maritime shipping suits larger commercial loads, and land freight may support regional legs within a multimodal route."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information is needed to plan an international shipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Useful planning details include the origin, destination, dimensions or weight, target deadline, cargo type, and any customs or special-handling requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can AL MARWA CO help with both planning and execution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. AL MARWA CO supports route selection, mode coordination, documentation support, and shipment execution follow-through."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        body.shipping-page {
+            background: #f3f8f5;
+        }
+
+        .page-hero {
+            background: linear-gradient(155deg, rgba(4, 33, 50, 0.8), rgba(7, 25, 39, 0.58)), url("images/pic03.jpg") center/cover no-repeat;
+            min-height: 54vh;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .page-hero .inner {
+            padding-top: 7.2em;
+            padding-bottom: 3.2em;
+        }
+
+        .page-eyebrow {
+            display: inline-block;
+            margin: 0 0 0.95em 0;
+            padding: 0.45em 0.82em;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            color: #edf4f8;
+            font-size: 0.78em;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .page-hero h1 {
+            margin: 0 0 0.35em;
+            color: #ffffff;
+            font-size: clamp(2rem, 4vw, 3.35rem);
+            line-height: 1.08;
+            letter-spacing: -0.01em;
+        }
+
+        .page-hero p {
+            margin: 0;
+            color: #e8f2f8;
+            max-width: 58ch;
+            line-height: 1.75;
+        }
+
+        .page-main {
+            padding-top: 3em;
+            padding-bottom: 2.6em;
+        }
+
+        .page-stack {
+            display: grid;
+            gap: 1.35em;
+        }
+
+        .page-panel,
+        .cta-panel {
+            background: #ffffff;
+            border: 1px solid #dce8e1;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(8, 36, 24, 0.08);
+        }
+
+        .page-panel {
+            padding: 1.5em;
+        }
+
+        .page-panel h2 {
+            margin: 0 0 0.45em;
+            color: #0b4d2b;
+            font-size: clamp(1.35rem, 1.9vw, 1.95rem);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .page-panel p {
+            margin: 0 0 1em;
+            color: #334942;
+            line-height: 1.75;
+        }
+
+        .highlight-grid,
+        .mode-grid,
+        .faq-grid {
+            display: grid;
+            gap: 1em;
+        }
+
+        .highlight-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .mode-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .highlight-card,
+        .mode-card,
+        .faq-card,
+        .support-card {
+            border: 1px solid #dfece5;
+            border-radius: 12px;
+            background: #f8fcfa;
+            padding: 1.15em;
+        }
+
+        .highlight-card strong {
+            display: block;
+            margin-bottom: 0.25em;
+            color: #0b4d2b;
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .highlight-card span {
+            color: #4f655d;
+            line-height: 1.55;
+        }
+
+        .mode-card h3,
+        .faq-card h3,
+        .support-card h3 {
+            margin: 0 0 0.45em;
+            color: #0f6037;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .mode-card ul,
+        .faq-card ul,
+        .support-card ul,
+        .planning-list {
+            margin: 0;
+            padding-left: 1.2em;
+            color: #334942;
+        }
+
+        .mode-card li,
+        .faq-card li,
+        .support-card li,
+        .planning-list li {
+            margin-bottom: 0.45em;
+        }
+
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.95fr;
+            gap: 1.2em;
+            align-items: start;
+        }
+
+        .cta-panel {
+            padding: 1.55em;
+            background: linear-gradient(145deg, #0d4059 0%, #133246 100%);
+            color: #eef6fb;
+        }
+
+        .cta-panel h2 {
+            margin: 0 0 0.35em;
+            color: #ffffff;
+        }
+
+        .cta-panel p {
+            color: #e5f0f7;
+            margin: 0 0 1em;
+        }
+
+        .cta-panel .actions {
+            margin-bottom: 0;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8em;
+            margin-top: 1.15em;
+        }
+
+        .quick-links .button {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 980px) {
+            .highlight-grid,
+            .mode-grid,
+            .faq-grid,
+            .split-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="is-preload">
-<div id="wrapper">
+<body class="is-preload shipping-page">
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <div id="wrapper">
 
-    <header id="header">
-        <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
-        <nav><a href="#menu">Menu</a></nav>
-    </header>
+        <header id="header">
+            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
+            <nav><a href="#menu">Menu</a></nav>
+        </header>
 
-    <nav id="menu" aria-label="Main navigation">
-        <ul class="links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="one" class="style2" style="background-image: url('images/pic03.jpg'); background-size: cover;">
-        <div class="inner">
-            <header class="major">
-                <h1>International Shipping Services</h1>
-            </header>
-            <p>Choose the right freight mode based on cargo type, transit urgency, and handling requirements.</p>
-        </div>
-    </section>
-
-    <div id="main">
-        <section class="inner">
-            <h2>Route Planning for Better Delivery Outcomes</h2>
-            <p>International shipping requires balancing timeline, cost, and cargo sensitivity. We evaluate route and mode options before execution to reduce risks and avoid delays.</p>
-            <h3>Available Modes</h3>
-            <ul>
-                <li>Air cargo for urgent and high-priority cargo</li>
-                <li>Maritime shipping for containerized commercial loads</li>
-                <li>Land freight integration where route structure requires multimodal handoff</li>
+        <nav id="menu" aria-label="Main navigation">
+            <ul class="links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <h3>Information Needed for an Accurate Quote</h3>
-            <ul>
-                <li>Origin and destination points</li>
-                <li>Cargo dimensions and weight</li>
-                <li>Required timeline</li>
-                <li>Special handling or customs details</li>
-            </ul>
-            <ul class="actions">
-                <li><a href="services.html" class="button">Explore Services</a></li>
-                <li><a href="contact.html" class="button primary">Get Route Consultation</a></li>
-            </ul>
-        </section>
-    </div>
+        </nav>
 
-    <footer id="footer">
-        <div class="inner">
-            <div class="footer-bottom">
-                <p class="footer-copy">&copy; 2025 AL MARWA CO. All rights reserved.</p>
+        <section class="page-hero" aria-labelledby="shipping-hero-title">
+            <div class="inner">
+                <p class="page-eyebrow">Global Cargo Planning</p>
+                <h1 id="shipping-hero-title">International Shipping Services With Practical Route Planning</h1>
+                <p>Choosing the right international shipping structure means balancing transit time, cargo sensitivity, budget, and paperwork requirements before the shipment starts moving.</p>
             </div>
-        </div>
-    </footer>
+        </section>
 
-</div>
+        <main id="main" class="page-main">
+            <section class="inner">
+                <div class="page-stack">
+                    <section class="page-panel">
+                        <h2>International Shipping Works Best When the Route Plan Is Clear Early</h2>
+                        <p>Late decisions create expensive problems in international shipping. Mode selection, cargo handling, and customs-related preparation all affect whether the shipment moves smoothly or gets delayed at handoff points. Our role is to help shape the route before those risks show up.</p>
+                        <div class="highlight-grid">
+                            <article class="highlight-card">
+                                <strong>Transit Time</strong>
+                                <span>Choose speed based on the actual urgency of the cargo, not assumptions.</span>
+                            </article>
+                            <article class="highlight-card">
+                                <strong>Cost Control</strong>
+                                <span>Match the service level to the shipment instead of overspending on the wrong mode.</span>
+                            </article>
+                            <article class="highlight-card">
+                                <strong>Handling Risk</strong>
+                                <span>Plan for packaging, transfer points, and cargo sensitivity before movement begins.</span>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="page-panel">
+                        <h2>Available International Shipping Modes</h2>
+                        <div class="mode-grid">
+                            <article class="mode-card">
+                                <h3>Air Cargo</h3>
+                                <ul>
+                                    <li>Best for urgent or high-priority freight</li>
+                                    <li>Useful when tighter deadlines matter more than lower transport cost</li>
+                                    <li>Supports controlled movement for commercially sensitive cargo</li>
+                                </ul>
+                            </article>
+                            <article class="mode-card">
+                                <h3>Maritime Shipping</h3>
+                                <ul>
+                                    <li>Suitable for containerized commercial cargo and larger shipment volumes</li>
+                                    <li>Supports FCL and LCL options depending on load profile</li>
+                                    <li>Requires stronger planning around schedules and port handling</li>
+                                </ul>
+                            </article>
+                            <article class="mode-card">
+                                <h3>Multi-Modal Routing</h3>
+                                <ul>
+                                    <li>Combines road, sea, and air legs where the route demands flexibility</li>
+                                    <li>Helpful when cargo must move through multiple transfer stages</li>
+                                    <li>Benefits from one team managing the handoffs clearly</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="page-panel">
+                        <div class="split-layout">
+                            <div>
+                                <h2>What We Review Before Recommending a Shipping Plan</h2>
+                                <p>International cargo planning is rarely just about choosing air versus sea. A good recommendation has to weigh timeline, destination complexity, cargo profile, and documentation readiness together.</p>
+                                <ul class="planning-list">
+                                    <li>Origin and destination infrastructure</li>
+                                    <li>Cargo dimensions, weight, and packaging condition</li>
+                                    <li>Required transit window and delivery priority</li>
+                                    <li>Whether the cargo is fragile, oversized, high-value, or urgent</li>
+                                    <li>Known customs or consignee-side constraints</li>
+                                </ul>
+                            </div>
+                            <aside class="support-card">
+                                <h3>Typical Support Areas</h3>
+                                <ul>
+                                    <li>Mode and route selection</li>
+                                    <li>Shipment coordination and carrier planning</li>
+                                    <li>Documentation and handling visibility</li>
+                                    <li>Communication through the shipment cycle</li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </section>
+
+                    <section class="page-panel">
+                        <h2>How to Request an Accurate International Shipping Quote</h2>
+                        <p>Sharing complete shipment details early usually shortens the planning cycle and improves the quote quality. It helps us narrow the right transport mode and spot any route constraints before execution.</p>
+                        <ul class="planning-list">
+                            <li>Pickup point and final destination</li>
+                            <li>Dimensions, volume, and total weight</li>
+                            <li>Target ship date or required arrival date</li>
+                            <li>Description of the goods and any special handling needs</li>
+                            <li>Whether documents, customs support, or multi-leg coordination are required</li>
+                        </ul>
+                        <div class="quick-links">
+                            <a href="contact.html" class="button primary">Get Route Consultation</a>
+                            <a href="services.html#maritime-shipping" class="button">Explore Sea Freight</a>
+                            <a href="freight-forwarding-lebanon.html" class="button">Freight Forwarding in Lebanon</a>
+                        </div>
+                    </section>
+
+                    <section class="page-panel">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-grid">
+                            <article class="faq-card">
+                                <h3>Is air freight always better for international shipping?</h3>
+                                <p>No. Air freight is faster, but it is not always the best fit. Cargo type, shipment urgency, cost sensitivity, and handling needs all matter when choosing the right option.</p>
+                            </article>
+                            <article class="faq-card">
+                                <h3>Can one shipment involve more than one transport mode?</h3>
+                                <p>Yes. Some shipments need coordinated handoffs between road, sea, and air legs. This is where clear multi-modal planning becomes especially valuable.</p>
+                            </article>
+                            <article class="faq-card">
+                                <h3>When should we contact you for planning support?</h3>
+                                <p>The earlier the better. Early planning helps reduce avoidable delays, improves quote accuracy, and makes documentation and routing decisions easier to manage.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="cta-panel">
+                        <h2>Need Help Choosing the Right International Shipping Option?</h2>
+                        <p>Share your cargo type, route, and target timeline. We will help you narrow the practical options and coordinate the next steps with clarity.</p>
+                        <ul class="actions">
+                            <li><a href="contact.html" class="button primary">Request Shipping Advice</a></li>
+                            <li><a href="services.html" class="button">View All Services</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <div class="inner">
+                <div class="footer-grid">
+                    <div class="footer-col footer-about">
+                        <h3>AL MARWA CO</h3>
+                        <p>Professional freight forwarding and logistics coordination since 1997. Land, sea, and air cargo services across the region and beyond.</p>
+                    </div>
+                    <nav class="footer-col" aria-label="Site links">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services links">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="services.html#land-freight">Land Freight</a></li>
+                            <li><a href="services.html#heavy-lifting">Heavy Lifting</a></li>
+                            <li><a href="services.html#maritime-shipping">Maritime Shipping</a></li>
+                            <li><a href="services.html#air-cargo">Air Cargo</a></li>
+                        </ul>
+                    </nav>
+                    <address class="footer-col footer-contact">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><a href="mailto:info@al-marwaco.com"><span class="icon solid fa-envelope" aria-hidden="true"></span>info@al-marwaco.com</a></li>
+                            <li><a href="tel:+96170099978"><span class="icon solid fa-phone" aria-hidden="true"></span>+961 70 099978</a></li>
+                            <li><span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>Khalde Highway, Lebanon</li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copy">&copy; 2026 AL MARWA CO. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
 
 <script src="assets/js/jquery.min.js" defer></script>
 <script src="assets/js/jquery.scrolly.min.js" defer></script>
