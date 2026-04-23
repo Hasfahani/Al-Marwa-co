@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '393,405p' \"c:/al marwaco/about.html\")",
+      "Bash(sed -n '432,444p' \"c:/al marwaco/services.html\")",
+      "Bash(sed -n '486,498p' \"c:/al marwaco/contact.html\")",
+      "Bash(sed -n '325,332p' \"c:/al marwaco/freight-forwarding-lebanon.html\")",
+      "Bash(sed -n '147,154p' \"c:/al marwaco/sea-freight-lebanon.html\")",
+      "Bash(sed -n '156,163p' \"c:/al marwaco/air-cargo-lebanon.html\")",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
