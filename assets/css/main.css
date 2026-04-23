@@ -1,6 +1,29 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap");
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+    --clr-brand:        #007a3b;
+    --clr-brand-dark:   #005c2c;
+    --clr-brand-deep:   #0b4d2b;
+    --clr-brand-light:  #e6f4eb;
+    --clr-accent:       #00b057;
+    --clr-text:         #1a2820;
+    --clr-text-muted:   #4a5e56;
+    --clr-border:       #d8e8e0;
+    --clr-bg:           #ffffff;
+    --clr-bg-subtle:    #f5faf7;
+    --clr-bg-tint:      #edf5f0;
+    --radius-sm:        8px;
+    --radius-md:        12px;
+    --radius-lg:        16px;
+    --radius-xl:        24px;
+    --shadow-sm:        0 2px 8px rgba(8,36,24,.06);
+    --shadow-md:        0 8px 24px rgba(8,36,24,.09);
+    --shadow-lg:        0 20px 48px rgba(8,36,24,.14);
+    --font-sans:        "Inter", "Source Sans Pro", Helvetica, sans-serif;
+    --font-display:     "Manrope", "Inter", Helvetica, sans-serif;
+    --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
+}
 
 /* CSS Reset */
 html, body, div, span, applet, object,
@@ -86,11 +109,11 @@ html {
 
 /* Typography */
 body, input, select, textarea {
-	color: #222;
-	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	color: var(--clr-text);
+	font-family: var(--font-sans);
 	font-size: 17pt;
-	font-weight: 300;
-	letter-spacing: 0.025em;
+	font-weight: 400;
+	letter-spacing: -0.005em;
 	line-height: 1.65;
 }
 
@@ -175,11 +198,12 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color: #007a3b;
-	font-weight: 600;
+	color: var(--clr-brand);
+	font-family: var(--font-display);
+	font-weight: 700;
 	line-height: 1.18;
 	margin: 0 0 0.85em 0;
-	letter-spacing: -0.01em;
+	letter-spacing: -0.02em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -411,7 +435,7 @@ input[type="button"],
 button,
 .button {
 	appearance: none;
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.15s ease;
 	background-color: #007a3b;
 	border: 0;
 	border-radius: 8px;
@@ -1277,13 +1301,13 @@ body.is-menu-visible #menu .inner {
 .home-page h3,
 .home-page h4,
 .home-page .button {
-	font-family: "Manrope", "Source Sans Pro", Helvetica, sans-serif;
-	letter-spacing: 0.01em;
+	font-family: var(--font-display);
+	letter-spacing: -0.015em;
 }
 
 .home-page p {
 	line-height: 1.75;
-	color: #243730;
+	color: var(--clr-text-muted);
 }
 
 .home-page #banner .inner {
@@ -1453,7 +1477,7 @@ body.is-menu-visible #menu .inner {
 	display: block;
 	margin-bottom: 0.18em;
 	color: #0a4d2b;
-	font-family: "Manrope", "Source Sans Pro", Helvetica, sans-serif;
+	font-family: var(--font-display);
 	font-size: clamp(1.35rem, 2vw, 2rem);
 	font-weight: 800;
 	line-height: 1.05;
@@ -1669,10 +1693,10 @@ body.is-menu-visible #menu .inner {
 
 .home-page .step-number {
 	display: inline-block;
-	font-family: "Manrope", "Source Sans Pro", Helvetica, sans-serif;
+	font-family: var(--font-display);
 	font-weight: 800;
 	font-size: 0.8rem;
-	letter-spacing: 0.14em;
+	letter-spacing: 0.04em;
 	color: #0f6d3d;
 	margin-bottom: 0.7em;
 	padding: 0.4em 0.6em;
@@ -2217,4 +2241,321 @@ section {
 	.scroll-top-btn {
 		transition: none;
 	}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PREMIUM UPGRADE STYLES — high-quality / professional pass
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── Desktop Navigation Links ──────────────────────────── */
+#header nav {
+	display: flex;
+	align-items: center;
+}
+
+.desktop-nav {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	gap: 0.1em;
+	align-items: center;
+	height: inherit;
+}
+
+.desktop-nav li {
+	padding: 0;
+}
+
+.desktop-nav a {
+	display: inline-flex;
+	align-items: center;
+	height: 2.1em;
+	padding: 0 0.9em;
+	border-radius: 999px;
+	color: rgba(255, 255, 255, 0.88);
+	font-family: var(--font-sans);
+	font-size: 0.74rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	border: none;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a[aria-current="page"] {
+	background: rgba(255, 255, 255, 0.16);
+	color: #ffffff;
+}
+
+.nav-quote-btn {
+	display: inline-flex;
+	align-items: center;
+	height: 2.1em;
+	padding: 0 1.1em;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.18);
+	border: 1px solid rgba(255, 255, 255, 0.44) !important;
+	color: #ffffff !important;
+	font-family: var(--font-sans);
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	margin-right: 0.75em;
+	margin-left: 0.4em;
+	white-space: nowrap;
+	transition: background 0.2s ease, border-color 0.2s ease;
+	text-decoration: none;
+}
+
+.nav-quote-btn:hover {
+	background: rgba(255, 255, 255, 0.28);
+	border-color: rgba(255, 255, 255, 0.65) !important;
+	color: #ffffff !important;
+}
+
+@media screen and (max-width: 900px) {
+	.desktop-nav {
+		display: none;
+	}
+	.nav-quote-btn {
+		display: none;
+	}
+}
+
+/* When header is not .alt (scrolled down), update desktop-nav for dark bg */
+#header:not(.alt) .desktop-nav a {
+	color: rgba(255, 255, 255, 0.9);
+}
+
+/* ─── Section Eyebrow Labels ─────────────────────────────── */
+.section-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55em;
+	font-family: var(--font-sans);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--clr-brand);
+	margin: 0 0 0.7em 0;
+}
+
+.section-eyebrow::before {
+	content: '';
+	display: inline-block;
+	width: 22px;
+	height: 2.5px;
+	background: var(--clr-brand);
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+/* ─── Testimonial Stars ──────────────────────────────────── */
+.testimonial-stars {
+	display: flex;
+	gap: 3px;
+	margin-bottom: 0.85em;
+	color: #f5a623;
+	font-size: 1rem;
+	line-height: 1;
+}
+
+.testimonial-stars span {
+	display: inline-block;
+}
+
+/* ─── Scroll Reveal Animations ───────────────────────────── */
+.reveal {
+	opacity: 0;
+	transform: translateY(20px);
+	will-change: opacity, transform;
+	transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+	will-change: auto;
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ─── Process Steps — numbered circles ───────────────────── */
+.home-page .step-number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4em;
+	height: 2.4em;
+	border-radius: 50%;
+	background: linear-gradient(135deg, var(--clr-accent), var(--clr-brand-deep));
+	color: #ffffff;
+	font-family: var(--font-display);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0;
+	margin-bottom: 0.85em;
+	padding: 0;
+	box-shadow: 0 4px 12px rgba(0, 80, 40, 0.25);
+}
+
+/* ─── Section heading h2 underline accent ────────────────── */
+.home-page .section-heading h2::after {
+	display: none;
+}
+
+/* ─── Metric cards — subtle left border accent ───────────── */
+.home-page .metric-card {
+	border-left: 3px solid var(--clr-brand);
+}
+
+/* ─── Service cards — stronger hover ────────────────────── */
+.home-page .home-card {
+	border-radius: var(--radius-lg);
+}
+
+.home-page .home-card img {
+	border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* ─── Example cards — left accent bar ───────────────────── */
+.home-page .example-card {
+	border-left: 3px solid var(--clr-brand);
+}
+
+/* ─── Pillar cards — icon upgrade ───────────────────────── */
+.home-page .pillar-card .icon {
+	background: linear-gradient(135deg, #e4f3eb, #c8ebd8);
+	color: var(--clr-brand-deep);
+	font-size: 1rem;
+}
+
+/* ─── Quick quote strip — tighter professional look ─────── */
+.home-quick-quote {
+	background: linear-gradient(100deg, #073a20 0%, #0b4d2b 60%, #0d5c33 100%);
+	border-bottom: 2px solid rgba(0, 176, 87, 0.35);
+}
+
+/* ─── Final CTA box — premium gradient ──────────────────── */
+.home-page .final-cta-box {
+	background: linear-gradient(140deg, #f0f9f4 0%, #e4f5ec 50%, #d8efe4 100%);
+	border: 1.5px solid rgba(0, 122, 59, 0.18);
+	box-shadow: var(--shadow-lg);
+}
+
+/* ─── Coverage section — deeper bg ──────────────────────── */
+.home-coverage {
+	background: linear-gradient(150deg, #f0fbf5 0%, #e6f5ed 100%);
+}
+
+.coverage-region {
+	border-top: 3px solid var(--clr-brand-light);
+	border-radius: var(--radius-md);
+}
+
+.coverage-region:hover {
+	border-top-color: var(--clr-brand);
+}
+
+/* ─── Testimonials section – greenish tint bg ───────────── */
+.home-testimonials {
+	background: var(--clr-bg-subtle);
+}
+
+/* ─── Footer top accent ──────────────────────────────────── */
+#footer {
+	background: linear-gradient(160deg, #063a1e 0%, #084d28 40%, #063a1e 100%);
+	border-top: 3px solid rgba(0, 185, 90, 0.22);
+}
+
+/* ─── Nav reveal class (added by JS on scroll) ───────────── */
+#header.reveal {
+	opacity: 1;
+	transform: none;
+	background-color: rgba(7, 48, 26, 0.97);
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.22);
+}
+
+/* ─── Banner heading — tighter premium weight ────────────── */
+.home-page #banner h1 {
+	font-weight: 800;
+}
+
+/* ─── Body text refinement ───────────────────────────────── */
+p {
+	color: var(--clr-text-muted);
+}
+
+strong, b {
+	color: var(--clr-text);
+}
+
+/* ─── Improved button radius using tokens ────────────────── */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	border-radius: var(--radius-md);
+}
+
+/* ─── Input refinement ───────────────────────────────────── */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	border-radius: var(--radius-sm);
+}
+
+/* ─── Home section border refinement ────────────────────── */
+.home-page .home-section {
+	border-top: 1.5px solid rgba(10, 85, 46, 0.06);
+}
+
+/* ─── Section heading lead text ─────────────────────────── */
+.home-page .section-lead {
+	font-size: 1.05rem;
+	color: var(--clr-text-muted);
+	line-height: 1.75;
+}
+
+/* ─── Proof metrics responsive fix ──────────────────────── */
+@media screen and (max-width: 600px) {
+	.home-page .trust-metrics {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ─── Partner logos — cleaner on light bg ───────────────── */
+.home-page .home-partners {
+	background: #f8fbf9;
+}
+
+/* ─── Menu close button refinement ──────────────────────── */
+#menu .close {
+	border: 1px solid rgba(0, 122, 59, 0.2);
+	border-radius: var(--radius-sm);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--clr-brand-deep);
+	padding: 0.6em 1.1em;
+	transition: background 0.2s ease;
+}
+
+#menu .close:hover {
+	background: rgba(0, 122, 59, 0.06);
 }

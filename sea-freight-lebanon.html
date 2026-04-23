@@ -26,6 +26,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between FCL and LCL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FCL refers to a full container load, while LCL refers to less-than-container load shipping for smaller cargo volumes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is sea freight always cheaper than air freight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sea freight is often more cost-efficient for larger loads, but the right choice still depends on urgency, cargo profile, and total route requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you coordinate sea freight with inland transport too?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many routes need sea freight combined with road transport and documentation support for smoother end-to-end execution."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Sea Freight Services in Lebanon",
       "description": "Ocean freight planning and coordination for commercial cargo moving from Lebanon.",
@@ -58,8 +91,11 @@
     }
     </script>
 
+    <meta name="author" content="AL MARWA CO" />
+    <meta name="theme-color" content="#0b4d2b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
     <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
@@ -111,7 +147,16 @@
     <div id="wrapper">
         <header id="header">
             <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
-            <nav><a href="#menu">Menu</a></nav>
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-quote-btn">Get a Quote</a>
+                <a href="#menu">Menu</a>
+            </nav>
         </header>
         <nav id="menu" aria-label="Main navigation">
             <ul class="links">

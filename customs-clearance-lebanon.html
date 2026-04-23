@@ -26,6 +26,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can customs issues delay both air and sea shipments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Documentation readiness can affect any freight mode if shipment information is incomplete or inconsistent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need all shipment details before asking for help?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You can start with the route, cargo type, and what you already know. From there, we can help identify what is still needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is customs support separate from freight forwarding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is closely connected. Good freight forwarding usually includes documentation-aware planning because the shipment route depends on it."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Customs Clearance Support in Lebanon",
       "description": "Shipping documentation and customs-related coordination support for freight moving through Lebanon.",
@@ -58,8 +91,11 @@
     }
     </script>
 
+    <meta name="author" content="AL MARWA CO" />
+    <meta name="theme-color" content="#0b4d2b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
     <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
@@ -111,7 +147,16 @@
     <div id="wrapper">
         <header id="header">
             <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
-            <nav><a href="#menu">Menu</a></nav>
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-quote-btn">Get a Quote</a>
+                <a href="#menu">Menu</a>
+            </nav>
         </header>
         <nav id="menu" aria-label="Main navigation">
             <ul class="links">

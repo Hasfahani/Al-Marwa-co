@@ -26,6 +26,39 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is air freight always the fastest option?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually yes in overall transit speed, but total door-to-door timing still depends on booking, handling, documents, and destination-side readiness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is air cargo suitable for all shipment types?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is best for shipments where urgency, value, or timing makes the faster service level worthwhile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help if we are deciding between air and sea freight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We help compare timing, cargo profile, handling needs, and route practicality before recommending the right option."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "Article",
       "headline": "Air Cargo Services in Lebanon",
       "description": "Air freight planning and coordination for urgent and high-priority shipments from Lebanon.",
@@ -58,8 +91,11 @@
     }
     </script>
 
+    <meta name="author" content="AL MARWA CO" />
+    <meta name="theme-color" content="#0b4d2b" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
     <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
@@ -120,7 +156,16 @@
     <div id="wrapper">
         <header id="header">
             <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
-            <nav><a href="#menu">Menu</a></nav>
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-quote-btn">Get a Quote</a>
+                <a href="#menu">Menu</a>
+            </nav>
         </header>
 
         <nav id="menu" aria-label="Main navigation">
