@@ -1,12 +1,17 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
     <title>About AL MARWA CO | Freight Forwarding Company in Lebanon</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
         <meta name="description" content="Learn about AL MARWA CO, a Lebanon freight forwarding company established in 1997 with experience in land freight, sea freight, air cargo, and logistics coordination." />
+        <meta name="keywords" content="AL MARWA CO about, freight forwarding company Lebanon, logistics company Lebanon since 1997, Khalde freight company, Lebanon shipping company history" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://al-marwaco.com/about.html" />
 
@@ -58,18 +63,22 @@
 
     <meta name="author" content="AL MARWA CO" />
     <meta name="theme-color" content="#0b4d2b" />
+    <meta name="geo.region" content="LB" />
+    <meta name="geo.placename" content="Khalde, Lebanon" />
+    <meta name="geo.position" content="33.7614;35.4877" />
+    <meta name="ICBM" content="33.7614, 35.4877" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -82,8 +91,9 @@
 
         /* Hero */
         .about-hero {
-            background: linear-gradient(155deg, rgba(5, 42, 25, 0.80), rgba(6, 28, 18, 0.60)), url("images/pic08.jpg") center/cover no-repeat;
-            min-height: 52vh;
+            background: linear-gradient(180deg, rgba(6, 20, 14, 0.55) 0%, rgba(6, 20, 14, 0.35) 60%, rgba(6, 20, 14, 0.50) 100%), url("images/pic08.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 55vh;
             display: flex;
             align-items: flex-end;
         }
@@ -111,7 +121,7 @@
             color: #ffffff;
             font-size: clamp(2rem, 4vw, 3.3rem);
             line-height: 1.1;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .about-hero p {
@@ -147,7 +157,7 @@
             line-height: 1.2;
             font-weight: 800;
             margin-bottom: 0.75em;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .about-section p {
@@ -391,9 +401,9 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
 
-        <header id="header">
+        <header id="header" class="alt">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+                <img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo">
             </a>
             <nav>
                 <ul class="desktop-nav">
@@ -437,7 +447,7 @@
                             <p>Our approach is direct: <strong>We listen to the requirement, plan the right route, and follow through to delivery.</strong></p>
                         </div>
                         <figure>
-                            <img src="images/pic08.jpg" alt="AL MARWA CO freight operations and logistics coordination" loading="lazy" decoding="async" />
+                            <img fetchpriority="high" src="images/pic08.jpg" alt="AL MARWA CO freight operations and logistics coordination" decoding="async" />
                         </figure>
                     </div>
                 </section>
@@ -545,13 +555,19 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/jquery.scrolly.min.js" defer></script>
-    <script src="assets/js/jquery.scrollex.min.js" defer></script>
     <script src="assets/js/browser.min.js" defer></script>
     <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
     <script src="assets/js/main.js" defer></script>
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

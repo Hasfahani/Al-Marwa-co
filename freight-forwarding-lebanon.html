@@ -4,9 +4,14 @@
     <title>Freight Forwarding Lebanon | Land, Sea &amp; Air Cargo | AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
     <meta name="description" content="Freight forwarding in Lebanon with land freight, sea freight, air cargo, customs support, and practical shipment planning from AL MARWA CO." />
+    <meta name="keywords" content="freight forwarding Lebanon, freight forwarder Lebanon, land freight Lebanon, cargo transport Lebanon, Lebanon logistics company, shipping agent Lebanon, AL MARWA CO freight" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
 
@@ -16,32 +21,34 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://al-marwaco.com/freight-forwarding-lebanon.html" />
     <meta property="og:site_name" content="AL MARWA CO" />
-    <meta property="og:image" content="https://al-marwaco.com/images/pic05.jpg" />
+    <meta property="og:image" content="https://al-marwaco.com/images/pic11.jpg" />
+    <meta property="og:image:alt" content="Freight forwarding and land cargo services in Lebanon" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Freight Forwarding Lebanon | Land, Sea &amp; Air Cargo | AL MARWA CO" />
     <meta name="twitter:description" content="Freight forwarding from Lebanon with land, sea, and air cargo coordination for importers, exporters, and project shipments." />
-    <meta name="twitter:image" content="https://al-marwaco.com/images/pic05.jpg" />
+    <meta name="twitter:image" content="https://al-marwaco.com/images/pic11.jpg" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Freight Forwarding in Lebanon",
-      "description": "Guide to freight forwarding services in Lebanon by AL MARWA CO.",
-      "author": {
-        "@type": "Organization",
-        "name": "AL MARWA CO"
-      },
-      "publisher": {
-        "@type": "Organization",
+      "@type": "Service",
+      "name": "Freight Forwarding Lebanon",
+      "serviceType": "Freight Forwarding",
+      "description": "Land freight, sea freight, air cargo, customs support, and end-to-end shipment planning in Lebanon since 1997.",
+      "provider": {
+        "@type": "LocalBusiness",
         "name": "AL MARWA CO",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://al-marwaco.com/images/logo.jpg"
+        "url": "https://al-marwaco.com/",
+        "telephone": "+96170099978",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Khalde",
+          "addressCountry": "LB"
         }
       },
-      "mainEntityOfPage": "https://al-marwaco.com/freight-forwarding-lebanon.html"
+      "areaServed": { "@type": "Country", "name": "Lebanon" },
+      "url": "https://al-marwaco.com/freight-forwarding-lebanon.html"
     }
     </script>
 
@@ -106,13 +113,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -123,8 +130,9 @@
         }
 
         .page-hero {
-            background: linear-gradient(155deg, rgba(5, 42, 25, 0.82), rgba(6, 28, 18, 0.58)), url("images/pic05.jpg") center/cover no-repeat;
-            min-height: 54vh;
+            background: linear-gradient(180deg, rgba(6, 20, 14, 0.55) 0%, rgba(6, 20, 14, 0.30) 60%, rgba(6, 20, 14, 0.50) 100%), url("images/pic11.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 55vh;
             display: flex;
             align-items: flex-end;
         }
@@ -152,7 +160,7 @@
             color: #ffffff;
             font-size: clamp(2rem, 4vw, 3.35rem);
             line-height: 1.08;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .page-hero p {
@@ -323,8 +331,8 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
 
-        <header id="header">
-            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
             <nav>
                 <ul class="desktop-nav">
                     <li><a href="index.html">Home</a></li>
@@ -538,13 +546,19 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/jquery.scrolly.min.js" defer></script>
-<script src="assets/js/jquery.scrollex.min.js" defer></script>
 <script src="assets/js/browser.min.js" defer></script>
 <script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
 <script src="assets/js/main.js" defer></script>
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

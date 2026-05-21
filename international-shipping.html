@@ -4,9 +4,14 @@
     <title>International Shipping Services | Air, Sea &amp; Land Freight | AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
     <meta name="description" content="International shipping services with air freight, sea freight, land transport integration, and route planning from AL MARWA CO." />
+    <meta name="keywords" content="international shipping Lebanon, worldwide freight Lebanon, global logistics Lebanon, import export Lebanon, multimodal shipping Lebanon, international freight forwarder Lebanon" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://al-marwaco.com/international-shipping.html" />
 
@@ -26,14 +31,28 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "International Shipping Services",
-      "description": "Shipping options, planning factors, and service support for international cargo movement.",
-      "author": {
-        "@type": "Organization",
-        "name": "AL MARWA CO"
+      "@type": "Service",
+      "name": "International Shipping Services",
+      "serviceType": "International Freight Forwarding",
+      "description": "Worldwide shipping coordination via air, sea, and land freight with multimodal route planning from Lebanon.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AL MARWA CO",
+        "url": "https://al-marwaco.com/",
+        "telephone": "+96170099978",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Khalde",
+          "addressCountry": "LB"
+        }
       },
-      "mainEntityOfPage": "https://al-marwaco.com/international-shipping.html"
+      "areaServed": [
+        { "@type": "Country", "name": "Lebanon" },
+        { "@type": "Place", "name": "Middle East" },
+        { "@type": "Place", "name": "Europe" },
+        { "@type": "Place", "name": "Asia" }
+      ],
+      "url": "https://al-marwaco.com/international-shipping.html"
     }
     </script>
 
@@ -98,13 +117,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -115,8 +134,9 @@
         }
 
         .page-hero {
-            background: linear-gradient(155deg, rgba(4, 33, 50, 0.8), rgba(7, 25, 39, 0.58)), url("images/pic03.jpg") center/cover no-repeat;
-            min-height: 54vh;
+            background: linear-gradient(180deg, rgba(4, 18, 28, 0.55) 0%, rgba(4, 18, 28, 0.28) 60%, rgba(4, 18, 28, 0.50) 100%), url("images/pic03.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 55vh;
             display: flex;
             align-items: flex-end;
         }
@@ -144,7 +164,7 @@
             color: #ffffff;
             font-size: clamp(2rem, 4vw, 3.35rem);
             line-height: 1.08;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .page-hero p {
@@ -305,8 +325,8 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
 
-        <header id="header">
-            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
             <nav>
                 <ul class="desktop-nav">
                     <li><a href="index.html">Home</a></li>
@@ -513,13 +533,19 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/jquery.scrolly.min.js" defer></script>
-<script src="assets/js/jquery.scrollex.min.js" defer></script>
 <script src="assets/js/browser.min.js" defer></script>
 <script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
 <script src="assets/js/main.js" defer></script>
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

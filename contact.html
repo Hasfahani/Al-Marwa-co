@@ -4,11 +4,20 @@
         <title>Contact AL MARWA CO | Freight Quote Lebanon</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
 
         <meta name="description" content="Contact AL MARWA CO for a freight quote in Lebanon. Reach our team by phone, WhatsApp, email, or the online inquiry form." />
+        <meta name="keywords" content="contact AL MARWA CO, freight quote Lebanon, shipping quote Lebanon, logistics inquiry Lebanon, WhatsApp freight Lebanon, AL MARWA CO phone" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="geo.region" content="LB" />
+        <meta name="geo.placename" content="Khalde, Lebanon" />
+        <meta name="geo.position" content="33.7614;35.4877" />
+        <meta name="ICBM" content="33.7614, 35.4877" />
         <link rel="canonical" href="https://al-marwaco.com/contact.html" />
 
         <meta property="og:locale" content="en_US" />
@@ -86,13 +95,13 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://formsubmit.co" />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -104,8 +113,9 @@
         }
 
         .contact-hero {
-            background: linear-gradient(155deg, rgba(5, 42, 25, 0.78), rgba(6, 28, 18, 0.58)), url("images/pic01.jpg") center/cover no-repeat;
-            min-height: 52vh;
+            background: linear-gradient(180deg, rgba(6, 20, 14, 0.55) 0%, rgba(6, 20, 14, 0.28) 60%, rgba(6, 20, 14, 0.50) 100%), url("images/pic01.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 55vh;
             display: flex;
             align-items: flex-end;
         }
@@ -133,7 +143,7 @@
             color: #ffffff;
             font-size: clamp(2rem, 4vw, 3.3rem);
             line-height: 1.1;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .contact-hero p {
@@ -484,9 +494,9 @@
     <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
 
-        <header id="header">
+        <header id="header" class="alt">
             <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+                <img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo">
             </a>
             <nav>
                 <ul class="desktop-nav">
@@ -560,7 +570,7 @@
                         <h2 id="form-title" class="panel-title">Shipment Inquiry Form</h2>
                         <p class="panel-subtitle">Complete the form below and our team will review your request and contact you.</p>
 
-                        <form action="https://formsubmit.co/info@al-marwaco.com" method="POST">
+                        <form action="https://formsubmit.co/info@al-marwaco.com" method="POST" aria-labelledby="form-title">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Contact Form Message - AL MARWA CO">
                             <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
@@ -700,13 +710,19 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/jquery.scrolly.min.js" defer></script>
-    <script src="assets/js/jquery.scrollex.min.js" defer></script>
     <script src="assets/js/browser.min.js" defer></script>
     <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
     <script src="assets/js/main.js" defer></script>
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

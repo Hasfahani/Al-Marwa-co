@@ -1,13 +1,18 @@
-<!DOCTYPE HTML>
+ HTML>
 <html lang="en">
 <head>
         <title>Freight Services in Lebanon | Land, Sea, Air Cargo | AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
 
         <meta name="description" content="Explore freight services in Lebanon from AL MARWA CO including land freight, heavy lifting, maritime shipping, air cargo, and end-to-end logistics support." />
+        <meta name="keywords" content="freight services Lebanon, logistics services Lebanon, land freight Lebanon, sea freight Lebanon, air cargo Lebanon, heavy lift Lebanon, shipping services Lebanon, AL MARWA CO services" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://al-marwaco.com/services.html" />
 
@@ -17,25 +22,38 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://al-marwaco.com/services.html" />
         <meta property="og:site_name" content="AL MARWA CO" />
-        <meta property="og:image" content="https://al-marwaco.com/images/pic05.jpg" />
-        <meta property="og:image:alt" content="AL MARWA CO freight services" />
+        <meta property="og:image" content="https://al-marwaco.com/images/pic02.jpg" />
+        <meta property="og:image:alt" content="AL MARWA CO freight and logistics services Lebanon" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Freight Services in Lebanon | Land, Sea, Air Cargo | AL MARWA CO" />
         <meta name="twitter:description" content="Freight services in Lebanon including land transport, maritime shipping, air cargo, and heavy lifting support." />
-        <meta name="twitter:image" content="https://al-marwaco.com/images/pic05.jpg" />
+        <meta name="twitter:image" content="https://al-marwaco.com/images/pic02.jpg" />
 
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Service",
+            "name": "Freight & Logistics Services Lebanon",
             "serviceType": "Freight Forwarding and Logistics",
+            "description": "Comprehensive freight services in Lebanon including land freight, sea freight, air cargo, heavy lifting, and international shipping coordination.",
             "provider": {
-                "@type": "Organization",
+                "@type": "LocalBusiness",
                 "name": "AL MARWA CO",
-                "url": "https://al-marwaco.com/"
+                "url": "https://al-marwaco.com/",
+                "telephone": "+96170099978",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Khalde",
+                    "addressCountry": "LB"
+                }
             },
-            "areaServed": "Middle East, Europe, Asia",
+            "areaServed": [
+                { "@type": "Country", "name": "Lebanon" },
+                { "@type": "Place", "name": "Middle East" },
+                { "@type": "Place", "name": "Europe" },
+                { "@type": "Place", "name": "Asia" }
+            ],
             "url": "https://al-marwaco.com/services.html"
         }
         </script>
@@ -101,13 +119,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -119,7 +137,8 @@
         }
 
         .services-hero {
-            background: linear-gradient(160deg, rgba(4, 40, 24, 0.78), rgba(6, 27, 18, 0.58)), url("images/pic05.jpg") center/cover no-repeat;
+            background: linear-gradient(180deg, rgba(6, 20, 14, 0.55) 0%, rgba(6, 20, 14, 0.30) 60%, rgba(6, 20, 14, 0.50) 100%), url("images/pic02.jpg") center/cover no-repeat;
+            background-attachment: fixed;
             min-height: 62vh;
             display: flex;
             align-items: flex-end;
@@ -149,7 +168,7 @@
             margin-bottom: 0.35em;
             font-size: clamp(2rem, 4vw, 3.4rem);
             line-height: 1.1;
-            letter-spacing: -0.01em;
+            letter-spacing: 0;
         }
 
         .services-hero p {
@@ -430,9 +449,9 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 <div id="wrapper">
 
-    <header id="header">
+    <header id="header" class="alt">
         <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="AL MARWA CO Logo">
+            <img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo">
         </a>
         <nav>
             <ul class="desktop-nav">
@@ -512,7 +531,7 @@
 
                     <div class="service-layout">
                         <div class="service-media">
-                            <img src="images/pic02.jpg" alt="Land Freight" loading="lazy" decoding="async">
+                            <img fetchpriority="high" src="images/pic02.jpg" alt="Land Freight" decoding="async">
                             <div class="service-gallery">
                                 <img src="images/pic01.jpg" alt="Land transport operation" loading="lazy" decoding="async">
                                 <img src="images/pic11.jpg" alt="Trailer logistics" loading="lazy" decoding="async">
@@ -699,14 +718,19 @@
    aria-label="Chat with AL MARWA CO on WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
 </a>
-
-<script src="assets/js/jquery.min.js" defer></script>
-<script src="assets/js/jquery.scrolly.min.js" defer></script>
-<script src="assets/js/jquery.scrollex.min.js" defer></script>
 <script src="assets/js/browser.min.js" defer></script>
 <script src="assets/js/breakpoints.min.js" defer></script>
-<script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
 <script src="assets/js/main.js" defer></script>
-
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

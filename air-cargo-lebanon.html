@@ -4,9 +4,14 @@
     <title>Air Cargo Lebanon | Air Freight Services | AL MARWA CO</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+
     <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
     <link rel="shortcut icon" href="images/logo.jpg" />
     <meta name="description" content="Air cargo services in Lebanon for urgent shipments, high-priority freight, airport coordination, and practical air freight planning from AL MARWA CO." />
+    <meta name="keywords" content="air cargo Lebanon, air freight Lebanon, airfreight Beirut airport, urgent freight Lebanon, express shipping Lebanon, air logistics Lebanon" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://al-marwaco.com/air-cargo-lebanon.html" />
 
@@ -59,14 +64,23 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Air Cargo Services in Lebanon",
-      "description": "Air freight planning and coordination for urgent and high-priority shipments from Lebanon.",
-      "author": {
-        "@type": "Organization",
-        "name": "AL MARWA CO"
+      "@type": "Service",
+      "name": "Air Cargo Lebanon",
+      "serviceType": "Air Freight Forwarding",
+      "description": "Air cargo and express freight services in Lebanon for urgent shipments with airport coordination and priority handling.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "AL MARWA CO",
+        "url": "https://al-marwaco.com/",
+        "telephone": "+96170099978",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Khalde",
+          "addressCountry": "LB"
+        }
       },
-      "mainEntityOfPage": "https://al-marwaco.com/air-cargo-lebanon.html"
+      "areaServed": { "@type": "Country", "name": "Lebanon" },
+      "url": "https://al-marwaco.com/air-cargo-lebanon.html"
     }
     </script>
 
@@ -98,13 +112,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -112,8 +126,9 @@
     <style>
         body.aircargo-page { background: #f3f8f5; }
         .topic-hero {
-            background: linear-gradient(155deg, rgba(8, 35, 58, 0.8), rgba(5, 26, 41, 0.58)), url("images/pic07.jpg") center/cover no-repeat;
-            min-height: 54vh;
+            background: linear-gradient(180deg, rgba(6, 18, 30, 0.55) 0%, rgba(6, 18, 30, 0.28) 60%, rgba(6, 18, 30, 0.50) 100%), url("images/pic07.jpg") center/cover no-repeat;
+            background-attachment: fixed;
+            min-height: 55vh;
             display: flex;
             align-items: flex-end;
         }
@@ -122,7 +137,7 @@
             display: inline-block; margin: 0 0 0.95em 0; padding: 0.45em 0.82em; border-radius: 999px;
             border: 1px solid rgba(255,255,255,0.36); color: #edf4f8; font-size: 0.78em; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 700;
         }
-        .topic-hero h1 { margin: 0 0 0.35em; color: #fff; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.08; letter-spacing: -0.01em; }
+        .topic-hero h1 { margin: 0 0 0.35em; color: #fff; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.08; letter-spacing: 0; }
         .topic-hero p { margin: 0; color: #e8f2f8; max-width: 58ch; line-height: 1.75; }
         .topic-main { padding: 3em 0 2.6em; }
         .topic-stack { display: grid; gap: 1.35em; }
@@ -154,8 +169,8 @@
 <body class="is-preload aircargo-page">
     <a href="#main" class="skip-link">Skip to main content</a>
     <div id="wrapper">
-        <header id="header">
-            <a href="index.html" class="logo"><img src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo"></a>
             <nav>
                 <ul class="desktop-nav">
                     <li><a href="index.html">Home</a></li>
@@ -332,13 +347,19 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/jquery.scrolly.min.js" defer></script>
-    <script src="assets/js/jquery.scrollex.min.js" defer></script>
     <script src="assets/js/browser.min.js" defer></script>
     <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
     <script src="assets/js/main.js" defer></script>
+    <script>
+    (function() {
+        var h = document.getElementById('header');
+        var hero = document.querySelector('.about-hero,.services-hero,.page-hero,.topic-hero,.contact-hero');
+        if (!h || !hero) return;
+        function tick() { h.classList.toggle('alt', window.scrollY < hero.offsetHeight - h.offsetHeight); }
+        window.addEventListener('scroll', tick, { passive: true });
+        tick();
+    })();
+    </script>
 </body>
 </html>

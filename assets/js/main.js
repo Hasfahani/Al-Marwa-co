@@ -1,351 +1,322 @@
-/*
+﻿/*
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-(function($) {
+(function() {
+	var windowEl = window,
+		bodyEl = document.body,
+		wrapperEl = document.getElementById('wrapper'),
+		headerEl = document.getElementById('header'),
+		bannerEl = document.getElementById('banner');
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#wrapper'),
-		$header = $('#header'),
-		$banner = $('#banner');
+	function on(target, event, handler, options) {
+		if (target)
+			target.addEventListener(event, handler, options || false);
+	}
+
+	function off(target, event, handler) {
+		if (target)
+			target.removeEventListener(event, handler);
+	}
+
+	function triggerScroll() {
+		windowEl.dispatchEvent(new Event('scroll'));
+	}
+
+	function getDocumentTop(element) {
+		return element.getBoundingClientRect().top + (windowEl.pageYOffset || document.documentElement.scrollTop || 0);
+	}
+
+	function smoothScrollTo(top, duration) {
+		var start = windowEl.pageYOffset || document.documentElement.scrollTop || 0,
+			change = top - start,
+			startTime = null;
+
+		function ease(t) {
+			return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+		}
+
+		function animate(currentTime) {
+			if (startTime === null)
+				startTime = currentTime;
+
+			var progress = Math.min((currentTime - startTime) / duration, 1);
+			windowEl.scrollTo(0, start + change * ease(progress));
+
+			if (progress < 1)
+				windowEl.requestAnimationFrame(animate);
+		}
+
+		windowEl.requestAnimationFrame(animate);
+	}
 
 	// Breakpoints.
-		breakpoints({
-			xlarge:    ['1281px',   '1680px'   ],
-			large:     ['981px',    '1280px'   ],
-			medium:    ['737px',    '980px'    ],
-			small:     ['481px',    '736px'    ],
-			xsmall:    ['361px',    '480px'    ],
-			xxsmall:   [null,       '360px'    ]
-		});
+	breakpoints({
+		xlarge:    ['1281px',   '1680px'   ],
+		large:     ['981px',    '1280px'   ],
+		medium:    ['737px',    '980px'    ],
+		small:     ['481px',    '736px'    ],
+		xsmall:    ['361px',    '480px'    ],
+		xxsmall:   [null,       '360px'    ]
+	});
 
-	/**
-	 * Applies parallax scrolling to an element's background image.
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn._parallax = (browser.name == 'ie' || browser.name == 'edge' || browser.mobile) ? function() { return $(this) } : function(intensity) {
+	function parallax(element, intensity) {
+		var disabled = browser.name == 'ie' || browser.name == 'edge' || browser.mobile;
 
-		var	$window = $(window),
-			$this = $(this);
-
-		if (this.length == 0 || intensity === 0)
-			return $this;
-
-		if (this.length > 1) {
-
-			for (var i=0; i < this.length; i++)
-				$(this[i])._parallax(intensity);
-
-			return $this;
-
-		}
+		if (!element || disabled || intensity === 0)
+			return;
 
 		if (!intensity)
 			intensity = 0.25;
 
-		$this.each(function() {
-
-			var $t = $(this),
-				on, off;
-
-			on = function() {
-
-				$t.css('background-position', 'center 100%, center 100%, center 0px');
-
-				$window
-					.on('scroll._parallax', function() {
-
-						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
-
-						$t.css('background-position', 'center ' + (pos * (-1 * intensity)) + 'px');
-
-					});
-
-			};
-
-			off = function() {
-
-				$t
-					.css('background-position', '');
-
-				$window
-					.off('scroll._parallax');
-
-			};
-
-			breakpoints.on('<=medium', off);
-			breakpoints.on('>medium', on);
-
-		});
-
-		$window
-			.off('load._parallax resize._parallax')
-			.on('load._parallax resize._parallax', function() {
-				$window.trigger('scroll');
-			});
-
-		return $(this);
-
-	};
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Clear transitioning state on unload/hide.
-		$window.on('unload pagehide', function() {
-			window.setTimeout(function() {
-				$('.is-transitioning').removeClass('is-transitioning');
-			}, 250);
-		});
-
-	// Fix: Enable IE-only tweaks.
-		if (browser.name == 'ie' || browser.name == 'edge')
-			$body.addClass('is-ie');
-
-	// Scrolly.
-		$('.scrolly').scrolly({
-			offset: function() {
-				return $header.height() - 2;
-			}
-		});
-
-	// Tiles.
-		var $tiles = $('.tiles > article');
-
-		$tiles.each(function() {
-
-			var $this = $(this),
-				$image = $this.find('.image'), $img = $image.find('img'),
-				$link = $this.find('.link'),
-				x;
-
-			// Image.
-
-				// Set image.
-					$this.css('background-image', 'url(' + $img.attr('src') + ')');
-
-				// Set position.
-					if (x = $img.data('position'))
-						$image.css('background-position', x);
-
-				// Hide original.
-					$image.hide();
-
-			// Link.
-				if ($link.length > 0) {
-
-					$x = $link.clone()
-						.text('')
-						.addClass('primary')
-						.appendTo($this);
-
-					$link = $link.add($x);
-
-					$link.on('click', function(event) {
-
-						var href = $link.attr('href');
-
-						// Prevent default.
-							event.stopPropagation();
-							event.preventDefault();
-
-						// Target blank?
-							if ($link.attr('target') == '_blank') {
-
-								// Open in new tab.
-									window.open(href);
-
-							}
-
-						// Otherwise ...
-							else {
-
-								// Start transitioning.
-									$this.addClass('is-transitioning');
-									$wrapper.addClass('is-transitioning');
-
-								// Redirect.
-									window.setTimeout(function() {
-										location.href = href;
-									}, 500);
-
-							}
-
-					});
-
-				}
-
-		});
-
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() {
-				$window.trigger('scroll');
-			});
-
-			$window.on('load', function() {
-
-				$banner.scrollex({
-					bottom:		$header.height() + 10,
-					terminate:	function() { $header.removeClass('alt'); },
-					enter:		function() { $header.addClass('alt'); },
-					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
-				});
-
-				window.setTimeout(function() {
-					$window.triggerHandler('scroll');
-				}, 100);
-
-			});
-
+		function onScroll() {
+			var pos = parseInt(windowEl.pageYOffset || document.documentElement.scrollTop || 0) - parseInt(getDocumentTop(element));
+			element.style.backgroundPosition = 'center ' + (pos * (-1 * intensity)) + 'px';
 		}
 
-	// Banner.
-		$banner.each(function() {
+		function enable() {
+			element.style.backgroundPosition = 'center 100%, center 100%, center 0px';
+			off(windowEl, 'scroll', onScroll);
+			on(windowEl, 'scroll', onScroll);
+			onScroll();
+		}
 
-			var $this = $(this),
-				$image = $this.find('.image'), $img = $image.find('img');
+		function disable() {
+			element.style.backgroundPosition = '';
+			off(windowEl, 'scroll', onScroll);
+		}
 
-			// Parallax.
-				$this._parallax(0);
+		breakpoints.on('<=medium', disable);
+		breakpoints.on('>medium', enable);
+		on(windowEl, 'load', onScroll);
+		on(windowEl, 'resize', onScroll);
+	}
 
-			// Image.
-				if ($image.length > 0) {
+	// Play initial animations on page load.
+	on(windowEl, 'load', function() {
+		window.setTimeout(function() {
+			bodyEl.classList.remove('is-preload');
+		}, 100);
+	});
 
-					// Set image.
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
+	// Clear transitioning state on unload/hide.
+	on(windowEl, 'unload', clearTransitioning);
+	on(windowEl, 'pagehide', clearTransitioning);
 
-					// Hide original.
-						$image.hide();
+	function clearTransitioning() {
+		window.setTimeout(function() {
+			document.querySelectorAll('.is-transitioning').forEach(function(element) {
+				element.classList.remove('is-transitioning');
+			});
+		}, 250);
+	}
 
-				}
+	// IE-only tweaks.
+	if (browser.name == 'ie' || browser.name == 'edge')
+		bodyEl.classList.add('is-ie');
 
+	// Scrolly.
+	document.querySelectorAll('.scrolly[href^="#"]').forEach(function(link) {
+		on(link, 'click', function(event) {
+			var target = document.querySelector(link.getAttribute('href'));
+
+			if (!target)
+				return;
+
+			event.preventDefault();
+			smoothScrollTo(getDocumentTop(target) - ((headerEl ? headerEl.offsetHeight : 0) - 2), 500);
 		});
+	});
+
+	// Tiles.
+	document.querySelectorAll('.tiles > article').forEach(function(tile) {
+		var image = tile.querySelector('.image'),
+			img = image ? image.querySelector('img') : null,
+			link = tile.querySelector('.link');
+
+		if (img) {
+			tile.style.backgroundImage = 'url(' + img.getAttribute('src') + ')';
+
+			if (img.dataset.position)
+				image.style.backgroundPosition = img.dataset.position;
+
+			if (image)
+				image.style.display = 'none';
+		}
+
+		if (link) {
+			var overlayLink = link.cloneNode(true);
+
+			overlayLink.textContent = '';
+			overlayLink.classList.add('primary');
+			tile.appendChild(overlayLink);
+
+			[link, overlayLink].forEach(function(activeLink) {
+				on(activeLink, 'click', function(event) {
+					var href = activeLink.getAttribute('href');
+
+					event.stopPropagation();
+					event.preventDefault();
+
+					if (activeLink.getAttribute('target') == '_blank') {
+						window.open(href);
+						return;
+					}
+
+					tile.classList.add('is-transitioning');
+					if (wrapperEl)
+						wrapperEl.classList.add('is-transitioning');
+
+					window.setTimeout(function() {
+						location.href = href;
+					}, 500);
+				});
+			});
+		}
+	});
+
+	// Header.
+	if (bannerEl && headerEl && headerEl.classList.contains('alt')) {
+		function updateHeader() {
+			var bottom = getDocumentTop(bannerEl) + bannerEl.offsetHeight,
+				scrollTop = windowEl.pageYOffset || document.documentElement.scrollTop || 0,
+				threshold = (headerEl.offsetHeight || 0) + 10;
+
+			if (scrollTop + threshold < bottom) {
+				headerEl.classList.add('alt');
+				headerEl.classList.remove('reveal');
+			} else {
+				headerEl.classList.remove('alt');
+				headerEl.classList.add('reveal');
+			}
+		}
+
+		on(windowEl, 'scroll', updateHeader);
+		on(windowEl, 'resize', updateHeader);
+		on(windowEl, 'load', function() {
+			window.setTimeout(updateHeader, 100);
+		});
+	}
+
+	// Banner.
+	if (bannerEl) {
+		var bannerImage = bannerEl.querySelector('.image'),
+			bannerImg = bannerImage ? bannerImage.querySelector('img') : null;
+
+		parallax(bannerEl, 0);
+
+		if (bannerImg) {
+			bannerEl.style.backgroundImage = 'url(' + bannerImg.getAttribute('src') + ')';
+			bannerImage.style.display = 'none';
+		}
+	}
 
 	// Menu.
-		var $menu = $('#menu'),
-			$menuInner;
+	var menuEl = document.getElementById('menu'),
+		menuInnerEl,
+		menuLocked = false;
 
-		$menu.wrapInner('<div class="inner"></div>');
-		$menuInner = $menu.children('.inner');
-		$menu._locked = false;
+	if (menuEl) {
+		menuInnerEl = document.createElement('div');
+		menuInnerEl.className = 'inner';
 
-		$menu._lock = function() {
+		while (menuEl.firstChild)
+			menuInnerEl.appendChild(menuEl.firstChild);
 
-			if ($menu._locked)
+		menuEl.appendChild(menuInnerEl);
+		bodyEl.appendChild(menuEl);
+
+		function lockMenu() {
+			if (menuLocked)
 				return false;
 
-			$menu._locked = true;
-
+			menuLocked = true;
 			window.setTimeout(function() {
-				$menu._locked = false;
+				menuLocked = false;
 			}, 350);
 
 			return true;
+		}
 
-		};
+		function showMenu() {
+			if (lockMenu())
+				bodyEl.classList.add('is-menu-visible');
+		}
 
-		$menu._show = function() {
+		function hideMenu() {
+			if (lockMenu())
+				bodyEl.classList.remove('is-menu-visible');
+		}
 
-			if ($menu._lock())
-				$body.addClass('is-menu-visible');
+		function toggleMenu() {
+			if (lockMenu())
+				bodyEl.classList.toggle('is-menu-visible');
+		}
 
-		};
-
-		$menu._hide = function() {
-
-			if ($menu._lock())
-				$body.removeClass('is-menu-visible');
-
-		};
-
-		$menu._toggle = function() {
-
-			if ($menu._lock())
-				$body.toggleClass('is-menu-visible');
-
-		};
-
-		$menuInner
-			.on('click', function(event) {
-				event.stopPropagation();
-			})
-			.on('click', 'a', function(event) {
-
-				var href = $(this).attr('href');
-
-				event.preventDefault();
-				event.stopPropagation();
-
-				// Hide.
-					$menu._hide();
-
-				// Redirect.
-					window.setTimeout(function() {
-						window.location.href = href;
-					}, 250);
-
-			});
-
-		$menu
-			.appendTo($body)
-			.on('click', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				$body.removeClass('is-menu-visible');
-
-			})
-			.append('<a class="close" href="#menu">Close</a>');
-
-		$body
-			.on('click', 'a[href="#menu"]', function(event) {
-
-				event.stopPropagation();
-				event.preventDefault();
-
-				// Toggle.
-					$menu._toggle();
-
-			})
-			.on('click', function(event) {
-
-				// Hide.
-					$menu._hide();
-
-			})
-			.on('keydown', function(event) {
-
-				// Hide on escape.
-					if (event.keyCode == 27)
-						$menu._hide();
-
-			});
-
-	// Scroll-to-top button
-		var $scrollBtn = $('<button class="scroll-top-btn" aria-label="Scroll to top"><span class="icon solid fa-chevron-up" aria-hidden="true"></span></button>');
-		$body.append($scrollBtn);
-
-		$window.on('scroll.scrolltop', function() {
-			if ($window.scrollTop() > 400) {
-				$scrollBtn.addClass('visible');
-			} else {
-				$scrollBtn.removeClass('visible');
-			}
+		on(menuInnerEl, 'click', function(event) {
+			event.stopPropagation();
 		});
 
-		$scrollBtn.on('click', function() {
-			$('html, body').animate({ scrollTop: 0 }, 380);
+		menuInnerEl.querySelectorAll('a').forEach(function(link) {
+			on(link, 'click', function(event) {
+				var href = link.getAttribute('href');
+
+				event.preventDefault();
+				event.stopPropagation();
+				hideMenu();
+
+				window.setTimeout(function() {
+					window.location.href = href;
+				}, 250);
+			});
 		});
 
-})(jQuery);
+		on(menuEl, 'click', function(event) {
+			event.stopPropagation();
+			event.preventDefault();
+			bodyEl.classList.remove('is-menu-visible');
+		});
+
+		var closeLink = document.createElement('a');
+		closeLink.className = 'close';
+		closeLink.href = '#menu';
+		closeLink.textContent = 'Close';
+		menuEl.appendChild(closeLink);
+
+		document.querySelectorAll('a[href="#menu"]').forEach(function(link) {
+			on(link, 'click', function(event) {
+				event.stopPropagation();
+				event.preventDefault();
+				toggleMenu();
+			});
+		});
+
+		on(bodyEl, 'click', hideMenu);
+		on(bodyEl, 'keydown', function(event) {
+			if (event.keyCode == 27)
+				hideMenu();
+		});
+	}
+
+	// Scroll-to-top button.
+	var scrollBtn = document.createElement('button');
+	scrollBtn.className = 'scroll-top-btn';
+	scrollBtn.setAttribute('aria-label', 'Scroll to top');
+	scrollBtn.innerHTML = '<span class="icon solid fa-chevron-up" aria-hidden="true"></span>';
+	bodyEl.appendChild(scrollBtn);
+
+	on(windowEl, 'scroll', function() {
+		if ((windowEl.pageYOffset || document.documentElement.scrollTop || 0) > 400)
+			scrollBtn.classList.add('visible');
+		else
+			scrollBtn.classList.remove('visible');
+	});
+
+	on(scrollBtn, 'click', function() {
+		smoothScrollTo(0, 380);
+	});
+
+	triggerScroll();
+})();
