@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="The page you are looking for could not be found. Return to AL MARWA CO homepage for freight forwarding services in Lebanon." />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg" />
+    <link rel="canonical" href="https://al-marwaco.com/404.html" />
+    <meta property="og:url" content="https://al-marwaco.com/404.html" />
+    <meta property="og:image" content="https://al-marwaco.com/images/logo.jpg" />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '%%GA_MEASUREMENT_ID%%');
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -43,7 +49,7 @@
             color: rgba(255,255,255,0.12);
             line-height: 1;
             margin: 0 0 0.15em;
-            letter-spacing: -0.03em;
+            letter-spacing: 0;
         }
 
         .error-icon {
@@ -153,13 +159,9 @@
        aria-label="Chat with AL MARWA CO on WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
-
-    <script src="assets/js/jquery.min.js" defer></script>
-    <script src="assets/js/jquery.scrolly.min.js" defer></script>
-    <script src="assets/js/jquery.scrollex.min.js" defer></script>
     <script src="assets/js/browser.min.js" defer></script>
     <script src="assets/js/breakpoints.min.js" defer></script>
-    <script src="assets/js/util.js" defer></script>
+    <!-- util.js depends on jQuery and is intentionally not loaded after the vanilla main.js rewrite. -->
     <script src="assets/js/main.js" defer></script>
 </body>
 </html>
