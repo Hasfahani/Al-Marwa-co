@@ -92,18 +92,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://formsubmit.co" />
-
-    <!-- TODO: Replace %%GA_MEASUREMENT_ID%% with your real GA4 Measurement ID before deploying -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GA_MEASUREMENT_ID%%"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '%%GA_MEASUREMENT_ID%%');
-    </script>
-
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -113,9 +102,9 @@
         }
 
         .contact-hero {
-            background: linear-gradient(180deg, rgba(6, 20, 14, 0.55) 0%, rgba(6, 20, 14, 0.28) 60%, rgba(6, 20, 14, 0.50) 100%), url("images/pic01.jpg") center/cover no-repeat;
+            background: linear-gradient(90deg, rgba(5, 20, 13, 0.78) 0%, rgba(5, 20, 13, 0.44) 54%, rgba(5, 20, 13, 0.20) 100%), url("images/pic01.jpg") center 72%/cover no-repeat;
             background-attachment: fixed;
-            min-height: 55vh;
+            min-height: 46vh;
             display: flex;
             align-items: flex-end;
         }
@@ -634,6 +623,7 @@
                                 <input type="submit" value="Send Inquiry" class="primary">
                                 <input type="reset" value="Clear Form">
                             </div>
+                            <p class="form-privacy-note">Your details are used only to respond to your shipment inquiry.</p>
                         </form>
                     </section>
 
