@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://al-marwaco.com/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/hero-beirut.jpg</image:loc>
+      <image:title>Container vessel approaching the Port of Beirut</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://al-marwaco.com/services.html</loc>
@@ -20,9 +25,23 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-beirut.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/pic11.jpg</image:loc>
+      <image:title>Freight forwarding for Beirut businesses</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/beirut-freight-guide.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/hero-beirut.jpg</image:loc>
+      <image:title>Beirut freight planning guide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-beirut-ar.html</loc>

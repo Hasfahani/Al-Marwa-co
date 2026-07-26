@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -15,6 +16,24 @@ PUBLIC_PAGES = sorted(path for path in ROOT.glob("*.html") if path.name != "404.
 errors: list[str] = []
 SITEMAP = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
 NOSCRIPT_CSS = (ROOT / "assets" / "css" / "noscript.css").read_text(encoding="utf-8")
+seen_titles: dict[str, str] = {}
+seen_descriptions: dict[str, str] = {}
+
+try:
+    sitemap_root = ET.fromstring(SITEMAP)
+except ET.ParseError as exc:
+    errors.append(f"sitemap.xml: invalid XML ({exc})")
+    sitemap_root = None
+
+if sitemap_root is not None:
+    sitemap_namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    sitemap_locations = [
+        element.text
+        for element in sitemap_root.findall("s:url/s:loc", sitemap_namespace)
+        if element.text
+    ]
+    if len(sitemap_locations) != len(set(sitemap_locations)):
+        errors.append("sitemap.xml: contains duplicate URLs")
 
 
 class Document(HTMLParser):
@@ -37,13 +56,29 @@ for page in PUBLIC_PAGES:
 
     if len(re.findall(r"<h1\b", source, re.I)) != 1:
         fail(page, "must contain exactly one h1")
+    if "\ufffd" in source:
+        fail(page, "contains an invalid Unicode replacement character")
+    title = re.search(r"<title>(.*?)</title>", source, re.I | re.S)
+    if not title:
+        fail(page, "missing title")
+    else:
+        normalized_title = " ".join(title.group(1).split()).lower()
+        if normalized_title in seen_titles:
+            fail(page, f"duplicate title also used by {seen_titles[normalized_title]}")
+        seen_titles[normalized_title] = page.name
     language = re.search(r'<html\s+lang="([a-z-]+)"', source, re.I)
     if not language:
         fail(page, "missing document language declaration")
     elif language.group(1).lower().startswith("ar") and not re.search(r'<html[^>]+dir="rtl"', source, re.I):
         fail(page, "Arabic pages must declare right-to-left direction")
-    if not re.search(r'<meta\s+name="description"\s+content=".{70,170}"', source, re.I):
+    description = re.search(r'<meta\s+name="description"\s+content="(.{70,170})"', source, re.I)
+    if not description:
         fail(page, "description should be 70-170 characters")
+    else:
+        normalized_description = " ".join(description.group(1).split()).lower()
+        if normalized_description in seen_descriptions:
+            fail(page, f"duplicate description also used by {seen_descriptions[normalized_description]}")
+        seen_descriptions[normalized_description] = page.name
     if len(re.findall(r'<link\s+rel="canonical"', source, re.I)) != 1:
         fail(page, "must contain exactly one canonical URL")
     canonical = re.search(r'<link\s+rel="canonical"\s+href="([^"]+)"', source, re.I)
