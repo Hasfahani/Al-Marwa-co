@@ -25,6 +25,19 @@
     --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+::selection {
+	background: var(--clr-brand);
+	color: #ffffff;
+}
+
+/* Keep long landing pages fast without hiding content from search engines. */
+@supports (content-visibility: auto) {
+	#main > section:nth-child(n+3) {
+		content-visibility: auto;
+		contain-intrinsic-size: 1px 720px;
+	}
+}
+
 /* CSS Reset */
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -852,7 +865,7 @@ button,
 
 /* Banner */
 #banner {
-	background-image: url("../../images/hero.jpg") !important;
+	background-image: url("../../images/hero-beirut.jpg") !important;
 	background-color: transparent !important;
 	background-size: cover !important;
 	background-position: center center !important;
@@ -937,6 +950,7 @@ button,
 		min-height: 100dvh !important;
 		padding: 6em 1.5em 4em 1.5em !important;
 		background-position: 58% center !important;
+		background-attachment: scroll !important;
 	}
 	#banner .inner {
 		padding: 4em 1.5em !important;
@@ -958,6 +972,18 @@ button,
 	.handwritten-logo {
 		max-width: 75% !important;
 		margin: 0.5em auto !important;
+	}
+}
+
+/* Fixed backgrounds repaint heavily on touch devices and can stutter in iOS. */
+@media (hover: none), (pointer: coarse) {
+	#banner,
+	.about-hero,
+	.services-hero,
+	.page-hero,
+	.topic-hero,
+	.contact-hero {
+		background-attachment: scroll !important;
 	}
 }
 
@@ -2489,6 +2515,220 @@ section {
 	}
 	.scroll-top-btn {
 		transition: none;
+	}
+}
+
+/* Beirut service authority and practical quote guidance */
+.home-page .home-beirut {
+	background:
+		radial-gradient(circle at 88% 8%, rgba(0, 176, 87, 0.12), transparent 30%),
+		linear-gradient(145deg, #072c1b 0%, #0b4d2b 100%);
+}
+
+.home-page .home-beirut .inner {
+	padding-top: clamp(4rem, 8vw, 7rem);
+	padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.beirut-intro {
+	display: grid;
+	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	gap: clamp(2rem, 6vw, 6rem);
+	align-items: end;
+	margin-bottom: 2.5rem;
+}
+
+.home-beirut h2,
+.home-beirut h3,
+.home-beirut .section-eyebrow {
+	color: #ffffff;
+}
+
+.home-beirut .section-lead,
+.home-beirut p {
+	color: rgba(255, 255, 255, 0.76);
+}
+
+.beirut-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.beirut-card {
+	padding: clamp(1.5rem, 3vw, 2.2rem);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: var(--radius-lg);
+	background: rgba(255, 255, 255, 0.07);
+	box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+	backdrop-filter: blur(10px);
+	transition: transform 0.3s var(--ease-out), background 0.3s ease, border-color 0.3s ease;
+}
+
+.beirut-card:hover {
+	transform: translateY(-5px);
+	background: rgba(255, 255, 255, 0.11);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.beirut-card > .icon {
+	display: grid;
+	place-items: center;
+	width: 3rem;
+	height: 3rem;
+	margin-bottom: 1.4rem;
+	border-radius: 0.9rem;
+	background: #ffffff;
+	color: var(--clr-brand-dark);
+}
+
+.beirut-card h3 {
+	font-size: 1.15rem;
+	margin-bottom: 0.7rem;
+}
+
+.beirut-card p {
+	font-size: 0.94rem;
+	line-height: 1.7;
+	margin-bottom: 1.2rem;
+}
+
+.beirut-card a {
+	color: #7ff5ae;
+	border: 0;
+	font-weight: 700;
+	font-size: 0.9rem;
+}
+
+.quote-checklist {
+	display: grid;
+	grid-template-columns: minmax(180px, 0.7fr) minmax(280px, 1.4fr) auto;
+	gap: 2rem;
+	align-items: center;
+	margin-top: 1rem;
+	padding: clamp(1.4rem, 3vw, 2rem);
+	border-radius: var(--radius-lg);
+	background: #ffffff;
+	box-shadow: var(--shadow-lg);
+}
+
+.quote-checklist .section-eyebrow,
+.quote-checklist h3 {
+	color: var(--clr-brand-deep);
+}
+
+.quote-checklist h3 {
+	margin: 0;
+	font-size: 1.15rem;
+}
+
+.quote-checklist ul {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.45rem 1.2rem;
+}
+
+.quote-checklist li {
+	position: relative;
+	padding-left: 1.25rem;
+	color: var(--clr-text-muted);
+	font-size: 0.84rem;
+}
+
+.quote-checklist li::before {
+	content: "\2713";
+	position: absolute;
+	left: 0;
+	color: var(--clr-accent);
+	font-weight: 800;
+}
+
+.home-faq {
+	background: var(--clr-bg-subtle);
+}
+
+.faq-layout {
+	display: grid;
+	grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+	gap: clamp(2rem, 7vw, 6rem);
+	align-items: start;
+}
+
+.faq-list {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.faq-list details {
+	border: 1px solid var(--clr-border);
+	border-radius: var(--radius-md);
+	background: #ffffff;
+	box-shadow: var(--shadow-sm);
+	overflow: hidden;
+}
+
+.faq-list summary {
+	position: relative;
+	padding: 1.2rem 3.2rem 1.2rem 1.3rem;
+	color: var(--clr-brand-deep);
+	font-family: var(--font-display);
+	font-size: 1rem;
+	font-weight: 800;
+	line-height: 1.35;
+	cursor: pointer;
+	list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+	display: none;
+}
+
+.faq-list summary::after {
+	content: "+";
+	position: absolute;
+	right: 1.25rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.45rem;
+	color: var(--clr-brand);
+}
+
+.faq-list details[open] summary::after {
+	content: "\2212";
+}
+
+.faq-list details p {
+	margin: 0;
+	padding: 0 1.3rem 1.3rem;
+	color: var(--clr-text-muted);
+	font-size: 0.94rem;
+	line-height: 1.75;
+}
+
+@media screen and (max-width: 980px) {
+	.beirut-intro,
+	.faq-layout {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.beirut-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.quote-checklist {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.beirut-grid,
+	.quote-checklist ul {
+		grid-template-columns: 1fr;
+	}
+
+	.beirut-card:hover {
+		transform: none;
 	}
 }
 
