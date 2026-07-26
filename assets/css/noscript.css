@@ -21,3 +21,10 @@
 		transform: none;
 		opacity: 1;
 	}
+
+/* Progressive enhancement: content must remain visible when scripts are disabled. */
+
+	.reveal {
+		opacity: 1 !important;
+		transform: none !important;
+	}
