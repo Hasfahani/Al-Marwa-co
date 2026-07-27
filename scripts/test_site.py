@@ -16,6 +16,12 @@ PUBLIC_PAGES = sorted(path for path in ROOT.glob("*.html") if path.name != "404.
 errors: list[str] = []
 SITEMAP = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
 NOSCRIPT_CSS = (ROOT / "assets" / "css" / "noscript.css").read_text(encoding="utf-8")
+MAIN_CSS = (ROOT / "assets" / "css" / "main.css").read_text(encoding="utf-8")
+CSS_FILES = [
+    ROOT / "assets" / "css" / "main.css",
+    ROOT / "assets" / "css" / "fonts.css",
+    ROOT / "assets" / "css" / "fontawesome-all.min.css",
+]
 seen_titles: dict[str, str] = {}
 seen_descriptions: dict[str, str] = {}
 
@@ -56,6 +62,8 @@ for page in PUBLIC_PAGES:
 
     if len(re.findall(r"<h1\b", source, re.I)) != 1:
         fail(page, "must contain exactly one h1")
+    if "fonts.googleapis.com" in source or "fonts.gstatic.com" in source:
+        fail(page, "must use the self-hosted font files")
     if "\ufffd" in source:
         fail(page, "contains an invalid Unicode replacement character")
     title = re.search(r"<title>(.*?)</title>", source, re.I | re.S)
@@ -94,6 +102,8 @@ for page in PUBLIC_PAGES:
     for tag, attrs in document.tags:
         if tag == "img" and "alt" not in attrs:
             fail(page, f"image missing alt text: {attrs.get('src', 'unknown')}")
+        if tag == "img" and ("width" not in attrs or "height" not in attrs):
+            fail(page, f"image missing width or height: {attrs.get('src', 'unknown')}")
         if tag not in {"a", "link", "script", "img"}:
             continue
         attribute = "href" if tag in {"a", "link"} else "src"
@@ -106,6 +116,17 @@ for page in PUBLIC_PAGES:
 
 if ".reveal" not in NOSCRIPT_CSS or "opacity: 1" not in NOSCRIPT_CSS:
     errors.append("noscript.css: reveal content must remain visible without JavaScript")
+if re.search(r"^\s*@import", MAIN_CSS, re.M):
+    errors.append("main.css: avoid render-blocking nested stylesheet imports")
+
+for css_file in CSS_FILES:
+    css_source = css_file.read_text(encoding="utf-8")
+    for target in re.findall(r"url\([\"']?([^\"')]+)", css_source):
+        if target.startswith(("data:", "http:", "https:")):
+            continue
+        resolved_target = (css_file.parent / urlsplit(target).path).resolve()
+        if not resolved_target.exists():
+            errors.append(f"{css_file.name}: broken local reference: {target}")
 
 if errors:
     print("SITE CHECK FAILED")
