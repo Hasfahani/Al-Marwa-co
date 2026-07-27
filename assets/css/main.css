@@ -1,5 +1,3 @@
-@import url(fontawesome-all.min.css);
-
 /* Design Tokens */
 :root {
     --clr-brand:        #007a3b;
@@ -865,7 +863,7 @@ button,
 
 /* Banner */
 #banner {
-	background-image: url("../../images/hero-beirut.jpg") !important;
+	background-image: url("../../images/hero-beirut.webp") !important;
 	background-color: transparent !important;
 	background-size: cover !important;
 	background-position: center center !important;
