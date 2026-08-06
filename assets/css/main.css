@@ -3823,3 +3823,115 @@ input[type="submit"]:hover {
 		min-width: 0 !important;
 	}
 }
+
+/* Mobile hardening
+ * Keep hero copy and navigation inside the visual viewport. These rules live at
+ * the end of the cascade intentionally: the site contains legacy responsive
+ * layers from the original template and the production header must win them. */
+@media screen and (max-width: 560px) {
+	#header {
+		width: 100% !important;
+		padding: 0 0.7rem !important;
+		overflow: visible !important;
+	}
+
+	#header .logo {
+		flex: 0 0 auto !important;
+		padding: 0 !important;
+	}
+
+	#header nav {
+		position: absolute !important;
+		top: 0 !important;
+		right: 0.7rem !important;
+		bottom: auto !important;
+		left: auto !important;
+		display: flex !important;
+		width: 2.65rem !important;
+		max-width: none !important;
+		height: 100% !important;
+		margin-left: auto !important;
+		align-items: center !important;
+		justify-content: flex-end !important;
+	}
+
+	#header nav a[href="#menu"] {
+		position: relative !important;
+		display: inline-flex !important;
+		width: 2.65rem !important;
+		min-width: 2.65rem !important;
+		height: 2.35rem !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: 1px solid rgba(255, 255, 255, 0.2) !important;
+		background: rgba(0, 0, 0, 0.35) !important;
+		color: transparent !important;
+		font-size: 0 !important;
+		text-indent: 0 !important;
+		overflow: hidden !important;
+	}
+
+	#header nav a[href="#menu"]::before {
+		content: "" !important;
+		position: absolute !important;
+		left: 50% !important;
+		top: 50% !important;
+		display: block !important;
+		width: 1.05rem !important;
+		height: 0.72rem !important;
+		margin: 0 !important;
+		transform: translate(-50%, -50%) !important;
+		background:
+			linear-gradient(#fff, #fff) 0 0 / 100% 2px no-repeat,
+			linear-gradient(#fff, #fff) 0 50% / 100% 2px no-repeat,
+			linear-gradient(#fff, #fff) 0 100% / 100% 2px no-repeat !important;
+	}
+
+	#banner,
+	.home-page #banner .inner,
+	.home-page #banner header.major,
+	.home-page #banner .content {
+		box-sizing: border-box !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+	}
+
+	.home-page #banner .inner {
+		width: calc(100vw - 2rem) !important;
+		max-width: calc(100vw - 2rem) !important;
+		margin-right: auto !important;
+		margin-left: auto !important;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+	}
+
+	.home-page #banner header.major,
+	.home-page #banner .content,
+	.home-page #banner h1,
+	.home-page .hero-intro,
+	.home-page .hero-trust-list,
+	.cta-container {
+		width: calc(100vw - 4rem) !important;
+		max-width: calc(100vw - 4rem) !important;
+	}
+
+	.home-page #banner h1 {
+		width: 100% !important;
+		max-width: 100% !important;
+		font-size: clamp(1.85rem, 9vw, 2.35rem) !important;
+		overflow-wrap: anywhere !important;
+		word-break: normal !important;
+		text-wrap: wrap !important;
+	}
+
+	.home-page .hero-intro {
+		width: 100% !important;
+		max-width: 100% !important;
+		overflow-wrap: anywhere !important;
+	}
+}
+
+body.is-menu-visible {
+	overflow: hidden;
+}

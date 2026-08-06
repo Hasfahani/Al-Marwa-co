@@ -1,0 +1,228 @@
+body.de-service-page {
+    background: #f3f8f5;
+}
+
+.de-service-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.de-service-hero.sea-hero {
+    background-image: linear-gradient(90deg, rgba(3, 18, 12, .84), rgba(3, 18, 12, .34)), url("../../images/pic05.webp");
+}
+
+.de-service-hero.air-hero {
+    background-image: linear-gradient(90deg, rgba(3, 18, 12, .84), rgba(3, 18, 12, .34)), url("../../images/pic07.webp");
+}
+
+.de-service-hero .inner {
+    padding-top: 8em;
+    padding-bottom: 3.5em;
+}
+
+.de-service-eyebrow {
+    display: inline-flex;
+    margin: 0 0 1em;
+    padding: .48em .85em;
+    border: 1px solid rgba(255, 255, 255, .34);
+    border-radius: 999px;
+    color: #f0bc60;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.de-service-hero h1 {
+    max-width: 17ch;
+    margin: 0 0 .45em;
+    color: #fff;
+    font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+    line-height: 1.04;
+    text-wrap: balance;
+}
+
+.de-service-hero p:last-child {
+    max-width: 65ch;
+    margin: 0;
+    color: rgba(255, 255, 255, .88);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.de-service-main {
+    padding: 3.5em 0 4em;
+}
+
+.de-service-stack {
+    display: grid;
+    gap: 1.3em;
+}
+
+.de-service-panel,
+.de-service-cta {
+    padding: clamp(1.35em, 3vw, 2em);
+    border: 1px solid #dce8e1;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(8, 36, 24, .07);
+}
+
+.de-service-panel h2,
+.de-service-cta h2 {
+    margin: 0 0 .5em;
+    color: #0b4d2b;
+    font-size: clamp(1.45rem, 2.4vw, 2.25rem);
+    line-height: 1.16;
+}
+
+.de-service-panel > p {
+    max-width: 76ch;
+    color: #3d534a;
+}
+
+.de-service-kicker {
+    margin-bottom: .65em !important;
+    color: #8a611a !important;
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.de-service-grid,
+.de-process-grid,
+.de-faq-grid {
+    display: grid;
+    gap: 1em;
+}
+
+.de-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.de-process-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    counter-reset: service-step;
+}
+
+.de-faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.de-service-card,
+.de-process-card,
+.de-faq-card {
+    padding: 1.2em;
+    border: 1px solid #deebe4;
+    border-radius: 13px;
+    background: #f8fcfa;
+}
+
+.de-service-card h3,
+.de-process-card h3,
+.de-faq-card h3 {
+    margin: 0 0 .45em;
+    color: #0d6237;
+    font-size: 1.02rem;
+}
+
+.de-service-card p,
+.de-process-card p,
+.de-faq-card p {
+    margin: 0;
+    color: #3d534a;
+    font-size: .95rem;
+}
+
+.de-service-card ul,
+.de-service-checklist {
+    margin: 0;
+    padding-left: 1.2em;
+    color: #344b41;
+}
+
+.de-service-card li,
+.de-service-checklist li {
+    margin-bottom: .5em;
+}
+
+.de-process-card {
+    counter-increment: service-step;
+}
+
+.de-process-card::before {
+    content: "0" counter(service-step);
+    display: block;
+    margin-bottom: .45em;
+    color: rgba(11, 77, 43, .3);
+    font-family: var(--font-display);
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.de-service-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75em;
+    margin-top: 1.2em;
+}
+
+.de-service-cta {
+    background: linear-gradient(135deg, #0a4a2b, #082f20);
+}
+
+.de-service-cta h2 {
+    color: #fff;
+}
+
+.de-service-cta p {
+    max-width: 70ch;
+    color: rgba(255, 255, 255, .82);
+}
+
+@media screen and (max-width: 980px) {
+    .de-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .de-service-hero {
+        min-height: auto;
+        background-attachment: scroll;
+    }
+
+    .de-service-hero .inner {
+        width: calc(100% - 2rem);
+        padding-top: 7em;
+        padding-bottom: 3em;
+    }
+
+    .de-service-hero h1 {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 2.7rem);
+    }
+
+    .de-service-grid,
+    .de-process-grid,
+    .de-faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .de-service-actions {
+        flex-direction: column;
+    }
+
+    .de-service-actions .button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}

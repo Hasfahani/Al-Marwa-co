@@ -24,6 +24,52 @@ CSS_FILES = [
 ]
 seen_titles: dict[str, str] = {}
 seen_descriptions: dict[str, str] = {}
+MULTILINGUAL_ALTERNATES = {
+    "freight-forwarding-lebanon.html": {
+        "en-LB": "https://al-marwaco.com/freight-forwarding-lebanon.html",
+        "de-DE": "https://al-marwaco.com/spedition-libanon-deutschland.html",
+        "x-default": "https://al-marwaco.com/freight-forwarding-lebanon.html",
+    },
+    "spedition-libanon-deutschland.html": {
+        "de-DE": "https://al-marwaco.com/spedition-libanon-deutschland.html",
+        "en-LB": "https://al-marwaco.com/freight-forwarding-lebanon.html",
+        "x-default": "https://al-marwaco.com/freight-forwarding-lebanon.html",
+    },
+    "sea-freight-lebanon.html": {
+        "en-LB": "https://al-marwaco.com/sea-freight-lebanon.html",
+        "de-DE": "https://al-marwaco.com/seefracht-deutschland-libanon.html",
+        "x-default": "https://al-marwaco.com/sea-freight-lebanon.html",
+    },
+    "seefracht-deutschland-libanon.html": {
+        "de-DE": "https://al-marwaco.com/seefracht-deutschland-libanon.html",
+        "en-LB": "https://al-marwaco.com/sea-freight-lebanon.html",
+        "x-default": "https://al-marwaco.com/sea-freight-lebanon.html",
+    },
+    "air-cargo-lebanon.html": {
+        "en-LB": "https://al-marwaco.com/air-cargo-lebanon.html",
+        "de-DE": "https://al-marwaco.com/luftfracht-deutschland-libanon.html",
+        "x-default": "https://al-marwaco.com/air-cargo-lebanon.html",
+    },
+    "luftfracht-deutschland-libanon.html": {
+        "de-DE": "https://al-marwaco.com/luftfracht-deutschland-libanon.html",
+        "en-LB": "https://al-marwaco.com/air-cargo-lebanon.html",
+        "x-default": "https://al-marwaco.com/air-cargo-lebanon.html",
+    },
+}
+GERMAN_B2B_CLUSTER = {
+    "spedition-libanon-deutschland.html": {
+        "seefracht-deutschland-libanon.html",
+        "luftfracht-deutschland-libanon.html",
+    },
+    "seefracht-deutschland-libanon.html": {
+        "spedition-libanon-deutschland.html",
+        "luftfracht-deutschland-libanon.html",
+    },
+    "luftfracht-deutschland-libanon.html": {
+        "spedition-libanon-deutschland.html",
+        "seefracht-deutschland-libanon.html",
+    },
+}
 
 try:
     sitemap_root = ET.fromstring(SITEMAP)
@@ -32,7 +78,10 @@ except ET.ParseError as exc:
     sitemap_root = None
 
 if sitemap_root is not None:
-    sitemap_namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    sitemap_namespace = {
+        "s": "http://www.sitemaps.org/schemas/sitemap/0.9",
+        "xhtml": "http://www.w3.org/1999/xhtml",
+    }
     sitemap_locations = [
         element.text
         for element in sitemap_root.findall("s:url/s:loc", sitemap_namespace)
@@ -40,6 +89,21 @@ if sitemap_root is not None:
     ]
     if len(sitemap_locations) != len(set(sitemap_locations)):
         errors.append("sitemap.xml: contains duplicate URLs")
+    sitemap_urls = {
+        url.findtext("s:loc", namespaces=sitemap_namespace): url
+        for url in sitemap_root.findall("s:url", sitemap_namespace)
+    }
+    for page_name, alternates in MULTILINGUAL_ALTERNATES.items():
+        page_url = f"https://al-marwaco.com/{page_name}"
+        url_element = sitemap_urls.get(page_url)
+        if url_element is None:
+            continue
+        sitemap_alternates = {
+            link.get("hreflang"): link.get("href")
+            for link in url_element.findall("xhtml:link", sitemap_namespace)
+        }
+        if sitemap_alternates != alternates:
+            errors.append(f"sitemap.xml: incorrect hreflang cluster for {page_name}")
 
 
 class Document(HTMLParser):
@@ -92,6 +156,33 @@ for page in PUBLIC_PAGES:
     canonical = re.search(r'<link\s+rel="canonical"\s+href="([^"]+)"', source, re.I)
     if canonical and canonical.group(1) not in SITEMAP:
         fail(page, "canonical URL is missing from sitemap.xml")
+
+    # Every indexable page should produce a complete, intentional search/social
+    # preview instead of relying on crawler-generated fallback text or images.
+    required_preview_tags = {
+        "Open Graph title": r'<meta\s+property="og:title"\s+content="[^"]+"',
+        "Open Graph description": r'<meta\s+property="og:description"\s+content="[^"]+"',
+        "Open Graph URL": r'<meta\s+property="og:url"\s+content="https://al-marwaco\.com/[^"]*"',
+        "Open Graph image": r'<meta\s+property="og:image"\s+content="https://al-marwaco\.com/[^"]+"',
+        "Twitter card": r'<meta\s+name="twitter:card"\s+content="summary_large_image"',
+    }
+    for label, pattern in required_preview_tags.items():
+        if not re.search(pattern, source, re.I):
+            fail(page, f"missing {label}")
+
+    for locale, alternate_url in MULTILINGUAL_ALTERNATES.get(page.name, {}).items():
+        expected = f'<link rel="alternate" hreflang="{locale}" href="{alternate_url}"'
+        if expected not in source:
+            fail(page, f"missing reciprocal {locale} hreflang URL")
+
+    if page.name in GERMAN_B2B_CLUSTER:
+        if not re.search(r'<html\s+lang="de"', source, re.I):
+            fail(page, "German B2B cluster pages must declare German as the page language")
+        if '"@type": "Service"' not in source:
+            fail(page, "German B2B cluster pages must include Service structured data")
+        for cluster_target in GERMAN_B2B_CLUSTER[page.name]:
+            if f'href="{cluster_target}"' not in source:
+                fail(page, f"missing German B2B cluster link: {cluster_target}")
 
     for match in re.finditer(r'<script\s+type="application/ld\+json">(.*?)</script>', source, re.I | re.S):
         try:
