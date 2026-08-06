@@ -9,11 +9,15 @@
   - https://al-marwaco.com/services.html
   - https://al-marwaco.com/contact.html
   - https://al-marwaco.com/freight-forwarding-lebanon.html
+  - https://al-marwaco.com/spedition-libanon-deutschland.html
+  - https://al-marwaco.com/seefracht-deutschland-libanon.html
+  - https://al-marwaco.com/luftfracht-deutschland-libanon.html
   - https://al-marwaco.com/freight-forwarding-beirut.html
   - https://al-marwaco.com/freight-forwarding-beirut-ar.html
   - https://al-marwaco.com/beirut-freight-guide.html
   - https://al-marwaco.com/international-shipping.html
 - After deployment, inspect each submitted URL and confirm that Google selected the published canonical.
+- Inspect the English and German B2B pages and confirm Google recognizes the reciprocal `en-LB`, `de-DE`, and `x-default` hreflang annotations.
 - Review the Core Web Vitals report after enough real-user data is available.
 
 ## 2) Google Business Profile (NAP Consistency)
@@ -64,6 +68,8 @@ Rules:
 - Non-branded clicks
 - Top landing pages by impressions
 - Top queries by CTR
+- English B2B queries such as freight forwarder Lebanon, corporate freight Lebanon, and project cargo Lebanon
+- German B2B queries such as Spedition Libanon, Seefracht Libanon, Luftfracht Libanon, and Transport Deutschland Libanon
 - Contact form submissions
 - WhatsApp and phone leads attributed to organic search
 - Google Business Profile calls, website clicks, and direction requests
