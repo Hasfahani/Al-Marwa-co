@@ -1,57 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://al-marwaco.com/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/hero-beirut.jpg</image:loc>
+      <image:title>Container vessel approaching the Port of Beirut</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://al-marwaco.com/services.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-lebanon.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/spedition-libanon-deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://al-marwaco.com/spedition-libanon-deutschland.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/spedition-libanon-deutschland.html" />
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/hero-beirut.jpg</image:loc>
+      <image:title>B2B-Spedition zwischen Deutschland und Libanon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/seefracht-deutschland-libanon.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/pic05.jpg</image:loc>
+      <image:title>B2B-Seefracht zwischen Deutschland und Libanon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/luftfracht-deutschland-libanon.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/luftfracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/air-cargo-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/air-cargo-lebanon.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/pic07.jpg</image:loc>
+      <image:title>B2B-Luftfracht zwischen Deutschland und Libanon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/freight-forwarding-beirut.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/pic11.jpg</image:loc>
+      <image:title>Freight forwarding for Beirut businesses</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/beirut-freight-guide.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://al-marwaco.com/images/hero-beirut.jpg</image:loc>
+      <image:title>Beirut freight planning guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/freight-forwarding-beirut-ar.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://al-marwaco.com/sea-freight-lebanon.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/air-cargo-lebanon.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-08-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/air-cargo-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/luftfracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/air-cargo-lebanon.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/customs-clearance-lebanon.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/international-shipping.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/contact.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/about.html</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-07-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/privacy.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

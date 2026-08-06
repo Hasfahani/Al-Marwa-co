@@ -219,6 +219,15 @@
 		menuLocked = false;
 
 	if (menuEl) {
+		var menuTriggers = Array.prototype.slice.call(document.querySelectorAll('a[href="#menu"]')),
+			activeMenuTrigger = null;
+
+		menuEl.setAttribute('aria-hidden', 'true');
+		menuTriggers.forEach(function(trigger) {
+			trigger.setAttribute('aria-controls', 'menu');
+			trigger.setAttribute('aria-expanded', 'false');
+		});
+
 		menuInnerEl = document.createElement('div');
 		menuInnerEl.className = 'inner';
 
@@ -241,18 +250,43 @@
 		}
 
 		function showMenu() {
-			if (lockMenu())
+			if (bodyEl.classList.contains('is-menu-visible'))
+				return;
+
+			if (lockMenu()) {
 				bodyEl.classList.add('is-menu-visible');
+				menuEl.setAttribute('aria-hidden', 'false');
+				menuTriggers.forEach(function(trigger) {
+					trigger.setAttribute('aria-expanded', 'true');
+				});
+				window.setTimeout(function() {
+					var firstLink = menuInnerEl.querySelector('a');
+					if (firstLink)
+						firstLink.focus();
+				}, 360);
+			}
 		}
 
 		function hideMenu() {
-			if (lockMenu())
+			if (!bodyEl.classList.contains('is-menu-visible'))
+				return;
+
+			if (lockMenu()) {
 				bodyEl.classList.remove('is-menu-visible');
+				menuEl.setAttribute('aria-hidden', 'true');
+				menuTriggers.forEach(function(trigger) {
+					trigger.setAttribute('aria-expanded', 'false');
+				});
+				if (activeMenuTrigger)
+					activeMenuTrigger.focus();
+			}
 		}
 
 		function toggleMenu() {
-			if (lockMenu())
-				bodyEl.classList.toggle('is-menu-visible');
+			if (bodyEl.classList.contains('is-menu-visible'))
+				hideMenu();
+			else
+				showMenu();
 		}
 
 		on(menuInnerEl, 'click', function(event) {
@@ -276,7 +310,7 @@
 		on(menuEl, 'click', function(event) {
 			event.stopPropagation();
 			event.preventDefault();
-			bodyEl.classList.remove('is-menu-visible');
+			hideMenu();
 		});
 
 		var closeLink = document.createElement('a');
@@ -285,20 +319,75 @@
 		closeLink.textContent = 'Close';
 		menuEl.appendChild(closeLink);
 
-		document.querySelectorAll('a[href="#menu"]').forEach(function(link) {
+		menuTriggers.forEach(function(link) {
 			on(link, 'click', function(event) {
 				event.stopPropagation();
 				event.preventDefault();
+				activeMenuTrigger = link;
 				toggleMenu();
 			});
 		});
 
 		on(bodyEl, 'click', hideMenu);
 		on(bodyEl, 'keydown', function(event) {
-			if (event.keyCode == 27)
+			if (event.keyCode == 27 && bodyEl.classList.contains('is-menu-visible'))
 				hideMenu();
+
+			if (event.key === 'Tab' && bodyEl.classList.contains('is-menu-visible')) {
+				var focusable = menuEl.querySelectorAll('a[href], button:not([disabled])'),
+					first = focusable[0],
+					last = focusable[focusable.length - 1];
+
+				if (event.shiftKey && document.activeElement === first) {
+					event.preventDefault();
+					last.focus();
+				} else if (!event.shiftKey && document.activeElement === last) {
+					event.preventDefault();
+					first.focus();
+				}
+			}
 		});
 	}
+
+	// Reveal enhancements remain optional: content is visible without this script.
+	var revealItems = document.querySelectorAll('.reveal');
+	if (revealItems.length) {
+		if (!('IntersectionObserver' in window)) {
+			revealItems.forEach(function(element) {
+				element.classList.add('is-visible');
+			});
+		} else {
+			var revealObserver = new IntersectionObserver(function(entries) {
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						revealObserver.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.12 });
+
+			revealItems.forEach(function(element) {
+				revealObserver.observe(element);
+			});
+		}
+	}
+
+	// Keep FAQ interaction concise on small screens by closing adjacent answers.
+	document.querySelectorAll('.faq-list details').forEach(function(item) {
+		on(item, 'toggle', function() {
+			if (!item.open)
+				return;
+
+			var list = item.closest('.faq-list');
+			if (!list)
+				return;
+
+			list.querySelectorAll('details[open]').forEach(function(other) {
+				if (other !== item)
+					other.open = false;
+			});
+		});
+	});
 
 	// Scroll-to-top button.
 	var scrollBtn = document.createElement('button');

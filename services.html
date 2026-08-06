@@ -114,9 +114,9 @@
 
     <meta name="author" content="AL MARWA CO" />
     <meta name="theme-color" content="#0b4d2b" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="preload" href="images/pic02.webp" as="image" type="image/webp" fetchpriority="high" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -126,7 +126,7 @@
         }
 
         .services-hero {
-            background: linear-gradient(90deg, rgba(5, 20, 13, 0.74) 0%, rgba(5, 20, 13, 0.42) 52%, rgba(5, 20, 13, 0.22) 100%), url("images/pic02.jpg") center 64%/cover no-repeat;
+            background: linear-gradient(90deg, rgba(5, 20, 13, 0.74) 0%, rgba(5, 20, 13, 0.42) 52%, rgba(5, 20, 13, 0.22) 100%), url("images/pic02.webp") center 64%/cover no-repeat;
             background-attachment: fixed;
             min-height: 52vh;
             display: flex;
@@ -440,7 +440,7 @@
 
     <header id="header" class="alt">
         <a href="index.html" class="logo">
-            <img loading="lazy" src="images/logo.jpg" alt="AL MARWA CO Logo">
+            <img src="images/logo.jpg" alt="AL MARWA CO" width="597" height="586" decoding="async">
         </a>
         <nav>
             <ul class="desktop-nav">
@@ -490,6 +490,7 @@
                 <p>Browse focused pages for common shipment needs and the routes businesses ask about most often.</p>
                 <ul class="service-nav">
                     <li><a href="freight-forwarding-lebanon.html">Freight in Lebanon</a></li>
+                    <li><a href="freight-forwarding-beirut.html">Freight in Beirut</a></li>
                     <li><a href="international-shipping.html">International Shipping</a></li>
                     <li><a href="air-cargo-lebanon.html">Air Cargo Lebanon</a></li>
                     <li><a href="sea-freight-lebanon.html">Sea Freight Lebanon</a></li>
@@ -520,11 +521,11 @@
 
                     <div class="service-layout">
                         <div class="service-media">
-                            <img fetchpriority="high" src="images/pic02.jpg" alt="Land Freight" decoding="async">
+                            <img src="images/pic02.webp" alt="Land freight trucks on a regional highway" width="1206" height="823" loading="lazy" decoding="async">
                             <div class="service-gallery">
-                                <img src="images/pic01.jpg" alt="Land transport operation" loading="lazy" decoding="async">
-                                <img src="images/pic11.jpg" alt="Trailer logistics" loading="lazy" decoding="async">
-                                <img src="images/pic12.jpg" alt="Road freight handling" loading="lazy" decoding="async">
+                                <img src="images/pic01.webp" alt="Land transport operation" width="1206" height="912" loading="lazy" decoding="async">
+                                <img src="images/pic11.webp" alt="Trailer logistics" width="1600" height="1200" loading="lazy" decoding="async">
+                                <img src="images/pic12.webp" alt="Road freight handling" width="1600" height="1200" loading="lazy" decoding="async">
                             </div>
                         </div>
 
@@ -553,10 +554,10 @@
 
                     <div class="service-layout">
                         <div class="service-media">
-                            <img src="images/pic14.jpg" alt="Heavy cargo lifting operation" loading="lazy" decoding="async">
+                            <img src="images/pic14.webp" alt="Heavy cargo lifting operation" width="1599" height="899" loading="lazy" decoding="async">
                             <div class="service-gallery">
-                                <img src="images/pic13.jpg" alt="Heavy machinery loading" loading="lazy" decoding="async">
-                                <img src="images/pic10.jpg" alt="Crane positioning industrial equipment" loading="lazy" decoding="async">
+                                <img src="images/pic13.webp" alt="Heavy machinery loading" width="1368" height="524" loading="lazy" decoding="async">
+                                <img src="images/pic10.webp" alt="Crane positioning industrial equipment" width="1206" height="922" loading="lazy" decoding="async">
                             </div>
                         </div>
 
@@ -588,11 +589,11 @@
 
                     <div class="service-layout">
                         <div class="service-media">
-                            <img src="images/pic05.jpg" alt="Maritime Shipping" loading="lazy" decoding="async">
+                            <img src="images/pic05.webp" alt="Maritime Shipping" width="1920" height="1080" loading="lazy" decoding="async">
                             <div class="service-gallery">
-                                <img src="images/pic03.jpg" alt="Port operation" loading="lazy" decoding="async">
-                                <img src="images/pic04.jpg" alt="Container shipment" loading="lazy" decoding="async">
-                                <img src="images/pic15.jpg" alt="Maritime cargo handling" loading="lazy" decoding="async">
+                                <img src="images/pic03.webp" alt="Port operation" width="640" height="641" loading="lazy" decoding="async">
+                                <img src="images/pic04.webp" alt="Container shipment" width="1280" height="960" loading="lazy" decoding="async">
+                                <img src="images/pic15.webp" alt="Maritime cargo handling" width="891" height="826" loading="lazy" decoding="async">
                             </div>
                         </div>
 
@@ -620,10 +621,10 @@
 
                     <div class="service-layout">
                         <div class="service-media">
-                            <img src="images/pic07.jpg" alt="Air Cargo" loading="lazy" decoding="async">
+                            <img src="images/pic07.webp" alt="Air Cargo" width="1536" height="1024" loading="lazy" decoding="async">
                             <div class="service-gallery">
-                                <img src="images/pic06.jpg" alt="Air logistics" loading="lazy" decoding="async">
-                                <img src="images/pic16.jpg" alt="Cargo preparation" loading="lazy" decoding="async">
+                                <img src="images/pic06.webp" alt="Air logistics" width="1024" height="1024" loading="lazy" decoding="async">
+                                <img src="images/pic16.webp" alt="Cargo preparation" width="887" height="886" loading="lazy" decoding="async">
                             </div>
                         </div>
 
@@ -692,7 +693,7 @@
                 </address>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">&copy; 2026 AL MARWA CO. All rights reserved.</p>
+                <p class="footer-copy">&copy; 2026 AL MARWA CO. All rights reserved. &middot; <a href="privacy.html">Privacy</a></p>
             </div>
         </div>
     </footer>
