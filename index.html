@@ -274,8 +274,12 @@
     <div id="wrapper">
 
         <header id="header" class="alt">
-            <a href="index.html" class="logo">
-                <img src="images/logo.jpg" alt="AL MARWA CO" width="597" height="586" decoding="async" />
+            <a href="index.html" class="logo" aria-label="AL MARWA CO home">
+                <span class="brand-symbol" aria-hidden="true">AM</span>
+                <span class="brand-wordmark" aria-hidden="true">
+                    <strong>AL MARWA</strong>
+                    <small>Freight Forwarding</small>
+                </span>
             </a>
             <nav>
                 <ul class="desktop-nav">
@@ -304,31 +308,48 @@
 
         <section id="banner" class="major">
             <div class="inner">
-                <p class="hero-eyebrow">Freight Forwarding Since 1997</p>
-                <header class="major">
-                    <h1>B2B Freight Forwarding for Critical Cargo and Complex Supply Chains</h1>
-                </header>
+                <div class="hero-layout">
+                    <div class="hero-copy">
+                        <p class="hero-eyebrow"><span></span> Freight forwarding since 1997</p>
+                        <header class="major">
+                            <h1>Freight, managed<br><em>with precision.</em></h1>
+                        </header>
 
-                <div class="content">
-                    <p class="hero-intro">AL MARWA CO helps manufacturers, importers, exporters, procurement teams, and project operators move cargo across Lebanon, the Middle East, Europe, and Asia with clear planning and accountable execution.</p>
+                        <div class="content">
+                            <p class="hero-intro">B2B freight forwarding from Lebanon to the world—planned around your cargo, deadline, and commercial priorities.</p>
 
-                    <ul class="hero-trust-list">
-                        <li>Operating since 1997</li>
-                        <li>Middle East, Europe &amp; Asia</li>
-                        <li>Recognized carrier network</li>
-                    </ul>
-
-                    <div class="cta-container">
-                        <a href="contact.html" class="button cta primary-cta">
-                            <span class="icon solid fa-paper-plane" aria-hidden="true"></span>
-                            Get a Shipping Quote
-                        </a>
-                        <a href="services.html" class="button cta secondary-cta">
-                            <span class="icon solid fa-clipboard-list" aria-hidden="true"></span>
-                            Plan Your Shipment
-                        </a>
+                            <div class="cta-container">
+                                <a href="contact.html" class="button cta primary-cta">
+                                    Get a freight quote <span aria-hidden="true">&rarr;</span>
+                                </a>
+                                <a href="services.html" class="button cta secondary-cta">
+                                    Explore services
+                                </a>
+                            </div>
+                        </div>
                     </div>
+
+                    <aside class="hero-control-card" aria-label="AL MARWA freight service overview">
+                        <p class="control-kicker">Your freight desk</p>
+                        <h2>One team. Every milestone.</h2>
+                        <ul>
+                            <li><span class="icon solid fa-route" aria-hidden="true"></span><div><strong>Route planning</strong><small>Road, sea, air &amp; project cargo</small></div></li>
+                            <li><span class="icon solid fa-file-alt" aria-hidden="true"></span><div><strong>Document readiness</strong><small>Fewer avoidable delays</small></div></li>
+                            <li><span class="icon solid fa-satellite-dish" aria-hidden="true"></span><div><strong>Clear coordination</strong><small>Useful updates from booking to delivery</small></div></li>
+                        </ul>
+                        <div class="control-footer">
+                            <span><i></i> Freight desk available</span>
+                            <a href="tel:+96170099978">+961 70 099978</a>
+                        </div>
+                    </aside>
                 </div>
+
+                <ul class="hero-trust-list" aria-label="Company credentials">
+                    <li><strong>Since 1997</strong><span>Proven experience</span></li>
+                    <li><strong>3 modes</strong><span>Road, sea &amp; air</span></li>
+                    <li><strong>Global routes</strong><span>Middle East, Europe &amp; Asia</span></li>
+                    <li><strong>Lebanon based</strong><span>Local accountability</span></li>
+                </ul>
             </div>
         </section>
 
@@ -361,7 +382,7 @@
                 </div>
             </section>
 
-            <section class="home-section home-enterprise" aria-labelledby="enterprise-freight-title">
+            <section class="home-section home-enterprise" aria-labelledby="enterprise-freight-title" hidden>
                 <div class="inner">
                     <header class="section-heading reveal">
                         <p class="section-eyebrow">Enterprise Freight Desk</p>
@@ -404,8 +425,8 @@
 
                         <div class="trust-metrics reveal reveal-delay-1" aria-label="Company trust indicators">
                             <article class="metric-card">
-                                <span class="metric-value">29+</span>
-                                <span class="metric-label">years in business</span>
+                                <span class="metric-value">Since 1997</span>
+                                <span class="metric-label">freight experience in Lebanon</span>
                             </article>
                             <article class="metric-card">
                                 <span class="metric-value">3</span>
@@ -455,16 +476,12 @@
                     </div>
 
                     <div class="section-actions">
-                        <a href="services.html" class="button">Compare All Services</a>
-                        <a href="freight-forwarding-lebanon.html" class="button">Freight in Lebanon</a>
-                        <a href="freight-forwarding-beirut.html" class="button">Freight in Beirut</a>
-                        <a href="beirut-freight-guide.html" class="button">Beirut Freight Guide</a>
-                        <a href="international-shipping.html" class="button">International Shipping</a>
+                        <a href="services.html" class="button">View all freight services <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
             </section>
 
-            <section class="home-section home-examples">
+            <section class="home-section home-examples" hidden>
                 <div class="inner">
                     <header class="section-heading">
                         <p class="section-eyebrow">Case Examples</p>
@@ -502,7 +519,7 @@
                 </div>
             </section>
 
-            <section class="home-section home-why">
+            <section class="home-section home-why" hidden>
                 <div class="inner">
                     <header class="section-heading">
                         <p class="section-eyebrow">Our Advantage</p>
@@ -644,7 +661,7 @@
                 </div>
             </section>
 
-            <section class="home-section home-beirut" aria-labelledby="beirut-freight-title">
+            <section class="home-section home-beirut" aria-labelledby="beirut-freight-title" hidden>
                 <div class="inner">
                     <div class="beirut-intro reveal">
                         <div>
@@ -721,7 +738,7 @@
                 </div>
             </section>
 
-            <section class="home-section home-testimonials">
+            <section class="home-section home-testimonials" hidden>
                 <div class="inner">
                     <header class="section-heading reveal">
                         <p class="section-eyebrow">Client Priorities</p>
