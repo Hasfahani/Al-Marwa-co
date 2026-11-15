@@ -1,0 +1,32 @@
+name: Website checks and release package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Validate website and freight tools
+        run: |
+          python3 scripts/test_site.py
+          node scripts/test_freight_tools.js
+          node scripts/test_quote_context.js
+          node --check assets/js/freight-tools.js
+          node --check assets/js/main.js
+      - name: Prepare public deployment files
+        run: python3 scripts/package_site.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: al-marwa-static-site
+          path: artifacts/al-marwa-site.zip
+          if-no-files-found: error
+          retention-days: 14

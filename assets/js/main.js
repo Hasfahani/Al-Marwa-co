@@ -11,6 +11,39 @@
 		headerEl = document.getElementById('header'),
 		bannerEl = document.getElementById('banner');
 
+	// Keep route/service context when a visitor opens a business quote link.
+	var quoteType = document.getElementById('shipment-type');
+	if (quoteType && typeof URLSearchParams !== 'undefined') {
+		var quoteParameters = new URLSearchParams(windowEl.location.search),
+			requestedType = quoteParameters.get('shipment_type');
+		if (requestedType && Array.prototype.some.call(quoteType.options, function(option) {
+			return option.value === requestedType;
+		})) {
+			quoteType.value = requestedType;
+		}
+		['origin', 'destination'].forEach(function(name) {
+			var field = document.getElementById(name), value = quoteParameters.get(name);
+			if (field && value && value.length <= 120)
+				field.value = value;
+		});
+		try {
+			var cargoDraftRaw = windowEl.sessionStorage.getItem('al-marwa-cargo-draft');
+			if (cargoDraftRaw) {
+				windowEl.sessionStorage.removeItem('al-marwa-cargo-draft');
+				var cargoDraft = JSON.parse(cargoDraftRaw), age = Date.now() - cargoDraft.createdAt;
+				if (Number.isFinite(age) && age >= 0 && age < 30 * 60 * 1000) {
+					['load_details', 'estimated_weight'].forEach(function(name) {
+						var field = document.querySelector('[name="' + name + '"]'), value = cargoDraft[name];
+						if (field && typeof value === 'string' && value.length <= 2000)
+							field.value = value;
+					});
+				}
+			}
+		} catch (error) {
+			// A blocked or expired browser draft does not prevent a normal inquiry.
+		}
+	}
+
 	function on(target, event, handler, options) {
 		if (target)
 			target.addEventListener(event, handler, options || false);
@@ -408,4 +441,29 @@
 	});
 
 	triggerScroll();
+})();
+
+// Local measurement hooks: no provider, cookies, personal data or network calls.
+(function () {
+	function emitLeadEvent(name, method, mode) {
+		var event = { event: name, contact_method: method, shipment_type: mode || '', page_path: window.location.pathname };
+		window.dispatchEvent(new CustomEvent('almarwa:lead', { detail: event }));
+		if (Array.isArray(window.dataLayer)) window.dataLayer.push(event);
+	}
+	document.addEventListener('click', function (event) {
+		var link = event.target.closest && event.target.closest('a[href]');
+		if (!link) return;
+		var href = link.getAttribute('href') || '', method = '';
+		if (href.indexOf('tel:') === 0) method = 'phone';
+		else if (href.indexOf('mailto:') === 0) method = 'email';
+		else if (/^https:\/\/wa\.me\//.test(href)) method = 'whatsapp';
+		if (method) emitLeadEvent('freight_contact_click', method);
+	});
+	document.addEventListener('submit', function (event) {
+		var form = event.target;
+		if (form.getAttribute('action') !== 'https://formsubmit.co/info@al-marwaco.com') return;
+		var field = form.querySelector('[name="shipment_type"]'), mode = field ? field.value : '';
+		if (!['FCL', 'FTL', 'LCL', 'Large Cargo', 'Air Cargo', 'Not Sure'].includes(mode)) mode = '';
+		emitLeadEvent('freight_quote_submission_attempt', 'form', mode);
+	});
 })();

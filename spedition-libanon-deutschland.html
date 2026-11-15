@@ -33,37 +33,154 @@
     <meta name="twitter:image" content="https://al-marwaco.com/images/hero-beirut.jpg" />
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://al-marwaco.com/#organization",
+      "name": "AL MARWA CO",
+      "url": "https://al-marwaco.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://al-marwaco.com/images/logo.jpg"
+      },
+      "image": "https://al-marwaco.com/images/hero-beirut.jpg",
+      "description": "B2B freight forwarder in Khalde, Lebanon, since 1997, specializing in worldwide FCL, full truckloads, machinery and large commercial cargo. LCL imports from seven selected origins into Lebanon.",
+      "foundingDate": "1997",
+      "email": "info@al-marwaco.com",
+      "telephone": "+96170099978",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Khalde Highway",
+        "addressLocality": "Khalde",
+        "addressRegion": "Mount Lebanon",
+        "addressCountry": "LB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7614,
+        "longitude": 35.4877
+      },
+      "hasMap": "https://maps.app.goo.gl/GnxXc8WF17nMK7qi8",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+96170099978",
+        "email": "info@al-marwaco.com",
+        "areaServed": "LB",
+        "availableLanguage": [
+          "English",
+          "Arabic"
+        ]
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Lebanon"
+        },
+        {
+          "@type": "City",
+          "name": "Beirut"
+        },
+        {
+          "@type": "Place",
+          "name": "Greater Beirut"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Asia"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://al-marwaco.com/about.html#webpage"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://al-marwaco.com/#website",
+      "url": "https://al-marwaco.com/",
+      "name": "AL MARWA CO",
+      "publisher": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "inLanguage": [
+        "en-LB",
+        "ar-LB",
+        "de-DE"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#webpage",
+      "url": "https://al-marwaco.com/spedition-libanon-deutschland.html",
+      "name": "Spedition Libanon für Unternehmen | AL MARWA CO",
+      "description": "B2B-Spedition für Transporte zwischen Deutschland und Libanon: See-, Luft- und Landfracht, Projektladung, Zollkoordination und persönliche Betreuung.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://al-marwaco.com/#website"
+      },
+      "about": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#service"
+      },
+      "hasPart": {
+        "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#faq"
+      },
+      "breadcrumb": {
+        "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#breadcrumb"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#service",
       "name": "B2B-Spedition Deutschland–Libanon",
       "inLanguage": "de-DE",
-      "serviceType": ["Internationale Spedition", "Seefracht", "Luftfracht", "Landfracht", "Projektlogistik"],
+      "serviceType": [
+        "Internationale Spedition",
+        "Seefracht",
+        "Luftfracht",
+        "Landfracht",
+        "Projektlogistik"
+      ],
       "description": "B2B-Frachtkoordination für Unternehmen mit Warenverkehr zwischen Deutschland, Europa und Libanon.",
       "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://al-marwaco.com/#organization",
-        "name": "AL MARWA CO",
-        "url": "https://al-marwaco.com/",
-        "telephone": "+96170099978",
-        "email": "info@al-marwaco.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Khalde Highway",
-          "addressLocality": "Khalde",
-          "addressCountry": "LB"
-        }
+        "@id": "https://al-marwaco.com/#organization"
       },
       "audience": {
         "@type": "BusinessAudience",
-        "audienceType": "Einkauf, Supply Chain, Logistik, Produktion, Handel und Projektteams"
+        "audienceType": "Importers, exporters, wholesalers, manufacturers and project teams"
       },
       "areaServed": [
-        { "@type": "Country", "name": "Deutschland" },
-        { "@type": "Country", "name": "Libanon" },
-        { "@type": "Place", "name": "Europa" },
-        { "@type": "Place", "name": "Naher Osten" }
+        {
+          "@type": "Country",
+          "name": "Deutschland"
+        },
+        {
+          "@type": "Country",
+          "name": "Libanon"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        },
+        {
+          "@type": "Place",
+          "name": "Naher Osten"
+        }
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -88,13 +205,16 @@
         ]
       },
       "url": "https://al-marwaco.com/spedition-libanon-deutschland.html",
-      "availableLanguage": ["Deutsch", "Englisch", "Arabisch"]
-    }
-    </script>
-
-    <script type="application/ld+json">
+      "availableLanguage": [
+        "Deutsch",
+        "Englisch",
+        "Arabisch"
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#webpage"
+      }
+    },
     {
-      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
@@ -102,7 +222,7 @@
           "name": "Organisiert AL MARWA CO Transporte zwischen Deutschland und Libanon?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Je nach Sendungsprofil koordinieren wir See-, Luft- und kombinierte Transporte zwischen Deutschland, Europa und Libanon sowie die erforderlichen Übergaben und Dokumentationsschritte."
+            "text": "Ja. Je nach Sendungsprofil koordinieren wir See-, Luft- und kombinierte Transporte sowie die erforderlichen Übergaben und Dokumentationsschritte."
           }
         },
         {
@@ -110,7 +230,7 @@
           "name": "Welche Angaben benötigen Sie für ein B2B-Frachtangebot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Benötigt werden Abgangs- und Zielort, Warenart, Abmessungen und Gewicht, Häufigkeit oder Projektvolumen, Incoterms, gewünschtes Zeitfenster sowie Anforderungen an Abholung, Zoll, Zustellung und Sonderhandling."
+            "text": "Wichtig sind Strecke, Warenart, Maße, Gewicht, Häufigkeit oder Projektvolumen, Incoterms, Zeitfenster sowie Anforderungen an Abholung, Zoll und Zustellung."
           }
         },
         {
@@ -118,16 +238,17 @@
           "name": "Können wiederkehrende Lieferketten betreut werden?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Für wiederkehrende Import- oder Exportverkehre kann ein abgestimmter Ablauf für Sendungsdaten, Dokumentenprüfung, Meilenstein-Updates und Eskalationskontakte definiert werden."
+            "text": "Ja. Für wiederkehrende Verkehre kann ein abgestimmter Ablauf für Sendungsdaten, Dokumentenprüfung, Meilenstein-Updates und Eskalationskontakte definiert werden."
           }
         }
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
+      ],
+      "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#faq",
+      "isPartOf": {
+        "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#webpage"
+      },
+      "inLanguage": "de-DE"
+    },
     {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
         {
@@ -142,8 +263,11 @@
           "name": "Spedition Libanon für Unternehmen",
           "item": "https://al-marwaco.com/spedition-libanon-deutschland.html"
         }
-      ]
+      ],
+      "@id": "https://al-marwaco.com/spedition-libanon-deutschland.html#breadcrumb"
     }
+  ]
+}
     </script>
 
     <link rel="stylesheet" href="assets/css/fonts.css" />
@@ -241,34 +365,32 @@
     <div id="wrapper">
         <header id="header" class="alt">
             <a href="index.html" class="logo" aria-label="AL MARWA CO home"><span class="brand-symbol" aria-hidden="true">AM</span><span class="brand-wordmark" aria-hidden="true"><strong>AL MARWA</strong><small>Freight Forwarding</small></span></a>
-            <nav aria-label="Hauptnavigation">
-                <ul class="desktop-nav">
-                    <li><a href="index.html">Start</a></li>
-                    <li><a href="services.html">Leistungen</a></li>
-                    <li><a href="about.html">Unternehmen</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                    <li><a href="freight-forwarding-lebanon.html" lang="en" hreflang="en-LB">English</a></li>
-                </ul>
-                <a href="contact.html" class="nav-quote-btn">Angebot</a>
+            <nav aria-label="Main navigation">
+                <ul class="desktop-nav"><li><a href="services.html">Leistungen</a></li>
+<li><a href="shipping-routes-lebanon.html">Routen</a></li>
+<li><a href="freight-forwarding-lebanon.html">Für Unternehmen</a></li>
+<li><a href="freight-resources-lebanon.html">Planung</a></li>
+<li><a href="about.html">Über uns</a></li></ul>
+                <a href="contact.html" class="nav-quote-btn">B2B-Angebot</a>
                 <a href="#menu">Menü</a>
             </nav>
         </header>
+        <nav id="menu" aria-label="Mobile navigation"><ul class="links"><li><a href="index.html">Startseite</a></li><li><a href="services.html">Leistungen</a></li>
+<li><a href="shipping-routes-lebanon.html">Routen</a></li>
+<li><a href="freight-forwarding-lebanon.html">Für Unternehmen</a></li>
+<li><a href="freight-resources-lebanon.html">Planung</a></li>
+<li><a href="about.html">Über uns</a></li><li><a href="contact.html">Kontakt</a></li><li><a href="sea-freight-lebanon.html" lang="en" hreflang="en-LB">English · FCL</a></li>
+<li><a href="fcl-shipping-lebanon-ar.html" lang="ar" dir="rtl" hreflang="ar-LB">العربية · شحن الحاويات</a></li>
+<li><a href="spedition-libanon-deutschland.html" lang="de" hreflang="de-DE">Deutsch · B2B</a></li></ul></nav>
 
-        <nav id="menu" aria-label="Mobile Navigation">
-            <ul class="links">
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="services.html">Leistungen</a></li>
-                <li><a href="about.html">Unternehmen</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-                <li><a href="freight-forwarding-lebanon.html" lang="en" hreflang="en-LB">English</a></li>
-            </ul>
-        </nav>
+
 
         <section class="page-hero" aria-labelledby="de-freight-title">
             <div class="inner">
                 <p class="page-eyebrow">B2B-Spedition seit 1997</p>
                 <h1 id="de-freight-title">B2B-Spedition für Transporte zwischen Deutschland und Libanon</h1>
                 <p>AL MARWA CO koordiniert See-, Luft- und Landfracht für Hersteller, Importeure, Exporteure, Einkaufsabteilungen und Projektteams – mit einem zentralen Ansprechpartner im Libanon.</p>
+                <p class="b2b-scope-note">Unser Schwerpunkt ist B2B-Fracht: FCL weltweit, volle Lkw-Ladungen (FTL) aus der Ukraine, Jordanien, dem Irak, den VAE, der Türkei, dem Vereinigten Königreich und China sowie Maschinen und große gewerbliche Ladungen. LCL-Importe nach Libanon bieten wir nur ab Ukraine, Jordanien, Irak, den VAE, der Türkei, dem Vereinigten Königreich und China an. Route und Verfügbarkeit werden je Sendung bestätigt.</p>
             </div>
         </section>
 
@@ -298,7 +420,7 @@
                             <article class="de-card">
                                 <h3>Seefracht Deutschland–Libanon</h3>
                                 <ul>
-                                    <li>FCL- und LCL-Planung für Containerfracht</li>
+                                    <li>FCL-Planung für volle Container zwischen Deutschland und Libanon</li>
                                     <li>Abstimmung von Reederei, Fahrplan und Hafenübergaben</li>
                                     <li>Vorbereitung der erforderlichen Sendungsinformationen</li>
                                 </ul>
@@ -316,7 +438,7 @@
                             <article class="de-card">
                                 <h3>Landfracht und regionale Verbindungen</h3>
                                 <ul>
-                                    <li>FTL- und LTL-Lösungen für gewerbliche Sendungen</li>
+                                    <li>FTL-Komplettladungen per Lkw aus unseren sieben Kernmärkten in den Libanon</li>
                                     <li>Koordination von Ladefenstern und Zustellstellen</li>
                                     <li>Kombination mit See- oder Luftfracht bei Bedarf</li>
                                 </ul>

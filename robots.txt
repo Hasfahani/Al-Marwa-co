@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# AI search discovery. Hosting/CDN access must also allow these crawlers.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 Sitemap: https://al-marwaco.com/sitemap.xml

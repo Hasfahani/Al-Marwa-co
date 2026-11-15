@@ -4973,3 +4973,174 @@ body.is-menu-visible {
 		transition: none !important;
 	}
 }
+
+/* Readable business facts and shipment answers for visitors and crawlers. */
+.home-page .company-facts {
+	background: #f4f7f2;
+}
+
+.business-facts-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem 2.5rem;
+	margin: 2rem 0;
+}
+
+.business-facts-grid > div {
+	padding-top: 1.2rem;
+	border-top: 1px solid #cdd8cf;
+}
+
+.business-facts-grid dt {
+	margin: 0 0 0.65rem;
+	color: #163d29;
+	font-weight: 750;
+}
+
+.business-facts-grid dd {
+	margin: 0;
+	color: #475b4e;
+	line-height: 1.7;
+}
+
+.business-facts-grid a,
+.business-resource-links a {
+	color: #195834;
+	overflow-wrap: anywhere;
+}
+
+.business-facts-note {
+	max-width: 78ch;
+	color: #475b4e;
+}
+
+.business-resource-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.85rem 1.5rem;
+}
+
+.import-route-links {
+	margin-top: 1.75rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid #cdd8cf;
+}
+
+.business-audience-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.2rem;
+	margin-top: 1.75rem;
+}
+
+.business-audience-card {
+	display: block;
+	padding: 1.5rem;
+	border: 1px solid #bfcfc1;
+	border-radius: 8px;
+	background: #fff;
+	color: #334b3b;
+	transition: background-color .15s, border-color .15s;
+}
+
+.business-audience-card:hover { background: #edf3e8; border-color: #5e8c6c; }
+.business-audience-card h3 { color: #17462c; font-size: 1.2rem; line-height: 1.4; }
+.business-audience-card p { margin: 0; color: #475b4e; line-height: 1.7; }
+.business-audience-card:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #ba8622; outline-offset: 4px; }
+.business-hub-panel { padding: 2rem; margin: 2rem auto; background: #f3f7ef; border: 1px solid #c7d5c8; border-radius: 8px; }
+.business-hub-panel h2 { color: #17462c; }
+.business-hub-panel p, .business-hub-panel a { color: #37543f; }
+.business-hub-panel .business-audience-grid { margin-bottom: 1.5rem; }
+section[id], article[id] { scroll-margin-top: 6rem; }
+
+@media screen and (max-width: 1100px) {
+	#header .desktop-nav { display: none !important; }
+	#header nav a[href="#menu"] { display: inline-flex !important; align-items: center; }
+}
+
+@media screen and (min-width: 1101px) {
+	#header .desktop-nav { display: inline-flex; }
+	#header nav a[href="#menu"] { display: inline-flex !important; align-items: center; }
+}
+
+@media screen and (max-width: 736px) {
+	.business-audience-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.service-questions details {
+	padding: 1rem 0;
+	border-bottom: 1px solid #dce8e0;
+	color: #334942;
+}
+
+.service-questions summary {
+	cursor: pointer;
+	color: #0b4d2b;
+	font-weight: 700;
+}
+
+.service-questions details p {
+	margin: 0.8rem 0 0;
+}
+
+@media screen and (max-width: 736px) {
+	.business-facts-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Give business shipment details room in the homepage inquiry form. */
+.home-page .quick-quote-fields {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-page .quick-quote-fields input,
+.home-page .quick-quote-fields select {
+	min-width: 0;
+	font-size: 0.8rem;
+}
+
+.home-page .quick-quote-submit {
+	grid-column: 1 / -1;
+	justify-self: start;
+}
+
+.home-page #quick-scope-note {
+	font-size: 0.75rem;
+	line-height: 1.6;
+	color: #475b4e;
+}
+
+.home-page .home-enterprise {
+	background: #f4f7f2;
+}
+
+.b2b-scope-note {
+	padding-inline-start: 1rem;
+	border-inline-start: 3px solid #8bc99b;
+	font-size: 0.95rem;
+	line-height: 1.7;
+}
+
+@media screen and (max-width: 980px) {
+	.home-page .quick-quote-fields {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.home-page .quick-quote-fields {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.home-page .quick-quote-submit {
+		justify-self: stretch;
+	}
+}
+
+/* Customer-fit section: static cards, not links. */
+.customer-fit-grid .business-audience-card:hover { background: #fff; border-color: #bfcfc1; }
+.customer-fit-grid ul { margin: 0; padding-left: 1.1rem; color: #475b4e; line-height: 1.65; }
+.customer-fit-grid li { margin-bottom: 0.45rem; }
+.customer-fit-grid .business-audience-card:last-child h3 { color: #8a3b12; }
+#customer-fit .section-actions, #business-planning-tools .section-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }

@@ -8,6 +8,7 @@ import sys
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.robotparser import RobotFileParser
 from urllib.parse import urlsplit
 
 
@@ -21,6 +22,7 @@ CSS_FILES = [
     ROOT / "assets" / "css" / "main.css",
     ROOT / "assets" / "css" / "fonts.css",
     ROOT / "assets" / "css" / "fontawesome-all.min.css",
+    ROOT / "assets" / "css" / "freight-pages.css",
 ]
 seen_titles: dict[str, str] = {}
 seen_descriptions: dict[str, str] = {}
@@ -38,11 +40,13 @@ MULTILINGUAL_ALTERNATES = {
     "sea-freight-lebanon.html": {
         "en-LB": "https://al-marwaco.com/sea-freight-lebanon.html",
         "de-DE": "https://al-marwaco.com/seefracht-deutschland-libanon.html",
+        "ar-LB": "https://al-marwaco.com/fcl-shipping-lebanon-ar.html",
         "x-default": "https://al-marwaco.com/sea-freight-lebanon.html",
     },
     "seefracht-deutschland-libanon.html": {
         "de-DE": "https://al-marwaco.com/seefracht-deutschland-libanon.html",
         "en-LB": "https://al-marwaco.com/sea-freight-lebanon.html",
+        "ar-LB": "https://al-marwaco.com/fcl-shipping-lebanon-ar.html",
         "x-default": "https://al-marwaco.com/sea-freight-lebanon.html",
     },
     "air-cargo-lebanon.html": {
@@ -56,6 +60,22 @@ MULTILINGUAL_ALTERNATES = {
         "x-default": "https://al-marwaco.com/air-cargo-lebanon.html",
     },
 }
+MULTILINGUAL_ALTERNATES["fcl-shipping-lebanon-ar.html"] = dict(MULTILINGUAL_ALTERNATES["sea-freight-lebanon.html"])
+sys.path.insert(0, str(ROOT / "scripts"))
+from routes_ar import ROUTES_AR
+for _ar in ROUTES_AR:
+    for _name in (_ar["en_slug"], _ar["slug"]):
+        MULTILINGUAL_ALTERNATES[_name] = {
+            "en-LB": "https://al-marwaco.com/" + _ar["en_slug"],
+            "ar-LB": "https://al-marwaco.com/" + _ar["slug"],
+            "x-default": "https://al-marwaco.com/" + _ar["en_slug"],
+        }
+for beirut_page in ("freight-forwarding-beirut.html", "freight-forwarding-beirut-ar.html"):
+    MULTILINGUAL_ALTERNATES[beirut_page] = {
+        "en-LB": "https://al-marwaco.com/freight-forwarding-beirut.html",
+        "ar-LB": "https://al-marwaco.com/freight-forwarding-beirut-ar.html",
+        "x-default": "https://al-marwaco.com/freight-forwarding-beirut.html",
+    }
 GERMAN_B2B_CLUSTER = {
     "spedition-libanon-deutschland.html": {
         "seefracht-deutschland-libanon.html",
@@ -71,6 +91,7 @@ GERMAN_B2B_CLUSTER = {
     },
 }
 
+sitemap_locations: list[str] = []
 try:
     sitemap_root = ET.fromstring(SITEMAP)
 except ET.ParseError as exc:
@@ -110,19 +131,42 @@ class Document(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.tags: list[tuple[str, dict[str, str | None]]] = []
+        self.stack: list[tuple[str, bool]] = []
+        self.visible_text: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        self.tags.append((tag, dict(attrs)))
+        attributes = dict(attrs)
+        self.tags.append((tag, attributes))
+        suppressed = (
+            bool(self.stack and self.stack[-1][1])
+            or tag in {"head", "script", "style", "template"}
+            or "hidden" in attributes
+            or bool(re.search(r"display\s*:\s*none", attributes.get("style") or "", re.I))
+        )
+        if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}:
+            self.stack.append((tag, suppressed))
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index][0] == tag:
+                del self.stack[index:]
+                break
+
+    def handle_data(self, data: str) -> None:
+        if not self.stack or not self.stack[-1][1]:
+            self.visible_text.append(data)
 
 
 def fail(page: Path, message: str) -> None:
     errors.append(f"{page.name}: {message}")
 
 
+parsed_documents: dict[str, Document] = {}
 for page in PUBLIC_PAGES:
     source = page.read_text(encoding="utf-8")
     document = Document()
     document.feed(source)
+    parsed_documents[page.name] = document
 
     if len(re.findall(r"<h1\b", source, re.I)) != 1:
         fail(page, "must contain exactly one h1")
@@ -154,8 +198,11 @@ for page in PUBLIC_PAGES:
     if len(re.findall(r'<link\s+rel="canonical"', source, re.I)) != 1:
         fail(page, "must contain exactly one canonical URL")
     canonical = re.search(r'<link\s+rel="canonical"\s+href="([^"]+)"', source, re.I)
-    if canonical and canonical.group(1) not in SITEMAP:
+    if canonical and canonical.group(1) not in sitemap_locations:
         fail(page, "canonical URL is missing from sitemap.xml")
+    expected_url = "https://al-marwaco.com/" + ("" if page.name == "index.html" else page.name)
+    if canonical and canonical.group(1) != expected_url:
+        fail(page, "canonical must point to this page's production URL")
 
     # Every indexable page should produce a complete, intentional search/social
     # preview instead of relying on crawler-generated fallback text or images.
@@ -184,11 +231,48 @@ for page in PUBLIC_PAGES:
             if f'href="{cluster_target}"' not in source:
                 fail(page, f"missing German B2B cluster link: {cluster_target}")
 
+    structured_nodes = []
     for match in re.finditer(r'<script\s+type="application/ld\+json">(.*?)</script>', source, re.I | re.S):
         try:
-            json.loads(match.group(1))
+            data = json.loads(match.group(1))
+            structured_nodes.extend(data.get("@graph", [data]))
         except json.JSONDecodeError as exc:
             fail(page, f"invalid JSON-LD ({exc.msg})")
+
+    # Business facts and service providers must identify the same real company.
+    organization_id = "https://al-marwaco.com/#organization"
+    nodes_by_id = {node.get("@id"): node for node in structured_nodes}
+    ids = [node["@id"] for node in structured_nodes if "@id" in node]
+    if len(ids) != len(set(ids)):
+        fail(page, "structured data contains duplicate entity IDs")
+    organization = nodes_by_id.get(organization_id, {})
+    if (
+        organization.get("@type") != "LocalBusiness"
+        or organization.get("name") != "AL MARWA CO"
+        or organization.get("telephone") != "+96170099978"
+        or organization.get("email") != "info@al-marwaco.com"
+        or organization.get("foundingDate") != "1997"
+        or organization.get("address", {}).get("streetAddress") != "Khalde Highway"
+        or organization.get("address", {}).get("addressLocality") != "Khalde"
+        or organization.get("address", {}).get("addressCountry") != "LB"
+    ):
+        fail(page, "missing or inconsistent business identity and contact facts")
+    webpage = nodes_by_id.get(expected_url + "#webpage", {})
+    if (
+        webpage.get("url") != expected_url
+        or webpage.get("isPartOf", {}).get("@id") != "https://al-marwaco.com/#website"
+        or webpage.get("about", {}).get("@id") != organization_id
+    ):
+        fail(page, "page structured data must connect its canonical, website, and business")
+    visible_text = " ".join(" ".join(document.visible_text).split())
+    for node in structured_nodes:
+        if node.get("@type") == "Service" and node.get("provider", {}).get("@id") != organization_id:
+            fail(page, "service provider must reference the shared business identity")
+        if node.get("@type") == "FAQPage":
+            for question in node.get("mainEntity", []):
+                for text in (question.get("name", ""), question.get("acceptedAnswer", {}).get("text", "")):
+                    if not text or " ".join(text.split()) not in visible_text:
+                        fail(page, f"FAQ structured data does not match visible content: {question.get('name')}")
 
     for tag, attrs in document.tags:
         if tag == "img" and "alt" not in attrs:
@@ -205,6 +289,46 @@ for page in PUBLIC_PAGES:
         if local_path and not (ROOT / local_path).exists():
             fail(page, f"broken local reference: {target}")
 
+# A service/route page must be discoverable through actual website links, and
+# links into planning sections must land on a real fragment rather than a 404.
+page_links: dict[str, set[str]] = {name: set() for name in parsed_documents}
+for name, document in parsed_documents.items():
+    ids = [attrs["id"] for _, attrs in document.tags if attrs.get("id")]
+    if len(ids) != len(set(ids)):
+        fail(ROOT / name, "contains duplicate HTML IDs")
+    for tag, attrs in document.tags:
+        target = attrs.get("href")
+        if tag != "a" or not target:
+            continue
+        parts = urlsplit(target)
+        if parts.scheme or parts.netloc:
+            continue
+        target_name = parts.path or name
+        if target_name not in parsed_documents:
+            continue
+        page_links[name].add(target_name)
+        if parts.fragment:
+            target_ids = {a.get("id") for _, a in parsed_documents[target_name].tags}
+            if parts.fragment not in target_ids:
+                fail(ROOT / name, f"broken section link: {target}")
+
+reachable, pending = set(), ["index.html"]
+while pending:
+    name = pending.pop()
+    if name in reachable:
+        continue
+    reachable.add(name)
+    pending.extend(page_links.get(name, set()) - reachable)
+for name in sorted(set(parsed_documents) - reachable):
+    fail(ROOT / name, "is not reachable through links from the homepage")
+
+expected_sitemap_urls = {
+    "https://al-marwaco.com/" + ("" if page.name == "index.html" else page.name)
+    for page in PUBLIC_PAGES
+}
+if set(sitemap_locations) != expected_sitemap_urls:
+    errors.append("sitemap.xml: must contain exactly the indexable website pages")
+
 if ".reveal" not in NOSCRIPT_CSS or "opacity: 1" not in NOSCRIPT_CSS:
     errors.append("noscript.css: reveal content must remain visible without JavaScript")
 if re.search(r"^\s*@import", MAIN_CSS, re.M):
@@ -218,6 +342,20 @@ for css_file in CSS_FILES:
         resolved_target = (css_file.parent / urlsplit(target).path).resolve()
         if not resolved_target.exists():
             errors.append(f"{css_file.name}: broken local reference: {target}")
+
+robots = RobotFileParser()
+robots.parse((ROOT / "robots.txt").read_text(encoding="utf-8").splitlines())
+for agent in ("Googlebot", "Bingbot", "OAI-SearchBot", "PerplexityBot", "Claude-SearchBot"):
+    for public_path in ["", "llms.txt", "sitemap.xml"] + [p.name for p in PUBLIC_PAGES]:
+        if not robots.can_fetch(agent, f"https://al-marwaco.com/{public_path}"):
+            errors.append(f"robots.txt: blocks {agent} from /{public_path}")
+if "https://al-marwaco.com/sitemap.xml" not in (robots.site_maps() or []):
+    errors.append("robots.txt: missing production sitemap declaration")
+
+llms_text = (ROOT / "llms.txt").read_text(encoding="utf-8")
+for url in re.findall(r"\]\((https://al-marwaco\.com/[^)]+)\)", llms_text):
+    if not (ROOT / urlsplit(url).path.lstrip("/")).is_file():
+        errors.append(f"llms.txt: broken local page reference: {url}")
 
 if errors:
     print("SITE CHECK FAILED")

@@ -1,10 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://al-marwaco.com/</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -14,13 +12,13 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/services.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-lebanon.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/spedition-libanon-deutschland.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
@@ -29,7 +27,7 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/spedition-libanon-deutschland.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/spedition-libanon-deutschland.html" />
     <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-lebanon.html" />
@@ -42,20 +40,21 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/seefracht-deutschland-libanon.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
-    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://al-marwaco.com/images/pic05.jpg</image:loc>
       <image:title>B2B-Seefracht zwischen Deutschland und Libanon</image:title>
     </image:image>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/fcl-shipping-lebanon-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
   </url>
   <url>
     <loc>https://al-marwaco.com/luftfracht-deutschland-libanon.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/luftfracht-deutschland-libanon.html" />
     <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/air-cargo-lebanon.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/air-cargo-lebanon.html" />
@@ -68,7 +67,10 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-beirut.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-beirut.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/freight-forwarding-beirut-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-beirut.html" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -78,7 +80,7 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/beirut-freight-guide.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -88,22 +90,26 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/freight-forwarding-beirut-ar.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/freight-forwarding-beirut.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/freight-forwarding-beirut-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/freight-forwarding-beirut.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/sea-freight-lebanon.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
-    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/fcl-shipping-lebanon-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
   </url>
   <url>
     <loc>https://al-marwaco.com/air-cargo-lebanon.html</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/air-cargo-lebanon.html" />
     <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/luftfracht-deutschland-libanon.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/air-cargo-lebanon.html" />
@@ -112,32 +118,186 @@
   </url>
   <url>
     <loc>https://al-marwaco.com/customs-clearance-lebanon.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/international-shipping.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/contact.html</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/about.html</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://al-marwaco.com/privacy.html</loc>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/shipping-routes-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/china-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/china-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/china-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/china-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/turkey-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/turkey-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/turkey-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/turkey-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/uae-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/uae-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/uae-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/uae-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/jordan-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/jordan-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/jordan-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/jordan-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/iraq-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/iraq-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/iraq-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/iraq-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/uk-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/uk-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/uk-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/uk-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/ukraine-to-lebanon-shipping.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/ukraine-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/ukraine-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/ukraine-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/full-truckload-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/heavy-equipment-shipping-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/lcl-shipping-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/export-shipping-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/cargo-volume-calculator.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/commercial-imports-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/container-shipping-costs-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/fcl-shipping-lebanon-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+    <xhtml:link rel="alternate" hreflang="de-DE" href="https://al-marwaco.com/seefracht-deutschland-libanon.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/fcl-shipping-lebanon-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/sea-freight-lebanon.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/freight-planner-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/freight-resources-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/industrial-logistics-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/project-cargo-lebanon.html</loc>
+    <lastmod>2026-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/china-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/china-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/china-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/china-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/iraq-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/iraq-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/iraq-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/iraq-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/jordan-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/jordan-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/jordan-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/jordan-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/turkey-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/turkey-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/turkey-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/turkey-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/uae-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/uae-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/uae-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/uae-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/uk-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/uk-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/uk-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/uk-to-lebanon-shipping.html" />
+  </url>
+  <url>
+    <loc>https://al-marwaco.com/ukraine-to-lebanon-shipping-ar.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-LB" href="https://al-marwaco.com/ukraine-to-lebanon-shipping.html" />
+    <xhtml:link rel="alternate" hreflang="ar-LB" href="https://al-marwaco.com/ukraine-to-lebanon-shipping-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://al-marwaco.com/ukraine-to-lebanon-shipping.html" />
   </url>
 </urlset>

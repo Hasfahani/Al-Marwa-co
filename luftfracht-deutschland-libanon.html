@@ -31,84 +31,223 @@
     <meta name="twitter:image" content="https://al-marwaco.com/images/pic07.jpg" />
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://al-marwaco.com/#organization",
+      "name": "AL MARWA CO",
+      "url": "https://al-marwaco.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://al-marwaco.com/images/logo.jpg"
+      },
+      "image": "https://al-marwaco.com/images/hero-beirut.jpg",
+      "description": "B2B freight forwarder in Khalde, Lebanon, since 1997, specializing in worldwide FCL, full truckloads, machinery and large commercial cargo. LCL imports from seven selected origins into Lebanon.",
+      "foundingDate": "1997",
+      "email": "info@al-marwaco.com",
+      "telephone": "+96170099978",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Khalde Highway",
+        "addressLocality": "Khalde",
+        "addressRegion": "Mount Lebanon",
+        "addressCountry": "LB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7614,
+        "longitude": 35.4877
+      },
+      "hasMap": "https://maps.app.goo.gl/GnxXc8WF17nMK7qi8",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+96170099978",
+        "email": "info@al-marwaco.com",
+        "areaServed": "LB",
+        "availableLanguage": [
+          "English",
+          "Arabic"
+        ]
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Lebanon"
+        },
+        {
+          "@type": "City",
+          "name": "Beirut"
+        },
+        {
+          "@type": "Place",
+          "name": "Greater Beirut"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Asia"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "https://al-marwaco.com/about.html#webpage"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://al-marwaco.com/#website",
+      "url": "https://al-marwaco.com/",
+      "name": "AL MARWA CO",
+      "publisher": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "inLanguage": [
+        "en-LB",
+        "ar-LB",
+        "de-DE"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#webpage",
+      "url": "https://al-marwaco.com/luftfracht-deutschland-libanon.html",
+      "name": "Luftfracht Deutschland–Libanon für Unternehmen | AL MARWA",
+      "description": "B2B-Luftfracht zwischen Deutschland und Libanon für Ersatzteile, Waren und Projektbedarf: Routen-, Gewichts-, Dokumenten- und Lieferkoordination.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://al-marwaco.com/#website"
+      },
+      "about": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://al-marwaco.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#service"
+      },
+      "hasPart": {
+        "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#faq"
+      },
+      "breadcrumb": {
+        "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#breadcrumb"
+      }
+    },
+    {
       "@type": "Service",
       "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#service",
       "name": "B2B-Luftfracht Deutschland–Libanon",
       "inLanguage": "de-DE",
-      "serviceType": ["Luftfracht", "Internationale Luftfracht", "Zeitkritische Fracht", "Projektfracht"],
+      "serviceType": [
+        "Luftfracht",
+        "Internationale Luftfracht",
+        "Zeitkritische Fracht",
+        "Projektfracht"
+      ],
       "description": "Luftfrachtkoordination für Unternehmen mit Warenverkehr zwischen Deutschland, Europa und Libanon.",
       "provider": {
-        "@type": "LocalBusiness",
-        "@id": "https://al-marwaco.com/#organization",
-        "name": "AL MARWA CO",
-        "url": "https://al-marwaco.com/",
-        "telephone": "+96170099978",
-        "email": "info@al-marwaco.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Khalde Highway",
-          "addressLocality": "Khalde",
-          "addressCountry": "LB"
-        }
+        "@id": "https://al-marwaco.com/#organization"
       },
       "audience": {
         "@type": "BusinessAudience",
-        "audienceType": "Hersteller, Importeure, Exporteure, Einkauf, Supply Chain und Projektteams"
+        "audienceType": "Importers, exporters, wholesalers, manufacturers and project teams"
       },
       "areaServed": [
-        { "@type": "Country", "name": "Deutschland" },
-        { "@type": "Country", "name": "Libanon" },
-        { "@type": "Place", "name": "Europa" }
+        {
+          "@type": "Country",
+          "name": "Deutschland"
+        },
+        {
+          "@type": "Country",
+          "name": "Libanon"
+        },
+        {
+          "@type": "Place",
+          "name": "Europa"
+        }
       ],
-      "url": "https://al-marwaco.com/luftfracht-deutschland-libanon.html"
-    }
-    </script>
-
-    <script type="application/ld+json">
+      "url": "https://al-marwaco.com/luftfracht-deutschland-libanon.html",
+      "mainEntityOfPage": {
+        "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#webpage"
+      }
+    },
     {
-      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Welche Angaben werden für ein Luftfrachtangebot nach Libanon benötigt?",
+          "name": "Welche Angaben werden für ein Angebot benötigt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Benötigt werden Abgangs- und Zielort, Warenbeschreibung, Packstücke, genaue Abmessungen und Gewicht, gewünschter Liefertermin, Incoterms sowie Anforderungen an Abholung, Zollkoordination und Zustellung."
+            "text": "Wichtig sind Route, Warenart, Packstücke, genaue Maße und Gewicht, Liefertermin, Incoterms und der gewünschte Leistungsumfang."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie wird das frachtpflichtige Gewicht bei Luftfracht bestimmt?",
+          "name": "Wie wird das frachtpflichtige Gewicht bestimmt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Für die Kalkulation werden tatsächliches Gewicht und Volumengewicht berücksichtigt. Deshalb sind genaue Maße und Gewichte jedes Packstücks erforderlich. Die anwendbare Berechnung wird im konkreten Angebot dargestellt."
+            "text": "Für die Kalkulation werden tatsächliches Gewicht und Volumengewicht berücksichtigt. Deshalb sind genaue Maße und Gewichte jedes Packstücks erforderlich."
           }
         },
         {
           "@type": "Question",
-          "name": "Kann zeitkritische Projekt- oder Ersatzteilfracht koordiniert werden?",
+          "name": "Ist zeitkritische Ersatzteilfracht möglich?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, abhängig von Route, Kapazität, Warenart, Verpackung, Abmessungen und Annahmebedingungen. Der erforderliche Liefertermin sollte bereits bei der Anfrage genannt werden."
+            "text": "Die Option hängt von Route, Kapazität, Warenart, Verpackung, Abmessungen und Annahmebedingungen ab. Der erforderliche Liefertermin sollte direkt genannt werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wann ist Seefracht die bessere Alternative?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für größere Volumen und flexiblere Zeitfenster kann Seefracht geeigneter sein. Verglichen werden sollten Gesamtumfang, Termin, Warenprofil und Übergaben."
           }
         }
-      ]
-    }
-    </script>
-
-    <script type="application/ld+json">
+      ],
+      "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#faq",
+      "isPartOf": {
+        "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#webpage"
+      },
+      "inLanguage": "de-DE"
+    },
     {
-      "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://al-marwaco.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Spedition Libanon", "item": "https://al-marwaco.com/spedition-libanon-deutschland.html" },
-        { "@type": "ListItem", "position": 3, "name": "Luftfracht Deutschland–Libanon", "item": "https://al-marwaco.com/luftfracht-deutschland-libanon.html" }
-      ]
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://al-marwaco.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Spedition Libanon",
+          "item": "https://al-marwaco.com/spedition-libanon-deutschland.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Luftfracht Deutschland–Libanon",
+          "item": "https://al-marwaco.com/luftfracht-deutschland-libanon.html"
+        }
+      ],
+      "@id": "https://al-marwaco.com/luftfracht-deutschland-libanon.html#breadcrumb"
     }
+  ]
+}
     </script>
 
     <link rel="stylesheet" href="assets/css/fonts.css" />
@@ -123,35 +262,32 @@
     <div id="wrapper">
         <header id="header" class="alt">
             <a href="index.html" class="logo" aria-label="AL MARWA CO home"><span class="brand-symbol" aria-hidden="true">AM</span><span class="brand-wordmark" aria-hidden="true"><strong>AL MARWA</strong><small>Freight Forwarding</small></span></a>
-            <nav aria-label="Hauptnavigation">
-                <ul class="desktop-nav">
-                    <li><a href="index.html">Start</a></li>
-                    <li><a href="spedition-libanon-deutschland.html">Spedition</a></li>
-                    <li><a href="seefracht-deutschland-libanon.html">Seefracht</a></li>
-                    <li><a href="luftfracht-deutschland-libanon.html" aria-current="page">Luftfracht</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-                <a href="contact.html" class="nav-quote-btn">Angebot</a>
+            <nav aria-label="Main navigation">
+                <ul class="desktop-nav"><li><a href="services.html">Leistungen</a></li>
+<li><a href="shipping-routes-lebanon.html">Routen</a></li>
+<li><a href="freight-forwarding-lebanon.html">Für Unternehmen</a></li>
+<li><a href="freight-resources-lebanon.html">Planung</a></li>
+<li><a href="about.html">Über uns</a></li></ul>
+                <a href="contact.html" class="nav-quote-btn">B2B-Angebot</a>
                 <a href="#menu">Menü</a>
             </nav>
         </header>
+        <nav id="menu" aria-label="Mobile navigation"><ul class="links"><li><a href="index.html">Startseite</a></li><li><a href="services.html">Leistungen</a></li>
+<li><a href="shipping-routes-lebanon.html">Routen</a></li>
+<li><a href="freight-forwarding-lebanon.html">Für Unternehmen</a></li>
+<li><a href="freight-resources-lebanon.html">Planung</a></li>
+<li><a href="about.html">Über uns</a></li><li><a href="contact.html">Kontakt</a></li><li><a href="sea-freight-lebanon.html" lang="en" hreflang="en-LB">English · FCL</a></li>
+<li><a href="fcl-shipping-lebanon-ar.html" lang="ar" dir="rtl" hreflang="ar-LB">العربية · شحن الحاويات</a></li>
+<li><a href="spedition-libanon-deutschland.html" lang="de" hreflang="de-DE">Deutsch · B2B</a></li></ul></nav>
 
-        <nav id="menu" aria-label="Mobile Navigation">
-            <ul class="links">
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="spedition-libanon-deutschland.html">Spedition Libanon</a></li>
-                <li><a href="seefracht-deutschland-libanon.html">Seefracht Deutschland–Libanon</a></li>
-                <li><a href="luftfracht-deutschland-libanon.html" aria-current="page">Luftfracht Deutschland–Libanon</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-                <li><a href="air-cargo-lebanon.html" lang="en">English air cargo page</a></li>
-            </ul>
-        </nav>
+
 
         <section class="de-service-hero air-hero" aria-labelledby="air-title">
             <div class="inner">
                 <p class="de-service-eyebrow">B2B · Zeitkritisch · Beirut Airport</p>
                 <h1 id="air-title">Luftfracht zwischen Deutschland und Libanon für Unternehmen</h1>
                 <p>Planung und Koordination zeitkritischer Waren, Ersatzteile und projektbezogener Sendungen für Unternehmen mit Luftfrachtbedarf nach oder ab Beirut.</p>
+                <p class="b2b-scope-note">Unser Schwerpunkt ist B2B-Fracht: FCL weltweit, volle Lkw-Ladungen (FTL) aus der Ukraine, Jordanien, dem Irak, den VAE, der Türkei, dem Vereinigten Königreich und China sowie Maschinen und große gewerbliche Ladungen. LCL-Importe nach Libanon bieten wir nur ab Ukraine, Jordanien, Irak, den VAE, der Türkei, dem Vereinigten Königreich und China an. Route und Verfügbarkeit werden je Sendung bestätigt.</p>
             </div>
         </section>
 
@@ -285,7 +421,7 @@
                 <div class="footer-grid">
                     <div class="footer-col footer-about">
                         <h3>AL MARWA CO</h3>
-                        <p>B2B-Spedition und Frachtkoordination im Libanon seit 1997 – für Land-, See- und Luftfracht sowie Projektladung.</p>
+                        <p>B2B-Spedition im Libanon seit 1997: FCL weltweit, Komplettladungen und große gewerbliche Fracht.</p>
                     </div>
                     <nav class="footer-col" aria-label="Unternehmenslinks">
                         <h3>Unternehmen</h3>
