@@ -23,10 +23,12 @@ jobs:
           node --check assets/js/freight-tools.js
           node --check assets/js/main.js
       - name: Prepare public deployment files
-        run: python3 scripts/package_site.py
+        run: |
+          python3 scripts/package_site.py
+          python3 scripts/test_cloudflare.py
       - uses: actions/upload-artifact@v7
         with:
-          name: al-marwa-static-site
-          path: artifacts/al-marwa-site.zip
+          name: al-marwa-cloudflare-pages
+          path: artifacts/al-marwa-cloudflare.zip
           if-no-files-found: error
           retention-days: 14

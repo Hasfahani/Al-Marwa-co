@@ -1,5 +1,21 @@
 # AL MARWA CO SEO and AI Search Launch Checklist
 
+## Cloudflare preparation — 16 November 2026
+
+The owner plans to deploy on Cloudflare. The current source contains **43 indexable pages**, plus a custom 404, and remains unchanged by the deployment transform.
+
+- Added a Cloudflare Pages build that emits `dist/` and rewrites published canonicals, internal links, reciprocal language links, structured-data URLs, social URLs, AI summary links and the sitemap to extensionless URLs.
+- Added permanent legacy-path redirects, preserved quote parameters, real missing-page handling and root-relative assets that also work on deep 404 paths.
+- Fingerprinted referenced CSS, scripts, fonts, images and videos for safe immutable caching while keeping HTML fresh.
+- Added static response headers that preserve the FormSubmit destination and preview/branch noindex rules that do not block the production domain.
+- Removed redundant large JPEG favicon links from the built HTML and deferred service-video loading until playback.
+- Corrected the previous broad directory packer, which included unrelated PDFs from `videos/`. The new release contains only referenced public files and license material; local originals were not removed or changed.
+- Prepared `artifacts/al-marwa-cloudflare.zip`; the older `al-marwa-site.zip` link now points to an identical copy of the corrected package. The current release has 123 public files.
+- Static source checks, freight-tool tests and quote-context tests pass. Cloudflare's local Wrangler runtime also passed checks for all 43 canonical pages, legacy redirects, retained query parameters, real 404s, cache/security headers and preview noindex behavior.
+- Deployment, custom-domain activation, HTTPS and the account-level www redirect are the owner's next steps. See `cloudflare/DEPLOY.md`. Uploading files alone does not configure DNS or prove search indexing or Core Web Vitals.
+
+Earlier audit entries below describe the previous GitHub-hosting checks and earlier stages of the source expansion.
+
 ## Source audit — 15 November 2026
 
 - **Local website: 36 public, indexable pages**, plus the custom 404 page.

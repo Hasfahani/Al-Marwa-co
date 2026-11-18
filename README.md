@@ -40,11 +40,13 @@ The checks cover metadata, business identity, schema, visible FAQ answers, local
 
 ## Prepare deployment
 
-After checks pass, run `python scripts/package_site.py`. The verified ZIP at `artifacts/al-marwa-site.zip` includes public HTML, assets, images, videos, downloads, robots, sitemap, the optional `llms.txt` summary, CNAME and `.nojekyll`. It excludes Git data, scripts, credentials and internal planning documents. A SHA-256 manifest is saved beside it.
+The production target is now **Cloudflare Pages**. Run `python scripts/package_site.py`, then `python scripts/test_cloudflare.py`.
 
-Deploy the ZIP contents at the intended static host's website root. The file `index.html` must be at that root, with `assets/`, `images/`, `videos/` and `downloads/` alongside it. Do not replace the existing production domain or choose another repository without checking the intended hosting configuration. The prepared CI workflow validates changes and uploads the package; it does not publish the website.
+Upload `artifacts/al-marwa-cloudflare.zip` or the contents of `dist/`. The old `al-marwa-site.zip` download name is updated to the identical Cloudflare package. The referenced-files build excludes unrelated PDFs, Git metadata, source scripts, internal documents and GitHub-specific hosting files. Original local files are untouched.
 
-The configured GitHub repositories returned HTTP 404 to both available access methods during this work. Publishing settings could not be verified and no production deployment has been made. See `seo-launch-checklist.md` for the observed live-host responses and remaining account work.
+For Git-connected Cloudflare Pages, use framework preset **None**, build command `python3 scripts/build_cloudflare.py`, and output directory **dist**. The build transforms published page links and SEO URLs to Cloudflare's extensionless paths, fingerprints referenced assets, and includes permanent path redirects, response headers, preview noindex rules and a true custom 404.
+
+See [the Cloudflare deployment guide](cloudflare/DEPLOY.md) for custom-domain activation, HTTPS, the account-level www redirect, local runtime checks and post-deployment verification. No Cloudflare account settings or live website have been changed. The prepared CI workflow checks and packages changes; it does not deploy them.
 
 ## Tools, forms and measurement
 
