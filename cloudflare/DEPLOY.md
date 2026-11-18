@@ -1,6 +1,22 @@
 # Deploy AL MARWA CO on Cloudflare Pages
 
-Prepared for the existing production domain **https://al-marwaco.com/**. These files do not create a Cloudflare project, change DNS, or deploy the website.
+Prepared for the existing production domain **https://al-marwaco.com/**.
+
+## Current deployment (18 November 2026)
+
+The verified static build is deployed to **https://al-marwa-co.pages.dev/** in the Cloudflare Pages project `al-marwa-co`. This is a Direct Upload project with production branch `agent/beirut-website-upgrade`. The Pages URL intentionally sends `X-Robots-Tag: noindex`; published canonical URLs still point to the intended custom domain.
+
+The custom domain currently uses GitHub Pages and has not been moved. Its DNS zone is absent from the signed-in Cloudflare account, so custom-domain activation remains pending. Do not treat the Pages deployment as a completed domain migration.
+
+After rebuilding and passing the checks below, deploy updates with:
+
+```text
+npx wrangler@4.163.0 pages deploy dist --project-name al-marwa-co --branch agent/beirut-website-upgrade
+```
+
+Live HTTP checks passed for all 43 canonical pages, legacy redirects, referenced assets, caching and security headers, retained quote parameters, a real nested 404, sitemap, robots and the AI summary. Public page bytes matched the verified release.
+
+The repository CI validates and packages releases; it does not automatically publish this Direct Upload project.
 
 ## Ready-to-upload package
 

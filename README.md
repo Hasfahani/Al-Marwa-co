@@ -46,7 +46,7 @@ Upload `artifacts/al-marwa-cloudflare.zip` or the contents of `dist/`. The old `
 
 For Git-connected Cloudflare Pages, use framework preset **None**, build command `python3 scripts/build_cloudflare.py`, and output directory **dist**. The build transforms published page links and SEO URLs to Cloudflare's extensionless paths, fingerprints referenced assets, and includes permanent path redirects, response headers, preview noindex rules and a true custom 404.
 
-See [the Cloudflare deployment guide](cloudflare/DEPLOY.md) for custom-domain activation, HTTPS, the account-level www redirect, local runtime checks and post-deployment verification. No Cloudflare account settings or live website have been changed. The prepared CI workflow checks and packages changes; it does not deploy them.
+See [the Cloudflare deployment guide](cloudflare/DEPLOY.md) for custom-domain activation, HTTPS, the account-level www redirect, local runtime checks and post-deployment verification. The verified release is deployed at **https://al-marwa-co.pages.dev/**. The custom domain still uses GitHub Pages and has not been moved; its DNS zone is not available in the signed-in Cloudflare account. The CI workflow checks and packages changes; future publication uses the direct deployment command in the guide.
 
 ## Tools, forms and measurement
 
