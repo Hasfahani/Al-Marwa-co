@@ -386,7 +386,7 @@
 }
     </script>
 
-    <link rel="preload" href="images/hero-beirut.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="images/pic04.webp" as="image" type="image/webp" fetchpriority="high" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -417,316 +417,205 @@
 
 
 
-        <section id="banner" class="major">
+        <section id="banner">
             <div class="inner">
-                <div class="hero-layout">
-                    <div class="hero-copy">
-                        <p class="hero-eyebrow"><span></span> B2B freight &amp; large cargo since 1997</p>
-                        <header class="major">
-                            <h1>B2B freight.<br><em>Full containers.</em></h1>
-                        </header>
-
-                        <div class="content">
-                            <p class="hero-intro">Worldwide FCL shipping, full truckloads, and large commercial cargo. Import to Lebanon from our key markets and ship full containers from Lebanon worldwide.</p>
-
-                            <div class="cta-container">
-                                <a href="contact.html" class="button cta primary-cta">
-                                    Get a B2B freight quote <span aria-hidden="true">&rarr;</span>
-                                </a>
-                                <a href="services.html" class="button cta secondary-cta">
-                                    Explore services
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <aside class="hero-control-card" aria-label="AL MARWA freight service overview">
-                        <p class="control-kicker">Your freight desk</p>
-                        <h2>Big cargo. Clear plans.</h2>
-                        <ul>
-                            <li><span class="icon solid fa-route" aria-hidden="true"></span><div><strong>Route planning</strong><small>FCL, full truckloads &amp; large cargo</small></div></li>
-                            <li><span class="icon solid fa-file-alt" aria-hidden="true"></span><div><strong>Document readiness</strong><small>Fewer avoidable delays</small></div></li>
-                            <li><span class="icon solid fa-satellite-dish" aria-hidden="true"></span><div><strong>Clear coordination</strong><small>Useful updates from booking to delivery</small></div></li>
-                        </ul>
-                        <div class="control-footer">
-                            <span><i></i> Business freight desk</span>
-                            <a href="tel:+96170099978">+961 70 099978</a>
-                        </div>
-                    </aside>
+                <p class="hero-eyebrow">Freight forwarding · Khalde Highway, Lebanon · Since 1997</p>
+                <h1>B2B freight for full containers, full trucks and heavy cargo.</h1>
+                <p class="hero-intro">Worldwide FCL shipping, full truckloads and large commercial cargo. We import to Lebanon from our key markets and ship full containers from Lebanon worldwide.</p>
+                <div class="cta-container">
+                    <a href="contact.html" class="button primary">Request a freight quote</a>
+                    <a href="tel:+96170099978" class="button">Call +961 70 099978</a>
                 </div>
 
-                <ul class="hero-trust-list" aria-label="Company credentials">
-                    <li><strong>Since 1997</strong><span>Proven experience</span></li>
-                    <li><strong>FCL worldwide</strong><span>Full container loads</span></li>
-                    <li><strong>Full truckloads</strong><span>Commercial road freight</span></li>
-                    <li><strong>Lebanon based</strong><span>Local accountability</span></li>
+                <ul class="hero-trust-list" aria-label="Company overview">
+                    <li><strong>Since 1997</strong><span>Freight forwarding from Lebanon</span></li>
+                    <li><strong>FCL worldwide</strong><span>Imports to and exports from Lebanon</span></li>
+                    <li><strong>Full truckloads</strong><span>From seven road and sea markets</span></li>
+                    <li><strong>Heavy &amp; project cargo</strong><span>Machinery and industrial equipment</span></li>
                 </ul>
             </div>
         </section>
 
         <main id="main">
 
-            <section class="home-quick-quote" aria-label="Quick shipment inquiry">
-                <div class="inner">
-                    <p class="quick-quote-label"><span class="icon solid fa-bolt" aria-hidden="true"></span> Quick Inquiry</p>
-                    <form class="quick-quote-form" aria-label="Quick shipment inquiry" action="https://formsubmit.co/info@al-marwaco.com" method="POST">
+            <section class="home-quick-quote" aria-labelledby="quick-quote-title">
+                <div class="inner quick-quote-layout">
+                    <div class="quick-quote-intro">
+                        <h2 id="quick-quote-title">Request a freight quote</h2>
+                        <p>Send the route and load size. We review the shipment and reply by email with questions or a quote.</p>
+                        <p class="quote-direct">Prefer to talk? <a href="tel:+96170099978">+961 70 099978</a></p>
+                    </div>
+                    <form class="quick-quote-form" action="https://formsubmit.co/info@al-marwaco.com" method="POST">
                         <input type="hidden" name="_subject" value="B2B Container / Truckload Quote - AL MARWA CO">
                         <input type="hidden" name="_template" value="table">
                         <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
                         <div class="quick-quote-fields">
-                            <input type="text" name="origin" placeholder="Origin (city / country)" required aria-label="Origin city or country">
-                            <input type="text" name="destination" placeholder="Destination (city / country)" required aria-label="Destination city or country">
-                            <select name="shipment_type" required aria-label="Shipment requirement" aria-describedby="quick-scope-note"><option value="">Select shipment requirement</option>
+                            <div class="field"><label for="qq-origin">Origin</label><input type="text" id="qq-origin" name="origin" placeholder="City, country" required></div>
+                            <div class="field"><label for="qq-destination">Destination</label><input type="text" id="qq-destination" name="destination" placeholder="City, country" required></div>
+                            <div class="field"><label for="qq-type">Shipment type</label><select id="qq-type" name="shipment_type" required aria-describedby="quick-scope-note"><option value="">Select</option>
                                         <option value="FCL">FCL — Full Container Load (worldwide)</option>
                                         <option value="FTL">FTL — Full Truckload</option>
                                         <option value="Large Cargo">Large / Industrial / Project Cargo</option>
                                         <option value="LCL">LCL — Selected Origins to Lebanon</option>
                                         <option value="Air Cargo">Air Cargo — Commercial Shipments</option>
-                                        <option value="Not Sure">Need Advice on a Large Shipment</option></select>
-                            <input type="email" name="email" placeholder="Your email" required aria-label="Your email address">
-                            <input type="text" name="company" placeholder="Company name" autocomplete="organization" required aria-label="Company name">
-                            <input type="text" name="load_details" placeholder="Load size / gross weight" required aria-label="Container count, truck count or cargo dimensions and weight">
-                            <button type="submit" class="quick-quote-submit">Get Quote <span class="icon solid fa-arrow-right" aria-hidden="true"></span></button>
+                                        <option value="Not Sure">Need Advice on a Large Shipment</option></select></div>
+                            <div class="field"><label for="qq-company">Company</label><input type="text" id="qq-company" name="company" autocomplete="organization" required></div>
+                            <div class="field"><label for="qq-email">Work email</label><input type="email" id="qq-email" name="email" autocomplete="email" required></div>
+                            <div class="field"><label for="qq-load">Load size / gross weight</label><input type="text" id="qq-load" name="load_details" placeholder="e.g. 2 × 40ft, 18 t" required></div>
                         </div>
-                        <p class="form-privacy-note" id="quick-scope-note">B2B FCL worldwide &amp; full truckloads. LCL only from Ukraine, Jordan, Iraq, UAE, Turkey, UK &amp; China into Lebanon.</p>
-                        <p class="form-privacy-note">Your details are used only to respond to this shipment inquiry. <a href="privacy.html">Privacy policy</a>.</p>
+                        <p class="form-privacy-note" id="quick-scope-note">FCL worldwide and full truckloads. LCL only from Ukraine, Jordan, Iraq, the UAE, Turkey, the UK and China into Lebanon. Your details are used only to respond to this inquiry — <a href="privacy.html">privacy policy</a>.</p>
+                        <div class="quick-quote-actions"><button type="submit" class="quick-quote-submit">Send inquiry</button></div>
                     </form>
                 </div>
             </section>
 
-            <section class="home-section home-enterprise" aria-labelledby="enterprise-freight-title">
+            <section class="home-section home-services" aria-labelledby="services-title">
                 <div class="inner">
-                    <header class="section-heading reveal">
-                        <p class="section-eyebrow">Built for Business Shipments</p>
-                        <h2 id="enterprise-freight-title">Full Containers. Full Trucks. Large Cargo.</h2>
-                        <p class="section-lead">We work with importers, exporters, wholesalers, manufacturers, and project teams moving substantial commercial loads. FCL worldwide is our specialty.</p>
+                    <header class="section-heading">
+                        <h2 id="services-title">Core services</h2>
+                        <p class="section-lead">Our work is container and truckload freight for businesses. Air cargo and customs coordination support the wider shipment when it needs them.</p>
                     </header>
-                    <div class="pillar-grid reveal reveal-delay-1">
-                        <article class="pillar-card">
-                            <span class="icon solid fa-industry" aria-hidden="true"></span>
-                            <h3>FCL Worldwide</h3>
-                            <p>Full Container Load shipping for commercial imports to Lebanon and exports from Lebanon worldwide. Plan a dedicated container around your cargo and loading requirements.</p>
+
+                    <div class="home-card-grid">
+                        <article class="home-card">
+                            <img src="images/pic03.webp" alt="Container yard and gantry cranes at the Port of Beirut" width="640" height="641" loading="lazy" decoding="async" />
+                            <div class="home-card-body">
+                                <p class="home-card-tag">Sea freight</p>
+                                <h3>FCL container shipping</h3>
+                                <p>Full containers into Lebanon and from Lebanon to any country, planned around your cargo and loading requirements.</p>
+                                <a href="sea-freight-lebanon.html" class="text-link">FCL shipping <span aria-hidden="true">→</span></a>
+                            </div>
                         </article>
-                        <article class="pillar-card">
-                            <span class="icon solid fa-sync-alt" aria-hidden="true"></span>
-                            <h3>Full Truckloads &amp; Large Cargo</h3>
-                            <p>FTL road transport from our seven core markets, machinery, industrial equipment, and bulky commercial loads, with lifting and loading needs reviewed before booking.</p>
+                        <article class="home-card">
+                            <img src="images/pic11.webp" alt="Curtain-side trailer loaded with industrial generators" width="1600" height="1200" loading="lazy" decoding="async" />
+                            <div class="home-card-body">
+                                <p class="home-card-tag">Road freight</p>
+                                <h3>Full truckloads</h3>
+                                <p>FTL transport for substantial commercial loads from Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom and China.</p>
+                                <a href="full-truckload-lebanon.html" class="text-link">Full truckloads <span aria-hidden="true">→</span></a>
+                            </div>
                         </article>
-                        <article class="pillar-card">
-                            <span class="icon solid fa-drafting-compass" aria-hidden="true"></span>
-                            <h3>LCL on Selected Import Routes</h3>
-                            <p>LCL (Less than Container Load) is available from Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom, and China into Lebanon, subject to shipment and route confirmation.</p>
+                        <article class="home-card">
+                            <img src="images/pic13.webp" alt="Industrial machinery secured on a multi-axle lowbed trailer" width="1368" height="524" loading="lazy" decoding="async" />
+                            <div class="home-card-body">
+                                <p class="home-card-tag">Heavy cargo</p>
+                                <h3>Machinery &amp; large cargo</h3>
+                                <p>Machinery, industrial equipment and bulky loads, with container fit, lifting and delivery access reviewed before booking.</p>
+                                <a href="heavy-equipment-shipping-lebanon.html" class="text-link">Heavy cargo <span aria-hidden="true">→</span></a>
+                            </div>
                         </article>
                     </div>
-                    <div class="section-actions">
-                        <a href="freight-forwarding-lebanon.html" class="button primary">Explore B2B Freight</a>
-                        <a href="spedition-libanon-deutschland.html" class="button" lang="de" hreflang="de-DE">Deutsch: Spedition Libanon</a>
-                        <a href="contact.html" class="button">Request a B2B Freight Proposal</a>
-                    </div>
+
+                    <p class="service-footnote">Also available: <a href="lcl-shipping-lebanon.html">LCL imports from seven origins</a>, <a href="export-shipping-lebanon.html">FCL exports from Lebanon</a>, <a href="air-cargo-lebanon.html">air cargo</a> for urgent commercial shipments and <a href="customs-clearance-lebanon.html">customs documentation support</a>. <a href="services.html">All&nbsp;services&nbsp;→</a></p>
                 </div>
             </section>
 
-            <section class="home-section" id="customer-fit"><div class="inner"><header class="section-heading"><p class="section-eyebrow">Who we work with</p><h2>Built for Businesses Moving Big Loads</h2><p class="section-lead">We do our best work for companies shipping full containers, full trucks and large equipment.</p></header><div class="business-audience-grid customer-fit-grid"><div class="business-audience-card"><h3>Our best fit</h3><ul><li>Importers and wholesalers bringing in full containers or full trucks</li><li>Manufacturers moving machinery, tanks, production lines and raw materials</li><li>Exporters shipping full containers from Lebanon to any country</li><li>Project and construction teams with heavy or oversized equipment</li></ul></div><div class="business-audience-card"><h3>Also handled</h3><ul><li>LCL into Lebanon from Ukraine, Jordan, Iraq, the UAE, Turkey, the UK and China</li><li>Air cargo for urgent commercial shipments</li><li>Customs documentation support for business cargo</li><li>Recurring shipments and supplier consolidation</li></ul></div><div class="business-audience-card"><h3>Not our service</h3><ul><li>Parcels, courier and single-box shipments</li><li>Household moves and personal effects</li><li>LCL from countries outside our seven origins. A single large item from anywhere can still ship as FCL</li></ul></div></div><p class="section-actions"><a href="contact.html" class="button primary">Get a B2B freight quote</a><a href="freight-planner-lebanon.html" class="button">Check which service fits</a></p></div></section>
-            <section class="home-section" id="business-customer-groups"><div class="inner"><header class="section-heading"><p class="section-eyebrow">Built around your business</p><h2>Freight for the Teams Moving Substantial Loads</h2><p class="section-lead">Choose a planning brief for your commercial stock, production inputs, or equipment project.</p></header><div class="business-audience-grid"><a class="business-audience-card" href="commercial-imports-lebanon.html"><h3>Importers &amp; Wholesalers <span aria-hidden="true">↗</span></h3><p>Purchase orders, stock replenishment and commercial container loads.</p></a><a class="business-audience-card" href="industrial-logistics-lebanon.html"><h3>Manufacturers &amp; Industry <span aria-hidden="true">↗</span></h3><p>Production inputs, factory equipment and installation handoffs.</p></a><a class="business-audience-card" href="project-cargo-lebanon.html"><h3>Project &amp; Construction Teams <span aria-hidden="true">↗</span></h3><p>Large equipment, phased delivery and project-site access.</p></a></div></div></section>
-            <section class="home-section home-proof">
-                <div class="inner">
-                    <div class="proof-shell">
-                        <header class="section-heading proof-heading reveal">
-                            <p class="section-eyebrow">Why AL MARWA CO</p>
-                            <h2>A Freight Partner for Substantial Business Loads</h2>
-                            <p class="section-lead">From machinery and industrial equipment to wholesale goods and containerized stock, we plan around your shipment volume, loading requirements, and commercial deadline.</p>
+            <section class="home-section is-tinted" id="customer-fit"><div class="inner"><header class="section-heading"><h2>Built for commercial loads, not parcels</h2><p class="section-lead">We do our best work for companies shipping full containers, full trucks and large equipment.</p></header><div class="business-audience-grid customer-fit-grid"><div class="business-audience-card"><h3>Our best fit</h3><ul><li>Importers and wholesalers bringing in full containers or full trucks</li><li>Manufacturers moving machinery, tanks, production lines and raw materials</li><li>Exporters shipping full containers from Lebanon to any country</li><li>Project and construction teams with heavy or oversized equipment</li></ul></div><div class="business-audience-card"><h3>Also handled</h3><ul><li>LCL into Lebanon from Ukraine, Jordan, Iraq, the UAE, Turkey, the UK and China</li><li>Air cargo for urgent commercial shipments</li><li>Customs documentation support for business cargo</li><li>Recurring shipments and supplier consolidation</li></ul></div><div class="business-audience-card"><h3>Not our service</h3><ul><li>Parcels, courier and single-box shipments</li><li>Household moves and personal effects</li><li>LCL from countries outside our seven origins. A single large item from anywhere can still ship as FCL</li></ul></div></div><p class="section-actions"><a href="contact.html" class="button primary">Get a B2B freight quote</a><a href="freight-planner-lebanon.html" class="button">Check which service fits</a></p></div></section>
+
+            <section class="home-section home-coverage" aria-labelledby="routes-title">
+                <div class="inner route-layout">
+                    <div>
+                        <header class="section-heading">
+                            <h2 id="routes-title">Import routes into Lebanon</h2>
+                            <p class="section-lead">Seven key import markets, plus full containers from anywhere. Routes and schedules are confirmed per shipment.</p>
                         </header>
-
-                        <div class="trust-metrics reveal reveal-delay-1" aria-label="Company trust indicators">
-                            <article class="metric-card">
-                                <span class="metric-value">Since 1997</span>
-                                <span class="metric-label">freight experience in Lebanon</span>
-                            </article>
-                            <article class="metric-card">
-                                <span class="metric-value">3</span>
-                                <span class="metric-label">core freight modes under one team</span>
-                            </article>
-                            <article class="metric-card">
-                                <span class="metric-value">LB to Global</span>
-                                <span class="metric-label">service coverage from Lebanon to international routes</span>
-                            </article>
-                        </div>
+                        <ul class="route-notes">
+                            <li><strong>Worldwide FCL</strong>Full containers into Lebanon and from Lebanon worldwide, including large shipments from other origins after route review.</li>
+                            <li><strong>Regional markets</strong>Jordan, Iraq, the UAE and Turkey — FCL, selected LCL and full truckloads by road.</li>
+                            <li><strong>Europe &amp; China</strong>Ukraine, the United Kingdom and China — FCL and selected LCL imports, plus full truckloads.</li>
+                        </ul>
                     </div>
+                    <nav class="business-resource-links import-route-links" aria-label="Key business import routes"><a href="china-to-lebanon-shipping.html">China to Lebanon</a><a href="turkey-to-lebanon-shipping.html">Turkey to Lebanon</a><a href="uae-to-lebanon-shipping.html">United Arab Emirates to Lebanon</a><a href="jordan-to-lebanon-shipping.html">Jordan to Lebanon</a><a href="iraq-to-lebanon-shipping.html">Iraq to Lebanon</a><a href="uk-to-lebanon-shipping.html">United Kingdom to Lebanon</a><a href="ukraine-to-lebanon-shipping.html">Ukraine to Lebanon</a><a href="shipping-routes-lebanon.html">All freight routes</a></nav>
                 </div>
             </section>
 
-            <section class="home-section home-services">
+            <section class="home-section is-tinted home-process" aria-labelledby="process-title">
                 <div class="inner">
-                    <header class="section-heading reveal">
-                        <p class="section-eyebrow">What We Do</p>
-                        <h2>FCL, Full Truckloads &amp; Heavy Cargo</h2>
-                        <p class="section-lead">Our core offer is container and truckload freight for businesses. Air cargo and customs coordination support the wider commercial shipment when needed.</p>
+                    <header class="section-heading">
+                        <h2 id="process-title">How a shipment runs</h2>
+                        <p class="section-lead">From the first inquiry to delivery, one team handles the route, the paperwork and the handoffs.</p>
                     </header>
-
-                    <div class="home-card-grid reveal reveal-delay-1">
-                        <article class="home-card">
-                            <img src="images/pic03.webp" alt="Maritime shipping cargo vessel at port" width="640" height="641" loading="lazy" decoding="async" />
-                            <span class="card-icon icon solid fa-ship" aria-hidden="true"></span>
-                            <h3>FCL Container Shipping</h3>
-                            <p>Our specialty: FCL worldwide. LCL imports are available only from our seven selected origin markets into Lebanon.</p>
-                            <a href="sea-freight-lebanon.html" class="button small">Learn More</a>
-                        </article>
-
-                        <article class="home-card">
-                            <img src="images/pic02.webp" alt="Land freight trucks on regional highway" width="1206" height="823" loading="lazy" decoding="async" />
-                            <span class="card-icon icon solid fa-truck" aria-hidden="true"></span>
-                            <h3>Full Truckload Freight</h3>
-                            <p>Full truckload (FTL) transport for substantial commercial loads from Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom and China.</p>
-                            <a href="full-truckload-lebanon.html" class="button small">Learn More</a>
-                        </article>
-
-                        <article class="home-card">
-                            <img src="images/pic08.webp" alt="Commercial cargo and equipment handling" width="612" height="408" loading="lazy" decoding="async" />
-                            <span class="card-icon icon solid fa-industry" aria-hidden="true"></span>
-                            <h3>Large &amp; Industrial Cargo</h3>
-                            <p>Machinery, industrial equipment, and bulky cargo with container fit, lifting, loading, and delivery access reviewed in advance.</p>
-                            <a href="heavy-equipment-shipping-lebanon.html" class="button small">Learn More</a>
-                        </article>
-                    </div>
-
-                    <div class="section-actions">
-                        <a href="services.html" class="button">View all freight services <span aria-hidden="true">&rarr;</span></a>
-                    </div>
-                </div>
-            </section>
-
-
-
-
-
-            <section class="home-section home-process">
-                <div class="inner">
-                    <header class="section-heading reveal">
-                        <p class="section-eyebrow">Our Process</p>
-                        <h2>How It Works</h2>
-                        <p class="section-lead">A straightforward process that gets from quote to movement without wasted steps.</p>
-                    </header>
-
-                    <ol class="process-steps reveal reveal-delay-1">
+                    <ol class="process-steps">
                         <li class="process-step">
                             <span class="step-number">01</span>
-                            <h3>Share Shipment Details</h3>
-                            <p>Share your company, route, FCL or FTL requirement, cargo dimensions, weight, and readiness date.</p>
+                            <h3>Share the shipment</h3>
+                            <p>Company, route, FCL or FTL requirement, cargo dimensions, weight and readiness date.</p>
                         </li>
                         <li class="process-step">
                             <span class="step-number">02</span>
-                            <h3>Review the Best Option</h3>
-                            <p>We map the route, the freight mode, and the handling requirements before anything moves.</p>
+                            <h3>Review the options</h3>
+                            <p>We map the route, freight mode and handling requirements before anything moves.</p>
                         </li>
                         <li class="process-step">
                             <span class="step-number">03</span>
-                            <h3>Book and Dispatch</h3>
-                            <p>We handle booking, timing, and execution so the shipment moves with fewer surprises.</p>
+                            <h3>Book and dispatch</h3>
+                            <p>We handle booking, timing and execution so the shipment moves with fewer surprises.</p>
                         </li>
                         <li class="process-step">
                             <span class="step-number">04</span>
-                            <h3>Delivery and Follow-Up</h3>
-                            <p>Your shipment reaches completion with clear updates and any final follow-through handled properly.</p>
+                            <h3>Deliver and follow up</h3>
+                            <p>Clear updates through to delivery, with any final follow-through handled properly.</p>
                         </li>
                     </ol>
                 </div>
             </section>
 
-            <section id="partners" class="home-section home-partners">
+            <section class="home-section company-facts" aria-labelledby="company-facts-title">
+                <div class="inner company-layout">
+                    <figure class="company-photo">
+                        <img src="images/pic10.webp" alt="Mobile crane lifting an industrial generator at the AL MARWA yard" width="1206" height="916" loading="lazy" decoding="async" />
+                        <figcaption>Generator lift at our yard, Khalde Highway.</figcaption>
+                    </figure>
+                    <div>
+                        <header class="section-heading">
+                            <h2 id="company-facts-title">A Lebanese freight forwarder since 1997</h2>
+                            <p class="section-lead">AL MARWA CO is based on Khalde Highway. We coordinate commercial cargo for importers, exporters, manufacturers, procurement teams and project operators.</p>
+                        </header>
+                        <dl class="business-facts-grid">
+                            <div><dt>Office</dt><dd>Khalde Highway, Lebanon. Serving Beirut, Greater Beirut and businesses across Lebanon.</dd></div>
+                            <div><dt>Services</dt><dd>Worldwide FCL, full truckloads, large and industrial cargo, selected-origin LCL, air cargo and customs documentation support.</dd></div>
+                            <div><dt>Import origins</dt><dd>Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom and China. FCL exports from Lebanon worldwide.</dd></div>
+                            <div><dt>Contact</dt><dd><a href="tel:+96170099978">+961 70 099978</a><br><a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a></dd></div>
+                        </dl>
+                        <p class="business-facts-note">For a useful comparison, share your cargo, route, weight, dimensions, deadline and required pickup or delivery scope. Pricing, transit times, cargo acceptance and customs requirements depend on the shipment.</p>
+                        <nav class="business-resource-links" aria-label="Freight planning resources">
+                            <a href="about.html">About the company</a>
+                            <a href="freight-forwarding-beirut.html">Beirut freight services</a>
+                            <a href="beirut-freight-guide.html">Shipment planning guide</a>
+                            <a href="freight-forwarding-beirut-ar.html" lang="ar" hreflang="ar-LB">خدمات الشحن للشركات</a>
+                            <a href="spedition-libanon-deutschland.html" lang="de" hreflang="de-DE">Spedition Libanon (Deutsch)</a>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+
+            <section class="home-section" id="business-customer-groups"><div class="inner"><header class="section-heading"><h2>Planning briefs by business type</h2><p class="section-lead">What to prepare for commercial stock, production inputs or an equipment project.</p></header><div class="business-audience-grid"><a class="business-audience-card" href="commercial-imports-lebanon.html"><h3>Importers &amp; wholesalers <span aria-hidden="true">→</span></h3><p>Purchase orders, stock replenishment and commercial container loads.</p></a><a class="business-audience-card" href="industrial-logistics-lebanon.html"><h3>Manufacturers &amp; industry <span aria-hidden="true">→</span></h3><p>Production inputs, factory equipment and installation handoffs.</p></a><a class="business-audience-card" href="project-cargo-lebanon.html"><h3>Project &amp; construction teams <span aria-hidden="true">→</span></h3><p>Large equipment, phased delivery and project-site access.</p></a></div></div></section>
+
+            <section class="home-section is-tinted" id="business-planning-tools"><div class="inner"><header class="section-heading"><h2>Prepare before you ask for a quote</h2><p class="section-lead">Practical tools for your team before requesting a commercial freight quote.</p></header><div class="business-audience-grid"><a href="freight-planner-lebanon.html" class="business-audience-card"><h3>Freight service planner <span aria-hidden="true">→</span></h3><p>Check which published service should be reviewed for your route and shipment size.</p></a><a href="cargo-volume-calculator.html" class="business-audience-card"><h3>Cargo volume calculator <span aria-hidden="true">→</span></h3><p>Calculate packed CBM, package count and supplied gross weights, then prepare a quote brief.</p></a><a href="container-shipping-costs-lebanon.html" class="business-audience-card"><h3>Container quote cost guide <span aria-hidden="true">→</span></h3><p>Compare pickup, handling, main freight and final delivery on the same basis.</p></a></div><p class="section-actions"><a href="freight-resources-lebanon.html" class="button">All tools &amp; guides</a><a href="fcl-shipping-lebanon-ar.html" class="button" lang="ar" dir="rtl" hreflang="ar-LB">شحن الحاويات للشركات بالعربية</a></p></div></section>
+
+            <section id="partners" class="home-section home-partners" aria-labelledby="carriers-title">
                 <div class="inner">
                     <header class="section-heading">
-                        <p class="section-eyebrow">Carrier Network</p>
-                        <h2>Recognized Global Carriers</h2>
-                        <p class="section-lead">Depending on the route and service required, we coordinate through established land, sea, and air carrier networks.</p>
+                        <h2 id="carriers-title">Ocean carriers</h2>
+                        <p class="section-lead">Depending on the route, we coordinate container moves through established shipping lines, including:</p>
                     </header>
-
-                    <div class="partner-badge-row" aria-label="Partner trust summary">
-                        <span class="partner-badge">Global carrier relationships</span>
-                        <span class="partner-badge">Multi-modal routing support</span>
-                        <span class="partner-badge">Documentation-aware coordination</span>
-                    </div>
-
                     <div class="partner-logos">
-                        <a href="https://www.ups.com" target="_blank" rel="noopener noreferrer"><img src="images/ups.jpg" alt="UPS" width="346" height="327" loading="lazy" decoding="async" /></a>
-                        <a href="https://www.dhl.com" target="_blank" rel="noopener noreferrer"><img src="images/dhl.jpg" alt="DHL" width="497" height="313" loading="lazy" decoding="async" /></a>
-                        <a href="https://www.fedex.com" target="_blank" rel="noopener noreferrer"><img src="images/fedex.jpg" alt="FedEx" width="497" height="501" loading="lazy" decoding="async" /></a>
-                        <a href="https://www.dpd.com" target="_blank" rel="noopener noreferrer"><img src="images/dpd.jpg" alt="DPD" width="488" height="388" loading="lazy" decoding="async" /></a>
-                        <a href="https://www.tnt.com" target="_blank" rel="noopener noreferrer"><img src="images/tnt.jpg" alt="TNT" width="408" height="397" loading="lazy" decoding="async" /></a>
-                        <a href="https://www.aramex.com" target="_blank" rel="noopener noreferrer"><img src="images/aramex.jpg" alt="Aramex" width="448" height="263" loading="lazy" decoding="async" /></a>
                         <a href="https://www.maersk.com" target="_blank" rel="noopener noreferrer"><img src="images/maersk.jpg" alt="Maersk" width="361" height="318" loading="lazy" decoding="async" /></a>
                         <a href="https://www.cma-cgm.com" target="_blank" rel="noopener noreferrer"><img src="images/cmacgm.jpg" alt="CMA CGM" width="424" height="252" loading="lazy" decoding="async" /></a>
                         <a href="https://www.arkasline.com" target="_blank" rel="noopener noreferrer"><img src="images/arkas.jpg" alt="ARKAS" width="698" height="355" loading="lazy" decoding="async" /></a>
                         <a href="https://www.evergreen-marine.com" target="_blank" rel="noopener noreferrer"><img src="images/evergreen.jpg" alt="Evergreen" width="248" height="246" loading="lazy" decoding="async" /></a>
                     </div>
+                    <p class="partner-note">Carrier names and logos are trademarks of their respective owners.</p>
                 </div>
             </section>
 
-            <section class="home-section home-coverage">
-                <div class="inner">
-                    <header class="section-heading">
-                        <p class="section-eyebrow">Where We Operate</p>
-                        <h2>Key Import Markets. Worldwide FCL Exports.</h2>
-                        <p class="section-lead">Our main import markets are Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom, and China. FCL is available worldwide; LCL is limited to these origins into Lebanon. Routes and schedules are confirmed per shipment.</p>
-                    </header>
-                    <div class="coverage-grid reveal reveal-delay-1">
-                        <div class="coverage-region">
-                            <span class="icon solid fa-map-marker-alt" aria-hidden="true"></span>
-                            <h3>Worldwide FCL</h3>
-                            <p>Full containers into Lebanon and from Lebanon worldwide, including large commercial shipments from other origins after route review.</p>
-                        </div>
-                        <div class="coverage-region">
-                            <span class="icon solid fa-globe" aria-hidden="true"></span>
-                            <h3>Regional Import Markets</h3>
-                            <p>Jordan, Iraq, the UAE, and Turkey into Lebanon. FCL and selected LCL imports, plus full truckloads by road.</p>
-                        </div>
-                        <div class="coverage-region">
-                            <span class="icon solid fa-ship" aria-hidden="true"></span>
-                            <h3>European Import Markets</h3>
-                            <p>Ukraine and the United Kingdom into Lebanon for FCL and selected LCL imports. Full truckloads by road are also available.</p>
-                        </div>
-                        <div class="coverage-region">
-                            <span class="icon solid fa-plane" aria-hidden="true"></span>
-                            <h3>China to Lebanon</h3>
-                            <p>FCL and selected LCL imports for wholesale goods, machinery, industrial supplies, and other commercial cargo.</p>
-                        </div>
-                    </div>
-                <nav class="business-resource-links import-route-links" aria-label="Key business import routes"><a href="china-to-lebanon-shipping.html">China to Lebanon</a><a href="turkey-to-lebanon-shipping.html">Turkey to Lebanon</a><a href="uae-to-lebanon-shipping.html">United Arab Emirates to Lebanon</a><a href="jordan-to-lebanon-shipping.html">Jordan to Lebanon</a><a href="iraq-to-lebanon-shipping.html">Iraq to Lebanon</a><a href="uk-to-lebanon-shipping.html">United Kingdom to Lebanon</a><a href="ukraine-to-lebanon-shipping.html">Ukraine to Lebanon</a><a href="shipping-routes-lebanon.html">All freight routes</a></nav>
-                </div>
-</section>
-
-            <section class="home-section company-facts" aria-labelledby="company-facts-title">
-                <div class="inner">
-                    <header class="section-heading">
-                        <p class="section-eyebrow">Company at a Glance</p>
-                        <h2 id="company-facts-title">A Freight Forwarder for Your Business</h2>
-                        <p class="section-lead">AL MARWA CO is a freight forwarding company based on Khalde Highway, Lebanon. Since 1997, we have coordinated commercial cargo for importers, exporters, manufacturers, procurement teams, and project operators.</p>
-                    </header>
-                    <dl class="business-facts-grid">
-                        <div><dt>Office &amp; local coverage</dt><dd>Khalde Highway, Lebanon. Serving Beirut, Greater Beirut, and businesses across Lebanon.</dd></div>
-                        <div><dt>Freight services</dt><dd>Worldwide FCL, full truckloads (FTL), large and industrial cargo, selected-origin LCL imports, plus air cargo and customs documentation support.</dd></div>
-                        <div><dt>International coordination</dt><dd>Key import origins: Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom, and China. FCL exports from Lebanon worldwide. LCL only from these origins into Lebanon; availability is confirmed per shipment.</dd></div>
-                        <div><dt>Talk to our team</dt><dd><a href="tel:+96170099978">+961 70 099978</a><br><a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a></dd></div>
-                    </dl>
-                    <p class="business-facts-note">For a useful comparison, share your cargo, route, weight, dimensions, deadline, and required pickup or delivery scope. Pricing, transit times, cargo acceptance, and customs requirements depend on the shipment.</p>
-                    <nav class="business-resource-links" aria-label="Freight planning resources">
-                        <a href="about.html">About the company</a>
-                        <a href="freight-forwarding-beirut.html">Beirut freight services</a>
-                        <a href="beirut-freight-guide.html">Shipment planning guide</a>
-                        <a href="freight-forwarding-beirut-ar.html" lang="ar" hreflang="ar-LB">خدمات الشحن للشركات</a>
-                        <a href="contact.html">Request a freight quote</a><a href="sea-freight-lebanon.html">FCL worldwide</a><a href="full-truckload-lebanon.html">Full truckloads</a><a href="heavy-equipment-shipping-lebanon.html">Machinery &amp; large cargo</a><a href="lcl-shipping-lebanon.html">Selected-origin LCL</a><a href="export-shipping-lebanon.html">Exports from Lebanon</a>
-                    </nav>
-                </div>
-            </section>
-
-            <section class="home-section" id="business-planning-tools"><div class="inner"><header class="section-heading"><p class="section-eyebrow">Prepare a useful freight inquiry</p><h2>Plan the Service. Measure the Load. Define the Scope.</h2><p class="section-lead">Practical tools for your team before requesting a commercial freight quote.</p></header><div class="business-audience-grid"><a href="freight-planner-lebanon.html" class="business-audience-card"><h3>Freight service planner ↗</h3><p>Check which published service should be reviewed for your route and shipment size.</p></a><a href="cargo-volume-calculator.html" class="business-audience-card"><h3>Cargo volume calculator ↗</h3><p>Calculate packed CBM, package count and supplied gross weights, then prepare a quote brief.</p></a><a href="container-shipping-costs-lebanon.html" class="business-audience-card"><h3>Container quote cost guide ↗</h3><p>Compare pickup, handling, main freight and final delivery on the same basis.</p></a></div><p class="section-actions"><a href="freight-resources-lebanon.html" class="button">All tools &amp; guides</a><a href="fcl-shipping-lebanon-ar.html" class="button" lang="ar" dir="rtl" hreflang="ar-LB">شحن الحاويات للشركات بالعربية</a></p></div></section>
             <section class="home-section home-faq" aria-labelledby="freight-faq-title">
                 <div class="inner faq-layout">
-                    <header class="section-heading reveal">
-                        <p class="section-eyebrow">Freight Answers</p>
-                        <h2 id="freight-faq-title">Before You Book a Shipment</h2>
-                        <p class="section-lead">Clear answers to the practical questions businesses ask before moving cargo through Beirut and Lebanon.</p>
+                    <header class="section-heading">
+                        <h2 id="freight-faq-title">Before you book</h2>
+                        <p class="section-lead">Practical answers to the questions businesses ask before moving cargo through Beirut and Lebanon.</p>
                     </header>
-                    <div class="faq-list reveal reveal-delay-1">
+                    <div class="faq-list">
 <details><summary>What shipments does AL MARWA CO specialize in?</summary><p>We focus mainly on B2B freight: FCL (Full Container Load) worldwide, full truckloads (FTL) from Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom and China, machinery, industrial equipment, and large commercial cargo for importers, exporters, wholesalers, and manufacturers.</p></details>
 <details><summary>Which countries do you offer LCL imports from?</summary><p>LCL (Less than Container Load) is available from Ukraine, Jordan, Iraq, the UAE, Turkey, the United Kingdom, and China into Lebanon, subject to shipment and route confirmation.</p></details>
 <details><summary>Can you ship one large item from a country outside your main import markets?</summary><p>We can assess a large item from another origin as an FCL shipment. Share its dimensions, weight, loading needs, and route so we can check container fit and total cost. Our main focus is full-container and substantial business loads.</p></details>
@@ -750,16 +639,17 @@
                 </div>
             </section>
 
-
-
-            <section class="home-section home-cta">
+            <section class="home-section home-cta" aria-labelledby="cta-title">
                 <div class="inner">
-                    <div class="final-cta-box reveal">
-                        <h2>Moving a Full Container or a Large Business Load?</h2>
-                        <p>Send your company details, route, container or truck count, cargo dimensions, weight, and deadline. We will review the loading plan and prepare a B2B freight quote.</p>
+                    <div class="final-cta-box">
+                        <div>
+                            <h2 id="cta-title">Moving a full container or a large business load?</h2>
+                            <p>Send your company details, route, container or truck count, cargo dimensions, weight and deadline. We review the loading plan and prepare a B2B freight quote.</p>
+                            <p class="cta-contact"><a href="tel:+96170099978">+961 70 099978</a> &nbsp;·&nbsp; <a href="mailto:info@al-marwaco.com">info@al-marwaco.com</a></p>
+                        </div>
                         <ul class="actions">
-                            <li><a href="contact.html" class="button primary">Request a Quote</a></li>
-                            <li><a href="services.html" class="button">Plan Your Shipment</a></li>
+                            <li><a href="contact.html" class="button primary">Request a quote</a></li>
+                            <li><a href="services.html" class="button">View services</a></li>
                         </ul>
                     </div>
                 </div>
